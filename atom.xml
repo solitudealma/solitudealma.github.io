@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
-    <title>SolitudeAlma&apos;s blog</title>
-    <updated>2021-02-12T14:10:09.606Z</updated>
+    <title>SolitudeAlma</title>
+    <updated>2021-02-12T14:12:10.634Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
     <subtitle>都懂一点，不是很懂的小捞仔</subtitle>
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, SolitudeAlma&apos;s blog</rights>
+    <rights>All rights reserved 2021, SolitudeAlma</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://solitudealma.github.io/post/hello-gridea/</id>
