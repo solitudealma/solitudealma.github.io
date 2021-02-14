@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-02-14T14:44:31.294Z</updated>
+    <updated>2021-02-14T14:46:15.834Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -37,6 +37,7 @@
         do -- j; while(q[j] &gt; x); //右指针寻找大于x的数
         if(i &lt; j) swap(q[i] &lt; q[j]); //swap函数存在于C++的algorithm头文件中，相当于自己手写的交换变量函数，因为指针停下来的时候可能是穿过，重合这两种情况其中一种，如果未相遇我们就交换指针所指的数，然后直到l&gt;=r循环结束
     }
+    //每一次递归之后i、j的相对位置只有两种情况，i==j或者i==j+1
     quick_sort(q , l , j) , quick_sort(q , j + 1 , r);//递归处理左右区间，先左，再右（注意划分区间用的是i还是j）
 }
 </code></pre>
