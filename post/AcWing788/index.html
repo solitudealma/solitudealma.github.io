@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1613638758767">
+<meta name="UpdateTime" content="1613639230463">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1613638758767" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1613639230463" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1613638758767" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1613639230463" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -286,7 +286,7 @@
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613638758767" srcset="https://solitudealma.github.io/images/avatar.png?v=1613638758767" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613639230463" srcset="https://solitudealma.github.io/images/avatar.png?v=1613639230463" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-18</span>
                                         </div>
@@ -317,10 +317,13 @@
 <h3 id="算法1">算法1</h3>
 <h5 id="归并排序-onlogn">(归并排序)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
 <p>做这道题的话因为序列是不能被打乱的，而归并排序开始排序之前，序列还是原来的样子。根据这道题的性质我们可以发现，一共有三种情况，也就是这两个数的位置。</p>
-<pre><code>1. 刚好在左区间
-2. 刚好在右区间
-3. 大的数在左区间，小的数在右区间
-</code></pre>
+<blockquote>
+<ol>
+<li>刚好在左区间</li>
+<li>刚好在右区间</li>
+<li>大的数在左区间，小的数在右区间</li>
+</ol>
+</blockquote>
 <p>前两个情况很好求，在我们处理左右区间时就可以求出来，那么第三种呢。其实也不难，根据归并的性质可以知道在归并到最后一个区间的时候左右两个子区间是有序的，那么我们归并的时候可以判断一下，如果左指针所指的数大于右指针所指的数，那么左指针后的所有数都将大于它，那么这个数构成的逆序对就是<code>mid - i + 1</code>,那么只需将所有这种情况加起来，再加上前两种情况就行了。前两种情况其实在合并为将它们分开时的那个区间时就已经计算完了，只需把<code>merge_sort(q , l , mid)</code> 和 <code>merge_sort(q , mid + 1 , r)</code>这两个结果加起来就行了，虽然看上去有点绕，但是如果你知道归并的过程的话，其实就能明白了，还是不太清楚的话建议手动模拟一下，也可以看看我画的图</p>
 <figure data-type="image" tabindex="1"><img src="https://img.imgdb.cn/item/602e2bb599aa8726f299df5b.jpg" alt="图解逆序对" loading="lazy"></figure>
 <h4 id="时间复杂度-onlogn">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
@@ -429,8 +432,8 @@ int main()
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing788/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing788/&sharesource=qzone&title=题解：AcWing 788. 逆序对&pics=https://solitudealma.github.io/images/avatar.png?v=1613638758767&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing788/&sharesource=weibo&title=题解：AcWing 788. 逆序对 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613638758767"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing788/&sharesource=qzone&title=题解：AcWing 788. 逆序对&pics=https://solitudealma.github.io/images/avatar.png?v=1613639230463&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing788/&sharesource=weibo&title=题解：AcWing 788. 逆序对 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613639230463"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
