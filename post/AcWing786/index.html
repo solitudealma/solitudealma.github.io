@@ -257,65 +257,173 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                题解：AcWing 786.第K个数
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            
-                                                <h3>
-                                                    2021
-                                                </h3>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
                                                 
+                                                    </span>
+                                                    <span class="post-view">
                                                     
-
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/merge_sort/">
-                                                                对归并排序的一些理解
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-17 </span>
-                                                        </article>
+                                                        &nbsp;•&nbsp;
+                                                        <span class="post-meta-item-text"><i class="Card Card-view"></i>&nbsp;阅读量&nbsp;</span>
+                                                        <span data-hk-page="current"> - </span>
                                                         
-                                                            
-                                                    
+                                                            </span>&nbsp;•&nbsp;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/quick_sort/">
-                                                                快速排序的介绍以及算法的模板分享
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+                                                            <span class="post-readtime">阅读时间:
+                                            2.4分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613632997774" srcset="https://solitudealma.github.io/images/avatar.png?v=1613632997774" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-18</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h4 id="引用">引用</h4>
+<blockquote>
+<p>星丶空大佬的题解，很不错的思路，奇怪的思路+1 <s>并没有</s><br>
+<a href="https://www.acwing.com/solution/content/4502/">写一个和yxc大佬不同但差不多思想的方法，代码更简单</a></p>
+</blockquote>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个长度为n的整数数列，以及一个整数k，请用快速选择算法求出数列从小到大排序后的第k个数。</p>
+<h4 id="样例">样例</h4>
+<h4 id="输入格式">输入格式</h4>
+<p>第一行包含两个整数 n 和 k。</p>
+<p>第二行包含 n 个整数（所有整数均在1~109范围内），表示整数数列。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>输出一个整数，表示数列的第k小数。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>100000</mn></mrow><annotation encoding="application/x-tex">1≤n≤100000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>,<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1≤k≤n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>5 3
+2 4 1 5 3
+</code></pre>
+<h4 id="输出样例">输出样例：</h4>
+<pre><code>3
+</code></pre>
+<hr>
+<h3 id="算法1">算法1</h3>
+<h5 id="暴力枚举-on2">(暴力枚举)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></h5>
+<p>从快排的性质可以知道，每次划分区间的时候j左边的数都是小于等于x的，右边的都是大于等于x的。所以如果左区间的长度大于等于k，那么第k个数必定在左区间，所以我们只需递归左区间，反过来，如果k大于左区间长度，那么第k个数在右区间，那么相对于右区间，第k个数在右区间中变为第（k - 左区间的长度）个数，然后递归右区间即可。</p>
+<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
+<p>emmm，问就是不知道怎么算的，不过肯定比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 小，等我看了y总的时空复杂度分析再来补吧，哈哈哈</p>
+<h4 id="c-代码">C++ 代码</h4>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/recursion/">
-                                                                简单介绍一下递归
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                        
-                                                                                
-                                    </div>
+using namespace std;
+
+const int N = 1e5 + 10;
+
+int n , k;
+int a[N];
+
+int quick_sort(int q[] , int l , int r , int k)
+{
+    if(l &gt;= r) return q[l];
+    
+    int i = l - 1 , j = r + 1 , x = q[l + r &gt;&gt; 1];
+    while(i &lt; j)
+    {
+        do ++ i; while(q[i] &lt; x);
+        do -- j; while(q[j] &gt; x);
+        if(i &lt; j) swap(q[i] , q[j]);
+    }
+    
+    int len = j - l + 1;
+    if(len &gt;= k) return quick_sort(q , l , j , k);
+    else return quick_sort(q , j + 1 , r , k - len);
+}
+
+int main()
+{
+    
+    scanf(&quot;%d%d&quot; , &amp;n , &amp;k);
+    
+    for(int i = 0; i &lt; n; ++ i) scanf(&quot;%d&quot; , &amp;a[i]);
+    
+    int res = quick_sort(a , 0 , n - 1 , k);
+    
+    printf(&quot;%d&quot; , res);
+    
+    return 0;
+}
+</code></pre>
+
                                 </div>
                             </div>
-                            <div class="post-footer">
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                        
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/AcWing786/" title="题解：AcWing 786.第K个数">
+                                        https://solitudealma.github.io/post/AcWing786/
+                                    </a><br> 协议: MIT License
                             </div>
-                        </article>
-                    </li>
-                </ul>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/merge_sort/">
+                                        对归并排序的一些理解<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing786/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing786/&sharesource=qzone&title=题解：AcWing 786.第K个数&pics=https://solitudealma.github.io/images/avatar.png?v=1613632997774&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing786/&sharesource=weibo&title=题解：AcWing 786.第K个数 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613632997774"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
             </div>
             <div id="sidebar">
     <ul>
@@ -468,6 +576,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -537,5 +646,18 @@
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>
