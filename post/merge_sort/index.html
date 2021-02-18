@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1613633197105">
+<meta name="UpdateTime" content="1613638758767">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1613633197105" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1613638758767" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1613633197105" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1613638758767" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -286,7 +286,7 @@
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613633197105" srcset="https://solitudealma.github.io/images/avatar.png?v=1613633197105" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613638758767" srcset="https://solitudealma.github.io/images/avatar.png?v=1613638758767" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-17</span>
                                         </div>
@@ -338,7 +338,7 @@
 <p>首先将区间一直划分，直到区间长度为1，接着排序左右区间，最后合并区间。<br>
 合并区间之前，区间一定是有序的</p>
 <figure data-type="image" tabindex="2"><img src="https://img.imgdb.cn/item/602d0ee43ffa7d37b36faecc.png" alt="划分过程" loading="lazy"></figure>
-<p>从左区间开始排序，此时区间中只有一个3，递归停止（只有一个元素不需要排序），排完后轮到右区间，此时区间中也是只有一个数，不需要排序，递归停止。跳回到上一层递归，然后排序3和1，因为本层递归将区间用mid划分了，也就是意义上的左右区间，形式上还是在同一个数组中，因为<code>q[i] = 3</code>是大于<code>q[j] = 1</code>的，所以将<code>q[j]</code>放入temp数组中，要注意这里的k++,++的位置意味着如果它在一个表达式中的话运算顺序是不一样的，除非它单独为一条语句，那它的位置在哪都一样，如果不能理解的话，单独拎出来自增也是可以的。然后此时<code>i = mid = 0</code>,所以while循环停止，接着把未比较完的数放进temp中，这样就合并完第一个区间了，然后更新q数组的前两个位置，如此往复就能把数组排序完了。</p>
+<p>从左区间开始排序，此时区间中只有一个3，递归停止（只有一个元素不需要排序），排完后轮到右区间，此时区间中也是只有一个数，不需要排序，递归停止。跳回到上一层递归，然后排序3和1，因为本层递归将区间用mid划分了，也就是意义上的左右区间，形式上还是在同一个数组中，因为 <code>q[i] = 3</code> 是大于 <code>q[j] = 1</code> 的，所以将 <code>q[j]</code> 放入temp数组中，要注意这里的k++，++的位置意味着如果它在一个表达式中的话运算顺序是不一样的，除非它单独为一条语句，那它的位置在哪都一样，如果不能理解的话，单独拎出来自增也是可以的。然后此时 <code>i &gt; mid</code> ，所以while循环停止，接着把未比较完的数放进temp中，这样就合并完第一个区间了，然后更新q数组的前两个位置，如此往复就能把数组排序完了。</p>
 <blockquote>
 <p>老规矩，自己手动模拟的话能更快的理解。</p>
 </blockquote>
@@ -478,8 +478,8 @@ int main()
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/merge_sort/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/merge_sort/&sharesource=qzone&title=对归并排序的一些理解&pics=https://solitudealma.github.io/images/avatar.png?v=1613633197105&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/merge_sort/&sharesource=weibo&title=对归并排序的一些理解 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613633197105"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/merge_sort/&sharesource=qzone&title=对归并排序的一些理解&pics=https://solitudealma.github.io/images/avatar.png?v=1613638758767&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/merge_sort/&sharesource=weibo&title=对归并排序的一些理解 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613638758767"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
