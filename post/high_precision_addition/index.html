@@ -257,75 +257,233 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                高精度加法介绍以及模板的分享
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            
-                                                <h3>
-                                                    2021
-                                                </h3>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
                                                 
+                                                    </span>
+                                                    <span class="post-view">
                                                     
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/high_precision_addition/" class="leancloud_visitors" data-flag-title="高精度加法介绍以及模板的分享">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing790/">
-                                                                题解 AcWing 790.数的三次方根
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-20 </span>
-                                                        </article>
-                                                        
-                                                            
                                                     
+                                                            </span>&nbsp;•&nbsp;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing789/">
-                                                                题解：AcWing 789.数的范围
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-19 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+                                                            <span class="post-readtime">阅读时间:
+                                            5.3分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613803442101" srcset="https://solitudealma.github.io/images/avatar.png?v=1613803442101" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-20</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h4 id="简单介绍一下高精度加法高精度加高精度或低精度都可以用">简单介绍一下高精度加法（高精度加高精度或低精度都可以用）</h4>
+<p>什么是高精度加法呢？🤣🤣🤣</p>
+<p>简单点说就是当我们计算的时候，如果数据过大，那么我们使用的数据类型可能存不下，比如 <code>int</code> 的范围是 $-2^{64} $ ~ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>64</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{64}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>（中间有个0），那么你存的数的位数不能超过9位数，但是很多时候数据都会很大，有些人会说，那我用 <code>long</code> 也行啊，我只能说有时候你用 <code>unsigned long long</code> 都不够，可见数据位数之长。</p>
+<p>详情可以看看这个<a href="https://baike.baidu.com/item/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/1024900?fr=aladdin#1_1">高精度算法</a>😘😘😘</p>
+<p>这里我们只解决高精度整数加法，一般也不考浮点数吧，emmm😜😜😜</p>
+<p>那这种数据我们应该怎么处理呢？很简单。既然存不下，那我们就用字符串（字符数组也行，C++特有的数据类型string，其实也等价于字符数组，只不过更方便使用）读入，然后将其每一位存入数组中即可，只要我们的数组够大，就能完成我们的计算（不<strong>TLE</strong>的前提，既然题目明确要用这种方法就不会让你超时）。</p>
+<p>但是对于加法我们都知道的一点，也是最重要的一点。那就是十进制数是满十进一，因为我们是用数组去存数的每一位，所以在计算的时候我们应该倒序存数的每一位，即数组的第一位存的不是最高位而是最低位，这样在我们进位的时候会更加方便（最高位可能也要进位，而这时数组第0位已经有数了，再放就越界了）。</p>
+<p>那么我们先看看模板是怎样的👇👇👇</p>
+<p>不知道vector的小伙伴可以看看这个<a href="https://www.runoob.com/w3cnote/cpp-vector-container-analysis.html">vector介绍</a></p>
+<p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</p>
+<pre><code class="language-c++">
+vector&lt;int&gt; add(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
+{
+    
+    if(A.size() &lt; B.size()) return add(B , A);//如果被加数长度小于加数那么就调整顺序
+    vector&lt;int&gt; C;// 定义一个答案
+    int t = 0; // 存储进位
+    for(int i = 0; i &lt; A.size(); ++ i)
+    {
+        t += A[i];
+        if(i &lt; B.size()) t += B[i]; //如果B还没加完就继续
+        C.push_back(t % 10); // mod 10 的结果就是对应位的结果 push_back 是往数组后面插入一个数
+        t /= 10; //整除10表示进位是多少
+    }
+    
+    if(t) C.push_back(c); // t为0，表示最高位无进位，大于0表示有进位
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing788/">
-                                                                题解：AcWing 788. 逆序对的数量
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-18 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+    return C;
+}
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing786/">
-                                                                题解：AcWing 786.第K个数
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-18 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                        
-                                                                                
-                                    </div>
+</code></pre>
+<p>这个模板并不难理解，输出答案的时候记得倒序输出就是了。</p>
+<p>我们直接上模板题👇👇👇</p>
+<p><a href="https://www.acwing.com/problem/content/793/">AcWing 791. 高精度加法</a></p>
+<h4 id="题目描述">题目描述</h4>
+<p>给定两个正整数，计算它们的和。</p>
+<h4 id="输入格式">输入格式</h4>
+<p>共两行，每行包含一个整数。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>共一行，包含所求的和。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi mathvariant="normal">整</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mo>≤</mo><mn>100000</mn></mrow><annotation encoding="application/x-tex">1≤整数长度≤100000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord cjk_fallback">整</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>12
+23
+</code></pre>
+<h4 id="输出样例">输出样例：</h4>
+<pre><code>35
+</code></pre>
+<h4 id="c-代码">C++ 代码</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+vector&lt;int&gt; A , B;
+string a , b;
+
+vector&lt;int&gt; add(vector&lt;int&gt; &amp;A ,vector&lt;int&gt; &amp;B)
+{
+    if(A.size() &lt; B.size()) return add(B , A);
+    
+    vector&lt;int&gt; C;
+    
+    int t = 0;
+    for(int i = 0; i &lt; (int)A.size(); ++ i)
+    {
+        t += A[i];
+        if(i &lt; (int)B.size()) t += B[i];
+        C.push_back(t % 10);
+        t /= 10;
+    }
+    
+    if(t) C.push_back(t);
+    
+    return C;
+}
+
+int main()
+{
+    cin &gt;&gt; a  &gt;&gt; b;
+    
+    // a[i] - '0' 是通过ACII码的差值计算该字符转为数字时的大小
+    for(int i = a.size() - 1; i &gt;= 0; -- i) A.push_back(a[i] - '0');
+    for(int j = b.size() - 1; j &gt;= 0; -- j) B.push_back(b[j] - '0');
+    
+    // auto是C++11的新特性，编译器会自动识别变量的类型，相当方便，如果不可以用，那就用标识符定义吧
+    auto C = add(A , B);
+    
+    for(int k = C.size() - 1; k &gt;= 0; -- k) cout &lt;&lt; C[k];
+    
+    return 0;
+}
+
+</code></pre>
+<h4 id="引用">引用</h4>
+<p>有大佬用数组写了一遍，可以参考，记得去前导零，因为开数组的时候都是比数据范围大，（emmm，其实也可以不用，不是写成函数的话可以搞个计数器，记录位数，然后输出2333，灵活运用吧），orz</p>
+<p>Java的小伙伴也可以学一下，貌似有些题目不能用Big Integer，毕竟算法这个东西学到一点是一点，不能因为语言特性而不去学</p>
+<p>还有一点就是用数组貌似比STL快了一倍，不过这时差可以忽略不计，但是比如链表的操作这些用数组作为静态链表去模拟的话速度会快很多，而且写法也简单，特别是数据很大的时候，用数组往往是很好的选择，当然这也是后话了</p>
+<p>对于压位感兴趣的小伙伴也可以试试，引用的题解中有，但是一般应该用不上</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/8854/">lyclyc_NSP</a> <a href="https://www.acwing.com/solution/content/10016/">AcWing 791. 高精度加法C++数组实现</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/7416/">小呆呆</a> <a href="https://www.acwing.com/solution/content/5467/">AcWing 791. 高精度加法</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/10412/">二月</a> <a href="https://www.acwing.com/solution/content/5692/">AcWing 791. 高精度加法（使用string，30行） c++</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/6015/">就是个渣渣</a> <a href="https://www.acwing.com/solution/content/5950/">AcWing 791. 高精度加法</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
                                 </div>
                             </div>
-                            <div class="post-footer">
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                        
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/high_precision_addition/" title="高精度加法介绍以及模板的分享">
+                                        https://solitudealma.github.io/post/high_precision_addition/
+                                    </a><br> 协议: MIT License
                             </div>
-                        </article>
-                    </li>
-                </ul>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/AcWing790/">
+                                        题解 AcWing 790.数的三次方根<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/high_precision_addition/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/high_precision_addition/&sharesource=qzone&title=高精度加法介绍以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1613803442101&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/high_precision_addition/&sharesource=weibo&title=高精度加法介绍以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613803442101"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
             </div>
             <div id="sidebar">
     <ul>
@@ -520,6 +678,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -589,5 +748,18 @@
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>
