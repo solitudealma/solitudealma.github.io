@@ -265,18 +265,16 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                2021.02.19 [日记]
+                                                题解 AcWing 790.数的三次方根
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/diary/'">Diary</span>
-                                                
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/20200219/" class="leancloud_visitors" data-flag-title="2021.02.19 [日记]">
+                                                    <span id="/post/O01Dk_S_j/" class="leancloud_visitors" data-flag-title="题解 AcWing 790.数的三次方根">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,20 +283,63 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            1.9分</span>
+                                            1.4分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613794268705" srcset="https://solitudealma.github.io/images/avatar.png?v=1613794268705" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-19</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-20</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <p>又是摸鱼的一天，一直睡到10点多才起床。起床后想到了可以给GitHub Pages改个自定义域名，u1s1，仓库名访问真的又臭又长，说干就干，百度了一下怎么操作。哦，越来加上A记录和CNAME记录就行啦，那简单，ping了一下原来的域名，搞到了ip，然后在仓库设置里填子域名即可，接着一通操作，ojbk。一访问，？？？，样式去哪了？出你妈大事。并且Github告诉我，我的DNS还未生效 <code>Domain's DNS record could not be retrieved.</code> 。然后我想了一下，可能是我配置的同时把DNS服务器从阿里云的改成了腾讯云。所以提示了这个？然后我又重新填了一边，发现，诶？可以正常访问了。晚上看了一下大佬的回答说是因为Github用了cdn，所以依然会有那个提示，具体原因不太清楚，反正能用就行2333。</p>
-<p>昨晚帮一个初中生解决了个小问题，然后突然提到他朋友6年级就搭建了一个OJ平台和博客，初中搞信息奥赛的都是大佬，真的是后生可畏啊...当然别人厉害之余我们也应该多去学习，而不是停滞不前，毕竟比你牛的人都在努力，你又有什么理由不努力呢。当他说出OJ平台的时候我下意识的以为是评测系统，也就是测试数据的部分，毕竟刷过题的小伙伴都知道测试数据的部分不好搞，得限制时间和空间，测试结果不能返回过慢，多人同时测试时不能等待时间过长等等一系列优化问题。突然有一种想自己搞一个OJ平台的冲动，然后昨晚睡前简单的百度了一下，发现一个完整的OJ平台包括题库，比赛&amp;作业，排名等等，看来挺有搞头的，而且完成之后对于前后端开发都会有很大的提升。不过很大程度上做不完，哈哈哈。开学再看吧，溜了溜了。</p>
+                                    <h3 id="题目描述">题目描述</h3>
+<p>给定一个浮点数n，求它的三次方根。</p>
+<h4 id="样例">样例</h4>
+<h4 id="输入格式">输入格式</h4>
+<p>共一行，包含一个浮点数n。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>共一行，包含一个浮点数，表示问题的解。</p>
+<p>注意，结果保留6位小数。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>10000</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">−10000≤n≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1000.00</mn></mrow><annotation encoding="application/x-tex">1000.00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h4 id="输出样例">输出样例：</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10.000000</mn></mrow><annotation encoding="application/x-tex">10.000000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<hr>
+<h3 id="算法">算法</h3>
+<h5 id="浮点数二分-on">(浮点数二分)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
+<p>关于浮点数二分就没什么好说的了，因为精度问题，像三次方根平方根这些都只能找到大概的范围，所以我们只要不断缩小范围即可，设定一个精度eps，如果题目说精确到6位，那我们设置的精度就为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi>e</mi><mo>−</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">1e-8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>。</p>
+<p>有一个需要注意的点是，求平方根时，如果输入的数是 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 5: &lt; 1 &amp;̲&amp; &gt;0'>&lt; 1 &amp;&amp; &gt;0</span>，那么计算的时候就要注意了，比如0.1的平方根，那么答案肯定是在0.1到1之间，所以应该特殊处理区间更新方式</p>
+<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
+<h4 id="c-代码">C++ 代码</h4>
+<pre><code class="language-c++">#include &lt;cstdio&gt;
+
+using namespace std;
+
+double n;
+
+int main()
+{
+    scanf(&quot;%lf&quot; , &amp;n);
+    
+    double l = -1000 , r = 1000 , eps = 1e-8;
+    
+    while(r - l &gt; eps)
+    {
+        double mid = (l + r) / 2;
+        if(mid * mid * mid &gt;= n) r = mid;
+        else l = mid;
+    }
+    
+    printf(&quot;%.6lf&quot; , l);
+    
+    return 0;
+}
+</code></pre>
 
                                 </div>
                             </div>
@@ -316,8 +357,8 @@
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/20200219/" title="2021.02.19 [日记]">
-                                        https://solitudealma.github.io/post/20200219/
+                                    <a href="https://solitudealma.github.io/post/O01Dk_S_j/" title="题解 AcWing 790.数的三次方根">
+                                        https://solitudealma.github.io/post/O01Dk_S_j/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -340,17 +381,10 @@
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/O01Dk_S_j/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解 AcWing 790.数的三次方根
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/AcWing789/">
-                                        题解：AcWing 789.数的范围<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/20200219/">
+                                        2021.02.19 [日记]<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -359,9 +393,9 @@
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/20200219/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/20200219/&sharesource=qzone&title=2021.02.19 [日记]&pics=https://solitudealma.github.io/images/avatar.png?v=1613794268705&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/20200219/&sharesource=weibo&title=2021.02.19 [日记] + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613794268705"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/O01Dk_S_j/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/O01Dk_S_j/&sharesource=qzone&title=题解 AcWing 790.数的三次方根&pics=https://solitudealma.github.io/images/avatar.png?v=1613794268705&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/O01Dk_S_j/&sharesource=weibo&title=题解 AcWing 790.数的三次方根 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613794268705"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
