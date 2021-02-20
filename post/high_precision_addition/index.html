@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1613803723405">
+<meta name="UpdateTime" content="1613807255324">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1613803723405" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1613807255324" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1613803723405" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1613807255324" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -285,11 +285,11 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            5.3分</span>
+                                            5.5分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613803723405" srcset="https://solitudealma.github.io/images/avatar.png?v=1613803723405" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613807255324" srcset="https://solitudealma.github.io/images/avatar.png?v=1613807255324" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-20</span>
                                         </div>
@@ -303,7 +303,7 @@
 <p>详情可以看看这个<a href="https://baike.baidu.com/item/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/1024900?fr=aladdin#1_1">高精度算法</a>😘😘😘</p>
 <p>这里我们只解决高精度整数加法，一般也不考浮点数吧，emmm😜😜😜</p>
 <p>那这种数据我们应该怎么处理呢？很简单。既然存不下，那我们就用字符串（字符数组也行，C++特有的数据类型string，其实也等价于字符数组，只不过更方便使用）读入，然后将其每一位存入数组中即可，只要我们的数组够大，就能完成我们的计算（不<strong>TLE</strong>的前提，既然题目明确要用这种方法就不会让你超时）。</p>
-<p>但是对于加法我们都知道的一点，也是最重要的一点。那就是十进制数是满十进一，因为我们是用数组去存数的每一位，所以在计算的时候我们应该倒序存数的每一位，即数组的第一位存的不是最高位而是最低位，这样在我们进位的时候会更加方便（最高位可能也要进位，而这时数组第0位已经有数了，再放就越界了）。</p>
+<p>但是对于加法我们都知道的一点，也是最重要的一点。那就是十进制数是满十进一，因为我们是用数组去存数的每一位，所以在计算的时候我们应该倒序存数的每一位，即数组的第一位存的不是最高位而是最低位，这样在我们进位的时候会更加方便（最高位可能也要进位，而这时数组第0位已经有数了，再放就越界了，得把数组中的数往后移，这样就会特别麻烦）。</p>
 <p>那么我们先看看模板是怎样的👇👇👇</p>
 <p>不知道vector的小伙伴可以看看这个<a href="https://www.runoob.com/w3cnote/cpp-vector-container-analysis.html">vector介绍</a></p>
 <p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</p>
@@ -311,7 +311,7 @@
 vector&lt;int&gt; add(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
 {
     
-    if(A.size() &lt; B.size()) return add(B , A);//如果被加数长度小于加数那么就调整顺序
+    if(A.size() &lt; B.size()) return add(B , A);//如果被加数长度小于加数那么就调整顺序，如果不加这一句就需要变动一下for循环，i多判断一次是否小于B的大小（即算完最长的数的位数才停），然后 t += A[i] 用 if(i &lt; A.size())包裹
     vector&lt;int&gt; C;// 定义一个答案
     int t = 0; // 存储进位
     for(int i = 0; i &lt; A.size(); ++ i)
@@ -463,8 +463,8 @@ int main()
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/high_precision_addition/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/high_precision_addition/&sharesource=qzone&title=高精度加法介绍以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1613803723405&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/high_precision_addition/&sharesource=weibo&title=高精度加法介绍以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613803723405"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/high_precision_addition/&sharesource=qzone&title=高精度加法介绍以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1613807255324&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/high_precision_addition/&sharesource=weibo&title=高精度加法介绍以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613807255324"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
