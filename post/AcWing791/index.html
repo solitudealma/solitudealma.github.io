@@ -265,7 +265,7 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解 AcWing 790.数的三次方根
+                                                题解 AcWing 791.高精度加法
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
@@ -276,7 +276,7 @@
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/AcWing790/" class="leancloud_visitors" data-flag-title="题解 AcWing 790.数的三次方根">
+                                                    <span id="/post/AcWing791/" class="leancloud_visitors" data-flag-title="题解 AcWing 791.高精度加法">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,7 +285,7 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            1.4分</span>
+                                            3.4分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
@@ -297,50 +297,89 @@
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h3 id="题目描述">题目描述</h3>
-<p>给定一个浮点数n，求它的三次方根。</p>
+                                    <h4 id="引用">引用</h4>
+<p>有大佬用数组写了一遍，可以参考，记得去前导零，因为开数组的时候都是比数据范围大，（emmm，其实也可以不用，不过写成函数的话可以搞个计数器，记录位数，然后输出2333，灵活运用吧），orz</p>
+<p>Java的小伙伴也可以学一下，貌似有些题目不能用Big Integer，毕竟算法这个东西学到一点是一点，不能因为语言特性而不去学</p>
+<p>还有一点就是用数组貌似比STL快了一倍，不过这时差可以忽略不计，但是比如链表的操作这些用数组作为静态链表去模拟的话速度会快很多，而且写法也简单，特别是数据很大的时候，用数组往往是很好的选择，当然这也是后话了</p>
+<p>对于压位感兴趣的小伙伴也可以试试，引用的题解中有，但是一般应该用不上</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/8854/">lyclyc_NSP</a> <a href="https://www.acwing.com/solution/content/10016/">AcWing 791. 高精度加法C++数组实现</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/7416/">小呆呆</a> <a href="https://www.acwing.com/solution/content/5467/">AcWing 791. 高精度加法</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/10412/">二月</a> <a href="https://www.acwing.com/solution/content/5692/">AcWing 791. 高精度加法（使用string，30行） c++</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/6015/">就是个渣渣</a> <a href="https://www.acwing.com/solution/content/5950/">AcWing 791. 高精度加法</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="题目描述">题目描述</h3>
+<p>给定两个正整数，计算它们的和。</p>
 <h4 id="样例">样例</h4>
 <h4 id="输入格式">输入格式</h4>
-<p>共一行，包含一个浮点数n。</p>
+<p>共两行，每行包含一个整数。</p>
 <h4 id="输出格式">输出格式</h4>
-<p>共一行，包含一个浮点数，表示问题的解。</p>
-<p>注意，结果保留6位小数。</p>
+<p>共一行，包含所求的和。</p>
 <h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>10000</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">−10000≤n≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi mathvariant="normal">整</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mo>≤</mo><mn>100000</mn></mrow><annotation encoding="application/x-tex">1≤整数长度≤100000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord cjk_fallback">整</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
 <h4 id="输入样例">输入样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1000.00</mn></mrow><annotation encoding="application/x-tex">1000.00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<pre><code>12
+23
+</code></pre>
 <h4 id="输出样例">输出样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10.000000</mn></mrow><annotation encoding="application/x-tex">10.000000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<pre><code>35
+</code></pre>
 <hr>
 <h3 id="算法">算法</h3>
-<h5 id="浮点数二分-on">(浮点数二分)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
-<p>关于浮点数二分就没什么好说的了，因为精度问题，像三次方根平方根这些都只能找到大概的范围，所以我们只要不断缩小范围即可，设定一个精度eps，如果题目说精确到6位，那我们设置的精度就为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi>e</mi><mo>−</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">1e-8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>。</p>
-<p>有一个需要注意的点是，求平方根时，如果输入的数是 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 5: &lt; 1 &amp;̲&amp; &gt;0'>&lt; 1 &amp;&amp; &gt;0</span>，那么计算的时候就要注意了，比如0.1的平方根，那么答案肯定是在0.1到1之间，所以应该特殊处理区间更新方式</p>
+<h5 id="高精度加法-on">(高精度加法) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
+<p>首先我们用字符串（字符数组也行，C++特有的数据类型string，其实也等价于字符数组，只不过更方便使用）读入，然后将其每一位存入数组中即可，只要我们的数组够大，就能完成我们的计算（不<strong>TLE</strong>的前提或者空间不超过限制，既然题目明确要用这种方法就不会让你超时）。</p>
+<p>但是对于加法我们都知道的一点，也是最重要的一点。那就是十进制数是满十进一，因为我们是用数组去存数的每一位，所以在计算的时候我们应该倒序存数的每一位，即数组的第一位存的不是最高位而是最低位，这样在我们进位的时候会更加方便（最高位可能也要进位，而这时数组第0位已经有数了，再放就越界了，得把数组中的数往后移，这样就会特别麻烦）。</p>
 <h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
+<p>根据A的长度决定循环的次数，所以是线性的（<s>应该没错吧，狗头保命</s>）</p>
 <h4 id="c-代码">C++ 代码</h4>
-<pre><code class="language-c++">#include &lt;cstdio&gt;
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
 
 using namespace std;
 
-double n;
+vector&lt;int&gt; A , B;
+string a , b;
+
+vector&lt;int&gt; add(vector&lt;int&gt; &amp;A ,vector&lt;int&gt; &amp;B)
+{
+    if(A.size() &lt; B.size()) return add(B , A);
+    
+    vector&lt;int&gt; C;
+    
+    int t = 0;
+    for(int i = 0; i &lt; (int)A.size(); ++ i)
+    {
+        t += A[i];
+        if(i &lt; (int)B.size()) t += B[i];
+        C.push_back(t % 10);
+        t /= 10;
+    }
+    
+    if(t) C.push_back(t);
+    
+    return C;
+}
 
 int main()
 {
-    scanf(&quot;%lf&quot; , &amp;n);
+    cin &gt;&gt; a  &gt;&gt; b;
     
-    double l = -1000 , r = 1000 , eps = 1e-8;
+    for(int i = a.size() - 1; i &gt;= 0; -- i) A.push_back(a[i] - '0');
+    for(int j = b.size() - 1; j &gt;= 0; -- j) B.push_back(b[j] - '0');
     
-    while(r - l &gt; eps)
-    {
-        double mid = (l + r) / 2;
-        if(mid * mid * mid &gt;= n) r = mid;
-        else l = mid;
-    }
+    auto C = add(A , B);
     
-    printf(&quot;%.6lf&quot; , l);
+    for(int k = C.size() - 1; k &gt;= 0; -- k) cout &lt;&lt; C[k];
     
     return 0;
 }
+
 </code></pre>
 
                                 </div>
@@ -359,8 +398,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/AcWing790/" title="题解 AcWing 790.数的三次方根">
-                                        https://solitudealma.github.io/post/AcWing790/
+                                    <a href="https://solitudealma.github.io/post/AcWing791/" title="题解 AcWing 791.高精度加法">
+                                        https://solitudealma.github.io/post/AcWing791/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -383,17 +422,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/high_precision_addition/">
-                                <i class="fa fa-chevron-left"></i>
-                                高精度加法介绍以及模板的分享
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/20200219/">
-                                        2021.02.19 [日记]<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/high_precision_addition/">
+                                        高精度加法介绍以及模板的分享<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -402,9 +434,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing790/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing790/&sharesource=qzone&title=题解 AcWing 790.数的三次方根&pics=https://solitudealma.github.io/images/avatar.png?v=1613807734571&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing790/&sharesource=weibo&title=题解 AcWing 790.数的三次方根 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613807734571"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing791/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing791/&sharesource=qzone&title=题解 AcWing 791.高精度加法&pics=https://solitudealma.github.io/images/avatar.png?v=1613807734571&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing791/&sharesource=weibo&title=题解 AcWing 791.高精度加法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613807734571"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
