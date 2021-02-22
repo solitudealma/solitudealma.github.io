@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1613973398948">
+<meta name="UpdateTime" content="1613985636455">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1613973398948" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1613985636455" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1613973398948" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1613985636455" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -285,11 +285,11 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            3.4分</span>
+                                            5.5分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613973398948" srcset="https://solitudealma.github.io/images/avatar.png?v=1613973398948" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1613985636455" srcset="https://solitudealma.github.io/images/avatar.png?v=1613985636455" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-20</span>
                                         </div>
@@ -297,26 +297,42 @@
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="引用">引用</h4>
-<p>有大佬用数组写了一遍，可以参考，记得去前导零，因为开数组的时候都是比数据范围大，（emmm，其实也可以不用，不过写成函数的话可以搞个计数器，记录位数，然后输出2333，灵活运用吧），orz</p>
-<p>Java的小伙伴也可以学一下，貌似有些题目不能用Big Integer，毕竟算法这个东西学到一点是一点，不能因为语言特性而不去学</p>
-<p>还有一点就是用数组貌似比STL快了一倍，不过这时差可以忽略不计，但是比如链表的操作这些用数组作为静态链表去模拟的话速度会快很多，而且写法也简单，特别是数据很大的时候，用数组往往是很好的选择，当然这也是后话了</p>
-<p>对于压位感兴趣的小伙伴也可以试试，引用的题解中有，但是一般应该用不上</p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/8854/">lyclyc_NSP</a> <a href="https://www.acwing.com/solution/content/10016/">AcWing 791. 高精度加法C++数组实现</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/7416/">小呆呆</a> <a href="https://www.acwing.com/solution/content/5467/">AcWing 791. 高精度加法</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/10412/">二月</a> <a href="https://www.acwing.com/solution/content/5692/">AcWing 791. 高精度加法（使用string，30行） c++</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/6015/">就是个渣渣</a> <a href="https://www.acwing.com/solution/content/5950/">AcWing 791. 高精度加法</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="题目描述">题目描述</h3>
+                                    <h4 id="简单介绍一下高精度加法高精度加高精度或低精度都可以用">简单介绍一下高精度加法（高精度加高精度或低精度都可以用）</h4>
+<p>什么是高精度加法呢？🤣🤣🤣</p>
+<p>简单点说就是当我们计算的时候，如果数据过大，那么我们使用的数据类型可能存不下，比如 <code>int</code> 的范围是 $-2^{31} $ ~ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>31</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{31}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>（中间有个0），那么你存的数的位数不能超过9位数，但是很多时候数据都会很大，有些人会说，那我用 <code>long</code> 也行啊，我只能说有时候你用 <code>unsigned long long</code> 都不够，可见数据位数之长。</p>
+<p>详情可以看看这个<a href="https://baike.baidu.com/item/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/1024900?fr=aladdin#1_1">高精度算法</a>😘😘😘</p>
+<p>这里我们只解决高精度整数加法，一般也不考浮点数吧，emmm😜😜😜</p>
+<p>那这种数据我们应该怎么处理呢？很简单。既然存不下，那我们就用字符串（字符数组也行，C++特有的数据类型string，其实也等价于字符数组，只不过更方便使用）读入，然后将其每一位存入数组中即可，只要我们的数组够大，就能完成我们的计算（不<strong>TLE</strong>的前提，既然题目明确要用这种方法就不会让你超时）。</p>
+<p>但是对于加法我们都知道的一点，也是最重要的一点。那就是十进制数是满十进一，因为我们是用数组去存数的每一位，所以在计算的时候我们应该倒序存数的每一位，即数组的第一位存的不是最高位而是最低位，这样在我们进位的时候会更加方便（最高位可能也要进位，而这时数组第0位已经有数了，再放就越界了，得把数组中的数往后移，这样就会特别麻烦）。</p>
+<p>那么我们先看看模板是怎样的👇👇👇</p>
+<p>不知道vector的小伙伴可以看看这个<a href="https://www.runoob.com/w3cnote/cpp-vector-container-analysis.html">vector介绍</a></p>
+<p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</p>
+<pre><code class="language-c++">
+vector&lt;int&gt; add(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
+{
+    
+    if(A.size() &lt; B.size()) return add(B , A);//如果被加数长度小于加数那么就调整顺序，如果不加这一句就需要变动一下for循环，i多判断一次是否小于B的大小（即算完最长的数的位数才停），然后 t += A[i] 用 if(i &lt; A.size())包裹
+    vector&lt;int&gt; C;// 定义一个答案
+    int t = 0; // 存储进位
+    for(int i = 0; i &lt; A.size(); ++ i)
+    {
+        t += A[i];
+        if(i &lt; B.size()) t += B[i]; //如果B还没加完就继续
+        C.push_back(t % 10); // mod 10 的结果就是对应位的结果 push_back 是往数组后面插入一个数
+        t /= 10; //整除10表示进位是多少
+    }
+    
+    if(t) C.push_back(c); // t为0，表示最高位无进位，大于0表示有进位
+
+    return C;
+}
+
+</code></pre>
+<p>这个模板并不难理解，输出答案的时候记得倒序输出就是了。</p>
+<p>我们直接上模板题👇👇👇</p>
+<p><a href="https://www.acwing.com/problem/content/793/">AcWing 791. 高精度加法</a></p>
+<h4 id="题目描述">题目描述</h4>
 <p>给定两个正整数，计算它们的和。</p>
-<h4 id="样例">样例</h4>
 <h4 id="输入格式">输入格式</h4>
 <p>共两行，每行包含一个整数。</p>
 <h4 id="输出格式">输出格式</h4>
@@ -330,13 +346,6 @@
 <h4 id="输出样例">输出样例：</h4>
 <pre><code>35
 </code></pre>
-<hr>
-<h3 id="算法">算法</h3>
-<h5 id="高精度加法-on">(高精度加法) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
-<p>首先我们用字符串（字符数组也行，C++特有的数据类型string，其实也等价于字符数组，只不过更方便使用）读入，然后将其每一位存入数组中即可，只要我们的数组够大，就能完成我们的计算（不<strong>TLE</strong>的前提或者空间不超过限制，既然题目明确要用这种方法就不会让你超时）。</p>
-<p>但是对于加法我们都知道的一点，也是最重要的一点。那就是十进制数是满十进一，因为我们是用数组去存数的每一位，所以在计算的时候我们应该倒序存数的每一位，即数组的第一位存的不是最高位而是最低位，这样在我们进位的时候会更加方便（最高位可能也要进位，而这时数组第0位已经有数了，再放就越界了，得把数组中的数往后移，这样就会特别麻烦）。</p>
-<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
-<p>根据A的长度决定循环的次数，所以是线性的（<s>应该没错吧，狗头保命</s>）</p>
 <h4 id="c-代码">C++ 代码</h4>
 <pre><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;vector&gt;
@@ -370,9 +379,11 @@ int main()
 {
     cin &gt;&gt; a  &gt;&gt; b;
     
+    // a[i] - '0' 是通过ACII码的差值计算该字符转为数字时的大小
     for(int i = a.size() - 1; i &gt;= 0; -- i) A.push_back(a[i] - '0');
     for(int j = b.size() - 1; j &gt;= 0; -- j) B.push_back(b[j] - '0');
     
+    // auto是C++11的新特性，编译器会自动识别变量的类型，相当方便，如果不可以用，那就用标识符定义吧
     auto C = add(A , B);
     
     for(int k = C.size() - 1; k &gt;= 0; -- k) cout &lt;&lt; C[k];
@@ -381,6 +392,23 @@ int main()
 }
 
 </code></pre>
+<h4 id="引用">引用</h4>
+<p>有大佬用数组写了一遍，可以参考，记得去前导零，因为开数组的时候都是比数据范围大，（emmm，其实也可以不用，不是写成函数的话可以搞个计数器，记录位数，然后输出2333，灵活运用吧），orz</p>
+<p>Java的小伙伴也可以学一下，貌似有些题目不能用Big Integer，毕竟算法这个东西学到一点是一点，不能因为语言特性而不去学</p>
+<p>还有一点就是用数组貌似比STL快了一倍，不过这时差可以忽略不计，但是比如链表的操作这些用数组作为静态链表去模拟的话速度会快很多，而且写法也简单，特别是数据很大的时候，用数组往往是很好的选择，当然这也是后话了</p>
+<p>对于压位感兴趣的小伙伴也可以试试，引用的题解中有，但是一般应该用不上</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/8854/">lyclyc_NSP</a> <a href="https://www.acwing.com/solution/content/10016/">AcWing 791. 高精度加法C++数组实现</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/7416/">小呆呆</a> <a href="https://www.acwing.com/solution/content/5467/">AcWing 791. 高精度加法</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/10412/">二月</a> <a href="https://www.acwing.com/solution/content/5692/">AcWing 791. 高精度加法（使用string，30行） c++</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/6015/">就是个渣渣</a> <a href="https://www.acwing.com/solution/content/5950/">AcWing 791. 高精度加法</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
                                 </div>
                             </div>
@@ -435,8 +463,8 @@ int main()
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing791/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing791/&sharesource=qzone&title=题解 AcWing 791.高精度加法&pics=https://solitudealma.github.io/images/avatar.png?v=1613973398948&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing791/&sharesource=weibo&title=题解 AcWing 791.高精度加法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613973398948"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing791/&sharesource=qzone&title=题解 AcWing 791.高精度加法&pics=https://solitudealma.github.io/images/avatar.png?v=1613985636455&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing791/&sharesource=weibo&title=题解 AcWing 791.高精度加法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1613985636455"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
