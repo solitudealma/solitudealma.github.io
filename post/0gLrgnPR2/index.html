@@ -257,75 +257,200 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                题解：AcWing 792.高精度减法
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            
-                                                <h3>
-                                                    2021
-                                                </h3>
-                                                
+                                                    </span>
+                                                    <span class="post-view">
                                                     
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/0gLrgnPR2/" class="leancloud_visitors" data-flag-title="题解：AcWing 792.高精度减法">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/high_precision_addition/">
-                                                                高精度加法介绍以及模板的分享
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-20 </span>
-                                                        </article>
-                                                        
-                                                            
                                                     
+                                                            </span>&nbsp;•&nbsp;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/merge_sort/">
-                                                                对归并排序的一些理解
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-17 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+                                                            <span class="post-readtime">阅读时间:
+                                            2.8分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1614345639198" srcset="https://solitudealma.github.io/images/avatar.png?v=1614345639198" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-26</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h4 id="题目链接">题目链接</h4>
+<p><a href="https://www.acwing.com/problem/content/794/">AcWing 792.高精度减法</a></p>
+<h4 id="引用">引用</h4>
+<h4 id="题目描述">题目描述</h4>
+<p>给定两个正整数，计算它们的差，计算结果可能为负数。</p>
+<h4 id="样例">样例</h4>
+<h4 id="输入格式">输入格式</h4>
+<p>共两行，每行包含一个整数。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>共一行，包含所求的差。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi mathvariant="normal">整</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mo>≤</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">1≤整数长度≤105</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord cjk_fallback">整</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">5</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>32
+11
+</code></pre>
+<h4 id="输出样例">输出样例：</h4>
+<pre><code>21
+</code></pre>
+<hr>
+<h3 id="算法">算法</h3>
+<h5 id="高精度减法-on">(高精度减法)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
+<p>高精度减法和加法区别不大，存储的时候我们也是倒序存入数组中，因为我们都知道，减法的过程中是会向前借位的，同样的，如果最高位是1，借位后为0，那么我们就不能够直接输出数组元素，必须先去掉前导零；还有就是因为减法是会产生负数，所以在计算之前我们应该先比较两个数的大小，通过数组长度以及从最高位开始对应位的大小；还有就是借位了，有一个很巧妙的计算借位相减后的数字， <code>(t + 10) % 10</code> 怎么理解呢， t存的是对应位相减的结果无论结果是正数还是负数，计算后都会得到正确的结果，然后根据t是否大于零来判断是否借位了。</p>
+<p><strong>负数记得输出负号哦~~~</strong></p>
+<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
+<p>根据数的长度决定循环的次数，所以时间复杂度也是线性的</p>
+<h4 id="参考文献">参考文献</h4>
+<h4 id="c-代码">C++ 代码</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/quick_sort/">
-                                                                快速排序的介绍以及算法的模板分享
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+using namespace std;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/recursion/">
-                                                                简单介绍一下递归
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                        
-                                                                                
-                                    </div>
+vector&lt;int&gt; A , B;
+string a , b;
+
+bool cmp(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
+{
+    if(A.size() != B.size()) return A.size() &gt; B.size();
+
+    for(int i = A.size() - 1; i &gt;= 0; i --) 
+        if(A[i] != B[i]) return A[i] &gt; B[i];
+
+    return true;
+}
+
+vector&lt;int&gt; sub(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
+{
+    vector&lt;int&gt; C;
+
+    int t = 0;
+    for(int i = 0; i &lt; A.size(); i ++)
+    {
+        t = A[i] - t;
+        if(i &lt; B.size()) t -= B[i];
+        C.push_back((t + 10) % 10);
+        if(t &lt; 0) t = 1;
+        else t = 0;
+    }
+
+    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
+
+    return C;
+}
+
+int main()
+{
+    cin &gt;&gt; a &gt;&gt; b;
+    
+    for(int i = a.size() - 1; i &gt;= 0; i --) A.push_back(a[i] - '0');
+    for(int i = b.size() - 1; i &gt;= 0; i --) B.push_back(b[i] - '0');
+
+    vector&lt;int&gt; C;
+    if(cmp(A , B)) C = sub(A , B);
+    else C = sub(B , A) , cout &lt;&lt; '-';
+
+    for(int i = C.size() - 1; i &gt;= 0; i --) cout &lt;&lt; C[i];
+
+    return 0;
+}
+</code></pre>
+
                                 </div>
                             </div>
-                            <div class="post-footer">
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                        
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/0gLrgnPR2/" title="题解：AcWing 792.高精度减法">
+                                        https://solitudealma.github.io/post/0gLrgnPR2/
+                                    </a><br> 协议: MIT License
                             </div>
-                        </article>
-                    </li>
-                </ul>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/OccoiC3O8/">
+                                        高精度减法的介绍以及模板的分享<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/0gLrgnPR2/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/0gLrgnPR2/&sharesource=qzone&title=题解：AcWing 792.高精度减法&pics=https://solitudealma.github.io/images/avatar.png?v=1614345639198&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/0gLrgnPR2/&sharesource=weibo&title=题解：AcWing 792.高精度减法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614345639198"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
             </div>
             <div id="sidebar">
     <ul>
@@ -533,6 +658,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -611,5 +737,18 @@
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>

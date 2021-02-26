@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-02-26T11:04:25.178Z</updated>
+    <updated>2021-02-26T13:20:43.487Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[题解：AcWing 792.高精度减法]]></title>
+        <id>https://solitudealma.github.io/post/0gLrgnPR2/</id>
+        <link href="https://solitudealma.github.io/post/0gLrgnPR2/">
+        </link>
+        <updated>2021-02-26T13:20:09.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[高精度减法的介绍以及模板的分享]]></title>
         <id>https://solitudealma.github.io/post/OccoiC3O8/</id>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/merge_sort/">
         </link>
         <updated>2021-02-17T13:47:40.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[快速排序的介绍以及算法的模板分享]]></title>
-        <id>https://solitudealma.github.io/post/quick_sort/</id>
-        <link href="https://solitudealma.github.io/post/quick_sort/">
-        </link>
-        <updated>2021-02-12T14:57:56.000Z</updated>
     </entry>
 </feed>
