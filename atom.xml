@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-02-26T13:21:37.940Z</updated>
+    <updated>2021-02-26T13:47:53.264Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -12,17 +12,17 @@
     <rights>All rights reserved 2021, SolitudeAlma</rights>
     <entry>
         <title type="html"><![CDATA[题解：AcWing 792.高精度减法]]></title>
-        <id>https://solitudealma.github.io/post/0gLrgnPR2/</id>
-        <link href="https://solitudealma.github.io/post/0gLrgnPR2/">
+        <id>https://solitudealma.github.io/post/AcWing792/</id>
+        <link href="https://solitudealma.github.io/post/AcWing792/">
         </link>
-        <updated>2021-02-26T13:20:09.000Z</updated>
+        <updated>2021-02-26T13:38:10.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[高精度减法的介绍以及模板的分享]]></title>
-        <id>https://solitudealma.github.io/post/OccoiC3O8/</id>
-        <link href="https://solitudealma.github.io/post/OccoiC3O8/">
+        <id>https://solitudealma.github.io/post/high_precision_subtraction/</id>
+        <link href="https://solitudealma.github.io/post/high_precision_subtraction/">
         </link>
-        <updated>2021-02-26T10:55:50.000Z</updated>
+        <updated>2021-02-26T13:36:02.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 AcWing 791.高精度加法]]></title>
