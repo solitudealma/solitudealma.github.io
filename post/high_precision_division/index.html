@@ -265,18 +265,18 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                2021.02.19 [日记]
+                                                高精度乘法的介绍和模板分享
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/diary/'">Diary</span>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/20200219/" class="leancloud_visitors" data-flag-title="2021.02.19 [日记]">
+                                                    <span id="/post/high_precision_division/" class="leancloud_visitors" data-flag-title="高精度乘法的介绍和模板分享">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,20 +285,118 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            1.9分</span>
+                                            3.3分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1614436640598" srcset="https://solitudealma.github.io/images/avatar.png?v=1614436640598" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-19</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-27</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <p>又是摸鱼的一天，一直睡到10点多才起床。起床后想到了可以给GitHub Pages改个自定义域名，u1s1，仓库名访问真的又臭又长，说干就干，百度了一下怎么操作。哦，越来加上A记录和CNAME记录就行啦，那简单，ping了一下原来的域名，搞到了ip，然后在仓库设置里填子域名即可，接着一通操作，ojbk。一访问，？？？，样式去哪了？出你妈大事。并且Github告诉我，我的DNS还未生效 <code>Domain's DNS record could not be retrieved.</code> 。然后我想了一下，可能是我配置的同时把DNS服务器从阿里云的改成了腾讯云。所以提示了这个？然后我又重新填了一边，发现，诶？可以正常访问了。晚上看了一下大佬的回答说是因为Github用了cdn，所以依然会有那个提示，具体原因不太清楚，反正能用就行2333。</p>
-<p>昨晚帮一个初中生解决了个小问题，然后突然提到他朋友6年级就搭建了一个OJ平台和博客，初中搞信息奥赛的都是大佬，真的是后生可畏啊...当然别人厉害之余我们也应该多去学习，而不是停滞不前，毕竟比你牛的人都在努力，你又有什么理由不努力呢。当他说出OJ平台的时候我下意识的以为是评测系统，也就是测试数据的部分，毕竟刷过题的小伙伴都知道测试数据的部分不好搞，得限制时间和空间，测试结果不能返回过慢，多人同时测试时不能等待时间过长等等一系列优化问题。突然有一种想自己搞一个OJ平台的冲动，然后昨晚睡前简单的百度了一下，发现一个完整的OJ平台包括题库，比赛&amp;作业，排名等等，看来挺有搞头的，而且完成之后对于前后端开发都会有很大的提升。不过很大程度上做不完，哈哈哈。开学再看吧，溜了溜了。</p>
+                                    <h4 id="今天我们来介绍一下高精度除法">今天我们来介绍一下高精度除法</h4>
+<p>什么是高精度除法呢？</p>
+<p>我们来看看百度百科是怎么介绍高精度除法的，但是并没有搜到相关信息，逛了一圈发现也没人介绍，那我在这里就简单提一下。</p>
+<p>一般我们计算高精度除法分为高精度除高精度和高精度除低精度，在这里我们只讲第二种，计算的过程很多时候都是不能整除的，所以我们需要计算商与余数，计算过程也非常简单。</p>
+<p>首先我们回想一下在草稿纸上我们是如何计算的，第一步看最高位，最高位除以除数作为商的第一位，对除数求余作为下一步计算的数的一部分，每一次求余过后我们都让余数扩大10倍再加上下一位，如此往复计算即可。</p>
+<p>那么我们来看看模板是怎么写的</p>
+<pre><code class="language-c++">vector&lt;int&gt; div(vector&lt;int&gt; &amp;A , int b , int &amp;r)
+{
+    vector&lt;int&gt; C;
+    r = 0; //余数，这里用到了C++的引用，所以返回的时候可以不用返回余数
+    // 这里正着算，从最高位开始
+    for(int i = A.size() - 1; i &gt;= 0; i --)
+    {
+        r = r * 10 + A[i]; //计算当前被减数大小
+        C.push_back(r / b); //计算当前商的对应位数
+        r %= b; // 更新余数
+    }
+
+    reverse(C.begin() , C.end()); //这里将数组翻转过来，因为我们需要去掉前导零
+    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
+    return C;
+}
+
+</code></pre>
+<p>接下来试试模板题吧</p>
+<p><a href="https://www.acwing.com/problem/content/796/">AcWing 794.高精度除法</a></p>
+<h4 id="题目描述">题目描述</h4>
+<p>给定两个非负整数A，B，请你计算 A / B的商和余数。</p>
+<h4 id="输入格式">输入格式</h4>
+<p>共两行，第一行包含整数A，第二行包含整数B。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>共两行，第一行输出所求的商，第二行输出所求余数。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>A</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mo>≤</mo><mn>100000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤A的长度≤100000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">A</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>B</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">1≤B≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi mathvariant="normal">一</mi><mi mathvariant="normal">定</mi><mi mathvariant="normal">不</mi><mi mathvariant="normal">为</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">B 一定不为0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord cjk_fallback">一</span><span class="mord cjk_fallback">定</span><span class="mord cjk_fallback">不</span><span class="mord cjk_fallback">为</span><span class="mord">0</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>7
+2
+</code></pre>
+<h4 id="输出样例">输出样例：</h4>
+<pre><code>3
+1
+</code></pre>
+<h4 id="c代码">C++代码</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+vector&lt;int&gt; A;
+string a;
+int b;
+
+vector&lt;int&gt; div(vector&lt;int&gt; &amp;A , int b , int &amp;r)
+{
+    vector&lt;int&gt; C;
+    r = 0;
+    for(int i = A.size() - 1; i &gt;= 0; i --)
+    {
+        r = r * 10 + A[i];
+        C.push_back(r / b);
+        r %= b;
+    }
+
+    reverse(C.begin() , C.end());
+
+    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
+
+    return C;
+}
+
+int main()
+{
+    cin &gt;&gt; a &gt;&gt; b;
+
+    // 因为高精度计算往往并不是单单一个，而是两三个一起，所以我们在这里统一存入方式，避免不必要的错误
+    for(int i = a.size() - 1; i &gt;= 0; i--) A.push_back(a[i] - '0');
+
+    int r;
+    auto C = div(A , b, r);
+
+    for(int i = C.size() - 1; i &gt;= 0; i --) cout &lt;&lt; C[i];
+    cout &lt;&lt; endl &lt;&lt; r;
+
+    return 0;
+}
+</code></pre>
+<h4 id="引用">引用</h4>
+<p>引用一些比较好的题解，比较详细有配图</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/64616/">空_22</a> <a href="https://www.acwing.com/solution/content/32448/">AcWing 794. 基础_高精度_高精度除法java_python_c++</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/28764/">zyz.</a> <a href="https://www.acwing.com/solution/content/35724/">AcWing 794. 高精度除法</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/2675/">Bug_FreeOωO</a> <a href="https://www.acwing.com/solution/content/26192/">AcWing 794. 高精度除法</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
 
                                 </div>
                             </div>
@@ -316,8 +414,8 @@
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/20200219/" title="2021.02.19 [日记]">
-                                        https://solitudealma.github.io/post/20200219/
+                                    <a href="https://solitudealma.github.io/post/high_precision_division/" title="高精度乘法的介绍和模板分享">
+                                        https://solitudealma.github.io/post/high_precision_division/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -340,17 +438,10 @@
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/AcWing790/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解 AcWing 790.数的三次方根
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/AcWing789/">
-                                        题解：AcWing 789.数的范围<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/high_precision_multiplication/">
+                                        高精度乘法的介绍以及模板的分享<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -359,9 +450,9 @@
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/20200219/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/20200219/&sharesource=qzone&title=2021.02.19 [日记]&pics=https://solitudealma.github.io/images/avatar.png?v=1614436640598&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/20200219/&sharesource=weibo&title=2021.02.19 [日记] + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614436640598"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/high_precision_division/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/high_precision_division/&sharesource=qzone&title=高精度乘法的介绍和模板分享&pics=https://solitudealma.github.io/images/avatar.png?v=1614436640598&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/high_precision_division/&sharesource=weibo&title=高精度乘法的介绍和模板分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614436640598"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
