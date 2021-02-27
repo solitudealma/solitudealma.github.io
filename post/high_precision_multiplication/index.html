@@ -265,16 +265,18 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                关于
+                                                高精度乘法的介绍以及模板的分享
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
+                                                
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/about/" class="leancloud_visitors" data-flag-title="关于">
+                                                    <span id="/post/high_precision_multiplication/" class="leancloud_visitors" data-flag-title="高精度乘法的介绍以及模板的分享">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -283,29 +285,137 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            0.3分</span>
+                                            4.4分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1614404223406" srcset="https://solitudealma.github.io/images/avatar.png?v=1614404223406" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-02-12</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-27</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <p>🎉🎉🎉欢迎来到我的Blog呀，很高兴遇见你！🤝</p>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>本站分享一些学习过程中遇到的问题，记录一些日常</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>在读菜狗学生</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>会点篮球，会点羽毛球，喜欢写一些web的小玩意，都懂一点，不是很懂</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=GykpLyoqLyotKSJbamo1eHR2" style="text-decoration:none;">
-    <img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png" data-fancybox="images">
-</a>
+                                    <h4 id="今天我们来讲讲高精度乘法">今天我们来讲讲高精度乘法</h4>
+<p>什么是高精度乘法呢？</p>
+<p>我们来看看百度百科什么介绍<a href="https://baike.baidu.com/item/%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/7520098?fr=aladdin">高精度乘法</a>的，同样是因为存储数据的问题，大整数的乘法必定会有溢出的时候，那么我们应该怎么计算呢</p>
+<p>其实乘法的计算也不难，我们这里会介绍高精度与高精度的乘法以及高精度与低精度的乘法，乘法我们用草稿纸演算的时候是按位相乘，就是一个数的每一位乘另一个数的每一位，然后再错位相加（注意不是数列求和的错位相加），还需注意前导零的情况，虽然乘法不会出现前导零，但是因为我们模板的原因，其中一个乘数为零是是会出现一堆零的，所以我们需要去掉多余的零</p>
+<p>高精度乘低精度就很简单了，首先我们先把数字倒序存入数组中，然后用数组中的每一位去乘低精度的数对10取余存入结果数组，然后保留进位继续下一次计算，当然你可能会问万一乘出来的数用 <code>unsigned long long</code> 都存不了呢，我只能说这种情况只能用高精度乘高精度的模板了，而且既然题目的意思是高精度乘低精度就不会让你溢出</p>
+<p>高精度乘高精度也不难，就是复现了草稿纸上的计算过程</p>
+<p>我们直接上模板吧</p>
+<pre><code class="language-c++">// 高精度乘低精度
+vector&lt;int&gt; mul(vector&lt;int&gt; &amp;A , int b)
+{
+    vector&lt;int&gt; C;
+    int t = 0;
+    // 循环的判断是如果A算完了，但是最高位要进位需要再算一次，当然分离出去也行
+    for(int i = 0; i &lt; A.size() || t; i ++)
+    {
+        if(i &lt; A.size()) t += A[i] * b; //if的判断配合循环判断
+        C.push_back(t % 10); //模10就是我们要的结果
+        t /= 10; // 保留进位
+    }
+
+    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back(); //如果乘数为零则去前导零
+
+    return C;
+}
+
+// 高精度乘高精度
+vector&lt;int&gt; mul(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
+{
+    vector&lt;int&gt; C(A.size() + B.size() , 0); //初始化，以免里面的数不是零，用于但是存相加的对应位结果
+
+    int t = 0;
+    // 计算对应位相加后的结果
+    for(int i = 0; i &lt; A.size(); i ++)
+        for(int j = 0; j &lt; B.size(); j ++)
+            C[i + j] += A[i] * B[j];
+    
+    // 计算对应位真正的结果
+    for(int i = 0; i &lt; C.size(); i ++)
+    {
+        t += C[i];
+        C[i] = t % 10;
+        t /= 10;
+    }
+
+    // 去前导零，以免出现这种情况
+    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
+
+    return C;
+}
+</code></pre>
+<p>接下来我们来一道模板题</p>
+<p><a href="https://www.acwing.com/problem/content/795/">AcWing 793.高精度乘法</a></p>
+<h4 id="题目描述">题目描述</h4>
+<p>给定两个正整数A和B，请你计算A * B的值。</p>
+<h4 id="输入格式">输入格式</h4>
+<p>共两行，第一行包含整数A，第二行包含整数B。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>共一行，包含A * B的值。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>A</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mo>≤</mo><mn>100000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤A的长度≤100000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">A</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>B</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">0≤B≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>2
+3
+</code></pre>
+<h4 id="输出样例">输出样例：</h4>
+<pre><code>6
+</code></pre>
+<h4 id="c代码">C++代码</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+vector&lt;int&gt; A;
+string a;
+int b;
+
+vector&lt;int&gt; mul(vector&lt;int&gt; &amp;A , int b)
+{
+    vector&lt;int&gt; C;
+
+    int t = 0;
+    for(int i = 0; i &lt; A.size() || t; i ++)
+    {
+        if(i &lt; A.size()) t += A[i] * b;
+        C.push_back(t % 10);
+        t /= 10;
+    }
+
+    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
+
+    return C;
+}
+
+int main()
+{
+    cin &gt;&gt; a  &gt;&gt; b;
+
+    for(int i = a.size() - 1; i &gt;= 0; i --) A.push_back(a[i] - '0');
+
+    auto C = mul(A , b);
+
+    for(int i = C.size() - 1; i &gt;= 0; i --) cout &lt;&lt; C[i];
+
+    return 0;
+}
+</code></pre>
+<h4 id="引用">引用</h4>
+<p>引用一些大佬的题解，其中有高精度乘高精度的模板，思路很不错orz，也有java的实现以及数组的实现</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/3019/">Anish</a> <a href="https://www.acwing.com/solution/content/13694/">AcWing 793. 高精度乘法 A x b 和 A x B 的模版</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/15848/">师大专升本16级学长</a> <a href="https://www.acwing.com/solution/content/7070/">AcWing 793. 高精度乘法（C语言新手版）</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/7416/">小呆呆</a> <a href="https://www.acwing.com/solution/content/5482/">AcWing 793. 高精度乘法</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
 
                                 </div>
                             </div>
@@ -323,8 +433,8 @@
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/about/" title="关于">
-                                        https://solitudealma.github.io/post/about/
+                                    <a href="https://solitudealma.github.io/post/high_precision_multiplication/" title="高精度乘法的介绍以及模板的分享">
+                                        https://solitudealma.github.io/post/high_precision_multiplication/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -348,14 +458,20 @@
                 <div class="lite-item nearby-article">
                     
                             
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/AcWing792/">
+                                        题解：AcWing 792.高精度减法<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
                 </div>
                 <!--Share-->
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/about/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/about/&sharesource=qzone&title=关于&pics=https://solitudealma.github.io/images/avatar.png?v=1614404223406&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/about/&sharesource=weibo&title=关于 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614404223406"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/high_precision_multiplication/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/high_precision_multiplication/&sharesource=qzone&title=高精度乘法的介绍以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1614404223406&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/high_precision_multiplication/&sharesource=weibo&title=高精度乘法的介绍以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614404223406"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
