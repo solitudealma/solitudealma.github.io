@@ -265,18 +265,16 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                对归并排序的一些理解
+                                                二位前缀和
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
-                                                
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/merge_sort/" class="leancloud_visitors" data-flag-title="对归并排序的一些理解">
+                                                    <span id="/post/K9p-WnFal/" class="leancloud_visitors" data-flag-title="二位前缀和">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,141 +283,105 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            6.0分</span>
+                                            4.1分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1614668704928" srcset="https://solitudealma.github.io/images/avatar.png?v=1614668704928" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-17</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-02</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="今天我们来介绍一下归并排序">今天我们来介绍一下归并排序</h4>
-<p>那么什么是归并排序呢？🤔🤔🤔</p>
-<blockquote>
-<p><a href="https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/1639015?fr=aladdin">百度百科</a>是这么说的:归并排序（Merge Sort）是建立在归并操作上的一种有效，稳定的排序算法，该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。</p>
-</blockquote>
-<p>也可以看看动态图😮😮😮</p>
-<figure data-type="image" tabindex="1"><img src="https://img.imgdb.cn/item/602ce6843ffa7d37b359ca11.gif" alt="归并排序" loading="lazy"></figure>
-<p>归并排序也和快速排序一样利用分治法来解决问题，同样它也采用了双指针算法（排序的时候），首先将一个有序或者无序的序列按中间索引（下标）分成两个部分，然后再将这两个部分继续分，直到区间长度为1。一个长度为n的区间一共需要分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">log_2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span></span></span></span> 次才能将区间分完。分完区间后就是对区间进行排序，然后合并区间即可。</p>
-<p>因为一共需要分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">log_2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span></span></span></span> 次区间，所以归并排序的时间复杂度为  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
-<p>我们先来看看归并排序的模板👇👇👇</p>
-<pre><code class="language-c++">void merge_sort(int q[] , int l , int r)
-{
-    if(l &gt;= r) return;//区间只有一个数的时候停止递归
+                                    <h4 id="今天我们来讲一下二位前缀和">今天我们来讲一下二位前缀和</h4>
+<p>什么叫二位前缀和呢？</p>
+<p>给我们一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n \times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的矩阵，矩阵中任意一点的左上角的点的数之和加上这个点的值为该点的二维前缀和 $ \displaystyle s[i][j]=\sum_{i=1...i}^{j=1...j} a[i][j]$。</p>
+<p>那么我们应该怎么用公式求呢？</p>
+<p>首先我们用s数组来表示前缀和，那么 <code>s[i][j] = s[i - 1][j] + s[i][j - 1] - s[i- 1][j - 1] + a[i][j]</code> ，即这一个点的二位前缀和等于它左边的点和上面的点的前缀和之和减去左上角的点的前缀和（即多加的部分）再加上这个点的值就是该点的二维前缀和，其实就是容斥定理。可以结合下图理解。</p>
+<figure data-type="image" tabindex="1"><img src="https://img.imgdb.cn/item/603dd999360785be542209fd.png" alt="二位前缀和" loading="lazy"></figure>
+<p>橙色部分是左边的点的前缀和，红色部分是上面的点的前缀和，绿色的点是重复部分，褐色是当前的点</p>
+<p>既然我们求出了每一个点对应的二维前缀和，那么如果需要求子矩阵的二维前缀和呢，该怎么求。</p>
+<p>其实也很简单，从定义出发，以（x1，y1）为左上角，（x2，y2）为右上角的子矩阵的前缀和可以看成是（x2，y2）的前缀和减去（x2，y1-1）的前缀和再减去（x1-1，y2）的前缀和最后再加上（x1-1，y1-1）的前缀和即可。用公式表示就是 <code>s[x2][y2] - s[x2][y1 - 1] - s[x1 - 1][y2] + s[x1 - 1][y1 - 1]</code> 。可以结合下图理解。</p>
+<figure data-type="image" tabindex="2"><img src="https://img.imgdb.cn/item/603dddbf360785be5423e72e.png" alt="任意子矩阵二位前缀和" loading="lazy"></figure>
+<p>红色部分为所求区域，绿色和橙色是多余部分要减去，而灰色部分是多减了要加回来。</p>
+<p>到这里相信你也懂得了怎么求矩阵的二维前缀和，那么我们直接上模板吧</p>
+<pre><code class="language-c++">
+S[i, j] = 第i行j列格子左上部分所有元素的和
+以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵的和为：
+S[x2, y2] - S[x1 - 1, y2] - S[x2, y1 - 1] + S[x1 - 1, y1 - 1]
 
-    int mid = l + r &gt;&gt; 1;//划分区间
-    merge_sort(q , l , mid) , merge_sort(q , mid + 1 , r);//递归划分左右区间
-
-    int i = l , j = mid + 1 ,  k = 0 , temp[r - l + 1];//i为左区间的指针，j为右区间的指针，k为排序的第几个数，temp数组用于合并区间时临时存储,temp也可以直接开一个和q一样大的全局变量，看个人喜好
-
-    //两个区间的数进行比较，小的或者相等的数将左区间的数放入temp，否则右区间放入
-    while(i &lt;= mid &amp;&amp; j &lt;= r)
-    {
-        if(q[i] &lt;= q[j]) temp[k ++] = q[i ++];
-        else temp[k ++] = q[j ++];
-    }
-
-    // 因为存在还没比较完就有一个区间已经没有数了，所以将剩余的数全部放在temp后，一下while只有一个会执行
-    while(i &lt;= mid) temp[k ++] = q[i ++];
-    while(j &lt;= r) temp[k ++] = q[j ++];
-
-    for(int i = l , j = 0; i &lt;= r; ++ i , ++ j) q[i] = temp[j];//将temp数组更新到q数组中，q即为排序后的数组
-}
 </code></pre>
-<h4 id="归并排序的三个步骤">归并排序的三个步骤</h4>
-<blockquote>
-<ol>
-<li>确定分界点 mid = l + r &gt;&gt; 1;</li>
-<li>递归排序左右区间</li>
-<li>归并区间❤️❤️❤️</li>
-</ol>
-</blockquote>
-<p>首先将区间一直划分，直到区间长度为1，接着排序左右区间，最后合并区间。<br>
-合并区间之前，区间一定是有序的</p>
-<figure data-type="image" tabindex="2"><img src="https://img.imgdb.cn/item/602d0ee43ffa7d37b36faecc.png" alt="划分过程" loading="lazy"></figure>
-<p>从左区间开始排序，此时区间中只有一个3，递归停止（只有一个元素不需要排序），排完后轮到右区间，此时区间中也是只有一个数，不需要排序，递归停止。跳回到上一层递归，然后排序3和1，因为本层递归将区间用mid划分了，也就是意义上的左右区间，形式上还是在同一个数组中，因为 <code>q[i] = 3</code> 是大于 <code>q[j] = 1</code> 的，所以将 <code>q[j]</code> 放入temp数组中，要注意这里的k++，++的位置意味着如果它在一个表达式中的话运算顺序是不一样的，除非它单独为一条语句，那它的位置在哪都一样，如果不能理解的话，单独拎出来自增也是可以的。然后此时 <code>i &gt; mid</code> ，所以while循环停止，接着把未比较完的数放进temp中，这样就合并完第一个区间了，然后更新q数组的前两个位置，如此往复就能把数组排序完了。</p>
-<blockquote>
-<p>老规矩，自己手动模拟的话能更快的理解。</p>
-</blockquote>
-<blockquote>
-<p>一些细节</p>
-<blockquote>
-<p>k++和++k在单独的一个语句中并没有什么区别，k都会自增。但是如果在一个表达式中的话就不一样了，比如<code>temp[k ++] = q[i ++]</code>,在这里是先用k和i的值，然后k和i再加1。我是这么记的，谁在前面谁先执行，即<code>k++</code>是先赋值后加1，<code>++k</code>是先加1后赋值</p>
-<blockquote>
-<p>emmm,好像没有了，有的时候再加上吧</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>这个算法的难点在于合并区间，必定会有一个区间先比较完，然后得把剩余的所有数全部放入temp数组中，模板中的方法就很不错</p>
-<p>又到了呈上例题的时候🤣🤣🤣</p>
-<blockquote>
-<p><a href="https://www.acwing.com/problem/content/789/">AcWing 787. 归并排序</a></p>
-</blockquote>
+<p>接着我们来做一道模板题</p>
+<p><a href="https://www.acwing.com/problem/content/description/798/">AcWing 796.子矩阵的和</a></p>
 <h4 id="题目描述">题目描述</h4>
-<p>给定你一个长度为n的整数数列。</p>
-<p>请你使用归并排序对这个数列按照从小到大进行排序。</p>
-<p>并将排好序的数列按顺序输出。</p>
+<p>输入一个n行m列的整数矩阵，再输入q个询问，每个询问包含四个整数x1, y1, x2, y2，表示一个子矩阵的左上角坐标和右下角坐标。</p>
+<p>对于每个询问输出子矩阵中所有数的和。</p>
 <h4 id="输入格式">输入格式</h4>
-<p>输入共两行，第一行包含整数 n。</p>
-<p>第二行包含 n 个整数（所有整数均在1~109范围内），表示整个数列。</p>
+<p>第一行包含三个整数n，m，q。</p>
+<p>接下来n行，每行包含m个整数，表示整数矩阵。</p>
+<p>接下来q行，每行包含四个整数x1, y1, x2, y2，表示一组询问。</p>
 <h4 id="输出格式">输出格式</h4>
-<p>输出共一行，包含 n 个整数，表示排好序的数列。</p>
+<p>共q行，每行输出一个询问的结果。</p>
 <h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>100000</mn></mrow><annotation encoding="application/x-tex">1≤n≤100000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>1000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤n,m≤1000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>q</mi><mo>≤</mo><mn>200000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤q≤200000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>x</mi><mn>1</mn><mo>≤</mo><mi>x</mi><mn>2</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤x1≤x2≤n,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">x</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">x</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>y</mi><mn>1</mn><mo>≤</mo><mi>y</mi><mn>2</mn><mo>≤</mo><mi>m</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤y1≤y2≤m,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>1000</mn><mo>≤</mo><mi mathvariant="normal">矩</mi><mi mathvariant="normal">阵</mi><mi mathvariant="normal">内</mi><mi mathvariant="normal">元</mi><mi mathvariant="normal">素</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">值</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">−1000≤矩阵内元素的值≤1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord cjk_fallback">矩</span><span class="mord cjk_fallback">阵</span><span class="mord cjk_fallback">内</span><span class="mord cjk_fallback">元</span><span class="mord cjk_fallback">素</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">值</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
 <h4 id="输入样例">输入样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>31245</mn></mrow><annotation encoding="application/x-tex">3 1 2 4 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">1</span><span class="mord">2</span><span class="mord">4</span><span class="mord">5</span></span></span></span></p>
+<pre><code>3 4 3
+1 7 2 4
+3 6 2 8
+2 1 2 3
+1 1 2 2
+2 1 3 4
+1 3 3 4
+</code></pre>
 <h4 id="输出样例">输出样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>12345</mn></mrow><annotation encoding="application/x-tex">1 2 3 4 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">3</span><span class="mord">4</span><span class="mord">5</span></span></span></span></p>
+<pre><code>17
+27
+21
+</code></pre>
 <h4 id="c代码">C++代码</h4>
 <pre><code class="language-c++">#include &lt;cstdio&gt;
 
 using namespace std;
 
-const int N = 100010;
+const int N = 1010;
 
-int n;
-int a[N];
-
-void merge_sort(int q[] , int l , int r)
-{
-    if(l &gt;= r) return;
-
-    int mid = l + r &gt;&gt; 1;
-    
-    merge_sort(q , l , mid) , merge_sort(q, mid + 1 , r);
-
-    int i = l , j = mid + 1 ,  k = 0 , temp[r - l + 1];
-    while(i &lt;= mid &amp;&amp; j &lt;= r)
-    {
-        if(q[i] &lt;= q[j]) temp[k ++] = q[i ++];
-        else temp[k ++] = q[j ++];
-    }
-
-    while(i &lt;= mid) temp[k ++] = q[i ++];
-    while(j &lt;= r) temp[k ++] = q[j ++];
-
-    for(int i = l , j = 0; i &lt;= r; ++ i , ++ j) q[i] = temp[j];
-}
+int n , m , q;
+int a[N][N] , s[N][N];
 
 int main()
 {
-    scanf(&quot;%d&quot; , &amp;n);
+    scanf(&quot;%d%d%d&quot; , &amp;n , &amp;m , &amp;q);
 
-    for(int i = 0; i &lt; n; ++ i) scanf(&quot;%d&quot; , &amp;a[i]);
+    for(int i = 1; i &lt;= n; i ++)
+        for(int j = 1; j &lt;= m; j ++)
+            scanf(&quot;%d&quot; , &amp;a[i][j]) , s[i][j] = s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1] + a[i][j];
+    
+    while(q --)
+    {
+        int x1 , y1 , x2 , y2;
+        scanf(&quot;%d%d%d%d&quot; , &amp;x1 , &amp;y1 , &amp;x2 , &amp;y2);
 
-    merge_sort(a , 0 , n - 1);
-
-    for(int i = 0; i &lt; n; ++ i) printf(&quot;%d &quot; , a[i]);
+        printf(&quot;%d\n&quot; , s[x2][y2] - s[x2][y1 - 1] - s[x1 - 1][y2] + s[x1 - 1][y1 - 1]);
+    }
 
     return 0;
 }
+
 </code></pre>
-<p>以上就是我对归并算法的一些理解，如有错误的地方请大佬们指出。🤺🤺🤺</p>
+<h4 id="引用">引用</h4>
+<p>引用一下大佬的题解</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/2675/">Bug_FreeOωO</a> <a href="https://www.acwing.com/solution/content/26263/">AcWing 796. 子矩阵的和</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/10048/">zning</a> <a href="https://www.acwing.com/solution/content/4684/">AcWing 796. 子矩阵的和_Java</a></p>
+</blockquote>
+</blockquote>
 
                                 </div>
                             </div>
@@ -437,8 +399,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/merge_sort/" title="对归并排序的一些理解">
-                                        https://solitudealma.github.io/post/merge_sort/
+                                    <a href="https://solitudealma.github.io/post/K9p-WnFal/" title="二位前缀和">
+                                        https://solitudealma.github.io/post/K9p-WnFal/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -461,17 +423,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/AcWing786/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解：AcWing 786.第K个数
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/quick_sort/">
-                                        快速排序的介绍以及算法的模板分享<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/two_dimensional_prefix_sum/">
+                                        二位前缀和<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -480,9 +435,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/merge_sort/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/merge_sort/&sharesource=qzone&title=对归并排序的一些理解&pics=https://solitudealma.github.io/images/avatar.png?v=1614668704928&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/merge_sort/&sharesource=weibo&title=对归并排序的一些理解 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614668704928"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/K9p-WnFal/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/K9p-WnFal/&sharesource=qzone&title=二位前缀和&pics=https://solitudealma.github.io/images/avatar.png?v=1614668704928&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/K9p-WnFal/&sharesource=weibo&title=二位前缀和 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1614668704928"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
