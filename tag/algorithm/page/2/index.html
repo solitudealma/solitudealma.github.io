@@ -257,187 +257,49 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <div class="lite-item">
-                    <article class="post post-type real-post">
-                        <header class="post-type-header">
-                            
-                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
-                                    
-                                        <div class="thumbnail-shadow">
-                                            <h1 class="post-title">
-                                                题解 AcWing 790.数的三次方根
-                                            </h1>
-                                            <div class="post-info">
-                                                <span class="post-category"><i class="Card Card-novel"></i>
+                <ul class="posts-list">
+                    <li class="lite-item">
+                        <article class="post post-type">
+                            <div class="post-main post-type-main">
+                                <div class="post-content">
+                                    <div class="post-content-real">
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
+                                            
+                                                <h3>
+                                                    2021
+                                                </h3>
                                                 
-                                                    </span>
-                                                    <span class="post-view">
                                                     
-                                                        &nbsp;•&nbsp;
-                                                    <span id="/post/AcWing790/" class="leancloud_visitors" data-flag-title="题解 AcWing 790.数的三次方根">
-                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
-                                                <i class="leancloud-visitors-count">0</i>
-                                            </span>
 
-                                                    
-                                                            </span>&nbsp;•&nbsp;
-
-                                                            <span class="post-readtime">阅读时间:
-                                            1.7分</span>
-                                                            <span class="post-edit"></span></div>
-                                        </div>
-                                        <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1615109326614" srcset="https://solitudealma.github.io/images/avatar.png?v=1615109326614" class="avatar avatar-100 photo" width="100" height="100">
-                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-20</span>
-                                        </div>
-                        </header>
-                        <div class="post-main post-type-main">
-                            <div class="post-content">
-                                <div class="post-content-real">
-                                    <h4 id="题目链接">题目链接</h4>
-<p><a href="https://www.acwing.com/problem/content/792/">AcWing 790.数的三次方根</a></p>
-<h4 id="引用">引用</h4>
-<p>引用一下还不错的题解</p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/5849/">第一WA者金银花</a> <a href="https://www.acwing.com/solution/content/3564/">AcWing 790. 数的三次方根</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/10048/">zning</a> <a href="https://www.acwing.com/solution/content/4651/">AcWing 790. 浮点数二分法_Java</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/37610/">modeming</a> <a href="https://www.acwing.com/solution/content/12909/">AcWing 790. 数的三次方根（牛顿迭代法）</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="题目描述">题目描述</h3>
-<p>给定一个浮点数n，求它的三次方根。</p>
-<h4 id="样例">样例</h4>
-<h4 id="输入格式">输入格式</h4>
-<p>共一行，包含一个浮点数n。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>共一行，包含一个浮点数，表示问题的解。</p>
-<p>注意，结果保留6位小数。</p>
-<h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>10000</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">−10000≤n≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
-<h4 id="输入样例">输入样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1000.00</mn></mrow><annotation encoding="application/x-tex">1000.00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
-<h4 id="输出样例">输出样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10.000000</mn></mrow><annotation encoding="application/x-tex">10.000000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
-<hr>
-<h3 id="算法">算法</h3>
-<h5 id="浮点数二分-on">(浮点数二分)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
-<p>关于浮点数二分就没什么好说的了，因为精度问题，像三次方根平方根这些都只能找到大概的范围，所以我们只要不断缩小范围即可，设定一个精度eps，如果题目说精确到6位，那我们设置的精度就为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi>e</mi><mo>−</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">1e-8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>。</p>
-<p>有一个需要注意的点是，求平方根时，如果输入的数是 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 5: &lt; 1 &amp;̲&amp; &gt;0'>&lt; 1 &amp;&amp; &gt;0</span>，那么计算的时候就要注意了，比如0.1的平方根，那么答案肯定是在0.1到1之间，所以应该特殊处理区间更新方式</p>
-<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
-<p>最多查找 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord">/</span><span class="mord">2</span></span></span></span> 次，所以时间复杂度是线性的</p>
-<h4 id="c-代码">C++ 代码</h4>
-<pre><code class="language-c++">#include &lt;cstdio&gt;
-
-using namespace std;
-
-double n;
-
-int main()
-{
-    scanf(&quot;%lf&quot; , &amp;n);
-    
-    double l = -1000 , r = 1000 , eps = 1e-8;
-    
-    while(r - l &gt; eps)
-    {
-        double mid = (l + r) / 2;
-        if(mid * mid * mid &gt;= n) r = mid;
-        else l = mid;
-    }
-    
-    printf(&quot;%.6lf&quot; , l);
-    
-    return 0;
-}
-</code></pre>
-
-                                </div>
-                            </div>
-                            
-                                <div class="reward ">
-                                    <div class="reward-button ">&yen;
-                                        <span class="reward-code "> 
-                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
-                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                                        <article class="archive-item">
+                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/recursion/">
+                                                                简单介绍一下递归
+                                                            </a>
+                                                            <span class="archive-item-date">2021-02-12 </span>
+                                                        </article>
+                                                        
+                                                            
+                                                                
+                                    </div>
+                                    <div class="pagination-container">
+                                        
+                                                                
+                                                                    <a href="https://solitudealma.github.io/tag/algorithm" class="prev"><i class="icon-arrow-ios-back-outline"></i> Prev</a>
+                                                                    
+                                                                        
+                                                                                
                                     </div>
                                 </div>
-                                
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-copyright">
-                                作者:
-                                SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/AcWing790/" title="题解 AcWing 790.数的三次方根">
-                                        https://solitudealma.github.io/post/AcWing790/
-                                    </a><br> 协议: MIT License
                             </div>
-                        </div>
-                    </article>
-                </div>
-                <style>
-                    .prev:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                    
-                    .next:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                </style>
-                <div class="lite-item nearby-article">
-                    
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/high_precision_addition/">
-                                <i class="fa fa-chevron-left"></i>
-                                高精度加法的介绍以及模板的分享
-                            </a>
-                        </div>
-                        
-                            
-                                <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/20200219/">
-                                        2021.02.19 [日记]<i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
+                            <div class="post-footer">
                                 
-                </div>
-                <!--Share-->
-                <span style="margin-right:15px">
-    <i class="post-share"></i>
-    <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing790/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing790/&sharesource=qzone&title=题解 AcWing 790.数的三次方根&pics=https://solitudealma.github.io/images/avatar.png?v=1615109326614&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing790/&sharesource=weibo&title=题解 AcWing 790.数的三次方根 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1615109326614"><i class="fa fa-weibo "></i></a>
-                </span>
-                
-                                            
-                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<div id="vlaine-comment"></div>
-<script type="application/javascript">
-    new Valine({
-        el: '#vlaine-comment',
-        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
-        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
-        pageSize: 10,
-        avatar: 'mp',
-        placeholder: '来都来了，不妨评论一下',
-        visitor: true,
-        highlight: true,
-        recordIP: true,
-    })
-</script>
-                                                    
+                                    <span class="pagination" onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm'"><a class="prev" rel="prev"  href="https://solitudealma.github.io/tag/algorithm" class="prev"><i class="icon-arrow-ios-back-outline"></i> &#x4E0A;&#x4E00;&#x9875;</a></span>
+                                    
+                                        
+                            </div>
+                        </article>
+                    </li>
+                </ul>
             </div>
             <div id="sidebar">
     <ul>
@@ -652,7 +514,6 @@ int main()
     </ul>
 </div>
         </div>
-
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -731,18 +592,5 @@ int main()
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
-    <script>
-        renderMathInElement(document.body, {
-            delimiters: [{
-                left: "$$",
-                right: "$$",
-                display: true
-            }, {
-                left: "$",
-                right: "$",
-                display: false
-            }]
-        });
-    </script>
 
 </html>

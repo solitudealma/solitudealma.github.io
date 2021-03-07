@@ -265,18 +265,18 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解 AcWing 790.数的三次方根
+                                                二维差分
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/AcWing790/" class="leancloud_visitors" data-flag-title="题解 AcWing 790.数的三次方根">
+                                                    <span id="/post/two_dimensional_difference/" class="leancloud_visitors" data-flag-title="二维差分">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,77 +285,133 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            1.7分</span>
+                                            4.9分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1615109326614" srcset="https://solitudealma.github.io/images/avatar.png?v=1615109326614" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-20</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-07</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="题目链接">题目链接</h4>
-<p><a href="https://www.acwing.com/problem/content/792/">AcWing 790.数的三次方根</a></p>
-<h4 id="引用">引用</h4>
-<p>引用一下还不错的题解</p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/5849/">第一WA者金银花</a> <a href="https://www.acwing.com/solution/content/3564/">AcWing 790. 数的三次方根</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/10048/">zning</a> <a href="https://www.acwing.com/solution/content/4651/">AcWing 790. 浮点数二分法_Java</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/37610/">modeming</a> <a href="https://www.acwing.com/solution/content/12909/">AcWing 790. 数的三次方根（牛顿迭代法）</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="题目描述">题目描述</h3>
-<p>给定一个浮点数n，求它的三次方根。</p>
-<h4 id="样例">样例</h4>
+                                    <h4 id="今天我们来讲一下二维差分">今天我们来讲一下二维差分</h4>
+<p>什么是二维差分呢？</p>
+<p>相信了解一维差分的小伙伴都知道，差分和前缀和其实是互逆的。二位前缀和是计算矩阵中的一个点包括其和左上角的所有点的值的和，那么差分的作用就是在时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的情况下对一个矩阵操作，比如某区域的点都加上一个数。</p>
+<p>那么我们应该怎么构建差分数组呢，其实和一维差分差不多，只不过是多了一维。那么有了一维差分的构建经验对于二位差分我们直接用插入函数即可，原理下面会说。</p>
+<p>由一维差分我们可以知道， <code>a[i]</code> 是 <code>b[1]...b[i]</code> 的前缀和，如果我们要对区间 [l , r] 中的数都加上一个数c的话只需要让 <code>b[l] += c</code> 并且 <code>b[r + 1] -= c</code> 即可，这样用差分数组构建新数组时，区间 [l , r] 中的数都会在原基础上加上c。</p>
+<p>如果我们把这个区间放缩一下，并且让数组元素都为0的这个数组a作为我们的原数组，那么数组a的差分数组b也是全为0，这样我们就构成了差分数组，那么我们真正需要输入到数组中的数就可以利用二位差分的性质进行了，也就是当区间 l = r时，我们让其加上一个需要输入的数，这样既输入了数据，也构成了差分数组。</p>
+<p>我们来看一下对任意子矩阵都加上一个数的话，应该怎么利用差分数组。</p>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/solitudealma/blogimagebed/raw/master/image/AlgorithmNote/two_dimensional_difference.png" alt="二维差分" loading="lazy"></figure>
+<p>从图中我们可以很清楚的看到，如果在x1，y1上加一个数c那么它右下角的数都会加上c，那么该怎么办呢，其实这也是容斥定理。我们只需要减去右边多加的部分和下边多加的部分最后再加上重复减去的部分即可</p>
+<p>那么代码该怎么写呢，我们来看看模板吧</p>
+<pre><code class="language-c++">
+给以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵中的所有元素加上c：
+S[x1, y1] += c, S[x2 + 1, y1] -= c, S[x1, y2 + 1] -= c, S[x2 + 1, y2 + 1] += c
+
+</code></pre>
+<p>其实挺简单的，我们来做一道模板题熟悉一下吧</p>
+<p><a href="https://www.acwing.com/problem/content/description/800/">AcWing 798.差分矩阵</a></p>
+<h4 id="题目描述">题目描述</h4>
+<p>输入一个n行m列的整数矩阵，再输入q个操作，每个操作包含五个整数x1, y1, x2, y2, c，其中(x1, y1)和(x2, y2)表示一个子矩阵的左上角坐标和右下角坐标。</p>
+<p>每个操作都要将选中的子矩阵中的每个元素的值加上c。</p>
+<p>请你将进行完所有操作后的矩阵输出。</p>
 <h4 id="输入格式">输入格式</h4>
-<p>共一行，包含一个浮点数n。</p>
+<p>第一行包含整数n,m,q。</p>
+<p>接下来n行，每行包含m个整数，表示整数矩阵。</p>
+<p>接下来q行，每行包含5个整数x1, y1, x2, y2, c，表示一个操作。</p>
 <h4 id="输出格式">输出格式</h4>
-<p>共一行，包含一个浮点数，表示问题的解。</p>
-<p>注意，结果保留6位小数。</p>
+<p>共 n 行，每行 m 个整数，表示所有操作进行完毕后的最终矩阵。</p>
 <h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>10000</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">−10000≤n≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>1000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤n,m≤1000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>q</mi><mo>≤</mo><mn>100000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤q≤100000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>x</mi><mn>1</mn><mo>≤</mo><mi>x</mi><mn>2</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤x1≤x2≤n,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">x</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">x</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>y</mi><mn>1</mn><mo>≤</mo><mi>y</mi><mn>2</mn><mo>≤</mo><mi>m</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤y1≤y2≤m,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>1000</mn><mo>≤</mo><mi>c</mi><mo>≤</mo><mn>1000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">−1000≤c≤1000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">−</mi><mn>1000</mn><mo>≤</mo><mi mathvariant="normal">矩</mi><mi mathvariant="normal">阵</mi><mi mathvariant="normal">内</mi><mi mathvariant="normal">元</mi><mi mathvariant="normal">素</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">值</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">−1000≤矩阵内元素的值≤1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord cjk_fallback">矩</span><span class="mord cjk_fallback">阵</span><span class="mord cjk_fallback">内</span><span class="mord cjk_fallback">元</span><span class="mord cjk_fallback">素</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">值</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
 <h4 id="输入样例">输入样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1000.00</mn></mrow><annotation encoding="application/x-tex">1000.00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<pre><code>3 4 3
+1 2 2 1
+3 2 2 1
+1 1 1 1
+1 1 2 2 1
+1 3 2 3 2
+3 1 3 4 1
+
+</code></pre>
 <h4 id="输出样例">输出样例：</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10.000000</mn></mrow><annotation encoding="application/x-tex">10.000000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
-<hr>
-<h3 id="算法">算法</h3>
-<h5 id="浮点数二分-on">(浮点数二分)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h5>
-<p>关于浮点数二分就没什么好说的了，因为精度问题，像三次方根平方根这些都只能找到大概的范围，所以我们只要不断缩小范围即可，设定一个精度eps，如果题目说精确到6位，那我们设置的精度就为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi>e</mi><mo>−</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">1e-8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>。</p>
-<p>有一个需要注意的点是，求平方根时，如果输入的数是 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 5: &lt; 1 &amp;̲&amp; &gt;0'>&lt; 1 &amp;&amp; &gt;0</span>，那么计算的时候就要注意了，比如0.1的平方根，那么答案肯定是在0.1到1之间，所以应该特殊处理区间更新方式</p>
-<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
-<p>最多查找 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord">/</span><span class="mord">2</span></span></span></span> 次，所以时间复杂度是线性的</p>
-<h4 id="c-代码">C++ 代码</h4>
-<pre><code class="language-c++">#include &lt;cstdio&gt;
+<pre><code>2 3 4 1
+4 3 4 1
+2 2 2 2
+
+</code></pre>
+<h4 id="c代码">C++代码</h4>
+<pre><code class="language-c++">
+#include &lt;cstdio&gt;
 
 using namespace std;
 
-double n;
+const int N = 1010;
+
+int n , m , q;
+int a[N][N] , b[N][N];
+
+void insert(int x1 , int y1 , int x2 , int y2 , int c)
+{
+    b[x1][y1] += c;
+    b[x1][y2 + 1] -= c;
+    b[x2 + 1][y1] -= c;
+    b[x2 + 1][y2 + 1] += c;
+}
 
 int main()
 {
-    scanf(&quot;%lf&quot; , &amp;n);
-    
-    double l = -1000 , r = 1000 , eps = 1e-8;
-    
-    while(r - l &gt; eps)
+    scanf(&quot;%d%d%d&quot; , &amp;n , &amp;m , &amp;q);
+
+    for(int i = 1; i &lt;= n; i ++)
     {
-        double mid = (l + r) / 2;
-        if(mid * mid * mid &gt;= n) r = mid;
-        else l = mid;
+       for(int j = 1; j &lt;= m; j ++)
+        {
+            scanf(&quot;%d&quot; , &amp;a[i][j]);
+            insert(i , j , i , j , a[i][j]);
+        } 
     }
-    
-    printf(&quot;%.6lf&quot; , l);
-    
+        
+    while(q --)
+    {
+        int x1 , y1 , x2 , y2 , c;
+
+        scanf(&quot;%d%d%d%d%d&quot; , &amp;x1 , &amp;y1 , &amp;x2 , &amp;y2 , &amp;c);
+
+        insert(x1 , y1 , x2 , y2 , c);
+    }
+
+    for(int i = 1; i &lt;= n; i ++)
+    {
+        for(int j = 1; j &lt;= m; j ++)
+        {
+            b[i][j] += b[i - 1][j] + b[i][j -1] - b[i - 1][j - 1];
+            printf(&quot;%d &quot; , b[i][j]);
+        }
+        puts(&quot;&quot;);
+    }
     return 0;
 }
+
 </code></pre>
+<h4 id="引用">引用</h4>
+<p>引用一些大佬的题解</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/4303/">p_c</a> <a href="https://www.acwing.com/solution/content/2137/">AcWing 798. 差分矩阵</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/13086/">dongwa_zzuli</a> <a href="https://www.acwing.com/solution/content/10946/">AcWing 798. 差分矩阵_java</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/3911/">vanilla</a> <a href="https://www.acwing.com/solution/content/2258/">AcWing 798. 差分矩阵</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
 
                                 </div>
                             </div>
@@ -373,8 +429,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/AcWing790/" title="题解 AcWing 790.数的三次方根">
-                                        https://solitudealma.github.io/post/AcWing790/
+                                    <a href="https://solitudealma.github.io/post/two_dimensional_difference/" title="二维差分">
+                                        https://solitudealma.github.io/post/two_dimensional_difference/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -397,17 +453,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/high_precision_addition/">
-                                <i class="fa fa-chevron-left"></i>
-                                高精度加法的介绍以及模板的分享
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/20200219/">
-                                        2021.02.19 [日记]<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/two_dimensional_prefix_sum/">
+                                        二位前缀和<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -416,9 +465,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing790/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing790/&sharesource=qzone&title=题解 AcWing 790.数的三次方根&pics=https://solitudealma.github.io/images/avatar.png?v=1615109326614&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing790/&sharesource=weibo&title=题解 AcWing 790.数的三次方根 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1615109326614"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/two_dimensional_difference/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/two_dimensional_difference/&sharesource=qzone&title=二维差分&pics=https://solitudealma.github.io/images/avatar.png?v=1615109326614&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/two_dimensional_difference/&sharesource=weibo&title=二维差分 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1615109326614"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
