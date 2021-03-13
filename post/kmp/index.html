@@ -265,7 +265,7 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                快速排序的介绍以及算法的模板分享
+                                                对于kmp算法的一些理解以及模板的分享
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
@@ -276,7 +276,7 @@
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/quick_sort/" class="leancloud_visitors" data-flag-title="快速排序的介绍以及算法的模板分享">
+                                                    <span id="/post/kmp/" class="leancloud_visitors" data-flag-title="对于kmp算法的一些理解以及模板的分享">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,145 +285,202 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            7.3分</span>
+                                            9.6分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1615624814473" srcset="https://solitudealma.github.io/images/avatar.png?v=1615624814473" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-12</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-13</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h3 id="今天我们来讲一下快速排序">今天我们来讲一下快速排序</h3>
-<p>那么什么是排序呢？🤔🤔🤔</p>
-<blockquote>
-<p><a href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/369842?fromtitle=%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F&amp;fromid=2084344&amp;fr=aladdin">百度百科</a>是这么介绍的：快速排序由C. A. R. Hoare在1960年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
-</blockquote>
-<p>也可以看看动态图😮😮😮<br>
-<img src="https://img.imgdb.cn/item/602ce6423ffa7d37b359a9c6.gif" alt="快速排序" loading="lazy"></p>
-<p>它的主要思想是分治法，就是把一个问题分成相互独立的几个规模较小的子问题，然后逐一去解决，最终将得到“母问题的答案”。链接 ==&gt;&gt;<a href="https://baike.baidu.com/item/%E5%88%86%E6%B2%BB%E6%B3%95/2407337?fr=aladdin">分治法</a></p>
-<p>今天我们将采用双指针算法去理解快速排序这一过程，对于双指针算法不太理解的小伙伴可以看看这个介绍 ==&gt;&gt;</p>
-<blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/95747836">算法 | 双指针套路总结</a></p>
-<blockquote>
-<p><a href="https://www.cnblogs.com/huansky/p/13508533.html">双指针算法基本原理和实践</a></p>
-</blockquote>
-</blockquote>
-<p>因为我们是用数组去排序的，所以你只需要知道双指针代表着两个在改变的下标就行了（下标访问本质上也是指针）。</p>
-<p>快排的平均时间复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlog_2n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，最糟糕的时候是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
-<p>首先我们先给出我们的快排模板👇👇👇</p>
-<pre><code class="language-c++">void quick_sort(int q[] , int l , int r)
-{
-    if(l &gt;= r) return; //表示此区间只有一个数或者没有数
+                                    <h4 id="今天我们来讲一下kmp看毛片算法">今天我们来讲一下kmp（看毛片）算法</h4>
+<p>讲到字符串操作有那些算法时，相信学过数据结构的小伙伴们都能想到kmp算法。</p>
+<p>那么什么是kmp算法呢？从<a href="https://baike.baidu.com/item/kmp%E7%AE%97%E6%B3%95/10951804?fromtitle=KMP&amp;fromid=10158450&amp;fr=aladdin">百度百科</a>我们可以知道，kmp是三个人共同研究出来的一个算法，并以他们的名字命名。它的前身是Brute-Force算法，它有一个很大的缺点，那就是如果当前匹配失败那么指针往前移一位继续匹配。细心的小伙伴很容易就能发现匹配串越长的话本身就不容易匹配成功，那么你每次匹配失败指针只往前移动一位的话，其时间复杂度可想而知。那有没有什么更好的优化方式解决这一问题呢，kmp算法很好地解决了这一问题</p>
+<p>初学kmp算法的小伙伴肯定会理解不来这个算法，其实这个算法还是不特别抽象<s>并不是</s>。当时我也是看了两三天才理解其中的奥秘。那废话不多说，我们就来看看这个kmp到底是怎么实现的吧</p>
+<p>如果我们要了解kmp算法，那么我们应该先看看Brute-Force算法是怎么实现的，这个算法属于暴力算法。我们来看看具体怎么实现的吧</p>
+<pre><code class="language-c++">
+/*
+*
+* s为原串，p为模式串
+*
+*/
 
-    int i = l - 0 , j = r + 1 , x = q[l + r &gt;&gt; 1]; //i为左指针，j为右指针 x为每一次分割区间时选定的比较数  &gt;&gt; 这个是右移运算符，是位运算的一种，将一个整数右移一位表示除以2 
-    while(i &lt; j)
+for(int i = 0; i &lt;= s.size() - p.size(); i ++)
+{   
+    bool flag = true;
+    for(int j = 0; j &lt; p.size(); j ++)
     {
-        do ++ i; while(q[i] &lt; x); //左指针寻找小于x的数
-        do -- j; while(q[j] &gt; x); //右指针寻找大于x的数
-        if(i &lt; j) swap(q[i] &lt; q[j]); //swap函数存在于C++的algorithm头文件中，相当于自己手写的交换变量函数，因为指针停下来的时候可能是穿过，重合这两种情况其中一种，如果未相遇我们就交换指针所指的数，然后直到l&gt;=r循环结束
+        if(p[j] != s[i + j])
+        {
+            flag = false;
+            break;
+        } 
     }
-    //每一次递归之后i、j的相对位置只有两种情况，i==j或者i==j+1
-    quick_sort(q , l , j) , quick_sort(q , j + 1 , r);//递归处理左右区间，先左，再右（注意划分区间用的是i还是j）
+    if(flag) printf(&quot;pos : %d&quot; , i);
 }
 </code></pre>
-<p>好了，以上就是我们要用到的快排模板了，一个好的模板能让你快速记忆一个算法，同时它也已经帮我们解决了烦人的边界问题，只需要好好理解记忆即可</p>
-<h4 id="快排的三个步骤">快排的三个步骤</h4>
-<blockquote>
-<ol>
-<li>确定分界点 q[l] , q[l + r &gt;&gt; 1] , q[r] , 随机</li>
-<li>调整区间 保证左边小于等于x，右边大于等于x，x在哪一边都可以❤️❤️❤️</li>
-<li>递归处理左右两段</li>
-</ol>
-</blockquote>
-<p>这个模板其实不难理解，函数传入一个含有n个元素的有序或者无序的序列，我们用分治法的思想，首先先确定分界点，因为选取的是<code>l + r &gt;&gt; 1</code>也就是中间元素；而后寻找满足条件的数，直到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>&gt;</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">l &gt;= r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> ,接着调整区间，将其分为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&gt;</mo><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">&gt;=x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">&lt;=x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>的两个区间（用j划分，j的左边一定小于等于x，j的右边一定大于等于x）；最后再递归处理左右区间。</p>
-<blockquote>
-<p>如果一个区间只有一个元素，而这个区间又满足小于等于x或者大于等于x这一条件，那么整个合并的区间都是有序的。</p>
-</blockquote>
-<p>一共需要分<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">log_2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span></span></span></span>次,在第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">log_2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span></span></span></span>次时每一个元素都在一个区间里，在那个区间中它是有序的。也是至此递归不再继续，因为区间中只有一个元素（ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>&gt;</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">l &gt;= r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> ），还是不明白的小伙伴可以动手模拟一下，画一下图会清晰很多</p>
-<blockquote>
-<p>一些细节</p>
-<blockquote>
-<ol>
-<li>i , j 指针每次都在区间之外，这是因为我们用了do-while循环，每一次指针都是先+1/-1，再判断，这样可以避免死循环等一些迷之操作（其实一般来说都是先判断再操作，这样的话避免回退操作，这里用do-while循环是为了方便理解）</li>
-<li>选取元素的作为比较的值时尽量不要选取左右端点，因为当序列有序时，时间复杂度会退化为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
-<li>如果选取右端点，则递归处理的代码为<code>quick_sort(q , l , i - 1) , quick_sort(q , i , r);</code>;如果选的是左端点，则为<code>quick_sort(q , l , j) , quick_sort(q , j + 1 , r);</code>；如果选取中间点，两种都可以哦</li>
-<li>一切有关边界问题的算法都建议背模板，因为这是经过n位大佬试验过的，只需要记就行了</li>
-<li>如果用的时候无论如何都想不起快排的模板的话，还有一个暴力的方式。1.首先我们先创建a，b两个数组；2.遍历数组q，小于等于x的数放入a中，其他的放入b中；3.将a，b分别排序后，先将a中的元素放入q，再将b中的元素放入q即可</li>
-</ol>
-</blockquote>
-</blockquote>
-<p>这个算法难点在于调整区间,以j来划分区间的话，在j左边的数都小于等于x，在右边的都大于等于x，其他同理，应该注意你用的是i还是j来划分区间</p>
-<h4 id="附上一个简单的快速排序图解">附上一个简单的快速排序图解</h4>
-<figure data-type="image" tabindex="1"><img src="https://img.imgdb.cn/item/602ce78e3ffa7d37b35a3686.jpg" alt="附上一个简单的快速排序图解" loading="lazy"></figure>
-<p>现在我们来写一道模板题</p>
-<blockquote>
-<p><a href="https://www.acwing.com/problem/content/787/">AcWing 785.快速排序</a></p>
-</blockquote>
-<h4 id="题目描述">题目描述</h4>
-<p>给定你一个长度为n的整数数列。</p>
-<p>请你使用快速排序对这个数列按照从小到大进行排序。</p>
-<p>并将排好序的数列按顺序输出。</p>
-<h4 id="输入格式">输入格式</h4>
-<p>输入共两行，第一行包含整数 n。</p>
-<p>第二行包含 n 个整数（所有整数均在1~109范围内），表示整个数列。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>输出共一行，包含 n 个整数，表示排好序的数列。</p>
-<h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>100000</mn></mrow><annotation encoding="application/x-tex">1≤n≤100000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
-<h4 id="输入样例">输入样例：</h4>
-<pre><code>5
+<p>从代码中我们可以发现这个算法的时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n*m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 级别的，算法的实现不唯一，虽然这种写法看上去匹配失败时指针i并没有回退，但是我们要明白，两个字符串对比时，对应的指针是一直在改变的，如果匹配失败，那么指向原串s的指针就要指向本次匹配的第二个位置继续开始新的一次匹配，这样的话时间开销会非常大。</p>
+<p>如果我们能够利用Brute-Force算法中的已知信息的话，那么我们是不是可以尝试优化呢，其实kmp算法巧妙地利用了最长前缀与后缀这一重要信息进行优化。</p>
+<p>kmp算法的核心其实就是next数组的计算，也就是所谓的《部分匹配表》，里面存着前缀与后缀的最大相等长度。那何为前缀和后缀，前缀就是除第i个字符 <code>p[i]</code> 外的前i个字符组成的字串集合 ，后缀就是除第一个字符 <code>p[1]</code> 外，1-i中的字符组成的字串集合。部分匹配表 <code>next[i]</code> 存的就是i的前缀与后缀的最大公共元素（即最大共有元素的长度）。有了部分匹配表的话，在匹配失败时我们就知道到底需要往前回退多少就能继续往下匹配，而不是回退到本次匹配的下一个位置，这样就大大减少了匹配的时间开销。</p>
+<p>那么我们来看看next数组是怎么计算的</p>
+<pre><code class="language-c++">
+// s[]是长文本，p[]是模式串，n是s的长度，m是p的长度，下标从1开始
+求模式串的Next数组：
+for(int i = 2 , j = 0; i &lt;= m; i ++)
+{
+    while(j &amp;&amp; p[i] != p[j + 1]) j = ne[j];
+    if(p[i] == p[j + 1]) j ++;
+    ne[i] = j;
+}
 
-3 1 2 4 5
+</code></pre>
+<p>首先我们先手写一下部分匹配表的计算过程<br>
+以&quot;ABCDABD&quot;为例：</p>
+<pre><code class="language-c++">
+　－　&quot;A&quot;的前缀和后缀都为空集，共有元素的长度为0；
+
+　－　&quot;AB&quot;的前缀为[A]，后缀为[B]，共有元素的长度为0；
+
+　－　&quot;ABC&quot;的前缀为[A, AB]，后缀为[BC, C]，共有元素的长度0；
+
+　－　&quot;ABCD&quot;的前缀为[A, AB, ABC]，后缀为[BCD, CD, D]，共有元素的长度为0；
+
+　－　&quot;ABCDA&quot;的前缀为[A, AB, ABC, ABCD]，后缀为[BCDA, CDA, DA, A]，共有元素为&quot;A&quot;，长度为1；
+
+　－　&quot;ABCDAB&quot;的前缀为[A, AB, ABC, ABCD, ABCDA]，后缀为[BCDAB, CDAB, DAB, AB, B]，共有元素为&quot;AB&quot;，长度为2；
+
+　－　&quot;ABCDABD&quot;的前缀为[A, AB, ABC, ABCD, ABCDA, ABCDAB]，后缀为[BCDABD, CDABD, DABD, ABD, BD, D]，共有元素的长度为0。
+
+</code></pre>
+<p>if语句用于计数 <code>next[i]</code> 的值。由上述可以知道，如果 <code>next[i - 1]</code> 不为零，那么下一个位置是否出现新的字符，都可能导致 <code>next[i]</code> 为0（因为后缀一定会带上该字符）。所以我们计算时需要用到前面的匹配值进行回退，也就是while语句，如果当前j不为0并且匹配不相等时，往前退到与 <code>next[j]</code> 的值相等的位置（j回退），如果此时j不为0并且回退后 <code>p[i]</code> 依然不等于 p[j + 1]，那么就继续回退，直到j为0或者<code>p[i] == p[j + 1]</code> 为止。</p>
+<p>简单来说就是p串自己与自己匹配，每次尝试 <code>i</code> 与 <code>j+1</code> 位的字符是否匹配，匹配的话 <code>ne[i]</code> 的值就是j的值（每次匹配时会检测j的值以及 <code>p[i]</code> 是否等于 <code>p[j + 1]</code> , 如果这两个条件同时满足，那么就需要回退，回退到当前j的 <code>next[j]</code> 上，如果next[j]不为0，那么是有可能存在前缀与后缀值相等，为0即第i位的<code>next[i] = 0</code>）。</p>
+<p>例如：&quot;ABADABAC&quot;</p>
+<pre><code class="language-c++">
+　－　&quot;A&quot;的前缀和后缀都为空集，共有元素的长度为0；
+
+　－　&quot;AB&quot;的前缀为[A]，后缀为[B]，共有元素的长度为0；
+
+　－　&quot;ABA&quot;的前缀为[A, AB]，后缀为[BA, A]，共有元素为&quot;A&quot;，共有元素的长度1；
+
+　－　&quot;ABAD&quot;的前缀为[A, AB, ABA]，后缀为[BAD, AD, D]，共有元素的长度为0；
+
+　－　&quot;ABADA&quot;的前缀为[A, AB, ABA, ABAD]，后缀为[BADA, ADA, DA, A]，共有元素为&quot;A&quot;，长度为1；
+
+　－　&quot;ABADAB&quot;的前缀为[A, AB, ABA, ABAD, ABADA]，后缀为[BADAB, ADAB, DAB, AB, B]，共有元素为&quot;AB&quot;，长度为2；
+
+　－　&quot;ABADABA&quot;的前缀为[A, AB, ABA, ABAD, ABADA, ABADAB]，后缀为[BADABA, ADABA, DABA, ABA, BA, A]，共有元素为&quot;ABA&quot;，共有元素的长度为3。
+
+  －  &quot;ABADABAC&quot;的前缀为[A, AB, ABA, ABAD, ABADA, ABADAB, ABADABA]，后缀为[BADABAC, ADABAC, DABAC, ABAC, BAC, AC, C]，共有元素的长度为0。
+
+</code></pre>
+<p>上面这个例子，匹配最后一个字符的next[i]时，因为出现的字符导致 <code>i</code> 与 <code>j + 1</code>不匹配（此时i为8，j为3，next[j]为3），此时需要回退，回退到哪个位置由next[j]决定，当j为3时，它们依然不相等，所以最后 <code>next[i] = j = 0</code>;</p>
+<p><strong>注意</strong></p>
+<blockquote>
+<p>为了方便数组下标从1开始</p>
+<blockquote>
+<p>前缀是指不包括第i的字符的连续字串集合，后缀是指不包括第1个的后i-1的连续字串集合（必需包括区间端点字符）</p>
+<blockquote>
+<p>回退位数 = 已匹配位数 - next[j]， 用本模板的话就是 <code>j = next[j]</code>这行代码</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>模式串和原串匹配过程与next数组计算类似</p>
+<p>既然我们知道了怎么计算next数组，那么就直接看代码吧</p>
+<pre><code class="language-c++">
+for(int i = 2 , j = 0; i &lt;= n; i ++)
+{
+    while(j &amp;&amp; s[i] != p[j + 1]) j = ne[j];//回退
+    if(s[i] == p[j + 1]) j ++;
+    //j == m 代表匹配成功
+    if(j == m)
+    {
+        j = ne[j];//同样也是回退，因为p[j + 1] == '\0' != s[]的任何一个字符,所以提前让它回退，避免一些边界问题
+        //匹配成功后的逻辑  
+    }
+}
+
+</code></pre>
+<p>接下来我们做一道模板题好好理解一下这万恶的kmp算法吧</p>
+<p><a href="https://www.acwing.com/problem/content/833/">AcWing 831.KMP字符串</a></p>
+<h4 id="题目描述">题目描述</h4>
+<p>给定一个模式串S，以及一个模板串P，所有字符串中只包含大小写英文字母以及阿拉伯数字。</p>
+<p>模板串P在模式串S中多次作为子串出现。</p>
+<p>求出模板串P在模式串S中所有出现的位置的起始下标。</p>
+<h4 id="输入格式">输入格式</h4>
+<p>第一行输入整数N，表示字符串P的长度。</p>
+<p>第二行输入字符串P。</p>
+<p>第三行输入整数M，表示字符串S的长度。</p>
+<p>第四行输入字符串S。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>共一行，输出所有出现位置的起始下标（下标从0开始计数），整数之间用空格隔开。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1≤N≤10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>M</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">1≤M≤10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>3
+aba
+5
+ababa
 </code></pre>
 <h4 id="输出样例">输出样例：</h4>
-<pre><code>1 2 3 4 5
+<pre><code>0 2
+
 </code></pre>
-<p>这时候我们直接套用模板既可</p>
-<pre><code class="language-c++">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
+<h4 id="c代码">C++代码</h4>
+<pre><code class="language-c++">
+#include &lt;cstdio&gt;
 
 using namespace std;
 
-const int N = 100010;
+const int N = 1e5 + 10 , M = 1e6 + 10;
 
-int n , a[N];
-
-void quick_sort(int q[] , int l , int r)
-{
-    if(l &gt;= r) return;
-
-    int x = q[l + r &gt;&gt; 1] , i = l - 1 , j = r + 1;
-    while(i &lt; j)
-    {
-        do ++ i; while(q[i] &lt; x);
-        do -- j; while(q[j] &gt; x);
-        if(i &lt; j) swap(q[i] , q[j]);
-    }
-    quick_sort(q , l , j) , quick_sort(q , j + 1 , r);
-}
+int n , m;
+char p[N] , s[M];
+int ne[N];
 
 int main()
 {
-    scanf(&quot;%d&quot; , &amp;n);
+    scanf(&quot;%d%s%d%s&quot; , &amp;n , p + 1 , &amp;m , s + 1);
 
-    for(int i = 0; i &lt; n; ++ i)
-        scanf(&quot;%d&quot; , &amp;a[i]);
+    for(int i = 2 , j = 0; i &lt;= n; i ++)
+    {
+        while(j &amp;&amp; p[i] != p[j + 1]) j = ne[j];
+        if(p[i] == p[j + 1]) j ++;
+        ne[i] = j;
+    }
 
-    quick_sort(a , 0 , n - 1);
-
-    for(int j = 0; j &lt; n; ++ j)
-        printf(&quot;%d &quot; , a[j]);
+    for(int i = 1 , j = 0; i &lt;= m; i ++)
+    {
+        while(j &amp;&amp; s[i] != p[j + 1]) j = ne[j];
+        if(s[i] == p[j + 1]) j ++;
+        if(j == n)
+        {
+            j = ne[j];
+            printf(&quot;%d &quot; , i - n);
+        }
+    }
 
     return 0;
 }
-
 </code></pre>
-<p>大家在学算法的时候，特别是学习一个类型题的模板时可以隔三岔五地去敲了两三遍，当然不用追求和模板一致，因为模板是死的，人是活的，只要知道哪里可以变哪里不可以变，灵活运用即可</p>
-<p>最后祝大家学习了算法之后，在刷题时能够游刃有余🤺🤺🤺</p>
+<h4 id="引用">引用</h4>
+<p>理解kmp的过程挺痛苦的，分享一下我看的那些文章吧</p>
+<blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a> <a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html">字符串匹配的KMP算法</a></p>
+<blockquote>
+<p><a href="https://mp.sohu.com/profile?xpt=cHBhZzE5ODdjMGExZmE0M0Bzb2h1LmNvbQ==&amp;_f=index_pagemp_1&amp;spm=smpc.content.author.2.1615611388360znuzOYt">书圈</a> <a href="https://www.sohu.com/a/336648975_453160">史上最简(详细)KMP算法讲解，看不懂算我输！</a></p>
+<blockquote>
+<p><a href="https://author.baidu.com/home?from=bjh_article&amp;app_id=1563894916825412">CSDN</a> <a href="https://baijiahao.baidu.com/s?id=1659735837100760934&amp;wfr=spider&amp;for=pc">漫画：什么是KMP算法？</a></p>
+<blockquote>
+<p><a href="https://www.zhihu.com/people/ruan-xing-zhi">阮行止</a> <a href="https://www.zhihu.com/question/21923021">如何更好地理解和掌握 KMP 算法?</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
                                 </div>
                             </div>
@@ -441,8 +498,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/quick_sort/" title="快速排序的介绍以及算法的模板分享">
-                                        https://solitudealma.github.io/post/quick_sort/
+                                    <a href="https://solitudealma.github.io/post/kmp/" title="对于kmp算法的一些理解以及模板的分享">
+                                        https://solitudealma.github.io/post/kmp/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -465,17 +522,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/merge_sort/">
-                                <i class="fa fa-chevron-left"></i>
-                                对归并排序的一些理解
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/recursion/">
-                                        简单介绍一下递归<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/two_dimensional_difference/">
+                                        二维差分<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -484,9 +534,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/quick_sort/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/quick_sort/&sharesource=qzone&title=快速排序的介绍以及算法的模板分享&pics=https://solitudealma.github.io/images/avatar.png?v=1615624814473&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/quick_sort/&sharesource=weibo&title=快速排序的介绍以及算法的模板分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1615624814473"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/kmp/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/kmp/&sharesource=qzone&title=对于kmp算法的一些理解以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1615624814473&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/kmp/&sharesource=weibo&title=对于kmp算法的一些理解以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1615624814473"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
