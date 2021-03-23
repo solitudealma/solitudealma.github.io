@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1616505872515">
+<meta name="UpdateTime" content="1616515532320">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1616505872515" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1616515532320" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1616505872515" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1616515532320" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -289,7 +289,7 @@
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1616505872515" srcset="https://solitudealma.github.io/images/avatar.png?v=1616505872515" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1616515532320" srcset="https://solitudealma.github.io/images/avatar.png?v=1616515532320" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-23</span>
                                         </div>
@@ -363,7 +363,7 @@ public:
 <hr>
 <h3 id="算法2">算法2</h3>
 <h5 id="low_bit-o1">(low_bit)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h5>
-<p>一个数与上它的负数可以得到它的二进制表示的最后一位1的位置，比如4的二进制表示是 <code>0000 0000 0000 0000 0000 0000 0000 1000</code> ，负数在计算机中以补码的形式存在，所以-4的二进制表示是 <code>1111 1111 1111 1111 1111 1111 1111 1000</code> ，然后进行与运算得到的是 <code>0000 0000 0000 0000 0000 0000 0000 1000</code> 也就是4，说明4的二进制表示的最后一位1是在4这个位置，所以如果我们用这个方法去计算一个数的二进制表示的1的个数，就可以用一个循环搞定，然后每次循环减去low_bit得到的数，只要这个数不为0就一直循环，比上一个算法快那么一点，因为它最多只循环32次，也就是每一位都有1</p>
+<p>一个数与上它的负数可以得到它的二进制表示的最后一位1所表示的数，比如8的二进制表示是 <code>0000 0000 0000 0000 0000 0000 0000 1000</code> ，负数在计算机中以补码的形式存在，所以-8的二进制表示是 <code>1111 1111 1111 1111 1111 1111 1111 1000</code> ，然后进行与运算得到的是 <code>0000 0000 0000 0000 0000 0000 0000 1000</code> 也就是8，说明8的二进制表示的最后一位1所表示的数是8，所以如果我们用这个方法去计算一个数的二进制表示的1的个数，就可以用一个循环搞定，然后每次循环减去low_bit得到的数，只要这个数不为0就一直循环，比上一个算法快那么一点，因为它最多只循环32次，也就是每一位都有1</p>
 <h4 id="时间复杂度-o1-2">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
 <p>最多循环32次</p>
 <h4 id="c-代码-2">C++ 代码</h4>
@@ -443,8 +443,8 @@ public:
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/LeetCode191/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/LeetCode191/&sharesource=qzone&title=题解：LeetCode 191.位1的个数&pics=https://solitudealma.github.io/images/avatar.png?v=1616505872515&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/LeetCode191/&sharesource=weibo&title=题解：LeetCode 191.位1的个数 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1616505872515"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/LeetCode191/&sharesource=qzone&title=题解：LeetCode 191.位1的个数&pics=https://solitudealma.github.io/images/avatar.png?v=1616515532320&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/LeetCode191/&sharesource=weibo&title=题解：LeetCode 191.位1的个数 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1616515532320"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
