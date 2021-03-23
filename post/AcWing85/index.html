@@ -265,18 +265,18 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                高精度除法的介绍以及模板的分享
+                                                题解：AcWing 85.不用加减乘除做加法
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/high_precision_division/" class="leancloud_visitors" data-flag-title="高精度除法的介绍以及模板的分享">
+                                                    <span id="/post/AcWing85/" class="leancloud_visitors" data-flag-title="题解：AcWing 85.不用加减乘除做加法">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,118 +285,74 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            3.3分</span>
+                                            2.5分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1616505872515" srcset="https://solitudealma.github.io/images/avatar.png?v=1616505872515" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-02-27</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-23</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="今天我们来介绍一下高精度除法">今天我们来介绍一下高精度除法</h4>
-<p>什么是高精度除法呢？</p>
-<p>我们来看看百度百科是怎么介绍高精度除法的，但是并没有搜到相关信息，逛了一圈发现也没人介绍，那我在这里就简单提一下。</p>
-<p>一般我们计算高精度除法分为高精度除高精度和高精度除低精度，在这里我们只讲第二种，计算的过程很多时候都是不能整除的，所以我们需要计算商与余数，计算过程也非常简单。</p>
-<p>首先我们回想一下在草稿纸上我们是如何计算的，第一步看最高位，最高位除以除数作为商的第一位，对除数求余作为下一步计算的数的一部分，每一次求余过后我们都让余数扩大10倍再加上下一位，如此往复计算即可。</p>
-<p>那么我们来看看模板是怎么写的</p>
-<pre><code class="language-c++">vector&lt;int&gt; div(vector&lt;int&gt; &amp;A , int b , int &amp;r)
-{
-    vector&lt;int&gt; C;
-    r = 0; //余数，这里用到了C++的引用，所以返回的时候可以不用返回余数
-    // 这里正着算，从最高位开始
-    for(int i = A.size() - 1; i &gt;= 0; i --)
-    {
-        r = r * 10 + A[i]; //计算当前被减数大小
-        C.push_back(r / b); //计算当前商的对应位数
-        r %= b; // 更新余数
-    }
-
-    reverse(C.begin() , C.end()); //这里将数组翻转过来，因为我们需要去掉前导零
-    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
-    return C;
-}
-
-</code></pre>
-<p>接下来试试模板题吧</p>
-<p><a href="https://www.acwing.com/problem/content/796/">AcWing 794.高精度除法</a></p>
-<h4 id="题目描述">题目描述</h4>
-<p>给定两个非负整数A，B，请你计算 A / B的商和余数。</p>
-<h4 id="输入格式">输入格式</h4>
-<p>共两行，第一行包含整数A，第二行包含整数B。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>共两行，第一行输出所求的商，第二行输出所求余数。</p>
-<h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>A</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mo>≤</mo><mn>100000</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">1≤A的长度≤100000,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">A</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>B</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">1≤B≤10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mi mathvariant="normal">一</mi><mi mathvariant="normal">定</mi><mi mathvariant="normal">不</mi><mi mathvariant="normal">为</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">B 一定不为0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord cjk_fallback">一</span><span class="mord cjk_fallback">定</span><span class="mord cjk_fallback">不</span><span class="mord cjk_fallback">为</span><span class="mord">0</span></span></span></span></p>
-<h4 id="输入样例">输入样例：</h4>
-<pre><code>7
-2
-</code></pre>
-<h4 id="输出样例">输出样例：</h4>
-<pre><code>3
-1
-</code></pre>
-<h4 id="c代码">C++代码</h4>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-vector&lt;int&gt; A;
-string a;
-int b;
-
-vector&lt;int&gt; div(vector&lt;int&gt; &amp;A , int b , int &amp;r)
-{
-    vector&lt;int&gt; C;
-    r = 0;
-    for(int i = A.size() - 1; i &gt;= 0; i --)
-    {
-        r = r * 10 + A[i];
-        C.push_back(r / b);
-        r %= b;
-    }
-
-    reverse(C.begin() , C.end());
-
-    while(C.size() &gt; 1 &amp;&amp; C.back() == 0) C.pop_back();
-
-    return C;
-}
-
-int main()
-{
-    cin &gt;&gt; a &gt;&gt; b;
-
-    // 因为高精度计算往往并不是单单一个，而是两三个一起，所以我们在这里统一存入方式，避免不必要的错误
-    for(int i = a.size() - 1; i &gt;= 0; i--) A.push_back(a[i] - '0');
-
-    int r;
-    auto C = div(A , b, r);
-
-    for(int i = C.size() - 1; i &gt;= 0; i --) cout &lt;&lt; C[i];
-    cout &lt;&lt; endl &lt;&lt; r;
-
-    return 0;
-}
-</code></pre>
+                                    <h4 id="题目链接">题目链接</h4>
+<p><a href="https://www.acwing.com/problem/content/81/">AcWing 85.不用加减乘除做加法</a></p>
 <h4 id="引用">引用</h4>
-<p>引用一些比较好的题解，比较详细有配图</p>
+<p>简单看了一下大佬们的题解，真的是操了，一堆骚操作，完全不懂2333，有用low_bit+异或+与实现的，也有和y总一样的异或+与。对比了大佬的题解发现一些细节方面的问题，等会待我一一道来。全加器感兴趣的小伙伴也可以去了解一下，慕明大佬写的题解用到了low_bit算法也可以观摩一下，加深对位运算的理解，对以后做题有意想不到的帮助哦</p>
 <blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/64616/">空_22</a> <a href="https://www.acwing.com/solution/content/32448/">AcWing 794. 基础_高精度_高精度除法java_python_c++</a></p>
+<p><a href="https://www.acwing.com/user/myspace/index/67126/">慕明</a> <a href="https://www.acwing.com/solution/content/41230/">AcWing 85. 不用加减乘除做加法 lowbit操作</a></p>
 <blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/28764/">zyz.</a> <a href="https://www.acwing.com/solution/content/35724/">AcWing 794. 高精度除法</a></p>
+<p><a href="https://www.acwing.com/user/myspace/index/66393/">咲张熊猫人</a> <a href="https://www.acwing.com/solution/content/41310/">AcWing 85. 不用加减乘除做加法</a></p>
 <blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/2675/">Bug_FreeOωO</a> <a href="https://www.acwing.com/solution/content/26192/">AcWing 794. 高精度除法</a></p>
+<p><a href="https://www.acwing.com/user/myspace/index/41934/">Elpsy_3</a> <a href="https://www.acwing.com/solution/content/25785/">AcWing 85. 不用加减乘除做加法 C++ 最简单易懂的思路</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/39383/">GRID</a> <a href="https://www.acwing.com/solution/content/18316/">AcWing 85. 不用加减乘除做加法 全加器，位运算，C++</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/20/">cornerCao</a> <a href="https://www.acwing.com/solution/content/763/">AcWing 85. 不用加减乘除做加法</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/32636/">贺谦</a> <a href="https://www.acwing.com/solution/content/13105/">AcWing 85. 不用加减乘除做加法</a></p>
 </blockquote>
 </blockquote>
 </blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="题目描述">题目描述</h4>
+<p>写一个函数，求两个整数之和，要求在函数体内不得使用 ＋、－、×、÷ 四则运算符号。</p>
+<h4 id="样例">样例</h4>
+<p>输入：num1 = 1 , num2 = 2</p>
+<p>输出：3</p>
+<hr>
+<h3 id="算法">算法</h3>
+<h5 id="位运算-o1">(位运算)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h5>
+<blockquote>
+<p>异或 相同为0，不同为1，所以可以起到相加的作用</p>
+<blockquote>
+<p>与 同为1为1，其余为0，起到了进位作用</p>
+</blockquote>
+</blockquote>
+<p>因为不能使用加减乘除运算，所以我们只能用位运算来实现，因为计算机中的任何运算最终都是位运算来完成的。</p>
+<p>那么应该怎么做呢？</p>
+<p>加法一共分成两步，首先按位相加，其次再处理进位。<br>
+聪明的小伙伴应该发现了异或运算的结果其实相当于两个二进制数相加，但没有进位，那么如果进位的话怎么办呢，那些大佬已经帮我们解决了这一问题，进位的话只要将这两个数相与然后右移1位就行了，不断迭代，直到进位为0，因为与的结果迟早是0，而右移的结果也迟早是0。这样我们就解决了进位与不进位的处理方式。只要进位为0，那么我们的计算就停止</p>
+<h4 id="时间复杂度-o1">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>最多计算32次，所以时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的</p>
+<h4 id="c-代码">C++ 代码</h4>
+<pre><code class="language-c++">class Solution {
+public:
+    int add(int num1, int num2){
+        while (num2) {
+            //可以把num2想象为进位，每次迭代时异或这两个数就是让他们直接相加不进位，然后再处理进位，接着再相加
+            int sum = num1 ^ num2;
+            int carry = (num1 &amp; num2) &lt;&lt; 1;
+            num1 = sum, num2 = carry;
+        }
+        return num1;
+    }
+};
+</code></pre>
 
                                 </div>
                             </div>
@@ -414,8 +370,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/high_precision_division/" title="高精度除法的介绍以及模板的分享">
-                                        https://solitudealma.github.io/post/high_precision_division/
+                                    <a href="https://solitudealma.github.io/post/AcWing85/" title="题解：AcWing 85.不用加减乘除做加法">
+                                        https://solitudealma.github.io/post/AcWing85/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -438,17 +394,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/one_dimensional_prefix_sum/">
-                                <i class="fa fa-chevron-left"></i>
-                                一维前缀和
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/high_precision_multiplication/">
-                                        高精度乘法的介绍以及模板的分享<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LeetCode191/">
+                                        题解：LeetCode 191.位1的个数<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -457,9 +406,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/high_precision_division/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/high_precision_division/&sharesource=qzone&title=高精度除法的介绍以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1616505872515&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/high_precision_division/&sharesource=weibo&title=高精度除法的介绍以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1616505872515"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing85/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing85/&sharesource=qzone&title=题解：AcWing 85.不用加减乘除做加法&pics=https://solitudealma.github.io/images/avatar.png?v=1616505872515&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing85/&sharesource=weibo&title=题解：AcWing 85.不用加减乘除做加法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1616505872515"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             

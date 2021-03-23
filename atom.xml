@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-03-23T11:01:47.832Z</updated>
+    <updated>2021-03-23T13:24:43.601Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[题解：AcWing 85.不用加减乘除做加法]]></title>
+        <id>https://solitudealma.github.io/post/AcWing85/</id>
+        <link href="https://solitudealma.github.io/post/AcWing85/">
+        </link>
+        <updated>2021-03-23T13:23:46.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解：LeetCode 191.位1的个数]]></title>
         <id>https://solitudealma.github.io/post/LeetCode191/</id>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/high_precision_multiplication/">
         </link>
         <updated>2021-02-27T05:35:37.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解：AcWing 792.高精度减法]]></title>
-        <id>https://solitudealma.github.io/post/AcWing792/</id>
-        <link href="https://solitudealma.github.io/post/AcWing792/">
-        </link>
-        <updated>2021-02-26T13:38:10.000Z</updated>
     </entry>
 </feed>
