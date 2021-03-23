@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-03-22T13:20:15.788Z</updated>
+    <updated>2021-03-23T06:11:07.956Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -11,7 +11,14 @@
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
     <entry>
-        <title type="html"><![CDATA[题解AcWing1236.递增三元组]]></title>
+        <title type="html"><![CDATA[题解：LeetCode 191.位1的个数]]></title>
+        <id>https://solitudealma.github.io/post/LeetCode191/</id>
+        <link href="https://solitudealma.github.io/post/LeetCode191/">
+        </link>
+        <updated>2021-03-23T06:09:07.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解：AcWing 1236.递增三元组]]></title>
         <id>https://solitudealma.github.io/post/AcWing1236/</id>
         <link href="https://solitudealma.github.io/post/AcWing1236/">
         </link>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/AcWing792/">
         </link>
         <updated>2021-02-26T13:38:10.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[高精度减法的介绍以及模板的分享]]></title>
-        <id>https://solitudealma.github.io/post/high_precision_subtraction/</id>
-        <link href="https://solitudealma.github.io/post/high_precision_subtraction/">
-        </link>
-        <updated>2021-02-26T13:36:02.000Z</updated>
     </entry>
 </feed>
