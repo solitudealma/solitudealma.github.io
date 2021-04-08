@@ -257,69 +257,245 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                并查集的介绍以及模板的分享
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            
-                                                <h3>
-                                                    2021
-                                                </h3>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm/'">Algorithm</span>
                                                 
+                                                    </span>
+                                                    <span class="post-view">
                                                     
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/union_find_disjoint_sets/" class="leancloud_visitors" data-flag-title="并查集的介绍以及模板的分享">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/merge_sort/">
-                                                                对归并排序的一些理解
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-17 </span>
-                                                        </article>
-                                                        
-                                                            
                                                     
+                                                            </span>&nbsp;•&nbsp;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/quick_sort/">
-                                                                快速排序的介绍以及算法的模板分享
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+                                                            <span class="post-readtime">阅读时间:
+                                            4.3分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1617886027552" srcset="https://solitudealma.github.io/images/avatar.png?v=1617886027552" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-08</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h4 id="今天我们来介绍一下并查集">今天我们来介绍一下并查集</h4>
+<p>那么什么是并查集呢</p>
+<p>我们来看看<a href="https://baike.baidu.com/item/%E5%B9%B6%E6%9F%A5%E9%9B%86/9388442?fr=aladdin">百度百科</a>是怎么介绍的，emmm，好像不太能理解。其实就是一个个不相交的集合之间的合并与查询等相关问题的解决方法，这些集合可以想象成一颗颗树。</p>
+<p>初始的时候集合里只有一个元素，通过不断地合并形成一个拥有很多元素的集合，比如一个家族中有非常多成员，但是和你有血缘关系的人也就那些，他们之间可以构成一个集合也就是一颗树，树的根节点就是这群人中辈分最大的那一个人，然后一直往下排。如果我们想要判断两个人是否是亲戚关系，那么我们就要判断他们的根节点是不是一样的，也就是查询操作。有时候我们需要合并两个集合，如果只是简单的寻找一个树的根节点，然后让另一颗树变成它的子树的话，在数据非常大的时候效率会非常低，然后现在有两个方法可以解决这一个问题，分别是路径压缩和按秩合并。这里我们只介绍路径压缩方法</p>
+<p>首先我们来看看查找函数怎么实现</p>
+<p>先将树的根节点初始化</p>
+<pre><code class="language-c++">// p数组存每棵树的根节点
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/recursion/">
-                                                                简单介绍一下递归
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-12 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                    <a href="https://solitudealma.github.io/tag/algorithm" class="prev"><i class="icon-arrow-ios-back-outline"></i> Prev</a>
-                                                                    
-                                                                        
-                                                                                
-                                    </div>
+int p[MAXN];
+void init(int n)
+{
+    for (int i = 1; i &lt;= n; ++i)
+        p[i] = i;
+}
+
+</code></pre>
+<p>接着我们写一下查询函数</p>
+<pre><code class="language-c++">
+//正常的查询
+int find(int x)
+{
+    if(fa[x] == x) return x;
+    else return find(fa[x]);
+}
+
+//结合路径压缩的查询
+// 返回x的祖宗节点
+int find(int x)
+{
+    if (p[x] != x) p[x] = find(p[x]);
+    return p[x];
+}
+
+</code></pre>
+<p>最后就是合并了(路径压缩)</p>
+<pre><code class="language-c++">
+//因为查询的时候就已经实现了路径压缩，所以这里就直接查询并合并即可
+void merge(int i, int j)
+{
+    p[find(i)] = find(j);
+}
+
+</code></pre>
+<p>现在我们来讲一下路径压缩是怎么实现的</p>
+<p>一般来说我们都是一层一层的往上找，然后找到根节点，那么怎么样才能快速找到根节点呢。其实只要查询的时候当前节点不是根节点，我们就让其指向根节点，这样每一条超根节点的路径上的点都直接指向了根节点，就不需要层层查询了，达到了路径压缩的效果</p>
+<p>现在我们来做一道模板题吧</p>
+<p><a href="https://www.acwing.com/problem/content/description/838/">AcWing 836.合并集合</a></p>
+<h4 id="题目描述">题目描述</h4>
+<p>一共有 n 个数，编号是 1∼n，最开始每个数各自在一个集合中。</p>
+<p>现在要进行 m 个操作，操作共有两种：</p>
+<p>M a b，将编号为 a 和 b 的两个数所在的集合合并，如果两个数已经在同一个集合中，则忽略这个操作；<br>
+Q a b，询问编号为 a 和 b 的两个数是否在同一个集合中；<br>
+输入格式<br>
+第一行输入整数 n 和 m。</p>
+<p>接下来 m 行，每行包含一个操作指令，指令为 M a b 或 Q a b 中的一种。</p>
+<p>输出格式<br>
+对于每个询问指令 Q a b，都要输出一个结果，如果 a 和 b 在同一集合内，则输出 Yes，否则输出 No。</p>
+<p>每个结果占一行。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">1≤n,m≤105</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">5</span></span></span></span></p>
+<h4 id="输入样例">输入样例：</h4>
+<pre><code>4 5
+M 1 2
+M 3 4
+Q 1 2
+Q 1 3
+Q 3 4
+</code></pre>
+<h4 id="输出样例">输出样例：</h4>
+<pre><code>Yes
+No
+Yes
+</code></pre>
+<h4 id="c">C++</h4>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+
+using namespace std;
+
+const int N = 100010;
+
+int n , m;
+int p[N];
+
+int find(int x)
+{
+    if(p[x] != x) p[x] = find(p[x]);
+    return p[x];
+}
+
+int main ()
+{
+    cin &gt;&gt; n &gt;&gt; m;
+    
+    for (int i = 1; i &lt;= n; i ++ ) p[i] = i;
+    
+    while (m -- )
+    {
+        char s[2];
+        int a , b;
+        scanf(&quot;%s%d%d&quot; , s , &amp;a , &amp;b);
+        
+        if(s[0] == 'M') p[find(a)] = find(b);            
+        else
+        {
+           if(find(a) == find(b)) puts(&quot;Yes&quot;);
+           else puts(&quot;No&quot;);
+        }
+    }
+    
+    return 0;
+}
+</code></pre>
+<h4 id="引用">引用</h4>
+<p>简单百度了一下，发现其他大佬介绍的很他妈详细，所以在这里提供一下链接避免小伙伴走错房间，hhh</p>
+<blockquote>
+<p><a href="https://www.zhihu.com/people/one-seventh">Pecco</a> <a href="https://zhuanlan.zhihu.com/p/93647900/">算法学习笔记(1) : 并查集</a></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/lyl194458">lyl194458</a> <a href="https://blog.csdn.net/lyl194458/article/details/93358678">并查集</a></p>
+<blockquote>
+<p><a href="https://segmentfault.com/u/brotherdong">Ocean</a> <a href="https://segmentfault.com/a/1190000004023326">傻子都能看懂的并查集入门</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+
                                 </div>
                             </div>
-                            <div class="post-footer">
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                    <span class="pagination" onclick="javascript:top.location='https://solitudealma.github.io/tag/algorithm'"><a class="prev" rel="prev"  href="https://solitudealma.github.io/tag/algorithm" class="prev"><i class="icon-arrow-ios-back-outline"></i> &#x4E0A;&#x4E00;&#x9875;</a></span>
-                                    
-                                        
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/union_find_disjoint_sets/" title="并查集的介绍以及模板的分享">
+                                        https://solitudealma.github.io/post/union_find_disjoint_sets/
+                                    </a><br> 协议: MIT License
                             </div>
-                        </article>
-                    </li>
-                </ul>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/AcWing85/">
+                                        题解：AcWing 85.不用加减乘除做加法<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/union_find_disjoint_sets/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/union_find_disjoint_sets/&sharesource=qzone&title=并查集的介绍以及模板的分享&pics=https://solitudealma.github.io/images/avatar.png?v=1617886027552&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/union_find_disjoint_sets/&sharesource=weibo&title=并查集的介绍以及模板的分享 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1617886027552"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
             </div>
             <div id="sidebar">
     <ul>
@@ -540,6 +716,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -618,5 +795,18 @@
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>
