@@ -265,7 +265,7 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解：AcWing 85.不用加减乘除做加法
+                                                题解洛谷P1255.数楼梯
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
@@ -276,7 +276,7 @@
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/AcWing85/" class="leancloud_visitors" data-flag-title="题解：AcWing 85.不用加减乘除做加法">
+                                                    <span id="/post/LuoGuP1255/" class="leancloud_visitors" data-flag-title="题解洛谷P1255.数楼梯">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,73 +285,93 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            2.5分</span>
+                                            1.9分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1618045972295" srcset="https://solitudealma.github.io/images/avatar.png?v=1618045972295" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-23</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-10</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="题目链接">题目链接</h4>
-<p><a href="https://www.acwing.com/problem/content/81/">AcWing 85.不用加减乘除做加法</a></p>
-<h4 id="引用">引用</h4>
-<p>简单看了一下大佬们的题解，真的是操了，一堆骚操作，完全不懂2333，有用low_bit+异或+与实现的，也有和y总一样的异或+与。对比了大佬的题解发现一些细节方面的问题，等会待我一一道来。全加器感兴趣的小伙伴也可以去了解一下，慕明大佬写的题解用到了low_bit算法也可以观摩一下，加深对位运算的理解，对以后做题有意想不到的帮助哦</p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/67126/">慕明</a> <a href="https://www.acwing.com/solution/content/41230/">AcWing 85. 不用加减乘除做加法 lowbit操作</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/66393/">咲张熊猫人</a> <a href="https://www.acwing.com/solution/content/41310/">AcWing 85. 不用加减乘除做加法</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/41934/">Elpsy_3</a> <a href="https://www.acwing.com/solution/content/25785/">AcWing 85. 不用加减乘除做加法 C++ 最简单易懂的思路</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/39383/">GRID</a> <a href="https://www.acwing.com/solution/content/18316/">AcWing 85. 不用加减乘除做加法 全加器，位运算，C++</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/20/">cornerCao</a> <a href="https://www.acwing.com/solution/content/763/">AcWing 85. 不用加减乘除做加法</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/32636/">贺谦</a> <a href="https://www.acwing.com/solution/content/13105/">AcWing 85. 不用加减乘除做加法</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h4 id="题目描述">题目描述</h4>
-<p>写一个函数，求两个整数之和，要求在函数体内不得使用 ＋、－、×、÷ 四则运算符号。</p>
+                                    <h4 id="题目描述">题目描述</h4>
+<p>楼梯有N阶，上楼可以一步上一阶，也可以一步上二阶。</p>
+<p>编一个程序，计算共有多少种不同的走法。</p>
 <h4 id="样例">样例</h4>
-<p>输入：num1 = 1 , num2 = 2</p>
-<p>输出：3</p>
+<h4 id="输入格式">输入格式</h4>
+<p>一个数字，楼梯数。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>输出走的方式总数。</p>
+<h4 id="输入输出样例">输入输出样例</h4>
+<h5 id="输入-1复制">输入 #1复制</h5>
+<pre><code>4
+</code></pre>
+<h5 id="输出-1复制">输出 #1复制</h5>
+<pre><code>5
+</code></pre>
+<h4 id="说明提示">说明/提示</h4>
+<p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">60\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">N \leq 50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span>；<br>
+对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≤</mo><mn>5000</mn></mrow><annotation encoding="application/x-tex">N \leq 5000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>。</p>
 <hr>
-<h3 id="算法">算法</h3>
-<h5 id="位运算-o1">(位运算)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h5>
-<blockquote>
-<p>异或 相同为0，不同为1，所以可以起到相加的作用</p>
-<blockquote>
-<p>与 同为1为1，其余为0，起到了进位作用</p>
-</blockquote>
-</blockquote>
-<p>因为不能使用加减乘除运算，所以我们只能用位运算来实现，因为计算机中的任何运算最终都是位运算来完成的。</p>
-<p>那么应该怎么做呢？</p>
-<p>加法一共分成两步，首先按位相加，其次再处理进位。<br>
-聪明的小伙伴应该发现了异或运算的结果其实相当于两个二进制数相加，但没有进位，那么如果进位的话怎么办呢，那些大佬已经帮我们解决了这一问题，进位的话只要将这两个数相与然后右移1位就行了，不断迭代，直到进位为0，因为与的结果迟早是0，而右移的结果也迟早是0。这样我们就解决了进位与不进位的处理方式。只要进位为0，那么我们的计算就停止</p>
-<h4 id="时间复杂度-o1">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
-<p>最多计算32次，所以时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的</p>
+<h3 id="算法1">算法1</h3>
+<h5 id="递推-高精度">(递推 + 高精度)</h5>
+<p>用unsigned long long 很明显已经存不下了，所以我们应该用高精度来解决。妈的，头脑有点混乱，debug了好久，后来写完了发现又wa了，结果是没考虑0，而且我的特判和else一起输出了2333。总的来说这题挺简单的。高精度就完了。</p>
+<h4 id="时间复杂度">时间复杂度</h4>
+<p>不会算，也不想算</p>
 <h4 id="c-代码">C++ 代码</h4>
-<pre><code class="language-c++">class Solution {
-public:
-    int add(int num1, int num2){
-        while (num2) {
-            //可以把num2想象为进位，每次迭代时异或这两个数就是让他们直接相加不进位，然后再处理进位，接着再相加
-            int sum = num1 ^ num2;
-            int carry = (num1 &amp; num2) &lt;&lt; 1;
-            num1 = sum, num2 = carry;
-        }
-        return num1;
+<pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+int n;
+vector&lt;int&gt; A(1 , 1) , B(1 , 2) , C;
+
+vector&lt;int&gt; add(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
+{
+    if (A.size() &lt; B.size()) return add(B, A);
+    
+    vector&lt;int&gt; C;
+    int t = 0;
+    
+    for (int i = 0; i &lt; A.size(); i ++ )
+    {
+        t += A[i];
+        if (i &lt; B.size()) t += B[i];
+        C.push_back(t % 10);
+        t /= 10;
     }
-};
+
+    if (t) C.push_back(t);
+    
+    return C;
+}
+
+int main()
+{
+    cin &gt;&gt; n;
+    
+    if(n == 0) cout &lt;&lt; 0;
+    else if(n == 1) cout &lt;&lt; 1;
+    else if( n == 2) cout &lt;&lt; 2;
+    else
+    {
+        for (int i = 3; i &lt;= n; i ++ )
+        {
+            C = add(A , B);
+            A.swap(B);//交换容器元素，也可以试试copy这个函数
+            B.swap(C);
+        }
+        
+        for(int i = B.size() - 1; i &gt;= 0 ; i --) cout &lt;&lt; B[i];
+    }
+
+    return 0;
+}
 </code></pre>
 
                                 </div>
@@ -370,8 +390,8 @@ public:
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/AcWing85/" title="题解：AcWing 85.不用加减乘除做加法">
-                                        https://solitudealma.github.io/post/AcWing85/
+                                    <a href="https://solitudealma.github.io/post/LuoGuP1255/" title="题解洛谷P1255.数楼梯">
+                                        https://solitudealma.github.io/post/LuoGuP1255/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -394,17 +414,10 @@ public:
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/union_find_disjoint_sets/">
-                                <i class="fa fa-chevron-left"></i>
-                                并查集的介绍以及模板的分享
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LeetCode191/">
-                                        题解：LeetCode 191.位1的个数<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LanQiao11E/">
+                                        题解第十一届蓝桥杯E.七段码<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -413,9 +426,9 @@ public:
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing85/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing85/&sharesource=qzone&title=题解：AcWing 85.不用加减乘除做加法&pics=https://solitudealma.github.io/images/avatar.png?v=1618045972295&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing85/&sharesource=weibo&title=题解：AcWing 85.不用加减乘除做加法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1618045972295"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/LuoGuP1255/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/LuoGuP1255/&sharesource=qzone&title=题解洛谷P1255.数楼梯&pics=https://solitudealma.github.io/images/avatar.png?v=1618045972295&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/LuoGuP1255/&sharesource=weibo&title=题解洛谷P1255.数楼梯 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1618045972295"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             

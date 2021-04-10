@@ -257,184 +257,49 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <div class="lite-item">
-                    <article class="post post-type real-post">
-                        <header class="post-type-header">
-                            
-                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
-                                    
-                                        <div class="thumbnail-shadow">
-                                            <h1 class="post-title">
-                                                题解：AcWing 85.不用加减乘除做加法
-                                            </h1>
-                                            <div class="post-info">
-                                                <span class="post-category"><i class="Card Card-novel"></i>
+                <ul class="posts-list">
+                    <li class="lite-item">
+                        <article class="post post-type">
+                            <div class="post-main post-type-main">
+                                <div class="post-content">
+                                    <div class="post-content-real">
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
+                                            
+                                                <h3>
+                                                    2021
+                                                </h3>
                                                 
-                                                    </span>
-                                                    <span class="post-view">
                                                     
-                                                        &nbsp;•&nbsp;
-                                                    <span id="/post/AcWing85/" class="leancloud_visitors" data-flag-title="题解：AcWing 85.不用加减乘除做加法">
-                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
-                                                <i class="leancloud-visitors-count">0</i>
-                                            </span>
 
-                                                    
-                                                            </span>&nbsp;•&nbsp;
-
-                                                            <span class="post-readtime">阅读时间:
-                                            2.5分</span>
-                                                            <span class="post-edit"></span></div>
-                                        </div>
-                                        <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1618045972295" srcset="https://solitudealma.github.io/images/avatar.png?v=1618045972295" class="avatar avatar-100 photo" width="100" height="100">
-                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-23</span>
-                                        </div>
-                        </header>
-                        <div class="post-main post-type-main">
-                            <div class="post-content">
-                                <div class="post-content-real">
-                                    <h4 id="题目链接">题目链接</h4>
-<p><a href="https://www.acwing.com/problem/content/81/">AcWing 85.不用加减乘除做加法</a></p>
-<h4 id="引用">引用</h4>
-<p>简单看了一下大佬们的题解，真的是操了，一堆骚操作，完全不懂2333，有用low_bit+异或+与实现的，也有和y总一样的异或+与。对比了大佬的题解发现一些细节方面的问题，等会待我一一道来。全加器感兴趣的小伙伴也可以去了解一下，慕明大佬写的题解用到了low_bit算法也可以观摩一下，加深对位运算的理解，对以后做题有意想不到的帮助哦</p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/67126/">慕明</a> <a href="https://www.acwing.com/solution/content/41230/">AcWing 85. 不用加减乘除做加法 lowbit操作</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/66393/">咲张熊猫人</a> <a href="https://www.acwing.com/solution/content/41310/">AcWing 85. 不用加减乘除做加法</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/41934/">Elpsy_3</a> <a href="https://www.acwing.com/solution/content/25785/">AcWing 85. 不用加减乘除做加法 C++ 最简单易懂的思路</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/39383/">GRID</a> <a href="https://www.acwing.com/solution/content/18316/">AcWing 85. 不用加减乘除做加法 全加器，位运算，C++</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/20/">cornerCao</a> <a href="https://www.acwing.com/solution/content/763/">AcWing 85. 不用加减乘除做加法</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/32636/">贺谦</a> <a href="https://www.acwing.com/solution/content/13105/">AcWing 85. 不用加减乘除做加法</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h4 id="题目描述">题目描述</h4>
-<p>写一个函数，求两个整数之和，要求在函数体内不得使用 ＋、－、×、÷ 四则运算符号。</p>
-<h4 id="样例">样例</h4>
-<p>输入：num1 = 1 , num2 = 2</p>
-<p>输出：3</p>
-<hr>
-<h3 id="算法">算法</h3>
-<h5 id="位运算-o1">(位运算)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h5>
-<blockquote>
-<p>异或 相同为0，不同为1，所以可以起到相加的作用</p>
-<blockquote>
-<p>与 同为1为1，其余为0，起到了进位作用</p>
-</blockquote>
-</blockquote>
-<p>因为不能使用加减乘除运算，所以我们只能用位运算来实现，因为计算机中的任何运算最终都是位运算来完成的。</p>
-<p>那么应该怎么做呢？</p>
-<p>加法一共分成两步，首先按位相加，其次再处理进位。<br>
-聪明的小伙伴应该发现了异或运算的结果其实相当于两个二进制数相加，但没有进位，那么如果进位的话怎么办呢，那些大佬已经帮我们解决了这一问题，进位的话只要将这两个数相与然后右移1位就行了，不断迭代，直到进位为0，因为与的结果迟早是0，而右移的结果也迟早是0。这样我们就解决了进位与不进位的处理方式。只要进位为0，那么我们的计算就停止</p>
-<h4 id="时间复杂度-o1">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
-<p>最多计算32次，所以时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的</p>
-<h4 id="c-代码">C++ 代码</h4>
-<pre><code class="language-c++">class Solution {
-public:
-    int add(int num1, int num2){
-        while (num2) {
-            //可以把num2想象为进位，每次迭代时异或这两个数就是让他们直接相加不进位，然后再处理进位，接着再相加
-            int sum = num1 ^ num2;
-            int carry = (num1 &amp; num2) &lt;&lt; 1;
-            num1 = sum, num2 = carry;
-        }
-        return num1;
-    }
-};
-</code></pre>
-
-                                </div>
-                            </div>
-                            
-                                <div class="reward ">
-                                    <div class="reward-button ">&yen;
-                                        <span class="reward-code "> 
-                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
-                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                                        <article class="archive-item">
+                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing786/">
+                                                                题解：AcWing 786.第K个数
+                                                            </a>
+                                                            <span class="archive-item-date">2021-02-18 </span>
+                                                        </article>
+                                                        
+                                                            
+                                                                
+                                    </div>
+                                    <div class="pagination-container">
+                                        
+                                                                
+                                                                    <a href="https://solitudealma.github.io/tag/answer" class="prev"><i class="icon-arrow-ios-back-outline"></i> Prev</a>
+                                                                    
+                                                                        
+                                                                                
                                     </div>
                                 </div>
-                                
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-copyright">
-                                作者:
-                                SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/AcWing85/" title="题解：AcWing 85.不用加减乘除做加法">
-                                        https://solitudealma.github.io/post/AcWing85/
-                                    </a><br> 协议: MIT License
                             </div>
-                        </div>
-                    </article>
-                </div>
-                <style>
-                    .prev:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                    
-                    .next:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                </style>
-                <div class="lite-item nearby-article">
-                    
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/union_find_disjoint_sets/">
-                                <i class="fa fa-chevron-left"></i>
-                                并查集的介绍以及模板的分享
-                            </a>
-                        </div>
-                        
-                            
-                                <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LeetCode191/">
-                                        题解：LeetCode 191.位1的个数<i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
+                            <div class="post-footer">
                                 
-                </div>
-                <!--Share-->
-                <span style="margin-right:15px">
-    <i class="post-share"></i>
-    <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing85/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing85/&sharesource=qzone&title=题解：AcWing 85.不用加减乘除做加法&pics=https://solitudealma.github.io/images/avatar.png?v=1618045972295&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing85/&sharesource=weibo&title=题解：AcWing 85.不用加减乘除做加法 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1618045972295"><i class="fa fa-weibo "></i></a>
-                </span>
-                
-                                            
-                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<div id="vlaine-comment"></div>
-<script type="application/javascript">
-    new Valine({
-        el: '#vlaine-comment',
-        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
-        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
-        pageSize: 10,
-        avatar: 'mp',
-        placeholder: '来都来了，不妨评论一下',
-        visitor: true,
-        highlight: true,
-        recordIP: true,
-    })
-</script>
-                                                    
+                                    <span class="pagination" onclick="javascript:top.location='https://solitudealma.github.io/tag/answer'"><a class="prev" rel="prev"  href="https://solitudealma.github.io/tag/answer" class="prev"><i class="icon-arrow-ios-back-outline"></i> &#x4E0A;&#x4E00;&#x9875;</a></span>
+                                    
+                                        
+                            </div>
+                        </article>
+                    </li>
+                </ul>
             </div>
             <div id="sidebar">
     <ul>
@@ -652,7 +517,6 @@ public:
     </ul>
 </div>
         </div>
-
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -731,18 +595,5 @@ public:
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
-    <script>
-        renderMathInElement(document.body, {
-            delimiters: [{
-                left: "$$",
-                right: "$$",
-                display: true
-            }, {
-                left: "$",
-                right: "$",
-                display: false
-            }]
-        });
-    </script>
 
 </html>
