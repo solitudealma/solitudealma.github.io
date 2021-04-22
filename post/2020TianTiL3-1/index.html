@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1619086521270">
+<meta name="UpdateTime" content="1619086661334">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1619086521270" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1619086661334" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1619086521270" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1619086661334" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -285,11 +285,11 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            5.4分</span>
+                                            5.8分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619086521270" srcset="https://solitudealma.github.io/images/avatar.png?v=1619086521270" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619086661334" srcset="https://solitudealma.github.io/images/avatar.png?v=1619086661334" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-20</span>
                                         </div>
@@ -314,6 +314,36 @@
 <h4 id="输出格式">输出格式</h4>
 <p>在一行中首先输出从 <code>A</code> 到 <code>B</code> 有多少种不同的推理路径，然后输出 <code>Yes</code> 如果推理是“逻辑自洽”的，或 <code>No</code> 如果不是。<br>
 题目保证输出数据不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="输入样例-1">输入样例 1：</h4>
+<pre><code>7 8
+7 6
+7 4
+6 5
+4 1
+5 2
+5 3
+2 1
+3 1
+7 1
+</code></pre>
+<h4 id="输出样例-1">输出样例 1：</h4>
+<pre><code>3 Yes
+</code></pre>
+<h4 id="输入样例-2">输入样例 2：</h4>
+<pre><code>7 8
+7 6
+7 4
+6 5
+4 1
+5 2
+5 3
+6 1
+3 1
+7 1
+</code></pre>
+<h4 id="输出样例-2">输出样例 2：</h4>
+<pre><code>3 No
+</code></pre>
 <hr>
 <h3 id="算法">算法</h3>
 <h4 id="记忆化搜索-on2">(记忆化搜索)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></h4>
@@ -454,8 +484,8 @@ int main()
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/2020TianTiL3-1/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/2020TianTiL3-1/&sharesource=qzone&title=题解2020届天梯赛总决赛L3-1那就别担心了&pics=https://solitudealma.github.io/images/avatar.png?v=1619086521270&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/2020TianTiL3-1/&sharesource=weibo&title=题解2020届天梯赛总决赛L3-1那就别担心了 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619086521270"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/2020TianTiL3-1/&sharesource=qzone&title=题解2020届天梯赛总决赛L3-1那就别担心了&pics=https://solitudealma.github.io/images/avatar.png?v=1619086661334&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/2020TianTiL3-1/&sharesource=weibo&title=题解2020届天梯赛总决赛L3-1那就别担心了 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619086661334"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
