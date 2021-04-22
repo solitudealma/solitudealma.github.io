@@ -257,139 +257,293 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list">
-                    <li class="lite-item">
-                        <article class="post post-type">
-                            <div class="post-main post-type-main">
-                                <div class="post-content">
-                                    <div class="post-content-real">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                题解2020届天梯赛总决赛L2-4网红点打卡攻略
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            
-                                                <h3>
-                                                    2021
-                                                </h3>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
                                                 
+                                                    </span>
+                                                    <span class="post-view">
                                                     
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/2020TianTiL2-4/" class="leancloud_visitors" data-flag-title="题解2020届天梯赛总决赛L2-4网红点打卡攻略">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/2020TianTiL2-4/">
-                                                                题解2020届天梯赛总决赛L2-4网红点打卡攻略
-                                                            </a>
-                                                            <span class="archive-item-date">2021-04-22 </span>
-                                                        </article>
-                                                        
-                                                            
                                                     
+                                                            </span>&nbsp;•&nbsp;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/2020TianTiL3-1/">
-                                                                题解2020届天梯赛总决赛L3-1那就别担心了
-                                                            </a>
-                                                            <span class="archive-item-date">2021-04-20 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+                                                            <span class="post-readtime">阅读时间:
+                                            6.8分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619086521270" srcset="https://solitudealma.github.io/images/avatar.png?v=1619086521270" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-22</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h2 id="引用">引用</h2>
+<p>这题并不是一定要dfs，也可以直接用邻接矩阵判断，但是因为想熟悉一下dfs，所以采用了邻接表这个方法，邻接矩阵的可以参考一下这位大佬的代码</p>
+<p><a href="https://blog.csdn.net/wenya13">东篱下の悠然</a> <a href="https://blog.csdn.net/wenya13/article/details/110351568">2020年11月28日天梯赛GPLT总决赛（全部题目 + 189分代码答案）</a></p>
+<h3 id="题目描述">题目描述</h3>
+<p>一个旅游景点，如果被带火了的话，就被称为“网红点”。大家来网红点游玩，俗称“打卡”。在各个网红点打卡的快（省）乐（钱）方法称为“攻略”。你的任务就是从一大堆攻略中，找出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略。</p>
+<h4 id="样例">样例</h4>
+<h4 id="输入格式">输入格式</h4>
+<p>首先第一行给出两个正整数：网红点的个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mn>1</mn><mo>&lt;</mo><mi>N</mi><mo>≤</mo><mn>200</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N(1&lt;N≤200)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 和网红点之间通路的条数 $ M $ 。随后 $ M $ 行，每行给出有通路的两个网红点、以及这条路上的旅行花费（为正整数），格式为“网红点1 网红点2 费用”，其中网红点从 $ 1 $ 到 $ N $ 编号；同时也给出你家到某些网红点的花费，格式相同，其中你家的编号固定为 <code>0</code> 。</p>
+<p>再下一行给出一个正整数 K，是待检验的攻略的数量。随后 K 行，每行给出一条待检攻略，格式为： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msub><mi>V</mi><mn>1</mn></msub><msub><mi>V</mi><mn>2</mn></msub><mo>⋯</mo><msub><mi>V</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">n V_1V_2 ⋯ V_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><br>
+​​<br>
+其中 $ n(≤200) $ 是攻略中的网红点数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">V_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是路径上的网红点编号。这里假设你从家里出发，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi mathvariant="normal">​</mi></msub><mn>1</mn></mrow><annotation encoding="application/x-tex">V_​1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">​</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">1</span></span></span></span> 开始打卡，最后从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi mathvariant="normal">​</mi></msub><mi>n</mi></mrow><annotation encoding="application/x-tex">V_​n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">​</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span></span></span></span>回家。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>在第一行输出满足要求的攻略的个数。</p>
+<p>在第二行中，首先输出那个能在每个网红点打卡仅一次、并且路上花费最少的攻略的序号（从 1 开始），然后输出这个攻略的总路费，其间以一个空格分隔。如果这样的攻略不唯一，则输出序号最小的那个。</p>
+<p>题目保证至少存在一个有效攻略，并且总路费不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 。</p>
+<h4 id="输入样例">输入样例</h4>
+<pre><code>6 13
+0 5 2
+6 2 2
+6 0 1
+3 4 2
+1 5 2
+2 5 1
+3 1 1
+4 1 2
+1 6 1
+6 3 2
+1 2 1
+4 5 3
+2 0 2
+7
+6 5 1 4 3 6 2
+6 5 2 1 6 3 4
+8 6 2 1 6 3 4 5 2
+3 2 1 5
+6 6 1 3 4 5 2
+7 6 2 1 3 4 5 2
+6 5 2 1 4 3 6
+</code></pre>
+<h4 id="输出样例">输出样例</h4>
+<pre><code>3
+5 11
+</code></pre>
+<h4 id="样例说明">样例说明：</h4>
+<p>第 2、3、4、6 条都不满足攻略的基本要求，即不能做到从家里出发，在每个网红点打卡仅一次，且能回到家里。所以满足条件的攻略有 3 条。</p>
+<p>第 1 条攻略的总路费是：(0-&gt;5) 2 + (5-&gt;1) 2 + (1-&gt;4) 2 + (4-&gt;3) 2 + (3-&gt;6) 2 + (6-&gt;2) 2 + (2-&gt;0) 2 = 14；</p>
+<p>第 5 条攻略的总路费同理可算得：1 + 1 + 1 + 2 + 3 + 1 + 2 = 11，是一条更省钱的攻略；</p>
+<h2 id="第-7-条攻略的总路费同理可算得2-1-1-2-2-2-1-11与第-5-条花费相同但序号较大所以不输出">第 7 条攻略的总路费同理可算得：2 + 1 + 1 + 2 + 2 + 2 + 1 = 11，与第 5 条花费相同，但序号较大，所以不输出。</h2>
+<h3 id="算法">算法</h3>
+<h4 id="记忆化搜索-on2">(记忆化搜索)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></h4>
+<p>这个样例解释有点小坑，反正我是没看出来。它指的每个点不是攻略给出的点，而是1~n个点2333。由题目的意思我们可以知道，只需要dfs搜一下每一个攻略，看看是不是能到终点，并且遍历了n个点，然后记录一下费用和攻略个数即可。</p>
+<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
+<p>鸽了</p>
+<h3 id="c-代码">C++ 代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/LuoGuP1255/">
-                                                                题解洛谷P1255.数楼梯
-                                                            </a>
-                                                            <span class="archive-item-date">2021-04-10 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+using namespace std;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/LanQiao11E/">
-                                                                题解第十一届蓝桥杯E.七段码
-                                                            </a>
-                                                            <span class="archive-item-date">2021-04-08 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+const int N = 210 , M = 100010;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing85/">
-                                                                题解：AcWing 85.不用加减乘除做加法
-                                                            </a>
-                                                            <span class="archive-item-date">2021-03-23 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+int n , m , k , sum , f;
+int INF = 0x3f3f3f3f;
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/LeetCode191/">
-                                                                题解：LeetCode 191.位1的个数
-                                                            </a>
-                                                            <span class="archive-item-date">2021-03-23 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+int h[N] , e[N * N] , ne[N * N] , idx;
+int path[M] , g[N][N];
+long long res[M];
+bool st[N];
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing1236/">
-                                                                题解：AcWing 1236.递增三元组
-                                                            </a>
-                                                            <span class="archive-item-date">2021-03-22 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+void add(int a , int b)
+{
+    e[idx] = b , ne[idx] = h[a] , h[a] = idx ++;
+}
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing792/">
-                                                                题解：AcWing 792.高精度减法
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-26 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+int dfs(int u , int idx)
+{
+    //虽然总费用不超过10的9次方，但是int也才2开头的九位数，所以用LL
+    long long sum = 0;
+    
+    //表示这个点已经被遍历过了
+    st[u] = true;
+    
+    if(u == 0)
+    {
+        //标记这个攻略能回到起点
+        f = 1;
+        return sum;
+    }
+    
+    //如果当前的点为-1表示不能往下走所以直接返回0；
+    if(h[u] ==  -1) return 0;
+    
+    for(int i = h[u]; i != -1; i = ne[i])
+    {
+        int j = e[i];
+        if(!st[j])
+        {   
+            //如果这个点没有被遍历过，并且是路线的下一个点，那么就继续走
+            if(path[idx] == j) sum += g[u][j] + dfs(j , idx + 1);
+        }
+    }
+    // 返回以u为起点的费用
+    return sum;
+}
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing791/">
-                                                                题解：AcWing 791.高精度加法
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-20 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                    
+int main()
+{
+    
+    long long minx = INF;
+    
+    cin &gt;&gt; n &gt;&gt; m;
+    
+    //初始化头结点和攻略路径
+    memset(h , -1 ,sizeof h);
+    memset(path , -1 , sizeof path);
+    
+    for(int i = 0; i &lt; m; i ++)
+    {
+        int a , b , c;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+        //因为这题是无向有环图，所以要加两条边，然后用g记录费用，也就是邻接矩阵
+        add(a , b);
+        add(b , a);
+        g[a][b] = g[b][a] = c;
+    }
+    
+    cin &gt;&gt; k;
+    
+    int cnt = 0;
+    for(int i = 0; i &lt; k; i ++)
+    {
+        int t , flag = 0;
+        cin &gt;&gt; t;
+        
+        for(int j = 0; j &lt; t; j ++) cin &gt;&gt; path[j];
+        //将起点加入路径，作为终点
+        path[t] = 0;
+        //如果这个点的起点不是零能到的点，那么后续就不需要继续了
+        for(int j = h[0]; j != -1; j = ne[j])
+            if(e[j] == path[0]) 
+                flag = 1;
+            
+        if(flag) 
+        {
+            int t1 = 0;
+            //dfs时从攻略的起点开始会好一点
+            res[i] += dfs(path[0] , 1) + g[0][path[0]];
+            //看一下是否n个点都有且只到过一次
+            for(int i = 0; i &lt;= n; i ++) if(st[i]) t1++;
+            //如果到了起点并且是n个点都遍历了，那么就更新minx，并且cnt++，n+1是因为包括了0这个点，不这么写也可以
+            if(f &amp;&amp; t1 == n + 1) minx = min(res[i] , minx) , cnt ++;
+            f = 0;
+        }
+        
+        memset(path , -1 , sizeof path);
+        memset(st , 0 , sizeof st);
+    }
+    
+    cout &lt;&lt; cnt &lt;&lt; endl;
+    //遍历数组看看最先等于minx是哪一个
+    for(int i = 0; i &lt; k; i ++)
+    {
+        if(res[i] == minx)
+        {
+            cout &lt;&lt; i + 1 &lt;&lt; ' ' &lt;&lt; res[i] &lt;&lt; endl;
+            break;
+        }
+    }
+    
+    return 0;
+}
+</code></pre>
 
-                                                        <article class="archive-item">
-                                                            <a class="archive-item-link" href="https://solitudealma.github.io/post/AcWing790/">
-                                                                题解：AcWing 790.数的三次方根
-                                                            </a>
-                                                            <span class="archive-item-date">2021-02-20 </span>
-                                                        </article>
-                                                        
-                                                            
-                                                                
-                                    </div>
-                                    <div class="pagination-container">
-                                        
-                                                                
-                                                                        
-                                                                            <a href="https://solitudealma.github.io/tag/answer/page/2" class="next">Next <i class="icon-arrow-ios-forward-outline"></i></a>
-                                                                            
-                                                                                
-                                    </div>
                                 </div>
                             </div>
-                            <div class="post-footer">
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
                                 
-                                        
-                                            <span class="pagination" onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/page/2'"><a class="next" rel="next" href="https://solitudealma.github.io/tag/answer/page/2" class="next"> <i class="icon-arrow-ios-forward-outline"></i>&#x4E0B;&#x4E00;&#x9875;</a></span>
-                                            
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/2020TianTiL2-4/" title="题解2020届天梯赛总决赛L2-4网红点打卡攻略">
+                                        https://solitudealma.github.io/post/2020TianTiL2-4/
+                                    </a><br> 协议: MIT License
                             </div>
-                        </article>
-                    </li>
-                </ul>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/2020TianTiL3-1/">
+                                        题解2020届天梯赛总决赛L3-1那就别担心了<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/2020TianTiL2-4/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/2020TianTiL2-4/&sharesource=qzone&title=题解2020届天梯赛总决赛L2-4网红点打卡攻略&pics=https://solitudealma.github.io/images/avatar.png?v=1619086521270&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/2020TianTiL2-4/&sharesource=weibo&title=题解2020届天梯赛总决赛L2-4网红点打卡攻略 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619086521270"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
             </div>
             <div id="sidebar">
     <ul>
@@ -610,6 +764,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -688,5 +843,18 @@
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>

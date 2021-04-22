@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-04-20T14:56:35.495Z</updated>
+    <updated>2021-04-22T10:15:32.476Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[题解2020届天梯赛总决赛L2-4网红点打卡攻略]]></title>
+        <id>https://solitudealma.github.io/post/2020TianTiL2-4/</id>
+        <link href="https://solitudealma.github.io/post/2020TianTiL2-4/">
+        </link>
+        <updated>2021-04-22T10:14:30.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解2020届天梯赛总决赛L3-1那就别担心了]]></title>
         <id>https://solitudealma.github.io/post/2020TianTiL3-1/</id>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/two_dimensional_difference/">
         </link>
         <updated>2021-03-07T09:28:04.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[二位前缀和]]></title>
-        <id>https://solitudealma.github.io/post/two_dimensional_prefix_sum/</id>
-        <link href="https://solitudealma.github.io/post/two_dimensional_prefix_sum/">
-        </link>
-        <updated>2021-03-02T07:04:36.000Z</updated>
     </entry>
 </feed>
