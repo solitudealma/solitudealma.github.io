@@ -265,16 +265,18 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                20200425 [日记]
+                                                题解AcWing126. 最大的和
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
+                                                
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/wToexaFyH/" class="leancloud_visitors" data-flag-title="20200425 [日记]">
+                                                    <span id="/post/AcWing126/" class="leancloud_visitors" data-flag-title="题解AcWing126. 最大的和">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -283,7 +285,7 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            0.5分</span>
+                                            3.5分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
@@ -295,7 +297,109 @@
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <p>终于熬完了蓝桥杯和天梯赛，只能说还是太菜了，虽然寒假就开始准备了，但还是顶不住啊呜呜呜。蓝桥杯估计只有省四了，天梯赛团体个人都没有奖。刚开始学算法只是为了应付这两个比赛，但是经历了这几个月的学习，发现算法的学习还是挺好玩的，见识过大佬的实力之后，发现自己前进的空间还是很大的hhh。只能说继续努力吧2333</p>
+                                    <h2 id="引用">引用</h2>
+<p>贪心思想可以看看秦同学的题解，大佬还是一如既往的厉害，我还是依然很菜。在这里就不画图了，可以看看以下大佬画的图</p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/1130/">秦淮岸灯火阑珊</a> <a href="https://www.acwing.com/solution/content/867/">AcWing 126. 最大的和</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/2675/">Bug-Free</a> <a href="https://www.acwing.com/solution/content/25619/">AcWing 126. 最大的和</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/7412/">Aniway</a> <a href="https://www.acwing.com/solution/content/4127/">AcWing 126. 最大的和</a></p>
+<blockquote>
+<p><a href="https://www.acwing.com/user/myspace/index/4184/">皮皮柯</a> <a href="https://www.acwing.com/solution/content/1812/">AcWing 126. 最大的和(连续子序列和dp求解）</a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个包含整数的二维矩阵，子矩形是位于整个阵列内的任何大小为 1×1 或更大的连续子阵列。</p>
+<p>矩形的总和是该矩形中所有元素的总和。</p>
+<p>在这个问题中，具有最大和的子矩形被称为最大子矩形。</p>
+<p>例如，下列数组：</p>
+<pre><code>0 -2 -7 0 
+9 2 -6 2 
+-4 1 -4 1 
+-1 8 0 -2
+</code></pre>
+<p>其最大子矩形为：</p>
+<pre><code>9 2 
+-4 1 
+-1 8
+</code></pre>
+<p>它拥有最大和 15。</p>
+<h4 id="样例">样例</h4>
+<h4 id="输入格式">输入格式</h4>
+<p>输入中将包含一个 N×N 的整数数组。</p>
+<p>第一行只输入一个整数 N，表示方形二维数组的大小。</p>
+<p>从第二行开始，输入由空格和换行符隔开的 N2 个整数，它们即为二维数组中的 N2 个元素，输入顺序从二维数组的第一行开始向下逐行输入，同一行数据从左向右逐个输入。</p>
+<p>数组中的数字会保持在 [−127,127] 的范围内。</p>
+<h4 id="输出格式">输出格式</h4>
+<p>输出一个整数，代表最大子矩形的总和。</p>
+<h4 id="数据范围">数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1≤N≤100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h4 id="输入样例-1">输入样例 1：</h4>
+<pre><code>4
+0 -2 -7 0 9 2 -6 2
+-4 1 -4  1 -1
+
+8  0 -2
+</code></pre>
+<h4 id="输出样例-1">输出样例 1：</h4>
+<pre><code>15
+</code></pre>
+<hr>
+<h3 id="算法">算法</h3>
+<h4 id="二位前缀和-on">(二位前缀和) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
+<p>这题的数据范围很小，所以我们直接遍历所有子矩阵就行了，但是这样做复杂度是很高的，虽然不会超时，但是在这里介绍一个更好的思路。可以减少一层循环。我们预处理前缀和的时候，只计算列方向的前缀和或者行方向的前缀和。这样遍历的时候我们只要遍历上下界，即矩阵的上下边或者左右边就行了，然后算一下前k列或前k行的最大值。</p>
+<p>这题也有一点点贪心的影子，如果前几列加上这一列比零还小，那么我们就直接舍去，因为这个子矩阵的话，我们还不如选剩下的矩阵，因为加上这个矩阵只会更小</p>
+<p>多说不益，我们来试试吧</p>
+<h4 id="时间复杂度-on2m">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></h4>
+<p>预处理前缀和数组，所以计算的时候是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的</p>
+<h3 id="c-代码">C++ 代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+const int N = 110;
+
+int a[N][N];
+
+int n;
+int maxx = -0x3f3f3f3f;
+
+int main()
+{
+    cin &gt;&gt; n;
+    // 读入数据
+    for(int i = 1; i &lt;= n; i ++)
+        for(int j = 1; j &lt;= n; j ++)
+            cin &gt;&gt; a[i][j];
+    // 预处理前缀和
+    for(int i = 1; i &lt;= n; i ++)
+        for(int j = 1; j &lt;= n; j ++)
+            a[i][j] += a[i - 1][j];
+    // 遍历上下界
+    for(int i = 1; i &lt;= n; i ++)
+    {
+        for(int j = i; j &lt;= n; j ++)
+        {
+            // 存每一个上下界的前k列的值
+            int t = 0;
+            for(int k = 1; k &lt;= n; k ++)
+            {
+                // 计算前k列，如果上一个t小于零就不要了
+                t = max(t , 0) + a[j][k] - a[i - 1][k];
+                maxx = max(maxx , t);
+            }
+        }
+    }
+    
+    cout &lt;&lt; maxx &lt;&lt; endl;
+    
+    return 0;
+}
+</code></pre>
 
                                 </div>
                             </div>
@@ -313,8 +417,8 @@
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/wToexaFyH/" title="20200425 [日记]">
-                                        https://solitudealma.github.io/post/wToexaFyH/
+                                    <a href="https://solitudealma.github.io/post/AcWing126/" title="题解AcWing126. 最大的和">
+                                        https://solitudealma.github.io/post/AcWing126/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -337,17 +441,10 @@
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/IgTK6YeNB/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解AcWing126. 最大的和
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/2020TianTiL2-4/">
-                                        题解2020届天梯赛总决赛L2-4网红点打卡攻略<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/IgTK6YeNB/">
+                                        题解AcWing126. 最大的和<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -356,9 +453,9 @@
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/wToexaFyH/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/wToexaFyH/&sharesource=qzone&title=20200425 [日记]&pics=https://solitudealma.github.io/images/avatar.png?v=1619351313695&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/wToexaFyH/&sharesource=weibo&title=20200425 [日记] + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619351313695"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing126/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing126/&sharesource=qzone&title=题解AcWing126. 最大的和&pics=https://solitudealma.github.io/images/avatar.png?v=1619351313695&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing126/&sharesource=weibo&title=题解AcWing126. 最大的和 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619351313695"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
