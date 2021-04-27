@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="bg">
+<html id="bg">
 
 <head>
     <meta charset="utf-8" />
@@ -147,34 +147,6 @@
                             background-repeat: no-repeat;
                         }
                     </style>
-        <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
-        <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
-        <script async src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/result-template.ejs" type="text/ejs"></script>
-        <!--<script src="https://solitudealma.github.io/media/gridea-search/result-template.ejs" type="text/ejs"></script>-->
-        <style>
-            .main_ {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 90vh;
-            }
-            
-            .result-box {
-                margin-top: 50px;
-                display: flex;
-                border-radius: 5px;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .searched-keyword {
-                background-color: #0bf;
-            }
-        </style>
 </head>
 
 <body>
@@ -285,10 +257,215 @@
 </header>
         <div id="main">
             <div id="main-part">
-                <ul class="posts-list" id="gridea-search-result">
-                    <p class="searching">搜索中......</p>
-                    <p class="no-result" style="display:none">未搜索到相关文章</p>
-                </ul>
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                    
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                题解ProjectEuler2.Even Fibonacci numbers
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
+                                        
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/ProjectEuler/'">欧拉计划</span>
+                                                
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
+                                                
+                                                    </span>
+                                                    <span class="post-view">
+                                                    
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/ProjectEuler2/" class="leancloud_visitors" data-flag-title="题解ProjectEuler2.Even Fibonacci numbers">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
+
+                                                    
+                                                            </span>&nbsp;•&nbsp;
+
+                                                            <span class="post-readtime">阅读时间:
+                                            3.3分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619533393985" srcset="https://solitudealma.github.io/images/avatar.png?v=1619533393985" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-27</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h2 id="引用">引用</h2>
+<p>虽然知道这是一道数论题，但优先想到的还是怎么递推或者递归求解。看到评论区大佬的题解后发现还能这么玩？？？</p>
+<p><a href="https://www.hackerrank.com/dusty_mehul?hr_r=1">Mehul Singh Rathore</a> <a href="https://www.hackerrank.com/contests/projecteuler/challenges/euler002/forum">找到大佬的评论就能看到</a></p>
+<h3 id="题目描述">题目描述</h3>
+<p>This problem is a programming version of Problem 2 from <a href="https://projecteuler.net/problem=2">projecteuler.net</a></p>
+<p>Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with <strong>1</strong> and <strong>2</strong>, the first <strong>10</strong> terms will be: <strong>1,2,3,5,8,13,21,34,55,89</strong></p>
+<p>By considering the terms in the Fibonacci sequence whose values do not exceed <strong>N</strong>, find the sum of the even-valued terms.</p>
+<h4 id="样例">样例</h4>
+<h4 id="input-format">Input Format</h4>
+<p>First line contains <strong>T</strong> that denotes the number of test cases. This is followed by <strong>T</strong> lines, each containing an integer, <strong>N</strong>.</p>
+<h4 id="output-format">Output Format</h4>
+<p>Print the required answer for each test case.</p>
+<h4 id="constraints">Constraints</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">1 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>T</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">\leq 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">10 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>N</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>16</mn></msup></mrow><annotation encoding="application/x-tex">\leq 4 \times 10^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="sample-input-0">Sample Input 0</h4>
+<pre><code>2
+10
+100
+
+</code></pre>
+<h4 id="sample-output-0">Sample Output 0</h4>
+<pre><code>10
+44
+
+</code></pre>
+<h4 id="explanation-0">Explanation 0</h4>
+<p>For <em><strong>N</strong></em> <strong>=10</strong>, we have <strong>{2,8}</strong>, sum is <strong>10</strong>.<br>
+For <em><strong>N</strong></em> <strong>=100</strong>, we have <strong>{2,8,34}</strong>, sum is <strong>44</strong>.</p>
+<hr>
+<h3 id="算法">算法</h3>
+<h4 id="数论-o1">(数论) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>从数据范围上看可能会TLE，但实际上计算斐波那契数列值最接近 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>16</mn></msup></mrow><annotation encoding="application/x-tex">4 \times 10^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>并不需要多久，所以对于这个我们可以直接暴力去算。<br>
+但好歹他也是个数论题，你这样暴力就有点说不过去了，既然涉及数学知识那么就应该用数学知识来解决。</p>
+<p>从题目我们可以发现每三个数就会出现一次偶数。而斐波那契数列又具有f(n) = f(n - 1) + f(n - 2)的性质，那么我们可以往这方面想，因为一个序列如果满足一种性质，那么满足一定规律的子序列同样也会满足相似的性质。比如等差数列，我们从第一个开始，每三个取一个数，构成的新数列同样也满足等差数列的性质。</p>
+<p>我们仔细看看 0 2 8这三个数，发现第三个数是前一个数的四倍加上前二个数，即E(n) = 4 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> E(n - 1) + E(n - 2)。那么我们只需要计算一下这样的新斐波那契数列中小于N的前n项的和就行了</p>
+<h4 id="时间复杂度-o1">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>直接套公式</p>
+<h3 id="c-代码">C++ 代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+typedef long long LL;
+
+int n;
+
+int main()
+{
+    cin &gt;&gt; n;
+    
+    // 常规递推    
+    // while (n --)
+    // {
+    //     LL t , res = 0 , a = 1 , b = 1 , c;
+        
+    //     cin &gt;&gt; t;
+        
+    //     for(int i = 1; ; i ++)
+    //     {
+    //         c = a + b;
+    //         a = b;
+    //         b = c;
+    //         if(c &lt; t &amp;&amp; !(c &amp; 1)) res += c;
+    //         if(c &gt; t) break;
+
+    //     }
+    //     cout &lt;&lt; res &lt;&lt; endl;
+    // }
+
+    // 构建新的斐波那契数列
+    while (n --)
+    {
+        LL t , res = 2 , a = 0 , b = 2 , c;
+        
+        cin &gt;&gt; t;
+        
+        for(int i = 1; ; i ++)
+        {
+            c = a + 4 * b;
+            a = b;
+            b = c;
+            if(c &lt; t) res += c;
+            if(c &gt; t) break;
+
+        }
+        cout &lt;&lt; res &lt;&lt; endl;
+    }
+    
+    return 0;
+}
+</code></pre>
+
+                                </div>
+                            </div>
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/ProjectEuler2/" title="题解ProjectEuler2.Even Fibonacci numbers">
+                                        https://solitudealma.github.io/post/ProjectEuler2/
+                                    </a><br> 协议: MIT License
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/ProjectEuler1/">
+                                        题解ProjectEuler1.Multiples of 3 and 5<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/ProjectEuler2/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/ProjectEuler2/&sharesource=qzone&title=题解ProjectEuler2.Even Fibonacci numbers&pics=https://solitudealma.github.io/images/avatar.png?v=1619533393985&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/ProjectEuler2/&sharesource=weibo&title=题解ProjectEuler2.Even Fibonacci numbers + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619533393985"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
             </div>
             <div id="sidebar">
     <ul>
@@ -516,6 +693,7 @@
     </ul>
 </div>
         </div>
+
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -594,5 +772,18 @@
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
 
 </html>
