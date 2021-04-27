@@ -265,18 +265,20 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解洛谷P1255.数楼梯
+                                                题解ProjectEuler1.Multiples of 3 and 5
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/ProjectEuler/'">欧拉计划</span>
+                                                
                                             <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/LuoGuP1255/" class="leancloud_visitors" data-flag-title="题解洛谷P1255.数楼梯">
+                                                    <span id="/post/ProjectEuler1/" class="leancloud_visitors" data-flag-title="题解ProjectEuler1.Multiples of 3 and 5">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,93 +287,128 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            1.9分</span>
+                                            4.1分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619529329034" srcset="https://solitudealma.github.io/images/avatar.png?v=1619529329034" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-10</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-27</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="题目描述">题目描述</h4>
-<p>楼梯有N阶，上楼可以一步上一阶，也可以一步上二阶。</p>
-<p>编一个程序，计算共有多少种不同的走法。</p>
+                                    <h2 id="引用">引用</h2>
+<p>刚开始只想到了暴力做法，怎么优化都不能过，后来在群友的提示下想到了数列前n项和。下面这位大佬的题解相当于优化了前n项和的做法吧</p>
+<p><a href="https://www.hackerrank.com/anishacharya91?hr_r=1">Anish Acharya</a> <a href="https://www.hackerrank.com/contests/projecteuler/challenges/euler001/forum">找到大佬的评论就能看到</a></p>
+<h3 id="题目描述">题目描述</h3>
+<p>This problem is a programming version of Problem 1 from <a href="https://projecteuler.net/problem=1">projecteuler.net</a></p>
+<p>If we list all the natural numbers below <strong>10</strong> that are multiples of <strong>3</strong> or <strong>5</strong> , we get <strong>3</strong> , <strong>5</strong> , <strong>6</strong> and <strong>9</strong>. The sum of these multiples is <strong>23</strong>.</p>
+<p>Find the sum of all the multiples of <strong>3</strong> or <strong>5</strong> below <em><strong>N</strong></em>.</p>
 <h4 id="样例">样例</h4>
-<h4 id="输入格式">输入格式</h4>
-<p>一个数字，楼梯数。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>输出走的方式总数。</p>
-<h4 id="输入输出样例">输入输出样例</h4>
-<h5 id="输入-1复制">输入 #1复制</h5>
-<pre><code>4
+<h4 id="input-format">Input Format</h4>
+<p>First line contains <em><strong>T</strong></em> that denotes the number of test cases. This is followed by <em><strong>T</strong></em> lines, each containing an integer, <em><strong>N</strong></em>.</p>
+<h4 id="output-format">Output Format</h4>
+<p>For each test case, print an integer that denotes the sum of all the multiples of <strong>3</strong> or <strong>5</strong> below <em><strong>N</strong></em>.</p>
+<h4 id="constraints">Constraints</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">1 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>T</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">\leq 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">1 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>N</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">\leq 10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="sample-input-0">Sample Input 0</h4>
+<pre><code>2
+10
+100
+
 </code></pre>
-<h5 id="输出-1复制">输出 #1复制</h5>
-<pre><code>5
+<h4 id="sample-output-0">Sample Output 0</h4>
+<pre><code>23
+2318
+
 </code></pre>
-<h4 id="说明提示">说明/提示</h4>
-<p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">60\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">N \leq 50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span>；<br>
-对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≤</mo><mn>5000</mn></mrow><annotation encoding="application/x-tex">N \leq 5000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>。</p>
+<h4 id="explanation-0">Explanation 0</h4>
+<p>For <em><strong>N</strong></em> <strong>= 10</strong>, if we list all the natural numbers below <strong>10</strong> that are multiples of <strong>3</strong> or <strong>5</strong> , we get <strong>3</strong> , <strong>5</strong> , <strong>6</strong> and <strong>9</strong>. The sum of these multiples is <strong>23</strong>.</p>
+<p>Similarly for <em><strong>N</strong></em> <strong>=100</strong>, we get <strong>2318</strong>.</p>
 <hr>
-<h3 id="算法1">算法1</h3>
-<h4 id="递推-高精度">(递推 + 高精度)</h4>
-<p>用unsigned long long 很明显已经存不下了，所以我们应该用高精度来解决。妈的，头脑有点混乱，debug了好久，后来写完了发现又wa了，结果是没考虑0，而且我的特判和else一起输出了2333。总的来说这题挺简单的。高精度就完了。</p>
-<h4 id="时间复杂度">时间复杂度</h4>
-<p>不会算，也不想算</p>
-<h4 id="c-代码">C++ 代码</h4>
-<pre><code>#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
+<h3 id="算法">算法</h3>
+<h4 id="数论-o1">(数论) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>从数据范围我们可以发现要是想拿满分朴素做法是不行的，所以我们可以从其他方面入手。因为这是一道数论题，我们应该数学方面的知识入手。细心的你应该发现了3的倍数其实是一个等差数列，5的倍数也是。那么我们就可以直接套公式求和就可以了。但是需要注意的是3和5是有公倍数的，所以我们在计算的时候会重复计算，因此我们还要求一下差项为15的等差数列的前n项和。</p>
+<p>还有一个需要注意的是，因为题目求的是小于N的和，所以如果3|N、5|N<br>
+或者15|N成立的话就需要减去N</p>
+<p>O(1) Solution : say N= 100 so, max multiple of 3 here below N is 99 i.e. 3*33 so, sum of all multiples of 3 has a pattern 3(1+2+3+....+33) use this</p>
+<p>这个做法和前n项和一致，只不过稍微转换了一下思路，我们先求出3的倍数中<strong>小于N</strong>的有几个，然后对1-几个求和再乘以3就是小于N中3的倍数和</p>
+<h4 id="时间复杂度-o1">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>直接套公式</p>
+<h3 id="c-代码">C++ 代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
 
 using namespace std;
 
 int n;
-vector&lt;int&gt; A(1 , 1) , B(1 , 2) , C;
-
-vector&lt;int&gt; add(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
-{
-    if (A.size() &lt; B.size()) return add(B, A);
-    
-    vector&lt;int&gt; C;
-    int t = 0;
-    
-    for (int i = 0; i &lt; A.size(); i ++ )
-    {
-        t += A[i];
-        if (i &lt; B.size()) t += B[i];
-        C.push_back(t % 10);
-        t /= 10;
-    }
-
-    if (t) C.push_back(t);
-    
-    return C;
-}
 
 int main()
 {
     cin &gt;&gt; n;
     
-    if(n == 0) cout &lt;&lt; 0;
-    else if(n == 1) cout &lt;&lt; 1;
-    else if( n == 2) cout &lt;&lt; 2;
-    else
-    {
-        for (int i = 3; i &lt;= n; i ++ )
-        {
-            C = add(A , B);
-            A.swap(B);//交换容器元素，也可以试试copy这个函数
-            B.swap(C);
-        }
+    long long res = 0;
+    // 朴素做法，但是会超时，只能拿60分
+    // while (n --)
+    // {
+    //     long long t;
+    //     res = 0;
+    //     cin &gt;&gt; t;
         
-        for(int i = B.size() - 1; i &gt;= 0 ; i --) cout &lt;&lt; B[i];
+    //     for(long long i = 1; i &lt;= t / 3; i ++)
+    //     {
+    //         if(i * 3 &gt;= t) continue;
+    //         res += i * 3;
+    //         if(i * 5 &gt;= t || (i * 5) % 15 == 0) continue;
+    //         res += i * 5;
+    //     }
+        
+    //     cout &lt;&lt; res &lt;&lt; endl;
+    // }
+    
+    // 等差数列前n项和
+    // while (n --)
+    // {
+    //     long long t , sum_mul_3, sum_mul_5 , sum_mul_15;
+    //     res = 0;
+    //     cin &gt;&gt; t;
+        
+    //     // 小于t的最大的3的倍数即为 3*(t/3) (t/3)是向下取整
+    //     sum_mul_3 = (t / 3) * (3 + 3 * (t / 3)) / 2;
+    //     if(t % 3 == 0) sum_mul_3 -= 3 * (t / 3);
+        
+    //     sum_mul_5 = (t / 5) * (5 + 5 * (t / 5)) / 2;
+
+    //     if(t % 5 == 0) sum_mul_5 -= 5 * (t / 5);
+        
+    //     sum_mul_15 = (t / 15) * (15 + 15 * (t / 15)) / 2;
+    //     if(t % 15 == 0) sum_mul_15 -= 15 * (t / 15);
+        
+    //     res = sum_mul_3 + sum_mul_5 - sum_mul_15;
+        
+    //     cout &lt;&lt; res &lt;&lt; endl;
+    // }
+
+    // 算是前n项和的优化吧，毕竟不需要判断了
+    while (n --)
+    {
+        long long t , three , five , fifteen , res = 0;
+        cin &gt;&gt; t;
+
+        // 求小于N的3的倍数的个数
+        three = (t - 1) / 3;
+        five = (t - 1) / 5;
+        fifteen = (t - 1) / 15;
+        
+        res = 3 * (three * (three + 1) / 2) + 5 * (five * (five + 1) / 2) - 15 * (fifteen * (fifteen + 1) / 2);
+        cout &lt;&lt; res &lt;&lt;endl;
     }
 
     return 0;
 }
+
 </code></pre>
 
                                 </div>
@@ -390,8 +427,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/LuoGuP1255/" title="题解洛谷P1255.数楼梯">
-                                        https://solitudealma.github.io/post/LuoGuP1255/
+                                    <a href="https://solitudealma.github.io/post/ProjectEuler1/" title="题解ProjectEuler1.Multiples of 3 and 5">
+                                        https://solitudealma.github.io/post/ProjectEuler1/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -414,17 +451,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/2020TianTiL3-1/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解2020届天梯赛总决赛L3-1那就别担心了
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LanQiao11E/">
-                                        题解第十一届蓝桥杯E.七段码<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/NiuKeHeKeYuanJiuShaoBei2021G/">
+                                        题解“九韶杯”河科院程序设计协会第一届程序设计竞赛G.最强对手矩阵<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -433,9 +463,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/LuoGuP1255/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/LuoGuP1255/&sharesource=qzone&title=题解洛谷P1255.数楼梯&pics=https://solitudealma.github.io/images/avatar.png?v=1619529329034&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/LuoGuP1255/&sharesource=weibo&title=题解洛谷P1255.数楼梯 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619529329034"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/ProjectEuler1/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/ProjectEuler1/&sharesource=qzone&title=题解ProjectEuler1.Multiples of 3 and 5&pics=https://solitudealma.github.io/images/avatar.png?v=1619529329034&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/ProjectEuler1/&sharesource=weibo&title=题解ProjectEuler1.Multiples of 3 and 5 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619529329034"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             

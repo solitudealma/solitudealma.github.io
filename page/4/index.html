@@ -256,207 +256,116 @@
     <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
 </header>
         <div id="main">
-            <div id="main-part">
-                <div class="lite-item">
-                    <article class="post post-type real-post">
-                        <header class="post-type-header">
+            <div id="usercard">
+                <ul>
+                    <li class="lite-item">
+                        <div class="card-bg"></div>
+                        <div class="card-info">
                             
-                                    <div class="thumbnail-link" style="background-color: transparent;"></div>
+                                <img alt="SolitudeAlma" src="https://img.imgdb.cn/item/603750c35f4313ce25f92a35.jpg" srcset="https://img.imgdb.cn/item/603750c35f4313ce25f92a35.jpg " class="avatar" style="height: 100px;">
+                                
+                                        <span class="card-info-block card-info-name">SolitudeAlma&nbsp;<i
+                                class="Card Card-certify"></i></span>
+                                        <span>都懂一点，不是很懂的小捞仔</span>
+                        </div>
+                        <div class="catch-me">
+                            <a data-content="rss" data-balloon-pos="up" target="_blank" href="https://solitudealma.github.io/atom.xml"><i class="fa fa-rss"></i></a>
+                            
+                                
+                                    <a data-content="Telegram" data-balloon-pos="up" target="_blank" href="https://t.me/SolitudeAlma"><i class="fa fa-send"></i></a>
                                     
-                                        <div class="thumbnail-shadow">
-                                            <h1 class="post-title">
-                                                题解洛谷P1255.数楼梯
-                                            </h1>
-                                            <div class="post-info">
-                                                <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
-                                                
-                                                    </span>
-                                                    <span class="post-view">
-                                                    
-                                                        &nbsp;•&nbsp;
-                                                    <span id="/post/LuoGuP1255/" class="leancloud_visitors" data-flag-title="题解洛谷P1255.数楼梯">
-                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
-                                                <i class="leancloud-visitors-count">0</i>
-                                            </span>
-
-                                                    
-                                                            </span>&nbsp;•&nbsp;
-
-                                                            <span class="post-readtime">阅读时间:
-                                            1.9分</span>
-                                                            <span class="post-edit"></span></div>
-                                        </div>
-                                        <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619529329034" srcset="https://solitudealma.github.io/images/avatar.png?v=1619529329034" class="avatar avatar-100 photo" width="100" height="100">
-                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-10</span>
-                                        </div>
-                        </header>
-                        <div class="post-main post-type-main">
-                            <div class="post-content">
-                                <div class="post-content-real">
-                                    <h4 id="题目描述">题目描述</h4>
-<p>楼梯有N阶，上楼可以一步上一阶，也可以一步上二阶。</p>
-<p>编一个程序，计算共有多少种不同的走法。</p>
-<h4 id="样例">样例</h4>
-<h4 id="输入格式">输入格式</h4>
-<p>一个数字，楼梯数。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>输出走的方式总数。</p>
-<h4 id="输入输出样例">输入输出样例</h4>
-<h5 id="输入-1复制">输入 #1复制</h5>
-<pre><code>4
-</code></pre>
-<h5 id="输出-1复制">输出 #1复制</h5>
-<pre><code>5
-</code></pre>
-<h4 id="说明提示">说明/提示</h4>
-<p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">60\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≤</mo><mn>50</mn></mrow><annotation encoding="application/x-tex">N \leq 50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span>；<br>
-对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span> 的数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≤</mo><mn>5000</mn></mrow><annotation encoding="application/x-tex">N \leq 5000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>。</p>
-<hr>
-<h3 id="算法1">算法1</h3>
-<h4 id="递推-高精度">(递推 + 高精度)</h4>
-<p>用unsigned long long 很明显已经存不下了，所以我们应该用高精度来解决。妈的，头脑有点混乱，debug了好久，后来写完了发现又wa了，结果是没考虑0，而且我的特判和else一起输出了2333。总的来说这题挺简单的。高精度就完了。</p>
-<h4 id="时间复杂度">时间复杂度</h4>
-<p>不会算，也不想算</p>
-<h4 id="c-代码">C++ 代码</h4>
-<pre><code>#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-
-using namespace std;
-
-int n;
-vector&lt;int&gt; A(1 , 1) , B(1 , 2) , C;
-
-vector&lt;int&gt; add(vector&lt;int&gt; &amp;A , vector&lt;int&gt; &amp;B)
-{
-    if (A.size() &lt; B.size()) return add(B, A);
-    
-    vector&lt;int&gt; C;
-    int t = 0;
-    
-    for (int i = 0; i &lt; A.size(); i ++ )
-    {
-        t += A[i];
-        if (i &lt; B.size()) t += B[i];
-        C.push_back(t % 10);
-        t /= 10;
-    }
-
-    if (t) C.push_back(t);
-    
-    return C;
-}
-
-int main()
-{
-    cin &gt;&gt; n;
-    
-    if(n == 0) cout &lt;&lt; 0;
-    else if(n == 1) cout &lt;&lt; 1;
-    else if( n == 2) cout &lt;&lt; 2;
-    else
-    {
-        for (int i = 3; i &lt;= n; i ++ )
-        {
-            C = add(A , B);
-            A.swap(B);//交换容器元素，也可以试试copy这个函数
-            B.swap(C);
-        }
-        
-        for(int i = B.size() - 1; i &gt;= 0 ; i --) cout &lt;&lt; B[i];
-    }
-
-    return 0;
-}
-</code></pre>
-
-                                </div>
-                            </div>
-                            
-                                <div class="reward ">
-                                    <div class="reward-button ">&yen;
-                                        <span class="reward-code "> 
-                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
-                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
-                                    </div>
-                                </div>
-                                
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-copyright">
-                                作者:
-                                SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/LuoGuP1255/" title="题解洛谷P1255.数楼梯">
-                                        https://solitudealma.github.io/post/LuoGuP1255/
-                                    </a><br> 协议: MIT License
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <style>
-                    .prev:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                    
-                    .next:hover {
-                        color: #2d96bd;
-                        text-decoration: none;
-                        text-align: center;
-                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-                    }
-                </style>
-                <div class="lite-item nearby-article">
-                    
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/2020TianTiL3-1/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解2020届天梯赛总决赛L3-1那就别担心了
-                            </a>
-                        </div>
-                        
-                            
-                                <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LanQiao11E/">
-                                        题解第十一届蓝桥杯E.七段码<i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                                
-                </div>
-                <!--Share-->
-                <span style="margin-right:15px">
-    <i class="post-share"></i>
-    <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/LuoGuP1255/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/LuoGuP1255/&sharesource=qzone&title=题解洛谷P1255.数楼梯&pics=https://solitudealma.github.io/images/avatar.png?v=1619529329034&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/LuoGuP1255/&sharesource=weibo&title=题解洛谷P1255.数楼梯 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619529329034"><i class="fa fa-weibo "></i></a>
-                </span>
-                
                                             
-                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<div id="vlaine-comment"></div>
-<script type="application/javascript">
-    new Valine({
-        el: '#vlaine-comment',
-        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
-        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
-        pageSize: 10,
-        avatar: 'mp',
-        placeholder: '来都来了，不妨评论一下',
-        visitor: true,
-        highlight: true,
-        recordIP: true,
-    })
-</script>
+                                                
+                                                        
+                                                
+                                                        
+                                                
+                                                    <a data-content="github" data-balloon-pos="up" target="_blank" href="https://github.com/solitudealma"><i class="fa fa-github"></i></a>
                                                     
+                                                        
+                                                
+                                                        
+                                                
+                                                        
+                                                
+                                                        
+                                                
+                                                        
+                                                
+                                                    <a data-content="qq" data-balloon-pos="up" target="_blank" href="2241141629"><i class="fa fa-qq"></i></a>
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                        
+                                                                
+                                                                        
+                                                                
+                                                                        
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div id="sidebar">
+            <div>
+                <div id="main-part">
+                    <ul class="posts-list">
+                        
+    <li class="lite-item" id="btnStyle" style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;" onclick="javascript:top.location='https://solitudealma.github.io/post/recursion/'">
+        <article class="post post-type">
+            <header class="post-type-header">
+                <div class="post-relative">
+                    
+                        <img alt="SolitudeAlma" src="https://img.imgdb.cn/item/603750c35f4313ce25f92a35.jpg" srcset="https://img.imgdb.cn/item/603750c35f4313ce25f92a35.jpg " class="avatar" width="100" height="100">
+                        
+                                <span class="post-type-author">
+                    SolitudeAlma
+                    <i class="Card Card-certify"></i><span class="publish-time"> - <i class="fa fa-calendar"
+                            aria-hidden="true"></i> 2021-02-12</span>
+                                </span>
+                                <h3 class="post-type-title">
+                                    <a href="https://solitudealma.github.io/post/recursion/" rel="bookmark" title="简单介绍一下递归">
+                                        
+                                                简单介绍一下递归
+                                    </a>
+                                </h3>
+                </div>
+            </header>
+            <div class="post-main post-type-main">
+                <div class="post-content">
+                    <div class="post-tag"></div>
+                    <div class="post-excerpt">
+                        
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    
+                    </div>
+                    <div class="post-category">
+                        
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                            
+                                <a href="https://solitudealma.github.io/tag/algorithm/" rel="category">
+                                    Algorithm
+                                        
+                                </a>
+                                
+                                    
+                    </div>
+                </div>
+            </div>
+        </article>
+    </li>
+    
+                    </ul>
+                    <div class="lite-item">
+                        
+                            <span id="btnStyle" style="display: inline-block;width: 50%;text-align: center;border-right: 1px solid#e3e8e8;font-size: 14px;float: left;padding: 15px;" onclick="javascript:top.location='https://solitudealma.github.io/page/3/'"> &#x4E0A;&#x4E00;&#x9875;</span>
+                            
+                                    
+                                            <span style="display: inline-block;width: 50%;text-align: center;border-right: 1px solid#e3e8e8;font-size: 14px;padding: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            
+                    </div>
+                </div>
+                <div id="sidebar">
     <ul>
         
             <li class="lite-item">
@@ -681,8 +590,8 @@ int main()
                                                     </li>
     </ul>
 </div>
+            </div>
         </div>
-
 </body>
 <footer id="foot">
     <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
@@ -761,18 +670,5 @@ int main()
         $('img').attr('data-fancybox', 'images');
     </script>
 </footer>
-    <script>
-        renderMathInElement(document.body, {
-            delimiters: [{
-                left: "$$",
-                right: "$$",
-                display: true
-            }, {
-                left: "$",
-                right: "$",
-                display: false
-            }]
-        });
-    </script>
 
 </html>
