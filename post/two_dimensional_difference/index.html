@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1619591488959">
+<meta name="UpdateTime" content="1619591847042">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1619591488959" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1619591847042" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1619591488959" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1619591847042" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -289,7 +289,7 @@
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619591488959" srcset="https://solitudealma.github.io/images/avatar.png?v=1619591488959" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619591847042" srcset="https://solitudealma.github.io/images/avatar.png?v=1619591847042" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-07</span>
                                         </div>
@@ -304,7 +304,7 @@
 <p>由一维差分我们可以知道， <code>a[i]</code> 是 <code>b[1]...b[i]</code> 的前缀和，如果我们要对区间 [l , r] 中的数都加上一个数c的话只需要让 <code>b[l] += c</code> 并且 <code>b[r + 1] -= c</code> 即可，这样用差分数组构建新数组时，区间 [l , r] 中的数都会在原基础上加上c。</p>
 <p>如果我们把这个区间放缩一下，并且让数组元素都为0的这个数组a作为我们的原数组，那么数组a的差分数组b也是全为0，这样我们就构成了差分数组，那么我们真正需要输入到数组中的数就可以利用二位差分的性质进行了，也就是当区间 l = r时，我们让其加上一个需要输入的数，这样既输入了数据，也构成了差分数组。</p>
 <p>我们来看一下对任意子矩阵都加上一个数的话，应该怎么利用差分数组。</p>
-<figure data-type="image" tabindex="1"><img src="https://gitee.com/solitudealma/blogimagebed/raw/master/image/AlgorithmNote/two_dimensional_difference.png" alt="二维差分" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://img.imgdb.cn/item/60890205d1a9ae528fc53336.png" alt="二维差分" loading="lazy"></figure>
 <p>从图中我们可以很清楚的看到，如果在x1，y1上加一个数c那么它右下角的数都会加上c，那么该怎么办呢，其实这也是容斥定理。我们只需要减去右边多加的部分和下边多加的部分最后再加上重复减去的部分即可</p>
 <p>那么代码该怎么写呢，我们来看看模板吧</p>
 <pre><code class="language-c++">
@@ -473,8 +473,8 @@ int main()
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/two_dimensional_difference/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/two_dimensional_difference/&sharesource=qzone&title=二维差分&pics=https://solitudealma.github.io/images/avatar.png?v=1619591488959&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/two_dimensional_difference/&sharesource=weibo&title=二维差分 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619591488959"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/two_dimensional_difference/&sharesource=qzone&title=二维差分&pics=https://solitudealma.github.io/images/avatar.png?v=1619591847042&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/two_dimensional_difference/&sharesource=weibo&title=二维差分 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619591847042"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
