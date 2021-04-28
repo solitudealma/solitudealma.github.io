@@ -265,18 +265,20 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解：LeetCode 191.位1的个数
+                                                题解Project Euler3.Largest prime factor
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/ProjectEuler/'">欧拉计划</span>
+                                                
                                             <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/LeetCode191/" class="leancloud_visitors" data-flag-title="题解：LeetCode 191.位1的个数">
+                                                    <span id="/post/ProjectEuler3/" class="leancloud_visitors" data-flag-title="题解Project Euler3.Largest prime factor">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,102 +287,97 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            3.1分</span>
+                                            2.4分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619590635502" srcset="https://solitudealma.github.io/images/avatar.png?v=1619590635502" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-03-23</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-28</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h4 id="题目链接">题目链接</h4>
-<p><a href="https://leetcode-cn.com/problems/number-of-1-bits/">leetcode 191.位1的个数</a></p>
-<h4 id="引用">引用</h4>
-<p>做法不唯一，引用一些大佬的解题方法，有助于我们更好的理解位运算的操作，如果需要用到这个数可以用右移k位与1这个方法，其余的没差</p>
+                                    <h2 id="引用">引用</h2>
+<p>可以看看这位大佬的证明，个人感觉挺详细的，但是没看明白hhh。自始至终对数学都慢半拍</p>
 <blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/64845/">我要出去乱说</a> <a href="https://www.acwing.com/solution/content/41202/">LeetCode 191. 位1的个数（遍历法、lowbit法）</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/7340/">Ncik</a> <a href="https://www.acwing.com/solution/content/14938/">LeetCode 191. 位1的个数</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/28665/">开水白菜</a> <a href="https://www.acwing.com/solution/content/41211/">LeetCode 191. 二进制位1的个数</a></p>
-</blockquote>
-</blockquote>
+<p><a href="https://home.cnblogs.com/u/fx1998/">haust_fx</a> <a href="https://www.cnblogs.com/fx1998/p/13412457.html">1.试除法判定质数 2.分解质因数 质数</a></p>
 </blockquote>
 <h3 id="题目描述">题目描述</h3>
-<p>编写一个函数，输入是一个无符号整数（以二进制串的形式），返回其二进制表达式中数字位数为 '1' 的个数（也被称为汉明重量）。</p>
-<p>提示：<br>
-请注意，在某些语言（如 Java）中，没有无符号整数类型。在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。<br>
-在 Java 中，编译器使用二进制补码记法来表示有符号整数。因此，在上面的示例3中，输入表示有符号整数 -3。</p>
+<p>This problem is a programming version of <a href="https://projecteuler.net/problem=3">Problem 3</a> from <a href="https://projecteuler.net">projecteuler.net</a></p>
+<p>The prime factors of <strong>13195</strong> are <strong>5</strong>,<strong>7</strong>,<strong>13</strong> and <strong>29</strong>.</p>
+<p>What is the largest prime factor of a given number <em><strong>N</strong></em> ?</p>
 <h4 id="样例">样例</h4>
-<h4 id="输入样例">输入样例</h4>
-<pre><code>00000000000000000000000000001011
-</code></pre>
-<h4 id="输出样例">输出样例</h4>
-<pre><code>3
-</code></pre>
-<h4 id="解释">解释</h4>
-<p>输入的二进制串 00000000000000000000000000001011中，共有三位为 '1'。</p>
-<h4 id="输入样例-2">输入样例</h4>
-<pre><code>00000000000000000000000010000000
-</code></pre>
-<h4 id="输出样例-2">输出样例</h4>
-<pre><code>1
-</code></pre>
-<h4 id="解释-2">解释</h4>
-<p>输入的二进制串 00000000000000000000000010000000 中，共有一位为 '1'。</p>
-<h4 id="输入样例-3">输入样例</h4>
-<pre><code>11111111111111111111111111111101
-</code></pre>
-<h4 id="输出">输出</h4>
-<pre><code>31
-</code></pre>
-<h4 id="解释-3">解释</h4>
-<p>输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 '1'。</p>
-<hr>
-<h3 id="算法1">算法1</h3>
-<h5 id="暴力枚举-o1">(暴力枚举)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h5>
-<p>利用右移运算和与运算可以轻松算出32位unsigned int 的二进制表示中的1的个数</p>
-<h4 id="时间复杂度-o1">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
-<p>函数只有一重循环，而且还是常数级别的，所以时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的</p>
-<h4 id="c-代码">C++ 代码</h4>
-<pre><code class="language-c++">
-class Solution {
-public:
-    int hammingWeight(uint32_t n) {
-        int cnt = 0;
-        for(int i = 0; i &lt; 32; i++)
-            if(n &gt;&gt; i &amp; 1) cnt ++;
-        //或者不需要判断，直接相加即可，与的结果只有0和1，加个判断会稍微慢一点，无伤大雅
-        return cnt;
-    }
-};
+<h4 id="input-format">Input Format</h4>
+<p>First line contains <em><strong>T</strong></em>, the number of test cases. This is followed by <em><strong>T</strong></em> lines each containing an integer <em><strong>N</strong></em>.</p>
+<h4 id="output-format">Output Format</h4>
+<p>For each test case, display the largest prime factor of <em><strong>N</strong></em>.</p>
+<h4 id="constraints">Constraints</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">1 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>T</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">\leq 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">10 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>N</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">\leq 10^{12}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="sample-input-0">Sample Input 0</h4>
+<pre><code>2
+10
+17
 
 </code></pre>
+<h4 id="sample-output-0">Sample Output 0</h4>
+<pre><code>5
+17
+
+</code></pre>
+<h4 id="explanation-0">Explanation 0</h4>
+<p>Prime factors of <strong>10</strong> are <strong>{2,5}</strong>, largest is <strong>5</strong>.<br>
+Prime factor of <strong>17</strong> is <strong>17</strong> itself, hence largest is <strong>17</strong>.</p>
 <hr>
-<h3 id="算法2">算法2</h3>
-<h5 id="low_bit-o1">(low_bit)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h5>
-<p>一个数与上它的负数可以得到它的二进制表示的最后一位1所表示的数，比如8的二进制表示是 <code>0000 0000 0000 0000 0000 0000 0000 1000</code> ，负数在计算机中以补码的形式存在，所以-8的二进制表示是 <code>1111 1111 1111 1111 1111 1111 1111 1000</code> ，然后进行与运算得到的是 <code>0000 0000 0000 0000 0000 0000 0000 1000</code> 也就是8，说明8的二进制表示的最后一位1所表示的数是8，所以如果我们用这个方法去计算一个数的二进制表示的1的个数，就可以用一个循环搞定，然后每次循环减去low_bit得到的数，只要这个数不为0就一直循环，比上一个算法快那么一点，因为它最多只循环32次，也就是每一位都有1</p>
-<h4 id="时间复杂度-o1-2">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
-<p>最多循环32次</p>
-<h4 id="c-代码-2">C++ 代码</h4>
-<pre><code class="language-c++">class Solution {
-public:
-    int low_bit(uint32_t n)
+<h3 id="算法">算法</h3>
+<h4 id="数论-o1">(数论) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>对于试除法分解质因数的证明我就不解释了，我也不是很明白2333。感兴趣的可以看看这个<a href="https://www.cnblogs.com/fx1998/p/13412457.html">1.试除法判定质数 2.分解质因数 质数</a>。这位大佬有给出具体证明，还是挺详细的。</p>
+<p>要找到质因数首先我们得先找到因数，然后看看这个因数是不是质数，再和上一个质因数比较或者存入数组中。这是我想到的朴素做法。</p>
+<p>但是试除法分解质因数不需要这么做，他能快速找出所有质因子。</p>
+<h4 id="时间复杂度-osqrtn">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msqrt><mi>n</mi></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\sqrt{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span></h4>
+<h3 id="c-代码">C++ 代码</h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+typedef long long LL;
+
+int n;
+
+int main()
+{
+    cin &gt;&gt; n;
+        
+    while (n --)
     {
-        return (n &amp; (~n + 1));
+        LL t , res = 0;
+        
+        cin &gt;&gt; t;
+        // 一个数的因子是成对存在的，那么比较小的那一个必定不会超过根号n
+        for(LL i = 2; i &lt;= t / i; i ++)
+        {
+            if(t % i == 0)
+            {
+                while(t % i == 0) t /= i;
+                // 每一次的质因子都比前一个大，所以直接更新
+                res = i;
+            } 
+        }
+        // 因为可能刚好这个数本来就是质数，那么它的最大质因子就是他自己，如果这个数有因子的话，最后必定会为1
+        if(t &gt; 1) res = max(res , t) , cout &lt;&lt; res &lt;&lt; endl;
+        else cout &lt;&lt; res &lt;&lt; endl;
     }
-
-    int hammingWeight(uint32_t n) {
-        int cnt = 0;
-        while(n) n -= low_bit(n) , cnt++;
-
-        return cnt;
-    }
-};
+    
+    return 0;
+}
 </code></pre>
 
                                 </div>
@@ -399,8 +396,8 @@ public:
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/LeetCode191/" title="题解：LeetCode 191.位1的个数">
-                                        https://solitudealma.github.io/post/LeetCode191/
+                                    <a href="https://solitudealma.github.io/post/ProjectEuler3/" title="题解Project Euler3.Largest prime factor">
+                                        https://solitudealma.github.io/post/ProjectEuler3/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -423,17 +420,10 @@ public:
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/AcWing85/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解：AcWing 85.不用加减乘除做加法
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/AcWing1236/">
-                                        题解：AcWing 1236.递增三元组<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/ProjectEuler2/">
+                                        题解ProjectEuler2.Even Fibonacci numbers<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -442,9 +432,9 @@ public:
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/LeetCode191/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/LeetCode191/&sharesource=qzone&title=题解：LeetCode 191.位1的个数&pics=https://solitudealma.github.io/images/avatar.png?v=1619590635502&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/LeetCode191/&sharesource=weibo&title=题解：LeetCode 191.位1的个数 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619590635502"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/ProjectEuler3/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/ProjectEuler3/&sharesource=qzone&title=题解Project Euler3.Largest prime factor&pics=https://solitudealma.github.io/images/avatar.png?v=1619590635502&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/ProjectEuler3/&sharesource=weibo&title=题解Project Euler3.Largest prime factor + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619590635502"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
