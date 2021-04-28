@@ -265,18 +265,20 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解AcWing126. 最大的和
+                                                题解Project Euler3.Largest prime factor
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/ProjectEuler/'">欧拉计划</span>
+                                                
                                             <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/AcWing126/" class="leancloud_visitors" data-flag-title="题解AcWing126. 最大的和">
+                                                    <span id="/post/Project Euler3/" class="leancloud_visitors" data-flag-title="题解Project Euler3.Largest prime factor">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,117 +287,94 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            3.5分</span>
+                                            2.4分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1619590193562" srcset="https://solitudealma.github.io/images/avatar.png?v=1619590193562" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-25</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-28</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
                                     <h2 id="引用">引用</h2>
-<p>贪心思想可以看看秦同学的题解，大佬还是一如既往的厉害，我还是依然很菜。在这里就不画图了，可以看看以下大佬画的图</p>
+<p>可以看看这位大佬的证明，个人感觉挺详细的，但是没看明白hhh。自始至终对数学都慢半拍</p>
 <blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/1130/">秦淮岸灯火阑珊</a> <a href="https://www.acwing.com/solution/content/867/">AcWing 126. 最大的和</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/2675/">Bug-Free</a> <a href="https://www.acwing.com/solution/content/25619/">AcWing 126. 最大的和</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/7412/">Aniway</a> <a href="https://www.acwing.com/solution/content/4127/">AcWing 126. 最大的和</a></p>
-<blockquote>
-<p><a href="https://www.acwing.com/user/myspace/index/4184/">皮皮柯</a> <a href="https://www.acwing.com/solution/content/1812/">AcWing 126. 最大的和(连续子序列和dp求解）</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
+<p><a href="https://home.cnblogs.com/u/fx1998/">haust_fx</a> <a href="https://www.cnblogs.com/fx1998/p/13412457.html">1.试除法判定质数 2.分解质因数 质数</a></p>
 </blockquote>
 <h3 id="题目描述">题目描述</h3>
-<p>给定一个包含整数的二维矩阵，子矩形是位于整个阵列内的任何大小为 1×1 或更大的连续子阵列。</p>
-<p>矩形的总和是该矩形中所有元素的总和。</p>
-<p>在这个问题中，具有最大和的子矩形被称为最大子矩形。</p>
-<p>例如，下列数组：</p>
-<pre><code>0 -2 -7 0 
-9 2 -6 2 
--4 1 -4 1 
--1 8 0 -2
-</code></pre>
-<p>其最大子矩形为：</p>
-<pre><code>9 2 
--4 1 
--1 8
-</code></pre>
-<p>它拥有最大和 15。</p>
+<p>This problem is a programming version of <a href="https://projecteuler.net/problem=3">Problem 3</a> from <a href="https://projecteuler.net">projecteuler.net</a></p>
+<p>The prime factors of <strong>13195</strong> are <strong>5</strong>,<strong>7</strong>,<strong>13</strong> and <strong>29</strong>.</p>
+<p>What is the largest prime factor of a given number <em><strong>N</strong></em> ?</p>
 <h4 id="样例">样例</h4>
-<h4 id="输入格式">输入格式</h4>
-<p>输入中将包含一个 N×N 的整数数组。</p>
-<p>第一行只输入一个整数 N，表示方形二维数组的大小。</p>
-<p>从第二行开始，输入由空格和换行符隔开的 N2 个整数，它们即为二维数组中的 N2 个元素，输入顺序从二维数组的第一行开始向下逐行输入，同一行数据从左向右逐个输入。</p>
-<p>数组中的数字会保持在 [−127,127] 的范围内。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>输出一个整数，代表最大子矩形的总和。</p>
-<h4 id="数据范围">数据范围</h4>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1≤N≤100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
-<h4 id="输入样例-1">输入样例 1：</h4>
-<pre><code>4
-0 -2 -7 0 9 2 -6 2
--4 1 -4  1 -1
+<h4 id="input-format">Input Format</h4>
+<p>First line contains <em><strong>T</strong></em>, the number of test cases. This is followed by <em><strong>T</strong></em> lines each containing an integer <em><strong>N</strong></em>.</p>
+<h4 id="output-format">Output Format</h4>
+<p>For each test case, display the largest prime factor of <em><strong>N</strong></em>.</p>
+<h4 id="constraints">Constraints</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">1 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>T</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">\leq 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn><mo>≤</mo></mrow><annotation encoding="application/x-tex">10 \leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span></span></span></span> <em><strong>N</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">\leq 10^{12}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="sample-input-0">Sample Input 0</h4>
+<pre><code>2
+10
+17
 
-8  0 -2
 </code></pre>
-<h4 id="输出样例-1">输出样例 1：</h4>
-<pre><code>15
+<h4 id="sample-output-0">Sample Output 0</h4>
+<pre><code>5
+17
+
 </code></pre>
+<h4 id="explanation-0">Explanation 0</h4>
+<p>Prime factors of <strong>10</strong> are <strong>{2,5}</strong>, largest is <strong>5</strong>.<br>
+Prime factor of <strong>17</strong> is <strong>17</strong> itself, hence largest is <strong>17</strong>.</p>
 <hr>
 <h3 id="算法">算法</h3>
-<h4 id="二位前缀和-on">(二位前缀和) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
-<p>这题的数据范围很小，所以我们直接遍历所有子矩阵就行了，但是这样做复杂度是很高的，虽然不会超时，但是在这里介绍一个更好的思路。可以减少一层循环。我们预处理前缀和的时候，只计算列方向的前缀和或者行方向的前缀和。这样遍历的时候我们只要遍历上下界，即矩阵的上下边或者左右边就行了，然后算一下前k列或前k行的最大值。</p>
-<p>这题也有一点点贪心的影子，如果前几列加上这一列比零还小，那么我们就直接舍去，因为这个子矩阵的话，我们还不如选剩下的矩阵，因为加上这个矩阵只会更小</p>
-<p>多说不益，我们来试试吧</p>
-<h4 id="时间复杂度-on2m">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></h4>
-<p>预处理前缀和数组，所以计算的时候是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 的</p>
+<h4 id="数论-o1">(数论) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></h4>
+<p>对于试除法分解质因数的证明我就不解释了，我也不是很明白2333。感兴趣的可以看看这个<a href="https://www.cnblogs.com/fx1998/p/13412457.html">1.试除法判定质数 2.分解质因数 质数</a>。这位大佬有给出具体证明，还是挺详细的。</p>
+<p>要找到质因数首先我们得先找到因数，然后看看这个因数是不是质数，再和上一个质因数比较或者存入数组中。这是我想到的朴素做法。</p>
+<p>但是试除法分解质因数不需要这么做，他能快速找出所有质因子。</p>
+<h4 id="时间复杂度-osqrtn">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msqrt><mi>n</mi></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\sqrt{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span></h4>
 <h3 id="c-代码">C++ 代码</h3>
 <pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
 
 using namespace std;
 
-const int N = 110;
-
-int a[N][N];
+typedef long long LL;
 
 int n;
-int maxx = -0x3f3f3f3f;
 
 int main()
 {
     cin &gt;&gt; n;
-    // 读入数据
-    for(int i = 1; i &lt;= n; i ++)
-        for(int j = 1; j &lt;= n; j ++)
-            cin &gt;&gt; a[i][j];
-    // 预处理前缀和
-    for(int i = 1; i &lt;= n; i ++)
-        for(int j = 1; j &lt;= n; j ++)
-            a[i][j] += a[i - 1][j];
-    // 遍历上下界
-    for(int i = 1; i &lt;= n; i ++)
+        
+    while (n --)
     {
-        for(int j = i; j &lt;= n; j ++)
+        LL t , res = 0;
+        
+        cin &gt;&gt; t;
+        // 一个数的因子是成对存在的，那么比较小的那一个必定不会超过根号n
+        for(LL i = 2; i &lt;= t / i; i ++)
         {
-            // 存每一个上下界的前k列的值
-            int t = 0;
-            for(int k = 1; k &lt;= n; k ++)
+            if(t % i == 0)
             {
-                // 计算前k列，如果上一个t小于零就不要了
-                t = max(t , 0) + a[j][k] - a[i - 1][k];
-                maxx = max(maxx , t);
-            }
+                while(t % i == 0) t /= i;
+                // 每一次的质因子都比前一个大，所以直接更新
+                res = i;
+            } 
         }
+        // 因为可能刚好这个数本来就是质数，那么它的最大质因子就是他自己，如果这个数有因子的话，最后必定会为1
+        if(t &gt; 1) res = max(res , t) , cout &lt;&lt; res &lt;&lt; endl;
+        else cout &lt;&lt; res &lt;&lt; endl;
     }
-    
-    cout &lt;&lt; maxx &lt;&lt; endl;
     
     return 0;
 }
@@ -417,8 +396,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/AcWing126/" title="题解AcWing126. 最大的和">
-                                        https://solitudealma.github.io/post/AcWing126/
+                                    <a href="https://solitudealma.github.io/post/Project Euler3/" title="题解Project Euler3.Largest prime factor">
+                                        https://solitudealma.github.io/post/Project Euler3/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -441,17 +420,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/20200425/">
-                                <i class="fa fa-chevron-left"></i>
-                                20210425 [日记]
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/2020TianTiL2-4/">
-                                        题解2020届天梯赛总决赛L2-4网红点打卡攻略<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/ProjectEuler2/">
+                                        题解ProjectEuler2.Even Fibonacci numbers<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -460,9 +432,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/AcWing126/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/AcWing126/&sharesource=qzone&title=题解AcWing126. 最大的和&pics=https://solitudealma.github.io/images/avatar.png?v=1619590193562&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/AcWing126/&sharesource=weibo&title=题解AcWing126. 最大的和 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619590193562"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/Project Euler3/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/Project Euler3/&sharesource=qzone&title=题解Project Euler3.Largest prime factor&pics=https://solitudealma.github.io/images/avatar.png?v=1619590193562&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/Project Euler3/&sharesource=weibo&title=题解Project Euler3.Largest prime factor + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1619590193562"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
