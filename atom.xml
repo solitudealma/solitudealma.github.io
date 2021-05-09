@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-05-09T07:18:25.837Z</updated>
+    <updated>2021-05-09T09:53:11.308Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[Nodejs-Mongodb的一些简单的CURD]]></title>
+        <id>https://solitudealma.github.io/post/pb6nCDUaa/</id>
+        <link href="https://solitudealma.github.io/post/pb6nCDUaa/">
+        </link>
+        <updated>2021-05-09T09:52:33.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解Project Euler3.Largest prime factor]]></title>
         <id>https://solitudealma.github.io/post/ProjectEuler3/</id>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/LuoGuP1255/">
         </link>
         <updated>2021-04-10T09:10:34.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解第十一届蓝桥杯E.七段码]]></title>
-        <id>https://solitudealma.github.io/post/LanQiao11E/</id>
-        <link href="https://solitudealma.github.io/post/LanQiao11E/">
-        </link>
-        <updated>2021-04-08T14:49:03.000Z</updated>
     </entry>
 </feed>
