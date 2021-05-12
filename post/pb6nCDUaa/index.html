@@ -21,7 +21,7 @@
 <meta name="keywords" content="algorithm">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1620557043539">
+<meta name="UpdateTime" content="1620794814400">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -201,13 +201,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1620557043539" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1620794814400" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1620557043539" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1620794814400" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -285,11 +285,11 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            4.2分</span>
+                                            4.1分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1620557043539" srcset="https://solitudealma.github.io/images/avatar.png?v=1620557043539" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1620794814400" srcset="https://solitudealma.github.io/images/avatar.png?v=1620794814400" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-05-09</span>
                                         </div>
@@ -300,7 +300,7 @@
                                     <p>最近放下了算法的学习，重新拾起了开发。刚好想搞点小玩意，因为学算法暂时搁置了。思来想去觉得用Mongodb这个数据库更好一点，query的数据刚好是一个json，而nodejs对json的支持堪称完美。</p>
 <p>因为初次使用这个模块，所以简单的实现了一下Mongodb的CURD</p>
 <p>刚开始按照自上而下的顺序写的时候发现顺序并不是我想要的，查询的时候查到了空数组。这说明了什么，异步问题，代码不能保证执行顺序，虽然相差不大，但刚好不是我们想要的顺序，而且随着业务的问题，一次操作的数据可能非常大，那样对于顺序的把控更加不可靠了，那么应该怎么办呢</p>
-<p>ES6有两个新语法糖，一个是Promise对象，一个async函数。Promise可以简化代码，让你的代码脱离回调地狱，毕竟这种俄罗斯套娃式的代码任谁看了都不好受。async是对异步操作的一种改进。<br>
+<p>ES6有两个新特性，一个是Promise对象，一个async函数。Promise可以简化代码，让你的代码脱离回调地狱，毕竟这种俄罗斯套娃式的代码任谁看了都不好受。async是对异步操作的一种改进。<br>
 具体的可以看看这个<a href="https://es6.ruanyifeng.com/">ES6 入门教程</a></p>
 <p>当然，安装部分就不给出了，这个有手就行，百度一下你就知道</p>
 <p>这里只实现了插入查询操作，余下的感兴趣的小伙伴可以看看<a href="https://www.runoob.com/nodejs/nodejs-mongodb.html">菜鸟教程</a></p>
@@ -311,26 +311,26 @@ const uri = &quot;mongodb://localhost:27017/&quot; + dbName;
 
 // 这里按照官方3.x示例更改了一下
 
-const client = new MongoClient(uri , {
-    useNewUrlParser: true ,
+const client = new MongoClient(uri, {
+    useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
 // 与 MySQL 不同的是 MongoDB 会自动创建数据库和集合，所以使用前我们不需要手动去创建。所以建立连接的时候直接指定数据库和集合即可
-// 在这里我们使用ES6语法，它有很多很好用的语法糖，比如接下来我们要用到的async，await，Promise，箭头函数，let，const等
+// 在这里我们使用ES6语法，它有很多很好用的新特性，比如接下来我们要用到的async，await，Promise，箭头函数，let，const等
 // 因为我们这些操作都是写在一个函数里，所以每一次操作之后就不断开连接了，这样就挺麻烦的。但是在写项目的时候，对于数据库的操作一般都是在接口上，所以我们每次操作完之后记得释放资源，如果封装的模块会自动释放那最好
 
 
 // 连接数据库
-async function connectDb(client , dbName) {
-    return new Promise(async function (resolve , reject) {
+async function connectDb(client, dbName) {
+    return new Promise(async function (resolve, reject) {
         await client.connect();
         let database = client.db(dbName);
         resolve(database);
     });
 }
 
-// 这个可有可无，最好就不要写，因为可能重复创建，会报错，直接连接就行，或者自己手动创建
+// 这个可有可无，最好就不要写，因为可能重复创建，会报错，直接连接就行，或者自己手动创建，因为它不能像MySQL那样去检测是否存在
 // async function createColl(database , collName) {
 //     return new Promise((resolve , reject) =&gt; {
 //         database.createCollection(collName , (err , res) =&gt; {
@@ -341,87 +341,85 @@ async function connectDb(client , dbName) {
 // }
 
 // 连接集合
-async function connectColl(database , collName){
-    return new Promise((resolve , reject) =&gt; {
+function connectColl(database, collName) {
+    return new Promise((resolve, reject) =&gt; {
         let collObj = database.collection(collName);
         resolve(collObj);
     });
 }
 
 // 插入一条数据
-async function insert(collObj , obj) {
-    return new Promise((resolve , reject) =&gt; {
-        collObj.insertOne(obj , (err , res) =&gt; {
+function insert(collObj, obj) {
+    return new Promise((resolve, reject) =&gt; {
+        collObj.insertOne(obj, (err, res) =&gt; {
             if (err) reject(err);
-            console.log(&quot;1 success&quot;);
             resolve();
         });
     });
 }
 
 // 插入多条数据
-async function insertM(collObj , arr) {
-    return new Promise((resolve , reject) =&gt; {
-        collObj.insertMany(arr , (err , res) =&gt; {
+function insertM(collObj, arr) {
+    return new Promise((resolve, reject) =&gt; {
+        collObj.insertMany(arr, (err, res) =&gt; {
             if (err) reject(err);
             resolve();
-            console.log(&quot;2 success&quot;);
         });
     });
 }
 
 // 查找数据
-async function findData(collObj , obj){
-    return new Promise((resolve , reject) =&gt; {
+function findData(collObj, obj) {
+    return new Promise((resolve, reject) =&gt; {
         // 将返回的数据转换为数组
-       let res = collObj.find(obj).toArray();
-       if(!res) reject(&quot;Not Found!&quot;);
-       else resolve(res); 
+        let res = collObj.find(obj).toArray();
+        if (!res) reject(&quot;Not Found!&quot;);
+        else resolve(res);
     });
 }
 
 async function run() {
-try {
-    let database = await connectDb(client , dbName);
-    let collName = &quot;testColl&quot;;
-    //await createColl(database , collName);
-    let collObj = await connectColl(database , collName);
+    try {
+        let database = await connectDb(client, dbName);
+        let collName = &quot;testColl&quot;;
+        //await createColl(database , collName);
+        let collObj = await connectColl(database, collName);
 
-    // mongodb默认_id为主键，不设置的话会自动帮你加上
-    let obj = {
-        _id: &quot;001&quot;,
-        name: &quot;张三&quot;,
-        sex: &quot;Female&quot;
-    };
-    
-    await insert(collObj , obj);
-
-    let arr = [
-        {
-            _id: &quot;002&quot;,
-            name: &quot;王五&quot;,
+        // mongodb默认_id为主键，不设置的话会自动帮你加上
+        let obj = {
+            _id: &quot;001&quot;,
+            name: &quot;张三&quot;,
             sex: &quot;Female&quot;
-        },
-        {
-            _id: &quot;003&quot;,
-            name: &quot;李四&quot;,
-            sex: &quot;Male&quot;
-        }
-    ];
-    await insertM(collObj , arr);
+        };
 
-    // 为空对象时相当于MySQL中的select * from XXX
-    let result = await findData(collObj , {});
-    console.log(result);
+        await insert(collObj, obj);
 
-    let query = { name: '李四' };
-    result = await findData(collObj , query);
-    console.log(result);
-    
-}finally{
-// 关闭连接
-    await client.close();
-}
+        let arr = [
+            {
+                _id: &quot;002&quot;,
+                name: &quot;王五&quot;,
+                sex: &quot;Female&quot;
+            },
+            {
+                _id: &quot;003&quot;,
+                name: &quot;李四&quot;,
+                sex: &quot;Male&quot;
+            }
+        ];
+        await insertM(collObj, arr);
+
+        // 为空对象时相当于MySQL中的select * from XXX
+        let result = await findData(collObj, {});
+        console.log(result);
+
+        let query = { name: '李四' };
+        result = await findData(collObj, query);
+        console.log(result);
+
+    } finally {
+        // 关闭连接
+        await client.close();
+    }
 }
 
 // 这个catch是Promise对象的一个方法，用于捕捉错误，也就相当于try/catch
@@ -482,8 +480,8 @@ run().catch(console.dir);
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/pb6nCDUaa/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/pb6nCDUaa/&sharesource=qzone&title=Nodejs-Mongodb的一些简单的CURD&pics=https://solitudealma.github.io/images/avatar.png?v=1620557043539&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/pb6nCDUaa/&sharesource=weibo&title=Nodejs-Mongodb的一些简单的CURD + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1620557043539"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/pb6nCDUaa/&sharesource=qzone&title=Nodejs-Mongodb的一些简单的CURD&pics=https://solitudealma.github.io/images/avatar.png?v=1620794814400&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/pb6nCDUaa/&sharesource=weibo&title=Nodejs-Mongodb的一些简单的CURD + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1620794814400"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
