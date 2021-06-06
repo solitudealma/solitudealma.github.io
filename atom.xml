@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-05-14T06:13:39.352Z</updated>
+    <updated>2021-06-06T09:11:41.651Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[Nodejs-Mongodb模块常用的操作封装]]></title>
+        <id>https://solitudealma.github.io/post/nXQ9P_Lo2/</id>
+        <link href="https://solitudealma.github.io/post/nXQ9P_Lo2/">
+        </link>
+        <updated>2021-06-06T09:10:53.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Nodejs-Mongodb的一些简单的CURD]]></title>
         <id>https://solitudealma.github.io/post/pb6nCDUaa/</id>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/2020TianTiL3-1/">
         </link>
         <updated>2021-04-20T14:50:11.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解洛谷P1255.数楼梯]]></title>
-        <id>https://solitudealma.github.io/post/LuoGuP1255/</id>
-        <link href="https://solitudealma.github.io/post/LuoGuP1255/">
-        </link>
-        <updated>2021-04-10T09:10:34.000Z</updated>
     </entry>
 </feed>

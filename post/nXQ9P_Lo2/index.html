@@ -265,18 +265,18 @@
                                     
                                         <div class="thumbnail-shadow">
                                             <h1 class="post-title">
-                                                题解2020届天梯赛总决赛L3-1那就别担心了
+                                                Nodejs-Mongodb模块常用的操作封装
                                             </h1>
                                             <div class="post-info">
                                                 <span class="post-category"><i class="Card Card-novel"></i>
                                         
-                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/answer/'">题解</span>
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/Nodejs/'">Nodejs</span>
                                                 
                                                     </span>
                                                     <span class="post-view">
                                                     
                                                         &nbsp;•&nbsp;
-                                                    <span id="/post/2020TianTiL3-1/" class="leancloud_visitors" data-flag-title="题解2020届天梯赛总决赛L3-1那就别担心了">
+                                                    <span id="/post/nXQ9P_Lo2/" class="leancloud_visitors" data-flag-title="Nodejs-Mongodb模块常用的操作封装">
                                                 <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
                                                 <i class="leancloud-visitors-count">0</i>
                                             </span>
@@ -285,143 +285,370 @@
                                                             </span>&nbsp;•&nbsp;
 
                                                             <span class="post-readtime">阅读时间:
-                                            5.8分</span>
+                                            10.9分</span>
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
                                             <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1622970698483" srcset="https://solitudealma.github.io/images/avatar.png?v=1622970698483" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
-                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-04-20</span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-06-06</span>
                                         </div>
                         </header>
                         <div class="post-main post-type-main">
                             <div class="post-content">
                                 <div class="post-content-real">
-                                    <h2 id="引用">引用</h2>
-<p>刚开始想到了怎么做，但是想不明白该怎么判断是否有些点不能达到终点，在群里问了一些大佬还是不能理解，看了大佬的题解之后，再结合群里的大佬所说的，瞬间就理解了，嘤嘤嘤</p>
+                                    <p>之前写了一篇文章是关于nodejs mongodb模块的一些简单Demo，但是如果是需要结合项目一起使用的话，那肯定是对其进行二次封装是最好的，这样能方便自己，也能学到一些东西。</p>
+<p>所以依照网上的一些文章和官方文档简单地封装了一下。虽然说调用起来并没有多大的区别，但至少我们把重复的部门提炼出来，定义为函数，调用起来显得更方便。结合Promise能更大程度降低代码的复杂性，脱离回调地狱，使代码显得不那么臃肿。</p>
+<p>个人觉得模块的封装并不是说一定要最大限度地简化方法的调用之类的，比如说你只是独立一个小功能，那么你只需要把接口之类的暴露出来就行了；如果是想数据库操作的模块封装那么可以考虑简化一下数据库语言的书写（比如MySQL），但这只是自己使用的时候有用，团队开发最好不要这么干，当然这么做也有其意义，能学到更深层面的东西。</p>
+<p>在找文章的时候看到了一个人用prototype这个属性来封装模块，之前看到的封装都是直接定义一个对象，然后添加方法等</p>
+<pre><code class="language-js">moudule.exports = {
+    insertOne() {},
+    insertMany() {}
+    ....
+}
+</code></pre>
+<p>上面用到了ES6语法的属性名简介表示，详情可以看看这个 <a href="https://es6.ruanyifeng.com/#docs/object">ECMAScript 6 入门</a> ，在对象扩展部分。本次封装用了一些ES6的语法，看不懂的话可以去链接里找找</p>
+<p>那么什么是prototype呢？JavaScript中的prototype是一个原型对象，那么什么是原型呢？在这里我们不做详细的解释，感兴趣的小伙伴可以去百度找找答案。我们都知道，js中函数也是一个对象，emmm，其中牵扯有点大，貌似涉及原型原型链，暂且这么认为吧。</p>
+<p>我们都知道，已存在的对象的构造器中是不能添加新的属性，除非在构造器中添加。</p>
 <blockquote>
-<p><a href="https://blog.csdn.net/qq_44866969">巴扎嘿呀</a> <a href="https://blog.csdn.net/qq_44866969/article/details/110313322">L3-1 那就别担心了（记忆化搜索）</a></p>
+<p>所有的 JavaScript 对象都会从一个 prototype（原型对象）中继承属性和方法：<br>
+Date 对象从 Date.prototype 继承。<br>
+Array 对象从 Array.prototype 继承。<br>
+Person 对象从 Person.prototype 继承。<br>
+所有 JavaScript 中的对象都是位于原型链顶端的 Object 的实例。<br>
+JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。<br>
+Date 对象, Array 对象, 以及 Person 对象从 Object.prototype 继承。<br>
+添加属性和方法<br>
+有的时候我们想要在所有已经存在的对象添加新的属性或方法。<br>
+另外，有时候我们想要在对象的构造函数中添加属性或方法。<br>
+-----菜鸟教程</p>
 </blockquote>
-<h3 id="题目描述">题目描述</h3>
-<p>下图转自“英式没品笑话百科”的新浪微博 —— 所以无论有没有遇到难题，其实都不用担心。<br>
-<img src="https://img.imgdb.cn/item/607ede1d8322e6675cf75768.jpg" alt="2020天梯赛总决赛L3-1" loading="lazy"></p>
-<p>博主将这种逻辑推演称为“逻辑自洽”，即从某个命题出发的所有推理路径都会将结论引导到同一个最终命题（开玩笑的，千万别以为这是真正的逻辑自洽的定义……）。现给定一个更为复杂的逻辑推理图，本题就请你检查从一个给定命题到另一个命题的推理是否是“逻辑自洽”的，以及存在多少种不同的推理路径。例如上图，从“你遇到难题了吗？”到“那就别担心了”就是一种“逻辑自洽”的推理，一共有 3 条不同的推理路径。</p>
-<h4 id="样例">样例</h4>
-<h4 id="输入格式">输入格式</h4>
-<p>输入首先在一行中给出两个正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mi mathvariant="normal">（</mi><mn>1</mn><mo>&lt;</mo><mi>N</mi><mo>≤</mo><mn>500</mn><mi mathvariant="normal">）</mi></mrow><annotation encoding="application/x-tex">N（1&lt;N≤500）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">（</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord cjk_fallback">）</span></span></span></span> 和 M，分别为命题个数和推理个数。这里我们假设命题从 1 到 N 编号。</p>
-<p>接下来 M 行，每行给出一对命题之间的推理关系，即两个命题的编号 <code>S1 S2</code>，表示可以从 <code>S1</code> 推出 <code>S2</code>。题目保证任意两命题之间只存在最多一种推理关系，且任一命题不能循环自证（即从该命题出发推出该命题自己）。<br>
-最后一行给出待检验的两个命题的编号 <code>A B</code>。</p>
-<h4 id="输出格式">输出格式</h4>
-<p>在一行中首先输出从 <code>A</code> 到 <code>B</code> 有多少种不同的推理路径，然后输出 <code>Yes</code> 如果推理是“逻辑自洽”的，或 <code>No</code> 如果不是。<br>
-题目保证输出数据不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></p>
-<h4 id="输入样例-1">输入样例 1：</h4>
-<pre><code>7 8
-7 6
-7 4
-6 5
-4 1
-5 2
-5 3
-2 1
-3 1
-7 1
-</code></pre>
-<h4 id="输出样例-1">输出样例 1：</h4>
-<pre><code>3 Yes
-</code></pre>
-<h4 id="输入样例-2">输入样例 2：</h4>
-<pre><code>7 8
-7 6
-7 4
-6 5
-4 1
-5 2
-5 3
-6 1
-3 1
-7 1
-</code></pre>
-<h4 id="输出样例-2">输出样例 2：</h4>
-<pre><code>3 No
-</code></pre>
-<hr>
-<h3 id="算法">算法</h3>
-<h4 id="记忆化搜索-on2">(记忆化搜索)  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></h4>
-<p>个人感觉这是一个很简单的图论题。由题目的意思我们可以知道，只需要存下所有命题能推导什么命题就行了。相信聪明的你已经想到了，那就是邻接表。至于邻接表呢就是一个用于存储图的结构，相信邻接矩阵大家都熟悉吧，就是用一个二维矩阵存储某个点是否能到另一个点的信息比如第一行第二列的数不为0，就表示1这个点能到2这个点，如果带权值那么数组的值就是权值。但是邻接矩阵一般不用来存无向图，因为你不能存两条边的信息，而且也浪费空间。所以对于图的存储我们可以用邻接表。其实邻接表就是一条单链表上的每一个节点都是一条单链表，上面存储了这个头结点能到那个点上，存储顺序无关紧要。</p>
-<p>这道题其实是有向无环图的遍历，我们先把每个点能到的点连一条边（如果是无环图就反向连一条就行），即在头结点上用头插法把节点插入就行了。因为按照题目的意思我们不仅要找到起点延申出来的点有几条能到终点，还有判断是否都能到终点。所以对于这种遍历我们可以采用dfs，一条路走到底，但是因为数据范围比较大，能多点可能会交错，如果只是单纯的遍历是不能在规定时间内跑完的，所以我们应该存下已经遍历的点到达终点的路径数，这样在第二次遍历这个点的时候就不用再次遍历了，也就是记忆化搜索。</p>
-<h4 id="时间复杂度-on">时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></h4>
-<p>所有点都只搜一次，嗯，应该是这样的</p>
-<h3 id="c-代码">C++ 代码</h3>
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;cstring&gt;
+<p>那么我们就可以通过prototype来为一个对象添加属性与方法</p>
+<p>说了这么多，直接上代码吧</p>
+<pre><code class="language-js">const { MongoClient } = require(&quot;mongodb&quot;);
 
-using namespace std;
+const connectionConfig = {
+    host: 'localhost',
+    username: '',
+    password: '',
+    port: '27017',
+    database: '',
+    authMechanism: 'DEFAULT'
+};
 
-const int N = 1000;
+// 某版本之后规定用户名密码需要URI编码
+const username = encodeURIComponent(connectionConfig.username);
+const password = encodeURIComponent(connectionConfig.password);
 
-//h用于存储头结点，初始化为-1  e为数据域，存储能到的点  ne为指针域 idx表示当前用到的是第几个节点
-int h[N] , e[N * N] , ne[N * N] , idx;
-int num[N];
+// 实例化db对象
+const db = function () {
+    this.dbClient = null;
+    this.MongoClient = null;
+};
 
-//将两点之间连一条边，头插法
-void add(int a , int b)
-{
-    e[idx] = b , ne[idx] = h[a] , h[a] = idx ++;
+db.prototype.getConnection = function () {
+    return new Promise((resolve, reject) =&gt; {
+        if (!this.dbClient) {
+            if (connectionConfig.username != '' &amp;&amp; connectionConfig.password != '') {
+                let url = `mongodb://${username}:${password}@${connectionConfig.host}:${connectionConfig.port}/?authMechanism=${connectionConfig.authMechanism}`;
+                try {
+                    let mongoClient = new MongoClient(url, {
+                        useNewUrlParser: true,
+                        useUnifiedTopology: true,
+                        poolSize: 10,
+                        authSource: connectionConfig.database,
+                        // user : connectionConfig.username,
+                        // password : connectionConfig.password, 不是必须
+                        authMechanism: connectionConfig.authMechanism
+                    });
+                    this.MongoClient = mongoClient;
+                    mongoClient.connect();
+                    this.dbClient = mongoClient.db(connectionConfig.database);
+                    resolve(this.dbClient);
+                } catch (error) {
+                    reject(error);
+                }
+            } else {
+                let url = `mongodb://${connectionConfig.host}:${connectionConfig.port}/`;
+                try {
+                    let mongoClient = new MongoClient(url, {
+                        useNewUrlParser: true,
+                        useUnifiedTopology: true
+                    });
+                    this.MongoClient = mongoClient;
+                    mongoClient.connect();
+                    this.dbClient = mongoClient.db(connectionConfig.database);
+                    resolve(this.dbClient);
+                } catch (error) {
+                    reject(error);
+                }
+            }
+        }
+        resolve(this.dbClient);
+    });
 }
 
-int n , m , x , y , flag;
-
-int dfs(int u)
-{
-    int res = 0;
-    //如果这个点搜过了就直接返回以它为起点的路径数
-    if(num[u] != -1) return num[u];
-    //如果搜到了终点，那么这个点的值为1，即以它为起点的路径只有一条
-    if(u == y) return num[u] = 1;
-    //如果这个为NULL,那么表示以这个点为起点的路径为0，并且它不能到达终点
-    if(h[u] == -1)
-    {
-        flag = 1;
-        return num[u] = 0;
-    }
-    
-    //遍历每条链表上的点
-    for(int i = h[u]; i != -1; i = ne[i])
-    {
-        //因为是有向无环图，所以不需要记录这个点是不是被遍历过
-        int j = e[i];
-        res += dfs(j);
-    }
-    //遍历完返回结果
-    return num[u] = res;
+/**
+ * 插入一个文档
+ * @param collection_name 集合名称
+ * @param obj 插入的文档数据
+ * @param options 一些可选操作
+ */
+db.prototype.insertOne = async function (collectionName, obj, options) {
+    options = options || {};
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName).insertOne(obj, options, (err, res) =&gt; {
+                if (err) reject(err);
+                this.MongoClient.close();
+                this.MongoClient = this.dbClient = null;
+                resolve(res);
+            });
+        }).catch(error =&gt; reject(error));
+    });
 }
 
-int main()
-{   
-    
-    memset(h, -1, sizeof h);
-    memset(num , -1 , sizeof num);
-    
-    cin &gt;&gt; n &gt;&gt; m;
-    
-    for(int i = 0; i &lt; m; i ++)
-    {
-        int a , b;
-        cin &gt;&gt; a &gt;&gt; b;
-        add(a, b);
-    }
-    
-    cin &gt;&gt; x &gt;&gt; y;
-    
-    int res = dfs(x);
-    
-    cout &lt;&lt; res &lt;&lt; ' ';
-    //如果为真代表有至少一个点不能到达终点
-    if(flag || !res) cout &lt;&lt; &quot;No&quot;;
-    else cout &lt;&lt; &quot;Yes&quot;;
-  
-    return 0;
+/**
+ * 插入多个文档
+ * @param collection_name 集合名称
+ * @param arr 插入的文档数据集合
+ * @param options 一些可选操作
+ * 
+ * option:
+ *   ordered:如果为true，则在插入失败时，不要执行其余的写操作。 如果为false，则在失败时继续执行其余的插入操作。
+ */
+db.prototype.insertMany = async function (collectionName, arr, options) {
+    return new Promise((resolve, reject) =&gt; {
+        options = options || {};
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName).insertMany(arr, options, (err, res) =&gt; {
+                if (err) reject(err);
+                this.MongoClient.close();
+                this.MongoClient = this.dbClient = null;
+                resolve(res);
+            });
+        }).catch(error =&gt; reject(error));
+    });
 }
+
+/**
+ * 查找文档（范围不止一条）
+ * @param collection_name 集合名称
+ * @param obj 查询数据的一些操作信息
+ * 传空对象会查询集合所有数据
+ * obj:
+ *   whereObj:条件，默认是{}
+ *   options:
+ *     projection:指定字段 0不显示 1显示
+ *     sort:排序，默认是{}
+ *   limit:显示提定条数,默认是0
+ *   skip:跳过指定条数，默认是0
+ * 
+ * js中逻辑与和其他语言不太一样，如果第一个操作数是true(或者能够转为true)，
+ * 计算结果就是第二个操作数，如果第一个操作数是false，结果就是false（短路计算），
+ * 对于一些特殊数值不遵循以上规则.
+ * 
+ * ObjectID 生成系统自动生成的_id
+ * sort也可以写进option
+ * 
+ * 以下写法等价
+ * collection.find({ runtime: { $lt: 15 } }, { sort: { title: 1 }, projection: { _id: 0, title: 1, imdb: 1 }});
+ * collection.find({ runtime: { $lt: 15 } }).sort({ title: 1}).project({ _id: 0, title: 1, imdb: 1 });
+ **/
+db.prototype.find = async function (collectionName, obj) {
+    return new Promise((resolve, reject) =&gt; {
+        obj.whereObj = obj.whereObj || {};
+        obj.options = obj.options || {};
+        obj.limit = obj.limit || 0;
+        obj.skip = obj.skip || 0;
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .find(obj.whereObj, obj.options)
+                .sort(obj.sortObj)
+                .limit(obj.limit)
+                .skip(obj.skip)
+                .toArray((err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+/**
+ * 修改单个文档
+ * @param collection_name 集合名称
+ * @param obj 修改数据的一些操作信息
+ * @param options 一些可选操作
+ * obj:
+ *   whereObj:条件，默认是{}
+ *   updateObj:修改语句，NOT NULL
+ * 
+ * 还有很多操作，但必须加上$xxx
+ * 如果应用程序在更新后需要文档，请考虑使用 collection.findOneAndUpdate()。方法，该方法具有与 updateOne ()类似的接口，但也返回原始文档或更新的文档。
+ * updateOne和updateMany与update不同，需要加上$操作（Update document requires atomic operators）$set $inc
+ **/
+db.prototype.updateOne = async function (collectionName, obj, options) {
+    obj.whereObj = obj.whereObj || {};
+    obj.updateObj = obj.updateObj || {};
+    options = options || {};
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .updateOne(obj.whereObj, obj.updateObj, options, (err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+
+/**
+ * 修改多个文档
+ * @param collection_name 集合名称
+ * @param obj 修改数据的一些操作信息
+ * @param options 一些可选操作
+ * obj:
+ *   whereObj:条件，默认是{}
+ *   updateObj:修改语句，NOT NULL
+ * 
+ * 还有很多操作，但必须加上$xxx
+ * updateOne和updateMany与update不同，需要加上$操作（Update document requires atomic operators） $set $inc
+ **/
+db.prototype.updateMany = async function (collectionName, obj, options) {
+    obj.whereObj = obj.whereObj || {};
+    obj.updateObj = obj.updateObj || {};
+    options = options || {};
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .updateMany(obj.whereObj, obj.updateObj, options, (err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+/**
+ * 替换单个文档
+ * @param collection_name 集合名称
+ * @param obj 修改数据的一些操作信息
+ * @param options 一些可选操作
+ * obj:
+ *   whereObj:条件，默认是{}
+ *   updateObj:修改语句，NOT NULL
+ * 
+ * replaceOne ()接受查询文档和替换文档。如果查询与集合中的某个文档匹配，它将用提供的替换文档替换匹配该查询的第一个文档。此操作删除原始文档中的所有字段和值，并用替换文档中的字段和值替换它们。除非在替换文档中为 _ id 显式指定一个新值，否则 _ id 字段的值保持不变。
+ **/
+db.prototype.replaceOne = async function (collectionName, obj, options) {
+    obj.whereObj = obj.whereObj || {};
+    obj.updateObj = obj.updateObj || {};
+    options = options || {};
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .replaceOne(obj.whereObj, obj.updateObj, options, (err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+/**
+ * 删除单个文档
+ * @param collection_name 集合名称
+ * @param obj 修改数据的一些操作信息
+ * @param options 一些可选操作
+ * obj:
+ *   whereObj:条件，NOT NULL，为空会删除第一条
+ * 
+ * 如果不提供查询文档(或者提供空文档) ，MongoDB 将匹配集合中的所有文档并删除第一个匹配。
+ * 如果应用程序在删除后需要被删除的文档，请考虑使用 collection.findOneAndDelete ()。方法，它具有与 deleteOne ()类似的接口，但也返回被删除的文档。
+ * 
+ **/
+db.prototype.deleteOne = async function (collectionName, obj, options) {
+    obj.whereObj = obj.whereObj;
+    options = options || {};
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .deleteOne(obj.whereObj, options, (err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+/**
+ * 删除多个文档
+ * @param collection_name 集合名称
+ * @param obj 修改数据的一些操作信息
+ * @param options 一些可选操作
+ * obj:
+ *   whereObj:条件，NOT NULL，为空会删除第一条除_id外的数据
+ * 
+ * 如果不提供查询文档(或者提供空文档) ，MongoDB 将匹配集合中的所有文档并删除它们。
+ * 虽然可以使用 deleteMany ()删除集合中的所有文档，但是为了获得更好的性能和更清晰的代码，可以考虑使用 drop ()。
+ * 
+ **/
+db.prototype.deleteMany = async function (collectionName, obj, options) {
+    obj.whereObj = obj.whereObj;
+    options = options || {};
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .deleteMany(obj.whereObj, options, (err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+/**
+ * 左连接
+ * @param collection_name 集合名称
+ * @param arr 左连接所需的参数
+ * arr:
+ *   from:右集合
+ *   localField:左集合 join 字段
+ *   foreignField:右集合 join 字段
+ *   as:新生成字段（类型array）
+ * 
+ **/
+db.prototype.aggregate = async function (collectionName, arr) {
+    return new Promise((resolve, reject) =&gt; {
+        this.getConnection().then(e =&gt; {
+            e.collection(collectionName)
+                .aggregate(arr)
+                .toArray((err, res) =&gt; {
+                    if (err) reject(err);
+                    this.MongoClient.close();
+                    this.MongoClient = this.dbClient = null;
+                    resolve(res);
+                });
+        }).catch(error =&gt; reject(error));
+    });
+}
+
+
+module.exports = new db();
 </code></pre>
 
                                 </div>
@@ -440,8 +667,8 @@ int main()
                             <div class="post-copyright">
                                 作者:
                                 SolitudeAlma<br>永久链接:
-                                    <a href="https://solitudealma.github.io/post/2020TianTiL3-1/" title="题解2020届天梯赛总决赛L3-1那就别担心了">
-                                        https://solitudealma.github.io/post/2020TianTiL3-1/
+                                    <a href="https://solitudealma.github.io/post/nXQ9P_Lo2/" title="Nodejs-Mongodb模块常用的操作封装">
+                                        https://solitudealma.github.io/post/nXQ9P_Lo2/
                                     </a><br> 协议: MIT License
                             </div>
                         </div>
@@ -464,17 +691,10 @@ int main()
                 </style>
                 <div class="lite-item nearby-article">
                     
-                        <div class="nearby-article-left" style="padding: 10px;">
-                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/2020TianTiL2-4/">
-                                <i class="fa fa-chevron-left"></i>
-                                题解2020届天梯赛总决赛L2-4网红点打卡攻略
-                            </a>
-                        </div>
-                        
                             
                                 <div class="nearby-article-right" style="padding: 10px;">
-                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/LuoGuP1255/">
-                                        题解洛谷P1255.数楼梯<i class="fa fa-chevron-right"></i>
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/pb6nCDUaa/">
+                                        Nodejs-Mongodb的一些简单的CURD<i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                                 
@@ -483,9 +703,9 @@ int main()
                 <span style="margin-right:15px">
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
-                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/2020TianTiL3-1/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/2020TianTiL3-1/&sharesource=qzone&title=题解2020届天梯赛总决赛L3-1那就别担心了&pics=https://solitudealma.github.io/images/avatar.png?v=1622970698483&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/2020TianTiL3-1/&sharesource=weibo&title=题解2020届天梯赛总决赛L3-1那就别担心了 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1622970698483"><i class="fa fa-weibo "></i></a>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/nXQ9P_Lo2/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/nXQ9P_Lo2/&sharesource=qzone&title=Nodejs-Mongodb模块常用的操作封装&pics=https://solitudealma.github.io/images/avatar.png?v=1622970698483&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/nXQ9P_Lo2/&sharesource=weibo&title=Nodejs-Mongodb模块常用的操作封装 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1622970698483"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
