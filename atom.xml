@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-06-20T06:02:42.188Z</updated>
+    <updated>2021-07-09T01:16:27.488Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[Nodejs-Agenda简单的例子]]></title>
+        <id>https://solitudealma.github.io/post/Fz0fHR1bR/</id>
+        <link href="https://solitudealma.github.io/post/Fz0fHR1bR/">
+        </link>
+        <updated>2021-07-09T01:15:17.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Nodejs-Mongodb模块常用的操作封装]]></title>
         <id>https://solitudealma.github.io/post/nXQ9P_Lo2/</id>
@@ -72,12 +79,5 @@
         <link href="https://solitudealma.github.io/post/2020TianTiL2-4/">
         </link>
         <updated>2021-04-22T10:14:30.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解2020届天梯赛总决赛L3-1那就别担心了]]></title>
-        <id>https://solitudealma.github.io/post/2020TianTiL3-1/</id>
-        <link href="https://solitudealma.github.io/post/2020TianTiL3-1/">
-        </link>
-        <updated>2021-04-20T14:50:11.000Z</updated>
     </entry>
 </feed>
