@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://solitudealma.github.io</id>
     <title>SolitudeAlma</title>
-    <updated>2021-07-09T01:44:10.691Z</updated>
+    <updated>2021-08-30T05:25:12.072Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://solitudealma.github.io"/>
     <link rel="self" href="https://solitudealma.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://solitudealma.github.io/images/avatar.png</logo>
     <icon>https://solitudealma.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, SolitudeAlma</rights>
+    <entry>
+        <title type="html"><![CDATA[Java学习笔记之Mybatis]]></title>
+        <id>https://solitudealma.github.io/post/qYIUMWbyl/</id>
+        <link href="https://solitudealma.github.io/post/qYIUMWbyl/">
+        </link>
+        <updated>2021-08-29T04:52:15.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java学习笔记之HTML5]]></title>
+        <id>https://solitudealma.github.io/post/liiMnTBGw/</id>
+        <link href="https://solitudealma.github.io/post/liiMnTBGw/">
+        </link>
+        <updated>2021-08-26T04:24:39.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Nodejs-Agenda简单的例子]]></title>
         <id>https://solitudealma.github.io/post/Fz0fHR1bR/</id>
@@ -65,19 +79,5 @@
         <link href="https://solitudealma.github.io/post/20200425/">
         </link>
         <updated>2021-04-25T11:52:19.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解AcWing126. 最大的和]]></title>
-        <id>https://solitudealma.github.io/post/AcWing126/</id>
-        <link href="https://solitudealma.github.io/post/AcWing126/">
-        </link>
-        <updated>2021-04-25T11:48:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解2020届天梯赛总决赛L2-4网红点打卡攻略]]></title>
-        <id>https://solitudealma.github.io/post/2020TianTiL2-4/</id>
-        <link href="https://solitudealma.github.io/post/2020TianTiL2-4/">
-        </link>
-        <updated>2021-04-22T10:14:30.000Z</updated>
     </entry>
 </feed>

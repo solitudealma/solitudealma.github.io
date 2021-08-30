@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html id="bg">
+
+<head>
+    <meta charset="utf-8" />
+<!--
+    * @Theme Card
+    * @Author admin@itjoker.cn
+    * @Link https://blog.itjoker.cn
+-->
+
+<title>
+    SolitudeAlma
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="SolitudeAlma">
+<meta name="description" content="都懂一点，不是很懂的小捞仔">
+<meta name="keywords" content="algorithm">
+<meta name="gridea-theme" content="Card">
+<meta name="spider" content="https://nmsl.sbjxw.网址">
+<meta name="UpdateTime" content="1630301105350">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
+<script src="https://solitudealma.github.io/media/js/script.js"></script>
+<link rel="stylesheet" href="https://solitudealma.github.io/media/css/main.min.css" />
+<link rel="stylesheet" href="https://solitudealma.github.io/styles/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
+<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/love.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<script>
+    $().ready(
+        function() {
+            var themeIcon = document.getElementById("themeIcon");
+            var currentTheme = window.localStorage.getItem('theme');
+            if (currentTheme == 'dark') {
+                document.getElementsByTagName('html')[0].classList.add('theme-dark');
+                document.getElementsByTagName('html')[0].removeAttribute('id');
+                themeIcon.classList.remove('Card-moon');
+                themeIcon.classList.add('Card-sun');
+            } else {
+                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
+                document.getElementsByTagName('html')[0].setAttribute('id', 'bg');
+                themeIcon.classList.remove('Card-sun');
+                themeIcon.classList.add('Card-moon');
+            }
+        }
+    )
+</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
+    
+        
+            <script>
+                (function() {
+                    var bp = document.createElement('script');
+                    var curProtocol = window.location.protocol.split(':')[0];
+                    if (curProtocol === 'https') {
+                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                    } else {
+                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(bp, s);
+                })();
+            </script>
+            
+                    <style>
+                        .Card-certify {
+                            color: #0091e4 !important;
+                        }
+                        
+                        #foot {
+                            color: #666666;
+                        }
+                        
+                        #menu-item:hover {
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                            border-bottom-color: rgba(0, 0, 0, .6);
+                        }
+                        
+                        .gray {
+                            -webkit-filter: grayscale(100%);
+                            /* webkit */
+                            -moz-filter: grayscale(100%);
+                            /*firefox*/
+                            -ms-filter: grayscale(100%);
+                            /*ie9*/
+                            -o-filter: grayscale(100%);
+                            /*opera*/
+                            filter: grayscale(100%);
+                            filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                            filter: gray;
+                            /*ie9- */
+                        }
+                        
+                        .lite-item,
+                        #header {
+                            opacity: 1;
+                        }
+                        
+                        .lite-item {
+                            background-color: #fafafa;
+                        }
+                        
+                        #btnStyle:hover {
+                            transition: all .3s ease;
+                            /*color: #fff;*/
+                            /*background-color: #6b6b6b;*/
+                            background-color: #eaeaea;
+                            /*#0092ee*/
+                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
+                        }
+                        
+                        #btnStyle {
+                            /*background-color: #efefef;*/
+                            font-size: 14px;
+                            transition: all .3s ease;
+                        }
+                        
+                        .link_a:hover {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            color: #fff;
+                            border-left: 8px solid #6b6b6b;
+                            padding: 5px;
+                            transition: all .3s ease;
+                        }
+                        
+                        html {
+                            width: 100%;
+                            height: 100%;
+                            background-attachment: fixed;
+                            background-repeat: no-repeat;
+                        }
+                    </style>
+</head>
+
+<body>
+    <header id="header">
+
+    <div id="pc-menu">
+        <a id="menu-bar" class="Card Card-menu"></a>
+        <a id="menu-title" href="https://solitudealma.github.io">
+            SolitudeAlma
+        </a>
+        <nav id="menu-main" class="menu-main">
+            <ul>
+                <li id="menu-item" class="menu-item">
+                    <div id="tp-weather-widget"></div>
+                </li>
+                
+                    <li id="menu-item" class="menu-item">
+                        <a href="/">
+                            🎈Home
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/archives">
+                            📚Archives
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/posts">
+                            📃Article
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/tags">
+                            🏷Tags
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/friends">
+                            👩‍💻Friends
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/post/about">
+                            🧜‍♂️About
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+        <form id="gridea-search-form" class="searchform" data-update="1630301105350" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+    </div>
+    <div id="mobile-menu">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1630301105350" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+        <nav class="menu">
+            <ul style="list-style: none;">
+                
+                    <li class="page_item page-item-2">
+                        <a href="/">
+                            🎈Home
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/archives">
+                            📚Archives
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/posts">
+                            📃Article
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/tags">
+                            🏷Tags
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/friends">
+                            👩‍💻Friends
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/post/about">
+                            🧜‍♂️About
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+    </div>
+    <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
+</header>
+        <div id="main">
+            <div id="main-part">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                <div class="thumbnail-link" style="background-image: url('https://solitudealma.github.io/post-images/liiMnTBGw.png')"></div>
+                                
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                Java学习笔记之HTML5
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
+                                        
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/java/'">Java</span>
+                                                
+                                                    </span>
+                                                    <span class="post-view">
+                                                    
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/liiMnTBGw/" class="leancloud_visitors" data-flag-title="Java学习笔记之HTML5">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
+
+                                                    
+                                                            </span>&nbsp;•&nbsp;
+
+                                                            <span class="post-readtime">阅读时间:
+                                            24.8分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1630301105350" srcset="https://solitudealma.github.io/images/avatar.png?v=1630301105350" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-08-26</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h1 id="1-初识html">1. 初识HTML</h1>
+<h2 id="11-what-is-html">1.1 What is HTML</h2>
+<ul>
+<li>HTML
+<ul>
+<li>Hyper Text Markup Language（超文本标记语言）</li>
+</ul>
+</li>
+<li>优势
+<ul>
+<li>世界知名浏览器厂商对HTML5的支持
+<ul>
+<li>微软</li>
+<li>Google</li>
+<li>苹果</li>
+<li>Opera</li>
+<li>Mozilla</li>
+</ul>
+</li>
+<li>市场需求</li>
+<li>跨平台</li>
+</ul>
+</li>
+<li>W3C标准
+<ul>
+<li>W3C
+<ul>
+<li><strong>W</strong>orld <strong>W</strong>ide <strong>W</strong>eb <strong>C</strong>onsortium（万维网联盟）</li>
+<li>成立于1994年，Web技术领域最权威和具影响力的国际<strong>中立性技术标准机构</strong></li>
+<li>http://www.w3.org</li>
+<li>http://www.chinaw3c.org</li>
+</ul>
+</li>
+<li>W3C标准包括
+<ul>
+<li><strong>结构</strong>化标准语言（HTML、XML）</li>
+<li><strong>表现</strong>标准语言（CSS）</li>
+<li><strong>行为</strong>标准（DOM、ECMAScript）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常见的IDE
+<ul>
+<li>记事本</li>
+<li>DreamWeaver</li>
+<li>IDEA</li>
+<li>WebStorm</li>
+<li>Visual Studio Code</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-网页的基本信息">1.2 网页的基本信息</h2>
+<ul>
+<li>DOCTYPE声明
+<ul>
+<li>告诉浏览器，我们要是用什么规范</li>
+<li>&lt;!DOCTYPE&gt; 声明必须是 HTML 文档的第一行，位于 &lt;html&gt; 标签之前。</li>
+<li>&lt;!DOCTYPE&gt; 声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。</li>
+<li>在 HTML 4.01 中，&lt;!DOCTYPE&gt; 声明引用 DTD，因为 HTML 4.01 基于 SGML。DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容。</li>
+<li>HTML5 不基于 SGML，所以不需要引用 DTD。</li>
+<li>**提示：**请始终向 HTML 文档添加 &lt;!DOCTYPE&gt; 声明，这样浏览器才能获知文档类型。</li>
+</ul>
+</li>
+<li>&lt;html&gt;标签
+<ul>
+<li>此元素可告知浏览器其自身是一个 HTML 文档。所有内容都应该包含其中</li>
+</ul>
+</li>
+<li>&lt;head&gt;标签
+<ul>
+<li>&lt;head&gt; 标签用于定义文档的头部，它是所有头部元素的容器。&lt;head&gt; 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息等等。</li>
+<li>文档的头部描述了文档的各种属性和信息，包括文档的标题、在 Web 中的位置以及和其他文档的关系等。绝大多数文档头部包含的数据都不会真正作为内容显示给读者。</li>
+<li>下面这些标签可用在 head 部分：&lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;script&gt;, &lt;style&gt;, 以及 &lt;title&gt;。</li>
+<li>&lt;title&gt; 定义文档的标题，它是 head 部分中唯一必需的元素。</li>
+</ul>
+</li>
+<li>&lt;title&gt;标签
+<ul>
+<li>&lt;title&gt; 元素可定义文档的标题。</li>
+<li>浏览器会以特殊的方式来使用标题，并且通常把它放置在浏览器窗口的标题栏或状态栏上。同样，当把文档加入用户的链接列表或者收藏夹或书签列表时，标题将成为该文档链接的默认名称。</li>
+</ul>
+</li>
+<li>&lt;meta&gt;标签
+<ul>
+<li>元数据（Metadata）是数据的数据信息。</li>
+<li>&lt;meta&gt; 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析。</li>
+<li>META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。</li>
+<li>元数据可以被使用浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 Web 服务调用。</li>
+</ul>
+</li>
+<li>&lt;body&gt;标签
+<ul>
+<li>body 元素定义文档的主体。</li>
+<li>body 元素包含文档的所有内容（比如文本、超链接、图像、表格和列表等等。</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-标签">2. 标签</h1>
+<h2 id="21-网页基本标签">2.1 网页基本标签</h2>
+<ul>
+<li>标题标签</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 标题标签 --&gt;
+&lt;h1&gt;一级标签&lt;/h1&gt;
+&lt;h2&gt;二级标签&lt;/h2&gt;
+&lt;h3&gt;三级标签&lt;/h3&gt;
+&lt;h4&gt;四级标签&lt;/h4&gt;
+&lt;h5&gt;五级标签&lt;/h5&gt;
+&lt;h6&gt;六级标签&lt;/h6&gt;
+</code></pre>
+<ul>
+<li>段落标签</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 段落标签 --&gt;
+&lt;p&gt;1111 1&lt;/p&gt;
+&lt;p&gt;222 2&lt;/p&gt;
+</code></pre>
+<ul>
+<li>换行标签</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 换行标签 --&gt;
+1111 1&lt;br/&gt;
+222 2&lt;br/&gt;
+</code></pre>
+<ul>
+<li>水平线标签</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 水平线标签 --&gt;
+&lt;hr/&gt;
+</code></pre>
+<ul>
+<li>字体样式标签</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 字体样式标签 --&gt;
+粗体：&lt;strong&gt;I Love You&lt;/strong&gt;
+斜体：&lt;em&gt;I Love You&lt;/em&gt;
+</code></pre>
+<ul>
+<li>特殊符号</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 特殊符号 --&gt;
+空    格
+空&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;格
+&lt;br/&gt;
+&amp;gt;
+&lt;br/&gt;
+&amp;lt;
+&lt;br/&gt;
+&amp;copy;版权归SolitudeAlma所有
+</code></pre>
+<h2 id="22-图像标签">2.2 图像标签</h2>
+<ul>
+<li>常见的图像格式
+<ul>
+<li>JPG</li>
+<li>GIF</li>
+<li>PNG</li>
+<li>BMP</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-html">&lt;!-- img标签学习
+src: 图片地址
+    相对路径（推荐），绝对路径
+    ../ 上一级目录
+title: 鼠标悬停显示的文字
+alt: 找不到路径时的替代文字
+--&gt;
+&lt;img src=&quot;../resources/image/214d533c880611ebb6edd017c2d2eca2.png&quot; alt=&quot;美女不见了&quot; title=&quot;色图&quot; width=&quot;1510&quot; height=&quot;700&quot;&gt;
+</code></pre>
+<h2 id="23-链接标签">2.3 链接标签</h2>
+<ul>
+<li>文本超链接</li>
+<li>图像超链接</li>
+</ul>
+<pre><code class="language-html">&lt;a id=&quot;top&quot;&gt;顶部&lt;/a&gt;
+&lt;a href=&quot;#bottom&quot;&gt;回到底部&lt;/a&gt;
+
+&lt;!-- a标签
+href：必填，表示要跳转的地址
+target：表示窗口在哪里打开
+    _blank  在新标签中打开
+    _self   在本页面打开
+--&gt;
+
+&lt;!-- 文本超链接 --&gt;
+&lt;a href=&quot;./基本标签.html&quot;&gt;click&lt;/a&gt;
+&lt;a href=&quot;https://www.baidu.com&quot;&gt;click&lt;/a&gt;
+
+&lt;!-- 图像超链接 --&gt;
+&lt;a href=&quot;./图像标签.html&quot;&gt;
+    &lt;img src=&quot;../resources/image/214d533c880611ebb6edd017c2d2eca2.png&quot; alt=&quot;美女不见了&quot; title=&quot;色图&quot; width=&quot;1510&quot; height=&quot;700&quot;&gt;
+&lt;/a&gt;
+
+&lt;!-- 锚链接
+ 1.需要一个锚标记 #
+ 2.跳转到标记--&gt;
+
+&lt;a href=&quot;#top&quot;&gt;回到顶部&lt;/a&gt;
+&lt;a id=&quot;bottom&quot;&gt;底部&lt;/a&gt;
+
+&lt;!-- 功能性标签
+邮件标签： mailto:
+qq链接:
+--&gt;
+
+&lt;a href=&quot;mailto:2241141629@qq.com&quot;&gt;邮我&lt;/a&gt;
+&lt;a target=&quot;_blank&quot; href=&quot;http://wpa.qq.com/msgrd?v=3&amp;uin=2241141629&amp;site=qq&amp;menu=yes&quot;&gt;
+    &lt;img border=&quot;0&quot; src=&quot;http://wpa.qq.com/pa?p=2:2241141629:51&quot; alt=&quot;联系我，领取小电影&quot; title=&quot;联系我，领取小电影&quot;/&gt;
+&lt;/a&gt;
+</code></pre>
+<pre><code class="language-html">&lt;!-- 跳转的另一页面的指定位置 --&gt;
+&lt;a href=&quot;./链接标签.html#bottom&quot;&gt;跳转另一页面指定位置&lt;/a&gt;
+</code></pre>
+<h2 id="24-行内元素和块元素">2.4 行内元素和块元素</h2>
+<ul>
+<li>块元素
+<ul>
+<li>无论内容多少，该元素独占一行</li>
+<li>（p、h1-h6...）</li>
+</ul>
+</li>
+<li>行内元素
+<ul>
+<li>内容撑开宽度，左右都是行内元素的可以排在一起</li>
+<li>（a、strong、em...）</li>
+</ul>
+</li>
+</ul>
+<h2 id="25-列表标签">2.5 列表标签</h2>
+<ul>
+<li>什么是列表
+<ul>
+<li>列表就是信息资源的一种展示形式。它可以使信息结构化和条理化，并以列表的样式显示出来，以便浏览者能更快地获得相应地信息</li>
+</ul>
+</li>
+<li>列表的分类
+<ul>
+<li>无序列表</li>
+<li>有序列表</li>
+<li>定义列表</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 有序列表 --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Java&lt;/li&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;运维&lt;/li&gt;
+    &lt;li&gt;C/C++&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr/&gt;
+
+&lt;!-- 无序列表
+应用范围：导航，侧边栏。。
+--&gt;
+&lt;ul&gt;
+    &lt;li&gt;Java&lt;/li&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;运维&lt;/li&gt;
+    &lt;li&gt;C/C++&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr/&gt;
+
+&lt;!-- 自定义列表
+dl：标签
+dt：列表名称
+dd：列表内容
+应用范围：公司网站底部
+--&gt;
+
+&lt;dl&gt;
+    &lt;dt&gt;学科&lt;/dt&gt;
+    &lt;dd&gt;Java&lt;/dd&gt;
+    &lt;dd&gt;Python&lt;/dd&gt;
+    &lt;dd&gt;运维&lt;/dd&gt;
+    &lt;dd&gt;C/C++&lt;/dd&gt;
+
+    &lt;dt&gt;位置&lt;/dt&gt;
+    &lt;dd&gt;广东&lt;/dd&gt;
+    &lt;dd&gt;福建 &lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h2 id="26-表格标签">2.6 表格标签</h2>
+<ul>
+<li>为什么使用表格
+<ul>
+<li>简单通用</li>
+<li>结构稳定</li>
+</ul>
+</li>
+<li>基本结构
+<ul>
+<li>单元格</li>
+<li>行</li>
+<li>列</li>
+<li>跨行</li>
+<li>跨列</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 表格table
+行 tr
+列 td
+--&gt;
+
+&lt;table border=&quot;1&quot; style=&quot;text-align: center&quot;&gt;
+    &lt;!-- colspan跨列 --&gt;
+    &lt;tr &gt;
+        &lt;td colspan=&quot;3&quot;&gt;成绩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan=&quot;2&quot;&gt;小明&lt;/td&gt;
+        &lt;td&gt;语文&lt;/td&gt;
+        &lt;td&gt;英语&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;100&lt;/td&gt;
+        &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td rowspan=&quot;2&quot;&gt;小红&lt;/td&gt;
+        &lt;td&gt;语文&lt;/td&gt;
+        &lt;td&gt;英语&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;100&lt;/td&gt;
+        &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h2 id="27-媒体标签">2.7 媒体标签</h2>
+<ul>
+<li>视频标签
+<ul>
+<li>video</li>
+</ul>
+</li>
+<li>音频标签
+<ul>
+<li>audio</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-html">&lt;!-- 音频视频
+controls 控件
+autoplay 自动播放
+--&gt;
+&lt;video src=&quot;../resources/video/bandicam%202021-07-04%2022-10-15-035.mp4&quot; controls=&quot;controls&quot; autoplay=&quot;autoplay&quot;&gt;&lt;/video&gt;
+&lt;audio src=&quot;../resources/audio/The%20Weepies%20-%20Gotta%20Have%20You.mp3&quot; controls=&quot;controls&quot; autoplay=&quot;autoplay&quot;&gt;&lt;/audio&gt;
+</code></pre>
+<h1 id="3-页面结构分析">3. 页面结构分析</h1>
+<table>
+<thead>
+<tr>
+<th>元素名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>标题头部区域的内容（用于页面或页面地一块区域</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>标题底部区域的内容（用于整个页面或页面的一块区域）</td>
+</tr>
+<tr>
+<td>section</td>
+<td>web页面中的一块独立区域</td>
+</tr>
+<tr>
+<td>article</td>
+<td>独立文章内容</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>相关内容或应用（常用于侧边栏）</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>导航类辅助内容</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-html">&lt;header&gt;
+    &lt;h2&gt;网页头部&lt;/h2&gt;
+&lt;/header&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;网页主体&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;footer&gt;
+    &lt;h2&gt;网页底部&lt;/h2&gt;
+&lt;/footer&gt;
+</code></pre>
+<h1 id="4-iframe内联框架">4. iframe内联框架</h1>
+<p>iframe 元素会创建包含另外一个文档的内联框架（即行内框架）。</p>
+<pre><code class="language-html">&lt;!-- iframe
+src：引用地址
+name：框架标识名
+--&gt;
+&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=630832946&amp;bvid=BV1Mb4y1Z7Pc&amp;cid=344048459&amp;page=1&quot; scrolling=&quot;no&quot;
+        border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+<h1 id="5-表单">5. 表单</h1>
+<p>HTML 表单用于收集用户输入。<br>
+HTML表单包含表单元素。<br>
+表单元素指的是不同类型的 input 元素、复选框、单选按钮、提交按钮等等。</p>
+<pre><code class="language-html">&lt;h1&gt;注册&lt;/h1&gt;
+&lt;!-- 表单form
+action：表单提交的地址，可以是网站，也可以是一个请求处理地址
+method：post，get 提交方式
+    get提交方式可以在url中看到提交的信息，不安全但高效
+    post提交方式比较安全，传输大文件
+--&gt;
+&lt;form action=&quot;./图像标签.html&quot; method=&quot;get&quot;&gt;
+    &lt;!-- 文本输入框：input type=&quot;text&quot; --&gt;
+    &lt;label&gt;用户名：
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;
+    &lt;/label&gt;
+    &lt;br/&gt;
+    &lt;!-- 密码输入框：input type=&quot;password&quot; --&gt;
+    &lt;label&gt;密码：
+        &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+    &lt;/label&gt;
+
+    &lt;input type=&quot;submit&quot; /&gt;
+    &lt;input type=&quot;reset&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="51-文本框单选框">5.1 文本框单选框</h2>
+<ul>
+<li>表单元素格式（input标签）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>指定元素的类型。text、password、checkbox、radio、submit、reset、file、hidden、image和button，默认为text</td>
+</tr>
+<tr>
+<td>name</td>
+<td>指定表单元素的名称</td>
+</tr>
+<tr>
+<td>value</td>
+<td>元素的初始值。type为radio时必须指定一个值</td>
+</tr>
+<tr>
+<td>size</td>
+<td>指定表单元素的初始宽度。当type为text或password时，表单元素的大小以字符为单位。对于其他类型，宽度以像素为单位</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>type为text或password时，输入的最大字符数</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>type为radio或checkbox时，指定按钮是否被选中</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-html">&lt;h1&gt;注册&lt;/h1&gt;
+&lt;!-- 表单form
+action：表单提交的地址，可以是网站，也可以是一个请求处理地址
+method：post，get 提交方式
+    get提交方式可以在url中看到提交的信息，不安全但高效
+    post提交方式比较安全，传输大文件
+--&gt;
+&lt;form action=&quot;./图像标签.html&quot; method=&quot;get&quot;&gt;
+    &lt;!-- 文本输入框：input type=&quot;text&quot; --&gt;
+    &lt;!-- value=&quot;SolitudeAlma&quot; 默认初始值
+         size=&quot;30&quot;            文本框的长度
+         maxlength=&quot;8&quot;        最多容纳几个字符
+    --&gt;
+    &lt;label&gt;用户名：
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;SolitudeAlma&quot; size=&quot;30&quot; maxlength=&quot;8&quot;/&gt;
+    &lt;/label&gt;
+    &lt;br/&gt;
+    &lt;!-- 密码输入框：input type=&quot;password&quot; --&gt;
+    &lt;label&gt;密码：
+        &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 单选框标签
+    input type=&quot;radio&quot;
+    value ：从单选框获取到的值
+    name ：分组名称，同一组才能不同时选中
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;male&quot; name=&quot;sex&quot;/&gt;男
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;female&quot; name=&quot;sex&quot;/&gt;女
+    &lt;/label&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+    &lt;input type=&quot;reset&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="52-按钮和多选框">5.2 按钮和多选框</h2>
+<pre><code class="language-html">&lt;h1&gt;注册&lt;/h1&gt;
+&lt;!-- 表单form
+action：表单提交的地址，可以是网站，也可以是一个请求处理地址
+method：post，get 提交方式
+    get提交方式可以在url中看到提交的信息，不安全但高效
+    post提交方式比较安全，传输大文件
+--&gt;
+&lt;form action=&quot;./图像标签.html&quot; method=&quot;get&quot;&gt;
+    &lt;!-- 文本输入框：input type=&quot;text&quot; --&gt;
+    &lt;!-- value=&quot;SolitudeAlma&quot; 默认初始值
+         size=&quot;30&quot;            文本框的长度
+         maxlength=&quot;8&quot;        最多容纳几个字符
+    --&gt;
+    &lt;label&gt;用户名：
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;SolitudeAlma&quot; size=&quot;30&quot; maxlength=&quot;8&quot;/&gt;
+    &lt;/label&gt;
+    &lt;br/&gt;
+    &lt;!-- 密码输入框：input type=&quot;password&quot; --&gt;
+    &lt;label&gt;密码：
+        &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 单选框标签
+    input type=&quot;radio&quot;
+    value ：从单选框获取到的值
+    name ：分组名称，同一组才能不同时选中
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;male&quot; name=&quot;sex&quot;/&gt;男
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;female&quot; name=&quot;sex&quot;/&gt;女
+    &lt;/label&gt;
+
+    &lt;!-- 多选框
+    input type=&quot;checkbox&quot;
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;sleep&quot; name=&quot;hobby&quot;&gt;睡觉
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;code&quot; name=&quot;hobby&quot;&gt;敲代码
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;chat&quot; name=&quot;hobby&quot;&gt;聊天
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;game&quot; name=&quot;hobby&quot;&gt;游戏
+    &lt;/label&gt;
+    &lt;!-- 按钮
+    input type=&quot;submit&quot;     提交按钮
+    input type=&quot;button&quot;     普通按钮
+    input type=&quot;image&quot;      图像按钮
+    input type=&quot;reset&quot;      重置按钮
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;button&quot; name=&quot;xxButton&quot; value=&quot;点击变长&quot;/&gt;
+        &lt;input type=&quot;image&quot; src=&quot;../resources/image/214d533c880611ebb6edd017c2d2eca2.png&quot; /&gt;
+    &lt;/label&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+    &lt;input type=&quot;reset&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="53-列表框文本框和文件域">5.3 列表框文本框和文件域</h2>
+<pre><code class="language-html">&lt;h1&gt;注册&lt;/h1&gt;
+&lt;!-- 表单form
+action：表单提交的地址，可以是网站，也可以是一个请求处理地址
+method：post，get 提交方式
+    get提交方式可以在url中看到提交的信息，不安全但高效
+    post提交方式比较安全，传输大文件
+--&gt;
+&lt;form action=&quot;./图像标签.html&quot; method=&quot;get&quot;&gt;
+    &lt;!-- 文本输入框：input type=&quot;text&quot; --&gt;
+    &lt;!-- value=&quot;SolitudeAlma&quot; 默认初始值
+         size=&quot;30&quot;            文本框的长度
+         maxlength=&quot;8&quot;        最多容纳几个字符
+    --&gt;
+    &lt;label&gt;用户名：
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;SolitudeAlma&quot; size=&quot;30&quot; maxlength=&quot;8&quot;/&gt;
+    &lt;/label&gt;
+    &lt;br/&gt;
+    &lt;!-- 密码输入框：input type=&quot;password&quot; --&gt;
+    &lt;label&gt;密码：
+        &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 单选框标签
+    input type=&quot;radio&quot;
+    value ：从单选框获取到的值
+    name ：分组名称，同一组才能不同时选中
+    checked：默认选中
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;male&quot; name=&quot;sex&quot; checked=&quot;checked&quot; /&gt;男
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;female&quot; name=&quot;sex&quot;/&gt;女
+    &lt;/label&gt;
+
+    &lt;!-- 多选框
+    input type=&quot;checkbox&quot;
+    checked：默认选中
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;sleep&quot; name=&quot;hobby&quot;&gt;睡觉
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;code&quot; name=&quot;hobby&quot; checked=&quot;checked&quot;&gt;敲代码
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;chat&quot; name=&quot;hobby&quot;&gt;聊天
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;game&quot; name=&quot;hobby&quot;&gt;游戏
+    &lt;/label&gt;
+    &lt;!-- 按钮
+    input type=&quot;submit&quot;     提交按钮
+    input type=&quot;button&quot;     普通按钮
+    input type=&quot;image&quot;      图像按钮
+    input type=&quot;reset&quot;      重置按钮
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;button&quot; name=&quot;xxButton&quot; value=&quot;点击变长&quot;/&gt;
+        &lt;input type=&quot;image&quot; src=&quot;../resources/image/214d533c880611ebb6edd017c2d2eca2.png&quot; /&gt;
+    &lt;/label&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+    &lt;input type=&quot;reset&quot; /&gt;
+
+    &lt;!-- 下拉框，列表框
+    --&gt;
+    &lt;label&gt;
+        &lt;select name=&quot;列表名称&quot;&gt;
+            &lt;option value=&quot;China&quot; selected=&quot;selected&quot;&gt;中国&lt;/option&gt;
+            &lt;option value=&quot;India&quot;&gt;印度&lt;/option&gt;
+            &lt;option value=&quot;America&quot;&gt;美国&lt;/option&gt;
+            &lt;option value=&quot;Switzerland&quot;&gt;瑞士&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 文本域
+    cols=&quot;20&quot; 行数
+    rows=&quot;10&quot; 列数
+    --&gt;
+    &lt;label&gt;
+        &lt;textarea name=&quot;textarea&quot; cols=&quot;20&quot; rows=&quot;10&quot;&gt;请输入内容&lt;/textarea&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 文件域
+    type=&quot;file&quot;
+    name=&quot;uploadFile&quot;
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;file&quot; name=&quot;uploadFile&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;上传&quot; name=&quot;uploadButton&quot;&gt;
+    &lt;/label&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="54-搜索框滑块和简单验证">5.4 搜索框滑块和简单验证</h2>
+<pre><code class="language-html">&lt;h1&gt;注册&lt;/h1&gt;
+&lt;!-- 表单form
+action：表单提交的地址，可以是网站，也可以是一个请求处理地址
+method：post，get 提交方式
+    get提交方式可以在url中看到提交的信息，不安全但高效
+    post提交方式比较安全，传输大文件
+--&gt;
+&lt;form action=&quot;./图像标签.html&quot; method=&quot;get&quot;&gt;
+    &lt;!-- 文本输入框：input type=&quot;text&quot; --&gt;
+    &lt;!-- value=&quot;SolitudeAlma&quot; 默认初始值
+         size=&quot;30&quot;            文本框的长度
+         maxlength=&quot;8&quot;        最多容纳几个字符
+    --&gt;
+    &lt;label&gt;用户名：
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;SolitudeAlma&quot; size=&quot;30&quot; maxlength=&quot;8&quot;/&gt;
+    &lt;/label&gt;
+    &lt;br/&gt;
+    &lt;!-- 密码输入框：input type=&quot;password&quot; --&gt;
+    &lt;label&gt;密码：
+        &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 单选框标签
+    input type=&quot;radio&quot;
+    value ：从单选框获取到的值
+    name ：分组名称，同一组才能不同时选中
+    checked：默认选中
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;male&quot; name=&quot;sex&quot; checked=&quot;checked&quot; /&gt;男
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;radio&quot; value=&quot;female&quot; name=&quot;sex&quot;/&gt;女
+    &lt;/label&gt;
+
+    &lt;!-- 多选框
+    input type=&quot;checkbox&quot;
+    checked：默认选中
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;sleep&quot; name=&quot;hobby&quot;&gt;睡觉
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;code&quot; name=&quot;hobby&quot; checked=&quot;checked&quot;&gt;敲代码
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;chat&quot; name=&quot;hobby&quot;&gt;聊天
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; value=&quot;game&quot; name=&quot;hobby&quot;&gt;游戏
+    &lt;/label&gt;
+    &lt;!-- 按钮
+    input type=&quot;submit&quot;     提交按钮
+    input type=&quot;button&quot;     普通按钮
+    input type=&quot;image&quot;      图像按钮
+    input type=&quot;reset&quot;      重置按钮
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;button&quot; name=&quot;xxButton&quot; value=&quot;点击变长&quot;/&gt;
+        &lt;input type=&quot;image&quot; src=&quot;../resources/image/214d533c880611ebb6edd017c2d2eca2.png&quot; /&gt;
+    &lt;/label&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+    &lt;input type=&quot;reset&quot; /&gt;
+
+    &lt;!-- 下拉框，列表框
+    --&gt;
+    &lt;label&gt;
+        &lt;select name=&quot;列表名称&quot;&gt;
+            &lt;option value=&quot;China&quot; selected=&quot;selected&quot;&gt;中国&lt;/option&gt;
+            &lt;option value=&quot;India&quot;&gt;印度&lt;/option&gt;
+            &lt;option value=&quot;America&quot;&gt;美国&lt;/option&gt;
+            &lt;option value=&quot;Switzerland&quot;&gt;瑞士&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 文本域
+    cols=&quot;20&quot; 行数
+    rows=&quot;10&quot; 列数
+    --&gt;
+    &lt;label&gt;
+        &lt;textarea name=&quot;textarea&quot; cols=&quot;20&quot; rows=&quot;10&quot;&gt;请输入内容&lt;/textarea&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 文件域
+    type=&quot;file&quot;
+    name=&quot;uploadFile&quot;
+    --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;file&quot; name=&quot;uploadFile&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;上传&quot; name=&quot;uploadButton&quot;&gt;
+    &lt;/label&gt;
+
+    &lt;!-- 邮件验证 --&gt;
+    &lt;label&gt;
+        邮箱：
+        &lt;input type=&quot;email&quot; name=&quot;email&quot; /&gt;
+    &lt;/label&gt;
+    &lt;!-- url验证 --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;url&quot; name=&quot;url&quot; /&gt;
+    &lt;/label&gt;
+    &lt;!-- 数字验证 --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;number&quot; name=&quot;number&quot; max=&quot;10&quot; min=&quot;0&quot; step=&quot;1&quot;/&gt;
+    &lt;/label&gt;
+    &lt;!-- 滑块 --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;range&quot; name=&quot;volume&quot; max=&quot;100&quot; min=&quot;0&quot; step=&quot;2&quot;/&gt;
+    &lt;/label&gt;
+    &lt;!-- 搜索框 --&gt;
+    &lt;label&gt;
+        &lt;input type=&quot;search&quot; name=&quot;search&quot; /&gt;
+    &lt;/label&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="55-表单的应用">5.5 表单的应用</h2>
+<ul>
+<li>隐藏域 hidden</li>
+<li>只读 readonly</li>
+<li>禁用 disable</li>
+<li>增强鼠标的可用性
+<ul>
+<li>被label包围的标签可以通过点击文字来选中它（绑定），或者是通过label中的for属性与标签的id属性对应</li>
+</ul>
+</li>
+</ul>
+<h2 id="56-表单的初级验证">5.6 表单的初级验证</h2>
+<ul>
+<li>为什么要进行验证
+<ul>
+<li>避免直接让后端校验，减轻服务器压力</li>
+<li>增加安全性</li>
+</ul>
+</li>
+<li>常用方式
+<ul>
+<li>placeholder 提示信息</li>
+<li>required 非空判断</li>
+<li>pattern 正则表达式</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://gitee.com/solitudealma/java-study-note">附属代码</a><br>
+<a href="https://www.bilibili.com/read/cv5702420">所有资源来源于狂神说的B站投稿视频</a></p>
+</blockquote>
+
+                                </div>
+                            </div>
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/liiMnTBGw/" title="Java学习笔记之HTML5">
+                                        https://solitudealma.github.io/post/liiMnTBGw/
+                                    </a><br> 协议: MIT License
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                        <div class="nearby-article-left" style="padding: 10px;">
+                            <a class="prev" rel="prev" href="https://solitudealma.github.io/post/qYIUMWbyl/">
+                                <i class="fa fa-chevron-left"></i>
+                                Java学习笔记之Mybatis
+                            </a>
+                        </div>
+                        
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/Fz0fHR1bR/">
+                                        Nodejs-Agenda简单的例子<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/liiMnTBGw/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/liiMnTBGw/&sharesource=qzone&title=Java学习笔记之HTML5&pics=https://solitudealma.github.io/images/avatar.png?v=1630301105350&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/liiMnTBGw/&sharesource=weibo&title=Java学习笔记之HTML5 + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1630301105350"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
+            </div>
+            <div id="sidebar">
+    <ul>
+        
+            <li class="lite-item">
+                <header class="lite-item-header">
+                    <h3 class="lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
+                </header>
+                <div class="textwidget">
+                    <p>
+                        <b id="hitokoto"></b>
+                    </p>
+                </div>
+            </li>
+            
+                <!--
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        
+                            <a href="" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                            </a>
+                            
+                    </div>
+                </li>-->
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        <div id='tags' style="height: auto;width: 360;"></div>
+                        <script src="https://solitudealma.github.io/media/js/svg3dtagcloud.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                var entries = ([
+                                    
+                                     {
+                                        label: '🏷Java',
+                                        url: 'https://solitudealma.github.io/tag/java/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Nodejs',
+                                        url: 'https://solitudealma.github.io/tag/Nodejs/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷欧拉计划',
+                                        url: 'https://solitudealma.github.io/tag/ProjectEuler/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷题解',
+                                        url: 'https://solitudealma.github.io/tag/answer/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Diary',
+                                        url: 'https://solitudealma.github.io/tag/diary/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Algorithm',
+                                        url: 'https://solitudealma.github.io/tag/algorithm/',
+                                        target: '_button'
+                                    }
+                                    
+                                    
+                                ]);
+                                var settings = {
+                                    entries: entries, //数据
+                                    width: 300, //宽度
+                                    height: 300, //高度
+                                    radius: '50%',
+                                    radiusMin: 50,
+                                    bgDraw: false, //是否显示背景
+                                    bgColor: '#fff', //背景颜色
+                                    opacityOver: 1.00,
+                                    opacityOut: 0.05,
+                                    opacitySpeed: 6,
+                                    fov: 360,
+                                    speed: 0.3, //旋转的速度
+                                    fontFamily: 'Oswald, Arial, sans-serif',
+                                    fontSize: '18', //默认字体大小
+                                    fontColor: '#666', //默认字体颜色
+                                    fontWeight: 'normal', //bold
+                                    fontStyle: 'normal', //italic 
+                                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    fontToUpperCase: true,
+                                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                                    tooltipFontSize: '16',
+                                    tooltipFontColor: 'red',
+                                    tooltipFontWeight: 'normal', //bold
+                                    tooltipFontStyle: 'normal', //italic 
+                                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    tooltipFontToUpperCase: false,
+                                    tooltipTextAnchor: 'left',
+                                    tooltipDiffX: 0,
+                                    tooltipDiffY: 5
+
+                                };
+
+                                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                                $('#tags').svg3DTagCloud(settings);
+                            });
+                        </script>
+                    </div>
+                </li>
+                
+                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+                    <div id="player"></div>
+                    
+                        <li class="lite-item">
+                            <header class="lite-item-header">
+                                <h3 class="lite-item-title">
+                                    &#x1F3B5;&#x97F3;&#x4E50;
+                                </h3>
+                            </header>
+                            <div class="textwidget">
+                                <p>
+                                    <div id="playerbox"></div>
+                                </p>
+                            </div>
+                        </li>
+                        
+                            <script>
+                                function LoadPlayer() {
+                                    var music_array = [];
+                                    
+                                    music_array.push({
+                                        name: 'Wherever You Go',
+                                        url: 'https://blog.yt1209.com/WhereverYouGo.mp3',
+                                        artist: 'A Rocket to the Moon',
+                                        cover: 'https://p1.music.126.net/ghFwbrRBHXuVGz2kVG3EUw==/2412328511380407.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Gotta Have You',
+                                        url: 'https://blog.yt1209.com/Gotta Have You.mp3',
+                                        artist: 'The Weepies',
+                                        cover: 'https://p2.music.126.net/AXD2wl0N3UooNRL_kPnpGQ==/6650945837329535.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: '愛にできることはまだあるかい',
+                                        url: 'https://blog.yt1209.com/愛にできることはまだあるかい.mp3',
+                                        artist: 'RADWIMPS',
+                                        cover: 'https://p2.music.126.net/dRwInA9PpkiKkmNWeUvi0w==/109951164220136544.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: '开始懂了',
+                                        url: 'https://blog.yt1209.com/开始懂了.mp3',
+                                        artist: '孙燕姿',
+                                        cover: 'https://p2.music.126.net/35P1LoCK43ANZ7Ebngrt4Q==/109951165549829619.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'めざせポケモンマスター',
+                                        url: 'https://blog.yt1209.com/めざせポケモンマスター.mp3',
+                                        artist: '松本梨香',
+                                        cover: 'https://p1.music.126.net/iAygFRUN_zMX-ObZkjTfOA==/1317214930122446.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Shotgun',
+                                        url: 'https://blog.yt1209.com/Shotgun.mp3',
+                                        artist: 'Us The Duo',
+                                        cover: 'https://p2.music.126.net/owFblNP0hTHbGbtThZk2Ug==/109951164074045609.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'FreeLoop',
+                                        url: 'https://blog.yt1209.com/FreeLoop.mp3',
+                                        artist: 'Daniel Powter',
+                                        cover: 'https://p1.music.126.net/grGdswi38xUoYcDBISdKcg==/92358976750445.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Everglow',
+                                        url: 'https://blog.yt1209.com/Everglow.mp3',
+                                        artist: 'Coldplay,Gwyneth Paltrow',
+                                        cover: 'https://p1.music.126.net/tnaTZ9ZokTL7w0kDa73iVA==/3297435376989078.jpg?param=130y130',
+                                    });
+                                    
+                                    
+                                    const ap = new APlayer({
+                                        container: document.getElementById('playerbox'),
+                                        audio: music_array
+                                    });
+                                    
+                                }
+                                LoadPlayer();
+                            </script>
+                            
+                                
+                                    
+                                        
+                                                
+                                                    <li class="lite-item">
+                                                        <header class="lite-item-header">
+                                                            <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
+                                                        </header>
+                                                        <div class="textwidget">
+                                                            
+                                                                
+                                                                    <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://layne666.cn'"><span class="link_a"><a href="https://layne666.cn" alt="Layne666 - Blog ">Layne666 - Blog -不多说了，诸位，拔剑吧！</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='http://noechou.cn'"><span class="link_a"><a href="http://noechou.cn" alt="noechou ">noechou -life is beautiful</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://blog.skywalkerch.cn/'"><span class="link_a"><a href="https://blog.skywalkerch.cn/" alt="Skywalkerch – skywalkerch的博客 ">Skywalkerch – skywalkerch的博客 -来自宇宙另一端的天行者</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://www.summerfire.cn'"><span class="link_a"><a href="https://www.summerfire.cn" alt="夏日萤火 ">夏日萤火 -个人学习笔记，如果能帮到你，不胜荣幸。</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://www.scery.com'"><span class="link_a"><a href="https://www.scery.com" alt="Anthony&#39;s Blog ">Anthony&#39;s Blog -As you look around</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://naiquoy.com'"><span class="link_a"><a href="https://naiquoy.com" alt="Marshall&#39;s Blog ">Marshall&#39;s Blog -</a></span></p>
+
+                                                                    
+                                                                        
+                                                        </div>
+                                                    </li>
+    </ul>
+</div>
+        </div>
+
+</body>
+<footer id="foot">
+    <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
+    <div class="copyright">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+            
+                <div style="width:300px;margin:0 auto; padding:0px 0;">
+                    <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=20063723" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                        <img src="https://yanxuan.nosdn.127.net/b610ced5ac6a0e25cf6edf5606c69775.png" style="float:left;">
+                        <p id="icpinfo" style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">
+                            粤ICP备20063723号
+                        </p>
+                    </a>
+                </div>
+                
+                    
+
+                        <div style="font-size:12px">
+                            
+                                        已经建站 <b id='build_time'></b>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
+                        <script>
+                            buildTime = '2021-2-12'
+                            setInterval(show_date_time, 1000, buildTime);
+                        </script>
+                        
+                            <a href="https://blog.itjoker.cn">
+                                Theme - Card
+                            </a>&nbsp;|&nbsp; &#x7248;&#x6743;&#x6240;&#x6709; &copy;
+                            <script>
+                                var date = new Date();
+                                data2 = new Date(buildTime.replace(/-/g, "/"));
+                                nowYear = date.getFullYear().toString()
+                                buildYear = data2.getFullYear().toString();
+                                if (buildYear == nowYear) {
+                                    document.write('<span class="my-face">' + nowYear + '</span>');
+                                } else {
+                                    document.write(buildYear + '-<span class="my-face">' + nowYear + '</span>');
+                                }
+                            </script>
+
+                            <a href="https://solitudealma.github.io">
+                                SolitudeAlma
+                            </a>&nbsp;|&nbsp;Powered by
+                            <a href="https://coding.net" target="_blank">
+                                Coding.net
+                            </a>
+    </div>
+    <script>
+        let back2TopText = document.querySelector('.back-to-top-text')
+        window.addEventListener('scroll', function(e) {
+            let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+            if (back2TopText) {
+                back2TopText.textContent = Math.floor(percent).toString() + '%';
+            }
+        });
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
+                document.title = OriginTitile
+            }, 2E3))
+        });
+        var OriginTitile = document.title;
+        
+        App.hitokoto();
+        
+        
+        App.weather();
+        
+        var themeIcon = document.getElementById("themeIcon");
+        const currentTheme = window.localStorage.getItem('theme');
+        if (currentTheme == 'dark') {
+            themeIcon.classList.remove('Card-moon');
+            themeIcon.classList.add('Card-sun');
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.cssText = mediaCssText;
+            }
+            document.documentElement.style.cssText = cssText;
+            document.getElementsByClassName('card-bg')[0].style.cssText = mediaCssText;
+        } else {
+            themeIcon.classList.remove('Card-sun');
+            themeIcon.classList.add('Card-moon');
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.cssText = '';
+            }
+            document.documentElement.style.cssText = '';
+            document.getElementsByClassName('card-bg')[0].style.cssText = '';
+        }
+        App.clearLog();
+        App.outputlog();
+        var logo = '%cSolitudeAlma\'%cBlog';
+        console.info(
+            logo,
+            'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
+        );
+        $('img').attr('data-fancybox', 'images');
+    </script>
+</footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
+
+</html>

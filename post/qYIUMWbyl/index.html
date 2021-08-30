@@ -1,0 +1,3928 @@
+<!DOCTYPE html>
+<html id="bg">
+
+<head>
+    <meta charset="utf-8" />
+<!--
+    * @Theme Card
+    * @Author admin@itjoker.cn
+    * @Link https://blog.itjoker.cn
+-->
+
+<title>
+    SolitudeAlma
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="SolitudeAlma">
+<meta name="description" content="都懂一点，不是很懂的小捞仔">
+<meta name="keywords" content="algorithm">
+<meta name="gridea-theme" content="Card">
+<meta name="spider" content="https://nmsl.sbjxw.网址">
+<meta name="UpdateTime" content="1630301105350">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/Card/script.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/main.min.css" />-->
+<script src="https://solitudealma.github.io/media/js/script.js"></script>
+<link rel="stylesheet" href="https://solitudealma.github.io/media/css/main.min.css" />
+<link rel="stylesheet" href="https://solitudealma.github.io/styles/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/css/Card/iconfont.css" />
+<!--link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_410989_wuhl0k5ojvf.css" /-->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.36/CDN/js/love.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+<script>
+    $().ready(
+        function() {
+            var themeIcon = document.getElementById("themeIcon");
+            var currentTheme = window.localStorage.getItem('theme');
+            if (currentTheme == 'dark') {
+                document.getElementsByTagName('html')[0].classList.add('theme-dark');
+                document.getElementsByTagName('html')[0].removeAttribute('id');
+                themeIcon.classList.remove('Card-moon');
+                themeIcon.classList.add('Card-sun');
+            } else {
+                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
+                document.getElementsByTagName('html')[0].setAttribute('id', 'bg');
+                themeIcon.classList.remove('Card-sun');
+                themeIcon.classList.add('Card-moon');
+            }
+        }
+    )
+</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/hit-kounter-lc-0.3.0.js"></script>
+    
+        
+            <script>
+                (function() {
+                    var bp = document.createElement('script');
+                    var curProtocol = window.location.protocol.split(':')[0];
+                    if (curProtocol === 'https') {
+                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                    } else {
+                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(bp, s);
+                })();
+            </script>
+            
+                    <style>
+                        .Card-certify {
+                            color: #0091e4 !important;
+                        }
+                        
+                        #foot {
+                            color: #666666;
+                        }
+                        
+                        #menu-item:hover {
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                            border-bottom-color: rgba(0, 0, 0, .6);
+                        }
+                        
+                        .gray {
+                            -webkit-filter: grayscale(100%);
+                            /* webkit */
+                            -moz-filter: grayscale(100%);
+                            /*firefox*/
+                            -ms-filter: grayscale(100%);
+                            /*ie9*/
+                            -o-filter: grayscale(100%);
+                            /*opera*/
+                            filter: grayscale(100%);
+                            filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                            filter: gray;
+                            /*ie9- */
+                        }
+                        
+                        .lite-item,
+                        #header {
+                            opacity: 1;
+                        }
+                        
+                        .lite-item {
+                            background-color: #fafafa;
+                        }
+                        
+                        #btnStyle:hover {
+                            transition: all .3s ease;
+                            /*color: #fff;*/
+                            /*background-color: #6b6b6b;*/
+                            background-color: #eaeaea;
+                            /*#0092ee*/
+                            /*linear-gradient( rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);*/
+                        }
+                        
+                        #btnStyle {
+                            /*background-color: #efefef;*/
+                            font-size: 14px;
+                            transition: all .3s ease;
+                        }
+                        
+                        .link_a:hover {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            color: #fff;
+                            border-left: 8px solid #6b6b6b;
+                            padding: 5px;
+                            transition: all .3s ease;
+                        }
+                        
+                        html {
+                            width: 100%;
+                            height: 100%;
+                            background-attachment: fixed;
+                            background-repeat: no-repeat;
+                        }
+                    </style>
+</head>
+
+<body>
+    <header id="header">
+
+    <div id="pc-menu">
+        <a id="menu-bar" class="Card Card-menu"></a>
+        <a id="menu-title" href="https://solitudealma.github.io">
+            SolitudeAlma
+        </a>
+        <nav id="menu-main" class="menu-main">
+            <ul>
+                <li id="menu-item" class="menu-item">
+                    <div id="tp-weather-widget"></div>
+                </li>
+                
+                    <li id="menu-item" class="menu-item">
+                        <a href="/">
+                            🎈Home
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/archives">
+                            📚Archives
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/posts">
+                            📃Article
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/tags">
+                            🏷Tags
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/friends">
+                            👩‍💻Friends
+                        </a>
+                    </li>
+                    
+                    <li id="menu-item" class="menu-item">
+                        <a href="/post/about">
+                            🧜‍♂️About
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+        <form id="gridea-search-form" class="searchform" data-update="1630301105350" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+    </div>
+    <div id="mobile-menu">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1630301105350" action="/search/index.html">
+            <i class="Card Card-search"></i>
+            <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+        </form>
+        <nav class="menu">
+            <ul style="list-style: none;">
+                
+                    <li class="page_item page-item-2">
+                        <a href="/">
+                            🎈Home
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/archives">
+                            📚Archives
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/posts">
+                            📃Article
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/tags">
+                            🏷Tags
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/friends">
+                            👩‍💻Friends
+                        </a>
+                    </li>
+                    
+                    <li class="page_item page-item-2">
+                        <a href="/post/about">
+                            🧜‍♂️About
+                        </a>
+                    </li>
+                    
+            </ul>
+        </nav>
+    </div>
+    <a id="theme-btn" class="theme-btn" onclick="App.changeTheme()"><i id="themeIcon" class="Card Card-moon"></i></a>
+</header>
+        <div id="main">
+            <div id="main-part">
+                <div class="lite-item">
+                    <article class="post post-type real-post">
+                        <header class="post-type-header">
+                            
+                                <div class="thumbnail-link" style="background-image: url('https://solitudealma.github.io/post-images/qYIUMWbyl.jpg')"></div>
+                                
+                                        <div class="thumbnail-shadow">
+                                            <h1 class="post-title">
+                                                Java学习笔记之Mybatis
+                                            </h1>
+                                            <div class="post-info">
+                                                <span class="post-category"><i class="Card Card-novel"></i>
+                                        
+                                            <span onclick="javascript:top.location='https://solitudealma.github.io/tag/java/'">Java</span>
+                                                
+                                                    </span>
+                                                    <span class="post-view">
+                                                    
+                                                        &nbsp;•&nbsp;
+                                                    <span id="/post/qYIUMWbyl/" class="leancloud_visitors" data-flag-title="Java学习笔记之Mybatis">
+                                                <i class="Card Card-view"></i>&nbsp;阅读量&nbsp;
+                                                <i class="leancloud-visitors-count">0</i>
+                                            </span>
+
+                                                    
+                                                            </span>&nbsp;•&nbsp;
+
+                                                            <span class="post-readtime">阅读时间:
+                                            96.7分</span>
+                                                            <span class="post-edit"></span></div>
+                                        </div>
+                                        <div class="post-relative">
+                                            <img alt="SolitudeAlma" src="https://solitudealma.github.io/images/avatar.png?v=1630301105350" srcset="https://solitudealma.github.io/images/avatar.png?v=1630301105350" class="avatar avatar-100 photo" width="100" height="100">
+                                            <span class="post-type-author"><a href="https://solitudealma.github.io" title="由SolitudeAlma发布" rel="author">SolitudeAlma<i class="Card Card-certify"></i></a></span>
+                                            <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2021-08-29</span>
+                                        </div>
+                        </header>
+                        <div class="post-main post-type-main">
+                            <div class="post-content">
+                                <div class="post-content-real">
+                                    <h1 id="1-mybatis">1. Mybatis</h1>
+<h2 id="11-mybatis介绍">1.1 MyBatis介绍</h2>
+<figure data-type="image" tabindex="1"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1628863180929-d30089cb-644d-49fc-b399-dc2b1c626305.png#clientId=u2d9c7733-e67d-4&amp;from=paste&amp;height=173&amp;id=u43146585&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=128&amp;originWidth=423&amp;originalType=binary&amp;ratio=1&amp;size=24041&amp;status=done&amp;style=none&amp;taskId=ue894ae1f-41c0-4e5b-96fb-bacfd354f57&amp;width=571.5" alt="image.png" loading="lazy"></figure>
+<ul>
+<li>MyBatis 是一款优秀的<strong>持久层框架</strong></li>
+<li>MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集的过程</li>
+<li>MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 实体类 【Plain Old Java Objects,普通的老式Java对象】映射成数据库中的记录。</li>
+<li>MyBatis 本是apache的一个开源项目ibatis, 2010年这个项目由apache 迁移到了google code，并且改名为MyBatis 。</li>
+<li>2013年11月迁移到<strong>Github</strong> .</li>
+<li>Mybatis官方文档 : http://www.mybatis.org/mybatis-3/zh/index.html</li>
+<li>GitHub : https://github.com/mybatis/mybatis-3</li>
+</ul>
+<p>如何获取Mybatis</p>
+<ul>
+<li>maven仓库</li>
+</ul>
+<pre><code class="language-xml">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.5.7&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>Github：<a href="https://github.com/mybatis/mybatis-3/releases">https://github.com/mybatis/mybatis-3/releases</a></li>
+<li>中文文档：<a href="http://www.mybatis.org/mybatis-3/zh/index.html">http://www.mybatis.org/mybatis-3/zh/index.html</a></li>
+</ul>
+<h2 id="12-持久化">1.2 持久化</h2>
+<p><strong>持久化是将程序数据在持久状态和瞬时状态间转换的机制。</strong></p>
+<ul>
+<li>即把数据（如内存中的对象）保存到可永久保存的存储设备中（如磁盘）。持久化的主要应用是将内存中的对象存储在数据库中，或者存储在磁盘文件中、XML数据文件中等等。</li>
+<li>JDBC就是一种持久化机制。文件IO也是一种持久化机制。</li>
+<li>在生活中 : 将鲜肉冷藏，吃的时候再解冻的方法也是。将水果做成罐头的方法也是。</li>
+</ul>
+<p><strong>为什么需要持久化服务呢？那是由于内存本身的缺陷引起的</strong></p>
+<ul>
+<li>内存断电后数据会丢失，但有一些对象是无论如何都不能丢失的，比如银行账号等，遗憾的是，人们还无法保证内存永不掉电。</li>
+<li>内存过于昂贵，与硬盘、光盘等外存相比，内存的价格要高2~3个数量级，而且维持成本也高，至少需要一直供电吧。所以即使对象不需要永久保存，也会因为内存的容量限制不能一直呆在内存中，需要持久化来缓存到外存。</li>
+</ul>
+<h2 id="13-持久层">1.3 持久层</h2>
+<p><strong>什么是持久层？</strong></p>
+<ul>
+<li>完成持久化工作的代码块。 ----&gt;  dao层 【DAO (Data Access Object)  数据访问对象】</li>
+<li>大多数情况下特别是企业级应用，数据持久化往往也就意味着将内存中的数据保存到磁盘上加以固化，而持久化的实现过程则大多通过各种<strong>关系数据库</strong>来完成。</li>
+<li>不过这里有一个字需要特别强调，也就是所谓的“层”。对于应用系统而言，数据持久功能大多是必不可少的组成部分。也就是说，我们的系统中，已经天然的具备了“持久层”概念？也许是，但也许实际情况并非如此。之所以要独立出一个“持久层”的概念,而不是“持久模块”，“持久单元”，也就意味着，我们的系统架构中，应该有一个相对独立的逻辑层面，专注于数据持久化逻辑的实现.</li>
+<li>与系统其他部分相对而言，这个层面应该具有一个较为清晰和严格的逻辑边界。【说白了就是用来操作数据库存在的！】</li>
+</ul>
+<h2 id="14-为什么需要mybatis">1.4 为什么需要Mybatis</h2>
+<ul>
+<li>Mybatis就是帮助程序猿将数据存入数据库中 , 和从数据库中取数据 .</li>
+<li>传统的jdbc操作 , 有很多重复代码块 .比如 : 数据取出时的封装 , 数据库的建立连接等等... , 通过框架可以减少重复代码,提高开发效率 .</li>
+<li>MyBatis 是一个半自动化的<strong>ORM框架 (Object Relationship Mapping) --&gt;对象关系映射</strong></li>
+<li>所有的事情，不用Mybatis依旧可以做到，只是用了它，所有实现会更加简单！<strong>技术没有高低之分，只有使用这个技术的人有高低之别</strong></li>
+<li>MyBatis的优点
+<ul>
+<li>简单易学：本身就很小且简单。没有任何第三方依赖，最简单安装只要两个jar文件+配置几个sql映射文件就可以了，易于学习，易于使用，通过文档和源代码，可以比较完全的掌握它的设计思路和实现。</li>
+<li>灵活：mybatis不会对应用程序或者数据库的现有设计强加任何影响。sql写在xml里，便于统一管理和优化。通过sql语句可以满足操作数据库的所有需求。</li>
+<li>解除sql与程序代码的耦合：通过提供DAO层，将业务逻辑和数据访问逻辑分离，使系统的设计更清晰，更易维护，更易单元测试。sql和代码的分离，提高了可维护性。</li>
+<li>提供xml标签，支持编写动态sql。</li>
+<li>.......</li>
+</ul>
+</li>
+<li>最重要的一点，使用的人多！公司需要！</li>
+</ul>
+<h1 id="2-第一个mybatis程序">2. 第一个Mybatis程序</h1>
+<p><strong>思路流程：搭建环境--&gt;导入Mybatis---&gt;编写代码---&gt;测试</strong></p>
+<h2 id="21-搭建环境">2.1 搭建环境</h2>
+<p>搭建数据库</p>
+<pre><code class="language-sql">CREATE DATABASE `mybatis` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+USE `mybatis`;
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+`id` INT(20) NOT NULL,
+`name` VARCHAR(30) DEFAULT NULL,
+`pwd` VARCHAR(30) DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `user`(`id`,`name`,`pwd`) VALUES (1,'SolitudeAlma','123456'),(2,'张三','abcdef'),(3,'李四','987654');
+</code></pre>
+<p>新建项目</p>
+<ol>
+<li>新建一个普通的maven项目（无模板）</li>
+<li>删除src目录，让工程变为一个父工程</li>
+<li>导入依赖</li>
+</ol>
+<pre><code class="language-xml">&lt;!--导入依赖--&gt;
+&lt;dependencies&gt;
+  &lt;!--Mybatis--&gt;
+  &lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.5.7&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;!--mysql驱动--&gt;
+  &lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;8.0.24&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;!--junit，测试用--&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;junit&lt;/groupId&gt;
+    &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;version&gt;4.13.2&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<h2 id="22-创建一个模块">2.2 创建一个模块</h2>
+<p>这样子项目就不需要重复添加依赖</p>
+<ol>
+<li>编写MyBatis核心配置文件</li>
+</ol>
+<p>查看帮助文档</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;!--configuration核心配置文件--&gt;
+&lt;configuration&gt;
+    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+&lt;/configuration&gt;
+</code></pre>
+<ol start="2">
+<li>编写MyBatis工具类</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.utils;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import javax.annotation.Resource;
+import java.io.IOException;
+import java.io.InputStream;
+
+/**
+ * sqlSessionFactory ---&gt; sqlSession
+ * @author SolitudeAlma
+ * @date 2021/8/13
+ */
+public class MybatisUtils {
+    private static SqlSessionFactory sqlSessionFactory;
+    static {
+        try {
+            //获取sqlSessionFactory对象
+            String resource = &quot;mybatis-config.xml&quot;;
+            InputStream inputStream = Resources.getResourceAsStream(resource);
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 既然有了 SqlSessionFactory，顾名思义，我们可以从中获得 SqlSession 的实例。SqlSession 提供了在数据库执行 SQL
+     * 命令所需的所有方法。你可以通过 SqlSession 实例来直接执行已映射的SQL语句。 sqlSession相当于jdbc中的
+     * prepareStatement对象
+     * @return SqlSessionFactory
+     */
+    public static SqlSession getSqlSession() {
+        return sqlSessionFactory.openSession();
+    }
+}
+</code></pre>
+<h2 id="23-编写代码">2.3 编写代码</h2>
+<ul>
+<li>实体类</li>
+</ul>
+<pre><code class="language-java">package com.SolitudeAlma.pojo;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ * @description 实体类
+ */
+public class User {
+    private int id;
+    private String name;
+    private String pwd;
+
+    public User(int id, String name, String pwd) {
+        this.id = id;
+        this.name = name;
+        this.pwd = pwd;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;User{&quot; +
+                &quot;id=&quot; + id +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, pwd='&quot; + pwd + '\'' +
+                '}';
+    }
+}
+</code></pre>
+<ul>
+<li>Dao接口</li>
+</ul>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public interface UserDao {
+    /**
+     * 查询所有用户信息
+     * @return User
+     */
+    List&lt;User&gt; getUserList();
+}
+</code></pre>
+<ul>
+<li>接口实现类</li>
+</ul>
+<p>用xml代替UserDaoImpl实现类</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;!--namespace绑定一个对应的Dao/Mapper接口（以后改为Mapper）--&gt;
+&lt;mapper namespace=&quot;com.SolitudeAlma.dao.UserDao&quot;&gt;
+    &lt;!--id对应接口方法名--&gt;
+    &lt;select id=&quot;getUserList&quot; resultType=&quot;com.SolitudeAlma.pojo.User&quot;&gt;
+        select * from user;
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<h2 id="24-测试">2.4 测试</h2>
+<p>注意点：org.apache.ibatis.binding.BindingException: Type interface com.SolitudeAlma.dao.UserDao is not known to the MapperRegistry.</p>
+<p>MapperRegistry是什么？<br>
+核心配置文件中注册mapper​</p>
+<pre><code class="language-xml">&lt;!--每一个Mapper.xml都需要在Mybatis核心配置文件中注册--&gt;
+&lt;mappers&gt;
+    &lt;mapper resource=&quot;com/SolitudeAlma/dao/UserMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<p>Could not find resource com/SolitudeAlma/dao/UserMapper.xml<br>
+JavaWeb中提到过，项目构建时，java目录下的非java文件不会被生成到target目录，所以我们需要在父项目的pom.xml中build标签下加入rusource标签，把我们的xml等配置文件也生成到target</p>
+<pre><code class="language-xml">&lt;!--在build中配置resources,来防止我们资源导出失败的问题--&gt;
+&lt;build&gt;
+  &lt;resources&gt;
+    &lt;resource&gt;
+      &lt;directory&gt;src/main/resources&lt;/directory&gt;
+      &lt;includes&gt;
+        &lt;include&gt;**/*.properties&lt;/include&gt;
+        &lt;include&gt;**/*.xml&lt;/include&gt;
+      &lt;/includes&gt;
+      &lt;filtering&gt;false&lt;/filtering&gt;
+    &lt;/resource&gt;
+    &lt;resource&gt;
+      &lt;directory&gt;src/main/java&lt;/directory&gt;
+      &lt;includes&gt;
+        &lt;include&gt;**/*.properties&lt;/include&gt;
+        &lt;include&gt;**/*.xml&lt;/include&gt;
+      &lt;/includes&gt;
+      &lt;filtering&gt;false&lt;/filtering&gt;
+    &lt;/resource&gt;
+  &lt;/resources&gt;
+&lt;/build&gt;
+</code></pre>
+<ul>
+<li>junit测试</li>
+</ul>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public class UserDaoTest {
+    @Test
+    public void test() {
+
+        //获取SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //方式一:getMapper
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = mapper.getUserList();
+
+        //方式二:不推荐使用
+        //List&lt;User&gt; userList = sqlSession.selectList(&quot;com.SolitudeAlma.dao.UserDao.getUserList&quot;);
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        //关闭SqlSession
+        sqlSession.close();
+    }
+}
+</code></pre>
+<p>可能遇到的问题：</p>
+<ol>
+<li>配置文件没有注册</li>
+<li>绑定接口错误</li>
+<li>方法名不对</li>
+<li>返回类型不对</li>
+<li>maven导出资源</li>
+</ol>
+<blockquote>
+<p>namespace</p>
+</blockquote>
+<ol>
+<li>将上面案例中的UserDao接口改名为UserMapper；</li>
+<li>将UserMapper.xml中的namespace改为为UserDao的路径 .</li>
+<li>再次测试</li>
+</ol>
+<p><strong>结论：</strong><br>
+配置文件中namespace中的名称为对应Mapper接口或者Dao接口的完整包名,必须一致！</p>
+<h1 id="3-crud操作">3. CRUD操作</h1>
+<h2 id="31-select">3.1 SELECT</h2>
+<ul>
+<li>select标签是mybatis中最常用的标签之一</li>
+<li>select语句有很多属性可以详细配置每一条SQL语句
+<ul>
+<li>SQL语句返回值类型。【完整的类名或者别名】</li>
+<li>传入SQL语句的参数类型 。【万能的Map，可以多尝试使用】</li>
+<li>命名空间中唯一的标识符</li>
+<li>接口中的方法名与映射文件中的SQL语句ID 一一对应</li>
+<li>id：namespace对应接口的方法名</li>
+<li>parameterType：参数类型</li>
+<li>resultType：SQL语句返回结果的类型</li>
+</ul>
+</li>
+</ul>
+<p><strong>需求：根据id查询用户</strong></p>
+<ol>
+<li>在UserDao中添加对应方法</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public interface UserDao {
+    /**
+     * 查询所有用户信息
+     * @return List 用户信息集合
+     */
+    List&lt;User&gt; getUserList();
+
+    /**
+     * 根据id查询用户信息
+     * @param id 用户唯一标识
+     * @return User 单个用户的信息
+     */
+    User getUserById(int id);
+}
+
+</code></pre>
+<ol start="2">
+<li>在UserMapper.xml中添加Select语句</li>
+</ol>
+<pre><code class="language-xml">&lt;select id=&quot;getUserById&quot; resultType=&quot;com.SolitudeAlma.pojo.User&quot; parameterType=&quot;int&quot;&gt;
+  select * from user where id = #{id};
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>测试类中测试</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public class UserDaoTest {
+    @Test
+    public void test() {
+
+        //获取SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //方式一:getMapper
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = mapper.getUserList();
+
+        //方式二:不推荐使用
+        //List&lt;User&gt; userList = sqlSession.selectList(&quot;com.SolitudeAlma.dao.UserDao.getUserList&quot;);
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        //关闭SqlSession
+        sqlSession.close();
+    }
+
+    @Test
+    public  void getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+}
+
+</code></pre>
+<h2 id="32-insert">3.2 INSERT</h2>
+<p>一般使用insert标签进行插入操作，它的配置和select标签差不多！<br>
+<strong>需求：给数据库增加一个用户</strong></p>
+<ol>
+<li>在UserDao接口中添加对应的方法</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public interface UserDao {
+    /**
+     * 查询所有用户信息
+     * @return List 用户信息集合
+     */
+    List&lt;User&gt; getUserList();
+
+    /**
+     * 根据id查询用户信息
+     * @param id 用户唯一标识
+     * @return User 单个用户的信息
+     */
+    User getUserById(int id);
+
+    /**
+     * 插入一个用户信息
+     * @param user 用户信息类
+     * @return SQL查询结果，成功影响几条数据
+     */
+    int insertOne(User user);   
+}
+</code></pre>
+<ol start="2">
+<li>在UserMapper.xml中添加insert语句</li>
+</ol>
+<pre><code class="language-xml">&lt;!--对象中的属性可以直接取出来--&gt;
+&lt;insert id=&quot;insertOne&quot; parameterType=&quot;com.SolitudeAlma.pojo.User&quot; &gt;
+  insert into user (id, name, pwd) values (#{id}, #{name}, #{pwd});
+&lt;/insert&gt;
+</code></pre>
+<p>3.测试</p>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public class UserDaoTest {
+    @Test
+    public void test() {
+
+        //获取SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //方式一:getMapper
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = mapper.getUserList();
+
+        //方式二:不推荐使用
+        //List&lt;User&gt; userList = sqlSession.selectList(&quot;com.SolitudeAlma.dao.UserDao.getUserList&quot;);
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        //关闭SqlSession
+        sqlSession.close();
+    }
+
+    @Test
+    public  void getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+
+    @Test
+    public  void insertOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        int result = mapper.insertOne(new User(4, &quot;小明&quot;, &quot;1212&quot;));
+        System.out.println(result);
+        //如果不加上这句提交事务，我们会发现虽然输出了1，但是还是没有插入成功，那是因为我们的工
+        //具类中的openSession方法没有传参数，默认手动提交事务，而mysql是自动提交事务的，所以我
+       	//只要设置参数为true就行了，false和不传参都是手动提交。这样相对比较安全
+        sqlSession.commit();
+        sqlSession.close();
+    }
+}
+</code></pre>
+<p><strong>注意点：增、删、改操作需要提交事务！</strong></p>
+<h2 id="33-update">3.3 UPDATE</h2>
+<p>一般使用update标签进行更新操作，它的配置和select标签差不多！<br>
+<strong>需求：修改用户的信息</strong></p>
+<ol>
+<li>同理，编写接口方法</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public interface UserDao {
+    /**
+     * 查询所有用户信息
+     * @return List 用户信息集合
+     */
+    List&lt;User&gt; getUserList();
+
+    /**
+     * 根据id查询用户信息
+     * @param id 用户唯一标识
+     * @return User 单个用户的信息
+     */
+    User getUserById(int id);
+
+    /**
+     * 插入一个用户信息
+     * @param user 用户信息类
+     * @return SQL查询结果，成功影响几条数据
+     */
+    int insertOne(User user);
+
+    /**
+     * 修改一个用户的信息
+     * @param user 用户信息类
+     * @return SQL查询结果，成功影响几条数据
+     */
+    int updateOne(User user);
+}
+</code></pre>
+<ol start="2">
+<li>编写对应的配置文件SQL</li>
+</ol>
+<pre><code class="language-xml">&lt;update id=&quot;updateOne&quot; parameterType=&quot;com.SolitudeAlma.pojo.User&quot;&gt;
+  update user set name = #{name}, pwd = #{pwd} where id = #{id};
+&lt;/update&gt;
+</code></pre>
+<ol start="3">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public class UserDaoTest {
+    @Test
+    public void test() {
+
+        //获取SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //方式一:getMapper
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = mapper.getUserList();
+
+        //方式二:不推荐使用
+        //List&lt;User&gt; userList = sqlSession.selectList(&quot;com.SolitudeAlma.dao.UserDao.getUserList&quot;);
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        //关闭SqlSession
+        sqlSession.close();
+    }
+
+    @Test
+    public  void getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+
+    @Test
+    public  void insertOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        int result = mapper.insertOne(new User(4, &quot;小明&quot;, &quot;1212&quot;));
+        System.out.println(result);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public  void updateOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        int result = mapper.updateOne(new User(4, &quot;废物&quot;, &quot;12121&quot;));
+        System.out.println(result);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+}
+</code></pre>
+<h2 id="34-delete">3.4 DELETE</h2>
+<p>一般使用delete标签进行删除操作，它的配置和select标签差不多！<br>
+<strong>需求：根据id删除一个用户</strong></p>
+<ol>
+<li>同理，编写接口方法</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public interface UserDao {
+    /**
+     * 查询所有用户信息
+     * @return List 用户信息集合
+     */
+    List&lt;User&gt; getUserList();
+
+    /**
+     * 根据id查询用户信息
+     * @param id 用户唯一标识
+     * @return User 单个用户的信息
+     */
+    User getUserById(int id);
+
+    /**
+     * 插入一个用户信息
+     * @param user 用户信息类
+     * @return SQL查询结果，成功影响几条数据
+     */
+    int insertOne(User user);
+
+    /**
+     * 修改一个用户的信息
+     * @param user 用户信息类
+     * @return SQL查询结果，成功影响几条数据
+     */
+    int updateOne(User user);
+
+    /**
+     * 删除一个用户的信息
+     * @param id 用户唯一标识
+     * @return SQL查询结果，成功影响几条数据
+     */
+    int deleteById(int id);
+}
+</code></pre>
+<ol start="2">
+<li>编写对应的配置文件SQL</li>
+</ol>
+<pre><code class="language-xml">&lt;delete id=&quot;deleteById&quot; parameterType=&quot;int&quot;&gt;
+  delete from user where id = #{id};
+&lt;/delete&gt;
+</code></pre>
+<ol start="3">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/14
+ */
+public class UserDaoTest {
+    @Test
+    public void test() {
+
+        //获取SqlSession对象
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //方式一:getMapper
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = mapper.getUserList();
+
+        //方式二:不推荐使用
+        //List&lt;User&gt; userList = sqlSession.selectList(&quot;com.SolitudeAlma.dao.UserDao.getUserList&quot;);
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        //关闭SqlSession
+        sqlSession.close();
+    }
+
+    @Test
+    public  void getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+
+    @Test
+    public  void insertOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        int result = mapper.insertOne(new User(4, &quot;小明&quot;, &quot;1212&quot;));
+        System.out.println(result);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public  void updateOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        int result = mapper.updateOne(new User(4, &quot;废物&quot;, &quot;12121&quot;));
+        System.out.println(result);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public  void deleteOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        int result = mapper.deleteById(4);
+        System.out.println(result);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+}
+</code></pre>
+<p><strong>小结：</strong></p>
+<ul>
+<li>所有的增删改操作都需要提交事务！（默认手动提交）</li>
+<li>接口所有的普通参数，尽量都写上@Param参数，尤其是多个参数时，必须写上！</li>
+<li>有时候根据业务的需求，可以考虑使用map传递参数！</li>
+<li>为了规范操作，在SQL的配置文件中，我们尽量将Parameter参数和resultType都写上！</li>
+</ul>
+<h2 id="35-like">3.5 LIKE</h2>
+<p><strong>模糊查询like语句该怎么写?</strong><br>
+第1种：在Java代码中添加sql通配符。</p>
+<pre><code class="language-java">string wildcardname = &quot;%smi%&quot;;
+List&lt;name&gt; names = mapper.selectlike(wildcardname);
+
+&lt;select id=&quot;selectlike&quot;&gt;
+select * from foo where bar like #{value}
+&lt;/select&gt;
+</code></pre>
+<p>第2种：在sql语句中拼接通配符，会引起sql注入</p>
+<pre><code class="language-java">string wildcardname = &quot;smi&quot;;
+List&lt;name&gt; names = mapper.selectlike(wildcardname);
+
+&lt;select id=&quot;selectlike&quot;&gt;
+    select * from foo where bar like &quot;%&quot;${value}&quot;%&quot;
+&lt;/select&gt;
+</code></pre>
+<p>在mybatis配置文件中：</p>
+<ol>
+<li>${}:表示拼接sql串，将接收到参数的内容不加任何修饰拼接在sql中，可能引发sql注入。</li>
+<li>#{ }是预编译处理，MyBatis在处理#{ }时，它会将sql中的#{ }替换为？，然后调用PreparedStatement的set方法来赋值，传入字符串后，会在值两边加上单引号，使用占位符的方式提高效率，可以防止sql注入。</li>
+</ol>
+<p>不推荐使用${}，能用#{}就用#{}，也可以使用MySQL函数concat连接字符串。<br>
+固定的值可以用${}，因为本来就是拼接字符串，但动态的不能</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/xiao-lin-unit/p/13644004.html">https://www.cnblogs.com/xiao-lin-unit/p/13644004.html</a><br>
+<a href="https://blog.csdn.net/Mr_Qiao93/article/details/109168291">https://blog.csdn.net/Mr_Qiao93/article/details/109168291</a><br>
+<a href="https://blog.csdn.net/weixin_42452395/article/details/113869915">https://blog.csdn.net/weixin_42452395/article/details/113869915</a></p>
+</blockquote>
+<h2 id="36-其他">3.6 其他</h2>
+<p>sql语句需要的参数很多时，可以考虑使用map而不是用类。<br>
+map可以随意定义key的名字，灵活性高，而类需要定义属性，set、get方法等，修改名字得修改属性名，麻烦</p>
+<p>大致用法：</p>
+<pre><code class="language-java">/**
+* 插入过个用户信息
+* @param map 用户信息集合
+* @return SQL查询结果，成功影响几条数据
+*/
+int insertMany(Map&lt;String, Object&gt; map);
+</code></pre>
+<pre><code class="language-xml">&lt;!--对象中的属性可以直接取出来 传递map中的key--&gt;
+&lt;insert id=&quot;insertMany&quot; parameterType=&quot;map&quot; &gt;
+  insert into user (id, name, pwd) values (#{userId}, #{userName}, #{password});
+&lt;/insert&gt;
+</code></pre>
+<pre><code class="language-java">@Test
+public  void insertMany() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserDao mapper = sqlSession.getMapper(UserDao.class);
+    Map &lt;String, Object&gt; map = new HashMap&lt;&gt;();
+    map.put(&quot;userId&quot;, 5);
+    map.put(&quot;userName&quot;, &quot;小红&quot;);
+    map.put(&quot;password&quot;, &quot;23333&quot;);
+    int result = mapper.insertMany(map);
+    System.out.println(result);
+    sqlSession.commit();
+    sqlSession.close();
+}
+</code></pre>
+<h1 id="4-配置解析">4. 配置解析</h1>
+<h2 id="41-核心配置文件">4.1 核心配置文件</h2>
+<ul>
+<li>mybatis-config.xml 系统核心配置文件</li>
+<li>MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性信息。</li>
+<li>能配置的内容如下：</li>
+</ul>
+<pre><code class="language-java">configuration（配置）
+properties（属性）
+settings（设置）
+typeAliases（类型别名）
+typeHandlers（类型处理器）
+objectFactory（对象工厂）
+plugins（插件）
+environments（环境配置）
+environment（环境变量）
+transactionManager（事务管理器）
+dataSource（数据源）
+databaseIdProvider（数据库厂商标识）
+mappers（映射器）
+&lt;!-- 注意元素节点的顺序！顺序不对会报错 --&gt;
+</code></pre>
+<p>可以阅读 mybatis-config.xml 上面的dtd的头文件</p>
+<h2 id="42-environment">4.2 environment</h2>
+<pre><code class="language-xml">&lt;environments default=&quot;development&quot;&gt;
+  &lt;environment id=&quot;development&quot;&gt;
+    &lt;transactionManager type=&quot;JDBC&quot;&gt;
+      &lt;property name=&quot;...&quot; value=&quot;...&quot;/&gt;
+    &lt;/transactionManager&gt;
+    &lt;dataSource type=&quot;POOLED&quot;&gt;
+      &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;
+      &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;
+      &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;
+      &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;
+    &lt;/dataSource&gt;
+  &lt;/environment&gt;
+&lt;/environments&gt;
+</code></pre>
+<ul>
+<li>配置MyBatis的多套运行环境，将SQL映射到多个不同的数据库上，必须指定其中一个为默认运行环境（通过default指定）</li>
+<li>子元素节点：<strong>environment</strong>
+<ul>
+<li>dataSource 元素使用标准的 JDBC 数据源接口来配置 JDBC 连接对象的资源。</li>
+<li>数据源是必须配置的。</li>
+<li>有三种内建的数据源类型 type=&quot;[UNPOOLED|POOLED|JNDI]&quot;​</li>
+<li><strong>UNPOOLED</strong>：这种数据源的实现只是每次被请求时打开和关闭连接。</li>
+<li><strong>POOLED</strong>：这种数据源的实现利用“池”的概念将 JDBC 连接对象组织起来 , 这是一种使得并发 Web 应用快速响应请求的流行处理方式。</li>
+<li><strong>JNDI</strong>：这个数据源的实现是为了能在如 Spring 或应用服务器这类容器中使用，容器可以集中或在外部配置数据源，然后放置一个 JNDI 上下文的引用。</li>
+<li>数据源也有很多第三方的实现，比如dbcp，c3p0，druid等等....</li>
+<li>详情：查看官方文档</li>
+<li>这两种事务管理器类型都不需要设置任何属性。</li>
+<li>具体的一套环境，通过设置id进行区别，id保证唯一！</li>
+<li>子元素节点：transactionManager - [ 事务管理器 ]</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-xml">&lt;!-- 语法 --&gt;
+&lt;transactionManager type=&quot;[ JDBC | MANAGED ]&quot;/&gt;
+</code></pre>
+<ul>
+<li>子元素节点：<strong>数据源（dataSource）</strong></li>
+</ul>
+<h2 id="43-properties">4.3 properties</h2>
+<p>数据库这些属性都是可外部配置且可动态替换的，既可以在典型的 Java 属性文件中配置，亦可通过 properties 元素的子元素来传递。具体看官方文档</p>
+<p>我们来优化配置文件</p>
+<p>第一步 ; 在资源目录下新建一个db.properties</p>
+<pre><code class="language-properties">driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8
+user=root
+password=xxx
+</code></pre>
+<p>第二步 : 将文件导入properties 配置文件</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;!--configuration核心配置文件--&gt;
+&lt;configuration&gt;
+    &lt;!--引入外部配置文件，可以内嵌properties标签配置一些信息，但如果有相同的属性，那么优先使用外部的--&gt;
+    &lt;!--&lt;properties resource=&quot;db.properties&quot;/&gt;--&gt;
+    &lt;properties resource=&quot;db.properties&quot;&gt;
+        &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;xxx&quot;/&gt;
+    &lt;/properties&gt;
+    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+    &lt;!--每一个Mapper.xml都需要在Mybatis核心配置文件中注册--&gt;
+    &lt;mappers&gt;
+        &lt;mapper resource=&quot;com/SolitudeAlma/dao/UserMapper.xml&quot;/&gt;
+    &lt;/mappers&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>注意：严格按照标签顺序来写<br>
+更多操作，可以查看官方文档</p>
+<ul>
+<li>配置文件优先级问题（相同属性优先使用外部配置）</li>
+<li>新特性：使用占位符</li>
+</ul>
+<h2 id="44-typealiases">4.4 typeAliases</h2>
+<p>类型别名是为 Java 类型设置一个短的名字。它只和 XML 配置有关，存在的意义仅在于用来减少类完全限定名的冗余。</p>
+<pre><code class="language-xml">&lt;!--为实体类配置别名,注意顺序--&gt;
+&lt;typeAliases&gt;
+  &lt;typeAlias type=&quot;com.SolitudeAlma.pojo.User&quot; alias=&quot;User&quot;/&gt;
+&lt;/typeAliases&gt;
+</code></pre>
+<p>当这样配置时，User可以用在任何使用com.SolitudeAlma.pojo.User的地方。</p>
+<p>也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean，比如:</p>
+<pre><code class="language-xml">&lt;typeAliases&gt;
+  &lt;!--使用这个方法时mapper中就用小写，以便区分使用的别名方法--&gt;
+  &lt;package name=&quot;com.SolitudeAlma.pojo&quot;/&gt;
+&lt;/typeAliases&gt;
+</code></pre>
+<p>每一个在com.SolitudeAlma.pojo包中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。<br>
+大小写都可以识别，但是用小写的话就知道你是用了扫描包这个方法<br>
+若有注解，则别名为其注解值。见下面的例子：</p>
+<pre><code class="language-java">@Alias(&quot;user&quot;)
+public class User {
+  ...
+}
+</code></pre>
+<p>实体类比较少的时候用第一钟方法，比较多的时候直接扫描包<br>
+第一种方法可以自定义别名，第二种不行，但可以用注解实现自定义​</p>
+<p>去官网查看一下Mybatis默认的一些类型别名（基本数据类型和引用类型等等）</p>
+<h2 id="45-setting">4.5 setting</h2>
+<ul>
+<li>设置（settings）相关 =&gt; 查看帮助文档（需要记住下面三个）
+<ul>
+<li>懒加载</li>
+<li>日志实现</li>
+<li>缓存开启关闭</li>
+</ul>
+</li>
+<li>一个配置完整的 settings 元素的示例如下：</li>
+</ul>
+<pre><code class="language-xml">&lt;settings&gt;
+  &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;
+  &lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot;/&gt;
+  &lt;setting name=&quot;multipleResultSetsEnabled&quot; value=&quot;true&quot;/&gt;
+  &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot;/&gt;
+  &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;false&quot;/&gt;
+  &lt;setting name=&quot;autoMappingBehavior&quot; value=&quot;PARTIAL&quot;/&gt;
+  &lt;setting name=&quot;autoMappingUnknownColumnBehavior&quot; value=&quot;WARNING&quot;/&gt;
+  &lt;setting name=&quot;defaultExecutorType&quot; value=&quot;SIMPLE&quot;/&gt;
+  &lt;setting name=&quot;defaultStatementTimeout&quot; value=&quot;25&quot;/&gt;
+  &lt;setting name=&quot;defaultFetchSize&quot; value=&quot;100&quot;/&gt;
+  &lt;setting name=&quot;safeRowBoundsEnabled&quot; value=&quot;false&quot;/&gt;
+  &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;false&quot;/&gt;
+  &lt;setting name=&quot;localCacheScope&quot; value=&quot;SESSION&quot;/&gt;
+  &lt;setting name=&quot;jdbcTypeForNull&quot; value=&quot;OTHER&quot;/&gt;
+  &lt;setting name=&quot;lazyLoadTriggerMethods&quot; value=&quot;equals,clone,hashCode,toString&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
+<h2 id="46-mappers">4.6 mappers</h2>
+<p><strong>mappers</strong></p>
+<ul>
+<li>映射器 : 定义映射SQL语句文件</li>
+<li>既然 MyBatis 的行为其他元素已经配置完了，我们现在就要定义 SQL 映射语句了。但是首先我们需要告诉 MyBatis 到哪里去找到这些语句。Java 在自动查找这方面没有提供一个很好的方法，所以最佳的方式是告诉 MyBatis 到哪里去找映射文件。你可以使用相对于类路径的资源引用， 或完全限定资源定位符（包括 file:/// 的 URL），或类名和包名等。映射器是MyBatis中最核心的组件之一，在MyBatis 3之前，只支持xml映射器，即：所有的SQL语句都必须在xml文件中配置。而从MyBatis 3开始，还支持接口映射器，这种映射器方式允许以Java代码的方式注解定义SQL语句，非常简洁。</li>
+</ul>
+<p><strong>引入资源方式</strong></p>
+<pre><code class="language-xml">&lt;!-- 使用相对于类路径的资源引用 --&gt;
+&lt;mappers&gt;
+ &lt;mapper resource=&quot;com/SolitudeAlma/dao/UserMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 使用完全限定资源定位符（URL）直接pass！！！！ --&gt;
+&lt;mappers&gt;
+ &lt;mapper url=&quot;file:///var/mappers/AuthorMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;!--
+使用映射器接口实现类的完全限定类名
+需要配置文件名称和接口名称一致，并且位于同一目录(包)下
+--&gt;
+&lt;mappers&gt;
+ &lt;mapper class=&quot;com.SolitudeAlma.dao.UserDao&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;!--
+将包内的映射器接口实现全部注册为映射器
+但是需要配置文件名称和接口名称一致，并且位于同一目录下
+--&gt;
+&lt;mappers&gt;
+ &lt;package name=&quot;com.SolitudeAlma.dao&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<p><strong>Mapper配置文件</strong></p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+       PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+       &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.kuang.mapper.UserMapper&quot;&gt;
+   
+&lt;/mapper&gt;
+</code></pre>
+<ul>
+<li>namespace中文意思：命名空间，作用如下：
+<ul>
+<li>namespace的命名必须跟某个接口同名</li>
+<li>接口中的方法与映射文件中sql语句id应该一一对应</li>
+</ul>
+<ol>
+<li>namespace和子元素的id联合保证唯一  , 区别不同的mapper</li>
+<li>绑定DAO接口</li>
+<li>namespace命名规则 : 包名+类名</li>
+</ol>
+</li>
+</ul>
+<p>MyBatis 的真正强大在于它的映射语句，这是它的魔力所在。由于它的异常强大，映射器的 XML 文件就显得相对简单。如果拿它跟具有相同功能的 JDBC 代码进行对比，你会立即发现省掉了将近 95% 的代码。MyBatis 为聚焦于 SQL 而构建，以尽可能地为你减少麻烦。</p>
+<h2 id="47-其他配置">4.7 其他配置</h2>
+<p><strong>typeHandlers类型处理器</strong></p>
+<ul>
+<li>无论是 MyBatis 在预处理语句（PreparedStatement）中设置一个参数时，还是从结果集中取出一个值时， 都会用类型处理器将获取的值以合适的方式转换成 Java 类型。</li>
+<li>你可以重写类型处理器或创建你自己的类型处理器来处理不支持的或非标准的类型。【了解即可】</li>
+</ul>
+<p><strong>objectFactory对象工厂</strong></p>
+<ul>
+<li>MyBatis 每次创建结果对象的新实例时，它都会使用一个对象工厂（ObjectFactory）实例来完成。</li>
+<li>默认的对象工厂需要做的仅仅是实例化目标类，要么通过默认构造方法，要么在参数映射存在的时候通过有参构造方法来实例化。</li>
+<li>如果想覆盖对象工厂的默认行为，则可以通过创建自己的对象工厂来实现。【了解即可】</li>
+</ul>
+<p><strong>plugins插件</strong></p>
+<ul>
+<li>mybatis-generator-core</li>
+<li>mybatis-plus</li>
+<li>通用mapper</li>
+</ul>
+<h2 id="48-生命周期和作用域">4.8 生命周期和作用域</h2>
+<p><strong>作用域（Scope）和生命周期</strong><br>
+理解我们目前已经讨论过的不同作用域和生命周期类是至关重要的，因为错误的使用会导致非常严重的并发问题。<br>
+我们可以先画一个流程图，分析一下Mybatis的执行过程！<br>
+<img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629032135660-fba597e4-c9bd-4d57-b06b-cd2d8027dde2.png#clientId=u84d9e174-9337-4&amp;from=paste&amp;height=513&amp;id=ub1daef10&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=649&amp;originWidth=1004&amp;originalType=binary&amp;ratio=1&amp;size=58406&amp;status=done&amp;style=none&amp;taskId=ud56bcb6f-8b9f-4af3-b531-0d5fb70b10d&amp;width=794" alt="image.png" loading="lazy"></p>
+<p><strong>作用域理解</strong></p>
+<ul>
+<li>SqlSessionFactoryBuilder 的作用在于创建 SqlSessionFactory，创建成功后，SqlSessionFactoryBuilder 就失去了作用，所以它只能存在于创建 SqlSessionFactory 的方法中，而不要让其长期存在。因此 <strong>SqlSessionFactoryBuilder 实例的最佳作用域是方法作用域</strong>（也就是局部方法变量）。</li>
+<li>SqlSessionFactory 可以被认为是一个数据库连接池，它的作用是创建 SqlSession 接口对象。因为 MyBatis 的本质就是 Java 对数据库的操作，所以 SqlSessionFactory 的生命周期存在于整个 MyBatis 的应用之中，所以一旦创建了 SqlSessionFactory，就要长期保存它，直至不再使用 MyBatis 应用，所以可以认为 SqlSessionFactory 的生命周期就等同于 MyBatis 的应用周期。</li>
+<li>由于 SqlSessionFactory 是一个对数据库的连接池，所以它占据着数据库的连接资源。如果创建多个 SqlSessionFactory，那么就存在多个数据库连接池，这样不利于对数据库资源的控制，也会导致数据库连接资源被消耗光，出现系统宕机等情况，所以尽量避免发生这样的情况。</li>
+<li>因此在一般的应用中我们往往希望 SqlSessionFactory 作为一个单例，让它在应用中被共享。所以说 <strong>SqlSessionFactory 的最佳作用域是应用作用域。</strong></li>
+<li>如果说 SqlSessionFactory 相当于数据库连接池，那么 SqlSession 就相当于一个数据库连接（Connection 对象），你可以在一个事务里面执行多条 SQL，然后通过它的 commit、rollback 等方法，提交或者回滚事务。所以它应该存活在一个业务请求中，处理完整个请求后，应该关闭这条连接，让它归还给 SqlSessionFactory，否则数据库资源就很快被耗费精光，系统就会瘫痪，所以用 try...catch...finally... 语句来保证其正确关闭。</li>
+<li><strong>所以 SqlSession 的最佳的作用域是请求或方法作用域。</strong></li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629032623297-835f7dcf-0443-453a-9766-6488795612ab.png#clientId=u84d9e174-9337-4&amp;from=paste&amp;height=512&amp;id=u1eeb14da&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=722&amp;originWidth=973&amp;originalType=binary&amp;ratio=1&amp;size=211987&amp;status=done&amp;style=none&amp;taskId=ub86097f7-0f53-49a9-9439-c656d144eee&amp;width=690.5" alt="image.png" loading="lazy"></figure>
+<h1 id="5-resultmap">5. ResultMap</h1>
+<h2 id="51-查询为null">5.1 查询为null</h2>
+<p><strong>要解决的问题：属性名和字段名不一致</strong><br>
+环境：新建一个项目，将之前的项目拷贝过来<br>
+1、查看之前的数据库的字段名<br>
+<a href="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629033277051-1fd3c7d6-c5bc-4124-99d9-51f54fafa848.png#clientId=u84d9e174-9337-4&amp;from=paste&amp;height=115&amp;id=u44171385&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=230&amp;originWidth=1080&amp;originalType=binary&amp;ratio=1&amp;size=17772&amp;status=done&amp;style=none&amp;taskId=ua4d6bca7-8114-4c0b-b4a4-033da22f03a&amp;width=540">image.png</a></p>
+<p>2、Java中的实体类设计</p>
+<pre><code class="language-java">package com.SolitudeAlma.pojo;
+
+import org.apache.ibatis.type.Alias;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/15
+ * @description 实体类
+ */
+@Alias(&quot;user&quot;)
+public class User {
+    private int id;
+    private String name;
+    private String password;
+
+    public User() {
+    }
+
+    public User(int id, String name, String password) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;User{&quot; +
+                &quot;id=&quot; + id +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, password='&quot; + password + '\'' +
+                '}';
+    }
+}
+</code></pre>
+<p>3、接口</p>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/15
+ */
+public interface UserDao {
+
+    /**
+     * 根据id查询用户信息
+     * @param id 用户唯一标识
+     * @return User 单个用户的信息
+     */
+    User getUserById(int id);
+}
+</code></pre>
+<p>4、mapper映射文件</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;!--namespace绑定一个对应的Dao/Mapper接口（以后改为Mapper）--&gt;
+&lt;mapper namespace=&quot;com.SolitudeAlma.dao.UserDao&quot;&gt;
+    &lt;select id=&quot;getUserById&quot; resultType=&quot;user&quot; parameterType=&quot;int&quot;&gt;
+        select * from user where id = #{id};
+    &lt;/select&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+<p>5、测试</p>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/15
+ */
+public class UserDaoTest {
+
+    @Test
+    public void getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+}
+</code></pre>
+<p><strong>结果:</strong></p>
+<ul>
+<li>User{id=1, name='SolitudeAlma', password='null'}</li>
+<li>查询出来发现 password 为空 . 说明出现了问题！</li>
+</ul>
+<p><strong>分析：</strong></p>
+<ul>
+<li>select * from user where id = #{id} 可以看做select  id,name,pwd  from user where id = #{id}</li>
+<li>mybatis会根据这些查询的列名(会将列名转化为小写,数据库不区分大小写) , 去对应的实体类中查找相应列名的set方法设值 , 由于找不到setPwd() , 所以password返回null ; 【自动映射】</li>
+</ul>
+<h3 id="511-解决方案">5.1.1 解决方案</h3>
+<p>方案一：为列名指定别名 , 别名和java实体类的属性名一致。</p>
+<pre><code class="language-xml">&lt;select id=&quot;selectUserById&quot; resultType=&quot;User&quot;&gt;
+  select id , name , pwd as password from user where id = #{id}
+&lt;/select&gt;
+</code></pre>
+<p>方案二：使用结果集映射-&gt;ResultMap 【推荐】</p>
+<pre><code class="language-xml">&lt;!--其实只需要加上要映射的字段就行了--&gt;
+&lt;resultMap id=&quot;UserMap&quot; type=&quot;User&quot;&gt;
+   &lt;!-- id为主键 --&gt;
+   &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;
+   &lt;!-- column是数据库表的列名 , property是对应实体类的属性名 --&gt;
+   &lt;result column=&quot;name&quot; property=&quot;name&quot;/&gt;
+   &lt;result column=&quot;pwd&quot; property=&quot;password&quot;/&gt;
+&lt;/resultMap&gt;
+
+&lt;select id=&quot;selectUserById&quot; resultMap=&quot;UserMap&quot;&gt;
+  select id , name , pwd from user where id = #{id}
+&lt;/select&gt;
+</code></pre>
+<h2 id="52-resultmap">5.2 resultMap</h2>
+<p><strong>自动映射</strong></p>
+<ul>
+<li>resultMap元素是 MyBatis 中最重要最强大的元素。它可以让你从 90% 的 JDBC ResultSets 数据提取代码中解放出来。</li>
+<li>实际上，在为一些比如连接的复杂语句编写映射代码的时候，一份resultMap能够代替实现同等功能的长达数千行的代码。</li>
+<li>ResultMap 的设计思想是，对于简单的语句根本不需要配置显式的结果映射，而对于复杂一点的语句只需要描述它们的关系就行了。</li>
+</ul>
+<p>你已经见过简单映射语句的示例了，但并没有显式指定resultMap。比如：</p>
+<pre><code class="language-xml">&lt;select id=&quot;selectUserById&quot; resultType=&quot;map&quot;&gt;
+select id , name , pwd
+  from user
+  where id = #{id}
+&lt;/select&gt;
+</code></pre>
+<p>上述语句只是简单地将所有的列映射到HashMap的键上，这由resultType属性指定。虽然在大部分情况下都够用，但是 HashMap 不是一个很好的模型。你的程序更可能会使用 JavaBean 或 POJO（Plain Old Java Objects，普通老式 Java 对象）作为模型。<br>
+ResultMap最优秀的地方在于，虽然你已经对它相当了解了，但是根本就不需要显式地用到他们。</p>
+<h3 id="521-手动映射">5.2.1 手动映射</h3>
+<p>1、返回值类型为resultMap</p>
+<pre><code class="language-xml">&lt;select id=&quot;selectUserById&quot; resultMap=&quot;UserMap&quot;&gt;
+  select id , name , pwd from user where id = #{id}
+&lt;/select&gt;
+</code></pre>
+<p>2、编写resultMap，实现手动映射！</p>
+<pre><code class="language-xml">&lt;resultMap id=&quot;UserMap&quot; type=&quot;User&quot;&gt;
+   &lt;!-- id为主键 --&gt;
+   &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;
+   &lt;!-- column是数据库表的列名 , property是对应实体类的属性名 --&gt;
+   &lt;result column=&quot;name&quot; property=&quot;name&quot;/&gt;
+   &lt;result column=&quot;pwd&quot; property=&quot;password&quot;/&gt;
+&lt;/resultMap&gt;
+</code></pre>
+<p>如果世界总是这么简单就好了。但是肯定不是的，数据库中，存在一对多，多对一的情况，我们之后会使用到一些高级的结果集映射，association，collection这些。</p>
+<h1 id="6-日志">6. 日志</h1>
+<h2 id="61-日志工厂">6.1 日志工厂</h2>
+<p>思考：在测试SQL的时候，要是能够在控制台输出 SQL 的话，是不是就能够有更快的排错效率？<br>
+如果一个 数据库相关的操作出现了问题，我们可以根据输出的SQL语句快速排查问题。<br>
+对于以往的开发过程，我们会经常使用到debug模式来调节，跟踪我们的代码执行过程。但是现在使用Mybatis是基于接口，配置文件的源代码执行过程。因此，我们必须选择日志工具来作为我们开发，调节程序的工具。<br>
+Mybatis内置的日志工厂提供日志功能，具体的日志实现有以下几种工具：</p>
+<ul>
+<li>SLF4J</li>
+<li>LOG4J 【掌握】</li>
+<li>LOG4J2</li>
+<li>JDK_LOGGING</li>
+<li>COMMONS_LOGGING</li>
+<li>STDOUT_LOGGING</li>
+<li>NO_LOGGING</li>
+</ul>
+<p>具体选择哪个日志实现工具由MyBatis的内置日志工厂确定。它会使用最先找到的（按SLF4J、Apache Commons Logging、Log4j 2、Log4j、JDK logging列举的顺序查找）。如果一个都未找到，日志功能就会被禁用。​</p>
+<p><strong>标准日志实现</strong><br>
+指定 MyBatis 应该使用哪个日志记录实现。如果此设置不存在，则会自动发现日志记录实现。</p>
+<pre><code class="language-xml">&lt;settings&gt;
+  &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
+<p>测试，可以看到控制台有大量的输出！我们可以通过这些输出来判断程序到底哪里出了Bug</p>
+<h2 id="62-log4j">6.2 Log4j</h2>
+<p><strong>简介：</strong></p>
+<ul>
+<li>Log4j是Apache的一个开源项目</li>
+<li>通过使用Log4j，我们可以控制日志信息输送的目的地：控制台，文本，GUI组件....</li>
+<li>我们也可以控制每一条日志的输出格式；</li>
+<li>通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。</li>
+</ul>
+<p><strong>使用步骤：</strong></p>
+<ol>
+<li>导入log4j的包</li>
+</ol>
+<pre><code class="language-xml">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;log4j&lt;/groupId&gt;
+    &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+    &lt;version&gt;1.2.17&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start="2">
+<li>配置文件编写</li>
+</ol>
+<pre><code class="language-properties">#将等级为DEBUG的日志信息输出到console和file这两个目的地，console和file的定义在下面的代码
+log4j.rootLogger=DEBUG,console,file
+
+#控制台输出的相关设置
+log4j.appender.console = org.apache.log4j.ConsoleAppender
+log4j.appender.console.Target = System.out
+log4j.appender.console.Threshold=DEBUG
+log4j.appender.console.layout = org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=[%c]-%m%n
+
+#文件输出的相关设置
+log4j.appender.file = org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=./log/Mybatis-04.log
+log4j.appender.file.MaxFileSize=10mb
+log4j.appender.file.Threshold=DEBUG
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=[%p][%d{yy-MM-dd}][%c]%m%n
+
+#日志输出级别
+log4j.logger.org.mybatis=DEBUG
+log4j.logger.java.sql=DEBUG
+log4j.logger.java.sql.Statement=DEBUG
+log4j.logger.java.sql.ResultSet=DEBUG
+log4j.logger.java.sql.PreparedStatement=DEBUG
+</code></pre>
+<ol start="3">
+<li>setting设置日志实现</li>
+</ol>
+<pre><code class="language-xml">&lt;settings&gt;
+   &lt;setting name=&quot;logImpl&quot; value=&quot;LOG4J&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
+<ol start="4">
+<li>在程序中使用Log4j进行输出！</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+import org.junit.Test;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/15
+ */
+public class UserDaoTest {
+
+    //注意导包：org.apache.log4j.Logger
+    static Logger logger = Logger.getLogger(UserDaoTest.class);
+
+    @Test
+    public void getUserById() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+
+    @Test
+    public void selectUser() {
+        logger.info(&quot;info：进入selectUser方法&quot;);
+        logger.debug(&quot;debug：进入selectUser方法&quot;);
+        logger.error(&quot;error: 进入selectUser方法&quot;);
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User userInfo = mapper.getUserById(1);
+        System.out.println(userInfo);
+        sqlSession.close();
+    }
+}
+</code></pre>
+<ol start="5">
+<li>测试，看控制台输出！</li>
+</ol>
+<ul>
+<li>使用Log4j 输出日志</li>
+<li>可以看到还生成了一个日志的文件 【需要修改file的日志级别】</li>
+</ul>
+<p>需要导包，参数为当前类的class对象</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/xiaobaizhiqian/p/7956690.html">https://www.cnblogs.com/xiaobaizhiqian/p/7956690.html</a><br>
+<a href="https://blog.csdn.net/eagleuniversityeye/article/details/80582140">https://blog.csdn.net/eagleuniversityeye/article/details/80582140</a><br>
+<a href="https://www.cnblogs.com/wangzhuxing/p/7753420.html">https://www.cnblogs.com/wangzhuxing/p/7753420.html</a></p>
+</blockquote>
+<h1 id="7-分页">7. 分页</h1>
+<p><strong>思考：为什么需要分页？</strong><br>
+在学习mybatis等持久层框架的时候，会经常对数据进行增删改查操作，使用最多的是对数据库进行查询操作，如果查询大量数据的时候，我们往往使用分页进行查询，也就是每次处理小部分数据，这样对数据库压力就在可控范围内。</p>
+<h2 id="71-使用limit实现分页">7.1 使用Limit实现分页</h2>
+<pre><code class="language-sql">#语法
+SELECT * FROM table LIMIT stratIndex，pageSize
+
+SELECT * FROM table LIMIT 5,10; // 检索记录行 6-15  
+
+#为了检索从某一个偏移量到记录集的结束所有的记录行，可以指定第二个参数为 -1：   
+SELECT * FROM table LIMIT 95,-1; // 检索记录行 96-last.  
+
+#如果只给定一个参数，它表示返回最大的记录行数目：   
+SELECT * FROM table LIMIT 5; //检索前 5 个记录行  
+
+#换句话说，LIMIT n 等价于 LIMIT 0,n。 
+</code></pre>
+<p><strong>步骤：</strong></p>
+<ol>
+<li>修改Mapper文件</li>
+</ol>
+<pre><code class="language-xml">&lt;select id=&quot;getUserByLimit&quot; parameterType=&quot;map&quot; resultMap=&quot;UserMap&quot;&gt;
+  select * from user limit #{currentPage},#{pageSize};
+&lt;/select&gt;
+</code></pre>
+<ol start="2">
+<li>Mapper接口，参数为map</li>
+</ol>
+<pre><code class="language-java">//选择全部用户实现分页
+List&lt;User&gt; selectUser(Map&lt;String,Integer&gt; map);
+</code></pre>
+<ol start="3">
+<li>在测试类中传入参数测试</li>
+</ol>
+<ul>
+<li>推断：起始位置 =  （当前页面 - 1 ） * 页面大小</li>
+</ul>
+<pre><code class="language-java">//分页查询 , 两个参数startIndex , pageSize
+@Test
+public void getUserByLimit() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserDao mapper = sqlSession.getMapper(UserDao.class);
+    int currentPage = 1;
+    int pageSize = 2;
+    Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+    map.put(&quot;currentPage&quot;, (currentPage - 1) * pageSize);//下标从0开始
+    map.put(&quot;pageSize&quot;, pageSize);
+    List&lt;User&gt; userList = mapper.getUserByLimit(map);
+    for (User user : userList) {
+        System.out.println(user);
+    }
+    sqlSession.close();
+}
+</code></pre>
+<h2 id="72-使用rowbounds分页">7.2 使用RowBounds分页</h2>
+<p>我们除了使用Limit在SQL层面实现分页，也可以使用RowBounds在Java代码层面实现分页，当然此种方式作为了解即可。我们来看下如何实现的！<br>
+<strong>步骤：</strong></p>
+<ol>
+<li>mapper接口</li>
+</ol>
+<pre><code class="language-java">/**
+* 通过Java类实现分页
+* @return List 用户信息集合
+*/
+List&lt;User&gt; getUserByRowBounds();
+</code></pre>
+<ol start="2">
+<li>mapper文件</li>
+</ol>
+<pre><code class="language-xml">&lt;select id=&quot;getUserByRowBounds&quot; resultType=&quot;user&quot;&gt;
+  select * from user
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>测试类<br>
+在这里，我们需要使用RowBounds类</li>
+</ol>
+<pre><code class="language-java">@Test
+public void getUserByRowBounds() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    int currentPage = 1;
+    int pageSize = 2;
+    RowBounds rowBounds = new RowBounds(currentPage - 1, pageSize);
+    //通过Java层代码实现分页
+    //通过session.**方法进行传递rowBounds，[此种方式现在已经不推荐使用了]
+    List&lt;User&gt; userList = sqlSession.selectList(&quot;com.SolitudeAlma.dao.UserDao.getUserByRowBounds&quot;, null, rowBounds);
+    for (User user : userList) {
+        System.out.println(user);
+    }
+    sqlSession.close();
+}
+</code></pre>
+<h2 id="73-pagehelper">7.3 PageHelper</h2>
+<figure data-type="image" tabindex="3"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629127875711-753a1a31-2d3c-45bd-90d5-def577c246ae.png#clientId=u479eed64-76c8-4&amp;from=paste&amp;height=312&amp;id=udc4b7fa6&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=624&amp;originWidth=1244&amp;originalType=binary&amp;ratio=1&amp;size=71223&amp;status=done&amp;style=none&amp;taskId=uc03774e4-b22f-4f2e-ae8a-2818e5cecba&amp;width=622" alt="image.png" loading="lazy"></figure>
+<p>了解即可，可以自己尝试使用</p>
+<p>官方文档：https://pagehelper.github.io/​</p>
+<p>在MyBatisPlu中，我们也讲解到了分页实现，所以实现方式很多，看自己的理解合熟练程度进行掌握即可</p>
+<h1 id="8-使用注解开发">8. 使用注解开发</h1>
+<h2 id="81-面向接口编程">8.1 面向接口编程</h2>
+<p><strong>面向接口编程：</strong></p>
+<ul>
+<li>大家之前都学过面向对象编程，也学习过接口，但在真正的开发中，很多时候我们会选择面向接口编程</li>
+<li><strong>根本原因 :  解耦 , 可拓展 , 提高复用 , 分层开发中 , 上层不用管具体的实现 , 大家都遵守共同的标准 , 使得开发变得容易 , 规范性更好</strong></li>
+<li>在一个面向对象的系统中，系统的各种功能是由许许多多的不同对象协作完成的。在这种情况下，各个对象内部是如何实现自己的,对系统设计人员来讲就不那么重要了；</li>
+<li>而各个对象之间的协作关系则成为系统设计的关键。小到不同类之间的通信，大到各模块之间的交互，在系统设计之初都是要着重考虑的，这也是系统设计的主要工作内容。面向接口编程就是指按照这种思想来编程。</li>
+</ul>
+<p><strong>关于接口的理解</strong></p>
+<ul>
+<li>接口从更深层次的理解，应是定义（规范，约束）与实现（名实分离的原则）的分离。</li>
+<li>接口的本身反映了系统设计人员对系统的抽象理解。</li>
+<li>接口应有两类：
+<ul>
+<li>第一类是对一个个体的抽象，它可对应为一个抽象体(abstract class)；</li>
+<li>第二类是对一个个体某一方面的抽象，即形成一个抽象面（interface）；</li>
+</ul>
+</li>
+<li>一个个体有可能有多个抽象面。抽象体与抽象面是有区别的。</li>
+</ul>
+<p><strong>三个面向区别</strong></p>
+<ul>
+<li>面向对象是指，我们考虑问题时，以对象为单位，考虑它的属性及方法 .</li>
+<li>面向过程是指，我们考虑问题时，以一个具体的流程（事务过程）为单位，考虑它的实现 .</li>
+<li>接口设计与非接口设计是针对复用技术而言的，与面向对象（过程）不是一个问题.更多的体现就是对系统整体的架构</li>
+</ul>
+<h2 id="82-利用注解开发">8.2 利用注解开发</h2>
+<ul>
+<li><strong>mybatis最初配置信息是基于 XML ,映射语句(SQL)也是定义在 XML 中的。而到MyBatis 3提供了新的基于注解的配置。不幸的是，Java 注解的的表达力和灵活性十分有限。最强大的 MyBatis 映射并不能用注解来构建</strong></li>
+<li>sql 类型主要分成 :
+<ul>
+<li>@select ()</li>
+<li>@update ()</li>
+<li>@Insert ()</li>
+<li>@delete ()</li>
+</ul>
+</li>
+</ul>
+<p>**注意：**利用注解开发就不需要mapper.xml映射文件了 .</p>
+<ol>
+<li>我们在我们的接口中添加注解</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/17
+ */
+public interface UserDao {
+
+    /**
+     * 获取所用用户信息
+     * @return List 用户信息集合
+     */
+    @Select(&quot;select id, name, pwd as password from user&quot;)
+    List&lt;User&gt; selectAll();
+}
+</code></pre>
+<ol start="2">
+<li>在mybatis的核心配置文件中注入</li>
+</ol>
+<pre><code class="language-xml">&lt;!--绑定接口--&gt;
+&lt;mappers&gt;
+  &lt;mapper class=&quot;com.SolitudeAlma.dao.UserDao&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<ol start="3">
+<li>我们去进行测试</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.User;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * junit测试类
+ * @author SolitudeAlma
+ * @date 2021/8/16
+ */
+public class UserDaoTest {
+
+    @Test
+    public void selectAll() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        //底层主要应用反射
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List&lt;User&gt; userList = mapper.selectAll();
+        for (User user : userList) {
+            System.out.println(user);
+        }
+        sqlSession.close();
+    }
+}
+</code></pre>
+<ol start="4">
+<li>
+<p>利用Debug查看本质<br>
+<img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629173214734-b246f3ca-bb96-41a5-8c12-6dbcf18740d5.png#clientId=ud139b93b-0d14-4&amp;from=paste&amp;height=224&amp;id=ue2615ea0&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=447&amp;originWidth=1098&amp;originalType=binary&amp;ratio=1&amp;size=66517&amp;status=done&amp;style=none&amp;taskId=u44ecb60a-3cc9-4221-88bc-6dce8433463&amp;width=549" alt="image.png" loading="lazy"></p>
+</li>
+<li>
+<p>本质上利用了jvm的动态代理机制<br>
+本质：反射机制<br>
+底层：动态代理<br>
+<img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629173252833-289945ca-c59b-46fd-a05a-6f133639298c.png#clientId=ud139b93b-0d14-4&amp;from=paste&amp;height=223&amp;id=u60812ed8&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=446&amp;originWidth=837&amp;originalType=binary&amp;ratio=1&amp;size=109012&amp;status=done&amp;style=none&amp;taskId=u2df55bc4-c8c7-4e94-b093-5e22d3a2253&amp;width=418.5" alt="image.png" loading="lazy"></p>
+</li>
+<li>
+<p>Mybatis详细的执行流程</p>
+</li>
+</ol>
+<figure data-type="image" tabindex="4"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629173355601-c1d2700d-936f-4761-af74-1f89bc9873d8.png#clientId=ud139b93b-0d14-4&amp;from=paste&amp;height=984&amp;id=uea18b5aa&amp;margin=%5Bobject%20Object%5D&amp;name=640.png&amp;originHeight=928&amp;originWidth=423&amp;originalType=binary&amp;ratio=1&amp;size=91882&amp;status=done&amp;style=none&amp;taskId=u71133102-b519-4ea5-915a-a327e23dfc1&amp;width=448.5" alt="640.png" loading="lazy"></figure>
+<h2 id="83-crud">8.3 CRUD</h2>
+<p>改造MybatisUtils工具类的getSession( ) 方法，重载实现。</p>
+<pre><code class="language-java">/**
+* 既然有了 SqlSessionFactory，顾名思义，我们可以从中获得 SqlSession 的实例。SqlSession 提供了在数据库执行 SQL
+* 命令所需的所有方法。你可以通过 SqlSession 实例来直接执行已映射的SQL语句。 sqlSession相当于jdbc中的
+* prepareStatement对象
+* @return SqlSessionFactory
+*/
+public static SqlSession getSqlSession() {
+    return sqlSessionFactory.openSession(true);
+}
+</code></pre>
+<p>【注意】确保实体类和数据库字段对应<br>
+<strong>查询：</strong></p>
+<ol>
+<li>编写接口方法注解</li>
+</ol>
+<pre><code class="language-java">/**
+* 根据id查询用户信息
+* @param id 用户唯一标识 @Param(&quot;xxx&quot;) 方法存在多个参数时前面必须加上这个注解，也起到起别名的作用
+* @return User类 用户信息类
+*/
+@Select(&quot;select id, name, pwd as password from user where id=#{id}&quot;)
+User selectById(@Param(&quot;id&quot;) int id);
+</code></pre>
+<ol start="2">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void selectById() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserDao mapper = sqlSession.getMapper(UserDao.class);
+    User user = mapper.selectById(1);
+    System.out.println(user);
+    sqlSession.close();
+}
+</code></pre>
+<p><strong>新增：</strong></p>
+<ol>
+<li>编写接口方法注解</li>
+</ol>
+<pre><code class="language-java">/**
+* 插入一条用户信息
+* @param user 用户信息类
+* @return SQL查询结果，影响了几行
+*/
+@Insert(&quot;insert into user(`id`, `name`, `pwd`) values(#{id}, #{name}, #{password})&quot;)
+int insertOne(User user);
+</code></pre>
+<ol start="2">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void insertOne() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserDao mapper = sqlSession.getMapper(UserDao.class);
+    int user = mapper.insertOne(new User(7, &quot;asd&quot;, &quot;asdsa&quot;));
+    System.out.println(user);
+    sqlSession.close();
+}
+</code></pre>
+<p><strong>修改：</strong></p>
+<ol>
+<li>编写接口方法注解</li>
+</ol>
+<pre><code class="language-java">/**
+* 修改一条用户信息
+* @param user 用户信息类
+* @return SQL查询结果，影响了几行
+*/
+@Update(&quot;update user set name = #{name}, pwd = #{password} where id = #{id}&quot;)
+int updateOne(User user);
+</code></pre>
+<ol start="2">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void updateOne() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserDao mapper = sqlSession.getMapper(UserDao.class);
+    int user = mapper.updateOne(new User(7, &quot;小王&quot;, &quot;145236&quot;));
+    System.out.println(user);
+    sqlSession.close();
+}
+</code></pre>
+<p><strong>删除：</strong></p>
+<ol>
+<li>编写接口方法注解</li>
+</ol>
+<pre><code class="language-java">/**
+* 删除一条用户信息
+* @param id 用户唯一标识
+* @return SQL查询结果，影响了几行
+*/
+@Delete(&quot;delete from user where id = #{uid}&quot;)
+int deleteOne(@Param(&quot;uid&quot;) int id);
+</code></pre>
+<ol start="2">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void deleteOne() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserDao mapper = sqlSession.getMapper(UserDao.class);
+    int user = mapper.deleteOne(7);
+    System.out.println(user);
+    sqlSession.close();
+}
+</code></pre>
+<p>【注意点：增删改一定记得对事务的处理】​</p>
+<p><strong>关于@param</strong><br>
+@Param注解用于给方法参数起一个名字。以下是总结的使用原则：</p>
+<ul>
+<li>在方法只接受一个参数的情况下，可以不使用@Param。</li>
+<li>在方法接受多个参数的情况下，建议一定要使用@Param注解给参数命名。</li>
+<li>如果参数是 JavaBean ， 则不能使用@Param。</li>
+<li>不使用@Param注解时，参数只能有一个，并且是Javabean。</li>
+</ul>
+<blockquote>
+<p><a href="https://www.cnblogs.com/zhuhui-site/p/10088369.html">https://www.cnblogs.com/zhuhui-site/p/10088369.html</a><br>
+<a href="https://blog.csdn.net/sinat_33010325/article/details/84261662">https://blog.csdn.net/sinat_33010325/article/details/84261662</a></p>
+</blockquote>
+<p><strong>#{}与${}的区别</strong></p>
+<ul>
+<li>#{} 的作用主要是替换预编译语句(PrepareStatement)中的占位符? 【推荐使用】</li>
+</ul>
+<pre><code class="language-sql">INSERT INTO user (name) VALUES (#{name});
+INSERT INTO user (name) VALUES (?);
+</code></pre>
+<ul>
+<li>${} 的作用是直接进行字符串替换（不推荐使用，容易引起SQL注入）</li>
+</ul>
+<pre><code class="language-sql">INSERT INTO user (name) VALUES ('${name}');
+INSERT INTO user (name) VALUES ('kuangshen');
+</code></pre>
+<p>使用注解和配置文件协同开发，才是MyBatis的最佳实践</p>
+<h1 id="9-lombok">9. Lombok</h1>
+<blockquote>
+<p>Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.<br>
+Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.</p>
+</blockquote>
+<ul>
+<li>java library</li>
+<li>plugs</li>
+<li>build tools</li>
+<li>with one annotation your class</li>
+</ul>
+<p>使用步骤：</p>
+<ol>
+<li>在idea安装Lombok插件</li>
+<li>在项目中导入Lombok依赖</li>
+</ol>
+<pre><code class="language-xml">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;version&gt;1.18.20&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start="3">
+<li>注解说明</li>
+</ol>
+<pre><code class="language-java">@Getter and @Setter
+@FieldNameConstants
+@ToString
+@EqualsAndHashCode
+@AllArgsConstructor, @RequiredArgsConstructor and @NoArgsConstructor
+@Log, @Log4j, @Log4j2, @Slf4j, @XSlf4j, @CommonsLog, @JBossLog, @Flogger, @CustomLog
+@Data
+@Builder
+@SuperBuilder
+@Singular
+@Delegate
+@Value
+@Accessors
+@Wither
+@With
+@SneakyThrows
+@val
+@var
+experimental @var
+@UtilityClass
+</code></pre>
+<pre><code class="language-java">//点开左边的structure查看类结构
+@Data：无参构造、get、set、toString()、hashcode()、equals()
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
+@Getter 可以放在固定的字段或者直接放在类上
+</code></pre>
+<h1 id="10-多对一处理">10. 多对一处理</h1>
+<p>多对一的理解：</p>
+<ul>
+<li>多个学生对应一个老师</li>
+<li>如果对于学生这边，就是一个多对一的现象，即从学生这边关联一个老师！</li>
+</ul>
+<figure data-type="image" tabindex="5"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629265047172-418c2b65-1792-4cba-8afb-206f25fe326e.png#clientId=ufbc0d8bb-8fc0-4&amp;from=paste&amp;height=483&amp;id=uf4324fe2&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=575&amp;originWidth=642&amp;originalType=binary&amp;ratio=1&amp;size=204230&amp;status=done&amp;style=none&amp;taskId=udebcbd19-0ec1-4758-9f59-6804279f5f7&amp;width=539" alt="image.png" loading="lazy"></figure>
+<h2 id="101-数据库设计">10.1 数据库设计</h2>
+<figure data-type="image" tabindex="6"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629266284727-184d67a8-683d-46ad-8f39-4fec37c74415.png#clientId=ufbc0d8bb-8fc0-4&amp;from=paste&amp;height=165&amp;id=u7a21238d&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=330&amp;originWidth=635&amp;originalType=binary&amp;ratio=1&amp;size=89181&amp;status=done&amp;style=none&amp;taskId=ue57078c4-a157-4e5d-9efd-18656695493&amp;width=317.5" alt="image.png" loading="lazy"></figure>
+<pre><code class="language-sql">CREATE TABLE `teacher` (
+  `id` INT(10) NOT NULL,
+  `name` VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO teacher(`id`, `name`) VALUES (1, 'SolitudeAlma'); 
+
+CREATE TABLE `student` (
+  `id` INT(10) NOT NULL,
+  `name` VARCHAR(30) DEFAULT NULL,
+  `tid` INT(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fktid` (`tid`),
+  CONSTRAINT `fktid` FOREIGN KEY (`tid`) REFERENCES `teacher` (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('1', '小明', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('2', '小红', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('3', '小张', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('4', '小李', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('5', '小王', '1');
+</code></pre>
+<h2 id="102-搭建测试环境">10.2 搭建测试环境</h2>
+<ol>
+<li>IDEA安装Lombok插件</li>
+<li>引入Maven依赖</li>
+</ol>
+<pre><code class="language-xml">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;version&gt;1.18.20&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start="3">
+<li>在代码中增加注解</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.pojo;
+
+import lombok.Data;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+@Data
+public class Teacher {
+    private int id;
+    private String name;
+}
+
+
+package com.SolitudeAlma.pojo;
+
+import lombok.Data;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+@Data
+public class Student {
+    private int id;
+    private String name;
+    private Teacher teacher;
+}
+</code></pre>
+<ol start="4">
+<li>编写实体类对应的Mapper接口 【两个】</li>
+</ol>
+<ul>
+<li><strong>无论有没有需求，都应该写上，以备后来之需！</strong></li>
+</ul>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+public interface StudentMapper {
+}
+</code></pre>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.Teacher;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+public interface TeacherMapper {
+
+    /**
+     * 查询单个老师的信息
+     * @param id 老师的唯一标识
+     * @return Teacher 老师信息类
+     */
+    @Select(&quot;select * from teacher where id = #{tid}&quot;)
+    Teacher getTeacher(@Param(&quot;tid&quot;) int id);
+}
+</code></pre>
+<ol start="5">
+<li>编写Mapper接口对应的 mapper.xml配置文件 【两个】</li>
+</ol>
+<ul>
+<li><strong>无论有没有需求，都应该写上，以备后来之需！</strong></li>
+</ul>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.SolitudeAlma.dao.StudentMapper&quot;&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.SolitudeAlma.dao.TeacherMapper&quot;&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+<ol start="6">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">import com.SolitudeAlma.dao.TeacherMapper;
+import com.SolitudeAlma.pojo.Teacher;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+public class MyTest {
+    @Test
+    public void selectOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+        Teacher teacher = mapper.getTeacher(1);
+        System.out.println(teacher.getId() + &quot; &quot; + teacher.getName());
+        sqlSession.close();
+    }
+}
+</code></pre>
+<h2 id="103-按查询嵌套处理">10.3 按查询嵌套处理</h2>
+<ol>
+<li>给StudentMapper接口增加方法</li>
+</ol>
+<pre><code class="language-java">/**
+* 查询所有学生的信息，以及对应老师的信息
+* @return List 学生信息集合
+*/
+List&lt;Student&gt; getStudent();
+</code></pre>
+<ol start="2">
+<li>编写对应的Mapper文件</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+       PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+       &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.kuang.mapper.StudentMapper&quot;&gt;
+   &lt;!--
+   需求：获取所有学生及对应老师的信息
+   思路：
+       1. 获取所有学生的信息
+       2. 根据获取的学生信息的老师ID-&gt;获取该老师的信息
+       3. 思考问题，这样学生的结果集中应该包含老师，该如何处理呢，数据库中我们一般使用关联查询？
+           1. 做一个结果集映射：studentInfo
+           2. studentInfo结果集的类型为 Student
+           3. 学生中老师的属性为teacher，对应数据库中为tid。
+              多个 [1,...）学生关联一个老师=&gt; 一对一，一对多
+           4. 查看官网找到：association – 一个复杂类型的关联；使用它来处理关联查询
+   --&gt;
+   &lt;select id=&quot;getStudents&quot; resultMap=&quot;studentInfo&quot;&gt;
+    select * from student
+   &lt;/select&gt;
+   &lt;resultMap id=&quot;studentInfo&quot; type=&quot;Student&quot;&gt;
+       &lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;
+       &lt;id property=&quot;name&quot; column=&quot;name&quot;/&gt;
+       &lt;!--association关联属性 property类的属性名 javaType属性类型 column在多的一方的表中的列名--&gt;
+       &lt;association property=&quot;teacher&quot;  column=&quot;tid&quot; javaType=&quot;Teacher&quot; select=&quot;getTeacher&quot;/&gt;
+   &lt;/resultMap&gt;
+   &lt;!--
+   这里传递过来的id，只有一个属性的时候，下面可以写任何值
+   association中column多参数配置：
+       column=&quot;{key=value,key=value}&quot;
+       其实就是键值对的形式，key是传给下个sql的取值名称，value是片段一中sql查询的字段名。
+   --&gt;
+   &lt;select id=&quot;getTeacher&quot; resultType=&quot;Teacher&quot;&gt;
+      select id, name from teacher where id = #{id}
+   &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>编写完毕去Mybatis配置文件中，注册Mapper！</li>
+<li>注意点说明：</li>
+</ol>
+<pre><code class="language-xml">&lt;resultMap id=&quot;studentInfo&quot; type=&quot;Student&quot;&gt;
+   &lt;!--association关联属性 property类的属性名 javaType属性类型 column在多的一方的表中的列名--&gt;
+   &lt;association property=&quot;teacher&quot;  column=&quot;{id=tid}&quot; javaType=&quot;Teacher&quot; select=&quot;getTeacher&quot;/&gt;
+&lt;/resultMap&gt;
+&lt;!--
+这里传递过来的id，只有一个属性的时候，下面可以写任何值
+association中column多参数配置：
+   column=&quot;{key=value,key=value}&quot;
+   注意：在使用复合主键的时候，你可以使用 column=&quot;{prop1=col1,prop2=col2}&quot; 这样的语法来指定多个传递给嵌套 Select 查询语句的列名。这会使得 prop1 和 prop2 作为参数对象，被设置为对应嵌套 Select 语句的参数。
+--&gt;
+&lt;select id=&quot;getTeacher&quot; resultType=&quot;teacher&quot;&gt;
+  select * from teacher where id = #{id}
+&lt;/select&gt;
+</code></pre>
+<ol start="5">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">import com.SolitudeAlma.dao.StudentMapper;
+import com.SolitudeAlma.dao.TeacherMapper;
+import com.SolitudeAlma.pojo.Student;
+import com.SolitudeAlma.pojo.Teacher;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+public class MyTest {
+    @Test
+    public void selectOne() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+        Teacher teacher = mapper.getTeacher(1);
+        System.out.println(teacher.getId() + &quot; &quot; + teacher.getName());
+        sqlSession.close();
+    }
+
+    @Test
+    public void selectAll() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+        List&lt;Student&gt; students = mapper.getStudent();
+        for (Student student : students) {
+            System.out.println(&quot;学生：&quot; + student.getName() + &quot;\t&quot; + &quot;老师：&quot; + student.getTeacher().getName());
+        }
+        sqlSession.close();
+    }
+}
+</code></pre>
+<h2 id="104-按结果嵌套处理">10.4 按结果嵌套处理</h2>
+<p>除了上面这种方式，还有其他思路吗？<br>
+我们还可以按照结果进行嵌套处理；</p>
+<ol>
+<li>接口方法编写</li>
+</ol>
+<pre><code class="language-java">/**
+* 查询所有学生的信息，以及对应老师的信息
+* @return List 学生信息集合
+*/
+List&lt;Student&gt; getStudent01();
+</code></pre>
+<ol start="2">
+<li>编写对应的mapper文件</li>
+</ol>
+<pre><code class="language-xml">&lt;!--
+按查询结果嵌套处理
+思路：
+1. 直接查询出结果，进行结果集的映射
+--&gt;
+&lt;select id=&quot;getStudent01&quot; resultMap=&quot;studentInfo01&quot;&gt;
+  select s.id, s.name, t.name from student as s, teacher as t where s.tid = t.id
+&lt;/select&gt;
+&lt;resultMap id=&quot;studentInfo01&quot; type=&quot;Student&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;
+  &lt;result property=&quot;name&quot; column=&quot;name&quot;/&gt;
+  &lt;!--关联对象property 关联对象在Student实体类中的属性--&gt;
+  &lt;association property=&quot;teacher&quot; javaType=&quot;Teacher&quot;&gt;
+    &lt;result property=&quot;name&quot; column=&quot;name&quot;/&gt;
+  &lt;/association&gt;
+&lt;/resultMap&gt;
+</code></pre>
+<ol start="3">
+<li>去mybatis-config文件中注入【此处应该处理过了】</li>
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void selectAll01() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+    List&lt;Student&gt; students = mapper.getStudent01();
+    for (Student student : students) {
+        System.out.println(&quot;学生：&quot; + student.getName() + &quot;\t&quot; + &quot;老师：&quot; + student.getTeacher().getName());
+    }
+    sqlSession.close();
+}
+</code></pre>
+<p><strong>小结：</strong><br>
+按照查询进行嵌套处理就像SQL中的子查询<br>
+按照结果进行嵌套处理就像SQL中的联表查询</p>
+<h1 id="11-一对多处理">11. 一对多处理</h1>
+<p>一对多的理解：</p>
+<ul>
+<li>一个老师拥有多个学生</li>
+<li>如果对于老师这边，就是一个一对多的现象，即从一个老师下面拥有一群学生（集合）！</li>
+</ul>
+<h2 id="111-数据库设计">11.1 数据库设计</h2>
+<p>不修改</p>
+<h2 id="112-搭建测试环境">11.2 搭建测试环境</h2>
+<p>把上一个项目拷过来，重新创建一个module</p>
+<p>实体类:</p>
+<pre><code class="language-java">package com.SolitudeAlma.pojo;
+
+import lombok.Data;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+@Data
+public class Teacher {
+    private int id;
+    private String name;
+    private List&lt;Student&gt; studentList;
+}
+</code></pre>
+<pre><code class="language-java">package com.SolitudeAlma.pojo;
+
+import lombok.Data;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+@Data
+public class Student {
+    private int id;
+    private String name;
+    private int tid;
+}
+</code></pre>
+<h2 id="113-按结果嵌套处理">11.3 按结果嵌套处理</h2>
+<ol>
+<li>TeacherMapper接口编写方法</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.Teacher;
+import lombok.Data;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+public interface TeacherMapper {
+    /**
+     * 获取指定教师信息的同时获取其教的学生的信息
+     * @param id 教师唯一标识
+     * @return List 信息集合，包括教师及所教学生信息
+     */
+    List&lt;Teacher&gt; getTeacher(@Param(&quot;tid&quot;) int id);
+}
+</code></pre>
+<ol start="2">
+<li>编写接口对应的Mapper配置文件</li>
+</ol>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.SolitudeAlma.dao.TeacherMapper&quot;&gt;
+    &lt;!--
+    思路:
+        1. 从学生表和老师表中查出学生id，学生姓名，老师姓名
+        2. 对查询出来的操作做结果集映射
+            1. 集合的话，使用collection！
+                JavaType和ofType都是用来指定对象类型的
+                JavaType是用来指定pojo中属性的类型
+                ofType指定的是映射到list集合属性中pojo的类型。
+    --&gt;
+    &lt;select id=&quot;getTeacher&quot; resultMap=&quot;teacherInfo&quot;&gt;
+        select s.id as sid, s.name as sname, t.id as tid, t.name as tname from student as s, teacher as t where s.tid = t.id and t.id = #{tid};
+    &lt;/select&gt;
+    &lt;!--
+        复杂的属性需要单独处理
+        对象：association
+        集合：collection
+    --&gt;
+    &lt;resultMap id=&quot;teacherInfo&quot; type=&quot;Teacher&quot;&gt;
+        &lt;result property=&quot;id&quot; column=&quot;tid&quot;/&gt;
+        &lt;result property=&quot;name&quot; column=&quot;tname&quot;/&gt;
+        &lt;collection  property=&quot;studentList&quot; ofType=&quot;Student&quot;&gt;
+            &lt;result property=&quot;id&quot; column=&quot;sid&quot;/&gt;
+            &lt;result property=&quot;name&quot; column=&quot;sname&quot;/&gt;
+            &lt;result property=&quot;tid&quot; column=&quot;tid&quot;/&gt;
+        &lt;/collection &gt;
+    &lt;/resultMap&gt;
+&lt;/mapper&gt;
+</code></pre>
+<ol start="3">
+<li>将Mapper文件注册到MyBatis-config文件中</li>
+</ol>
+<pre><code class="language-xml">&lt;mappers&gt;
+  &lt;mapper resource=&quot;com/SolitudeAlma/dao/StudentMapper.xml&quot;/&gt;
+  &lt;mapper resource=&quot;com/SolitudeAlma/dao/TeacherMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<ol start="4">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">import com.SolitudeAlma.dao.TeacherMapper;
+import com.SolitudeAlma.pojo.Teacher;
+import com.SolitudeAlma.utils.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/18
+ */
+public class MyTest {
+    @Test
+    public void getTeacher() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+        List&lt;Teacher&gt; teacherList = mapper.getTeacher(1);
+        for (Teacher teacher : teacherList) {
+            System.out.println(&quot;teacher: &quot; + teacher.getName());
+            teacher.getStudentList().forEach(e -&gt; {
+                System.out.println(&quot;student&quot; + e.getId() + &quot;: name: &quot; + e.getName() +  &quot; tid: &quot; + e.getTid());
+            });
+        }
+    }
+}
+</code></pre>
+<h2 id="114-按查询嵌套处理">11.4 按查询嵌套处理</h2>
+<ol>
+<li>TeacherMapper接口编写方法</li>
+</ol>
+<pre><code class="language-java">/**
+* 获取指定教师信息的同时获取其教的学生的信息
+* @param id 教师唯一标识
+* @return List 信息集合，包括教师及所教学生信息
+*/
+List&lt;Teacher&gt; getTeacher01(@Param(&quot;tid&quot;) int id);
+</code></pre>
+<ol start="2">
+<li>编写接口对应的Mapper配置文件</li>
+</ol>
+<pre><code class="language-xml">&lt;select id=&quot;getTeacher01&quot; resultMap=&quot;teacherInfo01&quot;&gt;
+  select id, name from teacher
+  where id = #{tid};
+&lt;/select&gt;
+&lt;resultMap id=&quot;teacherInfo01&quot; type=&quot;Teacher&quot;&gt;
+  &lt;result property=&quot;id&quot; column=&quot;id&quot;/&gt;
+  &lt;!--column是一对多的外键 , 写的是一的主键的列名--&gt;
+  &lt;collection property=&quot;studentList&quot; javaType=&quot;List&quot; column=&quot;id&quot; ofType=&quot;Student&quot; select=&quot;getStudentByTeacherId&quot;/&gt;
+&lt;/resultMap&gt;
+&lt;select id=&quot;getStudentByTeacherId&quot; resultType=&quot;Student&quot;&gt;
+  select id, name, tid from student
+  where tid = #{tid};
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>将Mapper文件注册到MyBatis-config文件中</li>
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void getTeacher01() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+    List&lt;Teacher&gt; teacherList = mapper.getTeacher01(1);
+    for (Teacher teacher : teacherList) {
+        System.out.println(&quot;teacher: name: &quot; + teacher.getName() + &quot; id: &quot; + teacher.getId());
+        teacher.getStudentList().forEach(e -&gt; {
+            System.out.println(&quot;student&quot; + e.getId() + &quot;: name: &quot; + e.getName() +  &quot; tid: &quot; + e.getTid());
+        });
+    }
+}
+</code></pre>
+<p><strong>小结：</strong></p>
+<ol>
+<li>关联-association</li>
+<li>集合-collection</li>
+<li>所以association是用于一对一和多对一，而collection是用于一对多的关系</li>
+<li>JavaType和ofType都是用来指定对象类型的</li>
+</ol>
+<ul>
+<li>JavaType是用来指定pojo中属性的类型</li>
+<li>ofType指定的是映射到list集合属性中pojo的类型。</li>
+</ul>
+<p><strong>注意说明：</strong></p>
+<ol>
+<li>保证SQL的可读性，尽量通俗易懂</li>
+<li>根据实际要求，尽量编写性能更高的SQL语句</li>
+<li>注意属性名和字段不一致的问题</li>
+<li>注意一对多和多对一 中：字段和属性对应的问题</li>
+<li>尽量使用Log4j，通过日志来查看自己的错误</li>
+</ol>
+<h1 id="12-动态sql">12. 动态SQL</h1>
+<h2 id="121-介绍">12.1 介绍</h2>
+<p>什么是动态SQL：<strong>动态SQL指的是根据不同的查询条件 , 生成不同的Sql语句.</strong></p>
+<blockquote>
+<p>官网描述：<br>
+MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。<br>
+虽然在以前使用动态 SQL 并非一件易事，但正是 MyBatis 提供了可以被用在任意 SQL 映射语句中的强大的动态 SQL 语言得以改进这种情形。<br>
+动态 SQL 元素和 JSTL 或基于类似 XML 的文本处理器相似。在 MyBatis 之前的版本中，有很多元素需要花时间了解。MyBatis 3 大大精简了元素种类，现在只需学习原来一半的元素便可。MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。</p>
+</blockquote>
+<hr>
+<ul>
+<li>if</li>
+<li>choose (when, otherwise)</li>
+<li>trim (where, set)</li>
+<li>foreach</li>
+</ul>
+<hr>
+<p>我们之前写的 SQL 语句都比较简单，如果有比较复杂的业务，我们需要写复杂的 SQL 语句，往往需要拼接，而拼接 SQL ，稍微不注意，由于引号，空格等缺失可能都会导致错误。<br>
+那么怎么去解决这个问题呢？这就要使用 mybatis 动态SQL，通过 if, choose, when, otherwise, trim, where, set, foreach等标签，可组合成非常灵活的SQL语句，从而在提高 SQL 语句的准确性的同时，也大大提高了开发人员的效率。</p>
+<h2 id="122-搭建环境">12.2 搭建环境</h2>
+<p><strong>新建一个数据库表：blog</strong><br>
+字段：id，title，author，create_time，views</p>
+<pre><code class="language-sql">CREATE TABLE `blog` (
+`id` varchar(50) NOT NULL COMMENT '博客id',
+`title` varchar(100) NOT NULL COMMENT '博客标题',
+`author` varchar(30) NOT NULL COMMENT '博客作者',
+`create_time` datetime NOT NULL COMMENT '创建时间',
+`views` int(30) NOT NULL COMMENT '浏览量'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+</code></pre>
+<ol>
+<li>
+<p>创建Mybatis基础工程<br>
+<img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629355404544-0a21636f-5f2d-40af-9009-85c4e5b9ba8a.png#clientId=u35d2d825-d4a0-4&amp;from=paste&amp;height=161&amp;id=ue903d042&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=322&amp;originWidth=484&amp;originalType=binary&amp;ratio=1&amp;size=24006&amp;status=done&amp;style=none&amp;taskId=ud67e234e-d148-439e-82fe-b8534ea8774&amp;width=242" alt="image.png" loading="lazy"></p>
+</li>
+<li>
+<p>IDutil工具类</p>
+</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.utils;
+
+import org.junit.Test;
+
+import java.util.UUID;
+
+/**
+ * 如果想在非test目录下测试，把依赖的作用域改一下或者去掉
+ * @author SolitudeAlma
+ * @date 2021/8/19
+ */
+public class IDUtils {
+    public static String getId() {
+        return UUID.randomUUID().toString().replaceAll(&quot;-&quot;, &quot;&quot;);
+    }
+}
+</code></pre>
+<ol start="3">
+<li>实体类编写  【注意set方法作用】</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.pojo;
+
+import lombok.Data;
+
+import java.util.Date;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/19
+ */
+@Data
+public class Blog {
+    private String id;
+    private String title;
+    private String author;
+    private Date createTime;
+    private int views;
+}
+</code></pre>
+<ol start="4">
+<li>编写Mapper接口及xml文件</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/19
+ */
+public interface BlogMapper {
+}
+</code></pre>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.SolitudeAlma.dao.BlogMapper&quot;&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+<ol start="5">
+<li>mybatis核心配置文件，下划线驼峰自动转换</li>
+</ol>
+<pre><code class="language-xml">&lt;settings&gt;
+  &lt;!--是否开启驼峰命名自动映射，即从经典数据库列名 A_COLUMN 映射到经典 Java 属性名 aColumn。--&gt;
+  &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot;/&gt;
+  &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;
+&lt;/settings&gt;
+&lt;mappers&gt;
+  &lt;mapper resource=&quot;com/SolitudeAlma/dao/BlogMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<ol start="6">
+<li>插入初始数据<br>
+编写接口</li>
+</ol>
+<pre><code class="language-java">package com.SolitudeAlma.dao;
+
+import com.SolitudeAlma.pojo.Blog;
+
+/**
+ * @author SolitudeAlma
+ * @date 2021/8/19
+ */
+public interface BlogMapper {
+    /**
+     * 添加一篇文章
+     * @param blog 文章类
+     * @return SQL执行结果，影响了几行
+     */
+    int addArticle(Blog blog);
+}
+</code></pre>
+<p>sql配置文件</p>
+<pre><code class="language-xml">&lt;insert id=&quot;addArticle&quot; parameterType=&quot;Blog&quot;&gt;
+  insert into blog(`id`, `title`, `author`, `create_time`, `views`)
+  values (#{id}, #{title}, #{author}, #{createTime}, #{views});
+&lt;/insert&gt;
+</code></pre>
+<p>测试</p>
+<pre><code class="language-java">@Test
+public void addArticleTest() throws ParseException {
+    String strDateFormat = &quot;yyyy-MM-dd HH:mm:ss&quot;;
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+    SimpleDateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+
+    Blog blog = new Blog();
+    blog.setId(IDUtils.getId());
+    blog.setTitle(&quot;Mybatis如此简单&quot;);
+    blog.setAuthor(&quot;SolitudeAlma&quot;);
+    blog.setCreateTime(dateFormat.format(new Date()));
+    blog.setViews(23333);
+    int result = mapper.addArticle(blog);
+    System.out.println(result);
+
+    blog.setId(IDUtils.getId());
+    blog.setTitle(&quot;Java如此简单&quot;);
+    blog.setCreateTime(dateFormat.format(new Date()));
+    result = mapper.addArticle(blog);
+    System.out.println(result);
+
+    blog.setId(IDUtils.getId());
+    blog.setTitle(&quot;微服务如此简单&quot;);
+    blog.setCreateTime(dateFormat.format(new Date()));
+    result = mapper.addArticle(blog);
+    System.out.println(result);
+
+    blog.setId(IDUtils.getId());
+    blog.setTitle(&quot;Spring如此简单&quot;);
+    blog.setCreateTime(dateFormat.format(new Date()));
+    result = mapper.addArticle(blog);
+    System.out.println(result);
+
+    sqlSession.close();
+}
+</code></pre>
+<p>初始化数据完毕！</p>
+<h2 id="123-if">12.3 IF</h2>
+<p><strong>需求：根据作者名字和博客名字来查询博客！如果作者名字为空，那么只根据博客名字查询，反之，则根据作者名来查询</strong></p>
+<ol>
+<li>编写接口类</li>
+</ol>
+<pre><code class="language-java">/**
+* 查询文章信息，并根据if语句进一步查询
+* @param map 查询条件集合
+* @return List 文章信息集合
+*/
+List&lt;Blog&gt; queryArticleIf(Map&lt;String, Object&gt; map);
+</code></pre>
+<ol start="2">
+<li>编写SQL语句</li>
+</ol>
+<pre><code class="language-xml">&lt;!--
+需求1：
+	   根据作者名字和博客名字来查询博客！
+		 如果作者名字为空，那么只根据博客名字查询，反之，则根据作者名来查询
+     select * from blog where title = #{title} and author = #{author}
+--&gt;
+&lt;select id=&quot;queryArticleIf&quot; parameterType=&quot;map&quot; resultType=&quot;Blog&quot;&gt;
+  select * from blog where
+  &lt;if test=&quot;title != null&quot;&gt;
+    title = #{title}
+  &lt;/if&gt;
+  &lt;if test=&quot;author != null&quot;&gt;
+    and author = #{author}
+  &lt;/if&gt;
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void queryArticleIfTest() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+    Map&lt;String, Object&gt;map = new HashMap&lt;&gt;();
+    //map.put(&quot;title&quot;, &quot;Mybatis如此简单&quot;);
+    map.put(&quot;author&quot;, &quot;SolitudeAlma&quot;);
+    List&lt;Blog&gt; blogs = mapper.queryArticleIf(map);
+    for (Blog blog : blogs) {
+        System.out.println(blog);
+    }
+    sqlSession.close();
+}
+</code></pre>
+<p>这样写我们可以看到，如果 author 等于 null，那么查询语句为 select * from user where title=#{title},但是如果title为空呢？那么查询语句为 select * from user where and author=#{author}，这是错误的 SQL 语句，如何解决呢？请看下面的 where 语句！</p>
+<h2 id="124-where">12.4 WHERE</h2>
+<p>修改上面的SQL语句：</p>
+<pre><code class="language-xml">&lt;!--
+需求1：
+     根据作者名字和博客名字来查询博客！
+     如果作者名字为空，那么只根据博客名字查询，反之，则根据作者名来查询
+     select * from blog where title = #{title} and author = #{author}
+--&gt;
+&lt;select id=&quot;queryArticleIf&quot; parameterType=&quot;map&quot; resultType=&quot;Blog&quot;&gt;
+  &lt;!--select * from blog where--&gt;
+  &lt;!--&lt;if test=&quot;title != null&quot;&gt;--&gt;
+  &lt;!--    title = #{title}--&gt;
+  &lt;!--&lt;/if&gt;--&gt;
+  &lt;!--&lt;if test=&quot;author != null&quot;&gt;--&gt;
+  &lt;!--    and author = #{author}--&gt;
+  &lt;!--&lt;/if&gt;--&gt;
+  select * from blog
+  &lt;where&gt;
+    &lt;if test=&quot;title != null&quot;&gt;
+      title = #{title}
+    &lt;/if&gt;
+    &lt;if test=&quot;author != null&quot;&gt;
+      and author = #{author}
+    &lt;/if&gt;
+  &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
+<p>这个“where”标签会知道如果它包含的标签中有返回值的话，它就插入一个‘where’。此外，如果标签返回的内容是以AND 或OR 开头的，则它会剔除掉。</p>
+<h2 id="125-choose-when-otherwise">12.5 choose (when, otherwise)</h2>
+<p>有时候，我们不想用到所有的查询条件，只想选择其中的一个，查询条件有一个满足即可，使用 choose 标签可以解决此类问题，类似于 Java 的 switch 语句​</p>
+<ol>
+<li>编写接口方法</li>
+</ol>
+<pre><code class="language-java">/**
+* 查询文章信息，并根据choose语句进一步查询
+* @param map 查询条件集合
+* @return List 文章信息集合
+*/
+List&lt;Blog&gt; queryBlogChoose(Map&lt;String, Object&gt; map);
+</code></pre>
+<ol start="2">
+<li>sql配置文件</li>
+</ol>
+<pre><code class="language-xml">&lt;!--根据未拼接的sql决定是否嵌套一个where标签--&gt;
+&lt;select id=&quot;queryBlogChoose&quot; parameterType=&quot;map&quot; resultType=&quot;Blog&quot;&gt;
+  select * from blog
+  &lt;where&gt;
+    &lt;choose&gt;
+      &lt;when test=&quot;title != null&quot;&gt;
+        title = #{title}
+      &lt;/when&gt;
+      &lt;when test=&quot;author != null&quot;&gt;
+        and author = #{author}
+      &lt;/when&gt;
+      &lt;otherwise&gt;
+        and views = #{views}
+      &lt;/otherwise&gt;
+    &lt;/choose&gt;
+  &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>测试类</li>
+</ol>
+<pre><code class="language-java">@Test
+public void queryBlogChooseTest() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+    Map&lt;String, Object&gt;map = new HashMap&lt;&gt;();
+    map.put(&quot;views&quot;, &quot;23333&quot;);
+    List&lt;Blog&gt; blogs = mapper.queryBlogChoose(map);
+    for (Blog blog : blogs) {
+        System.out.println(blog);
+    }
+    sqlSession.close();
+}
+</code></pre>
+<h2 id="126-set">12.6 set</h2>
+<p>同理，上面的对于查询 SQL 语句包含 where 关键字，如果在进行更新操作的时候，含有 set 关键词，我们怎么处理呢？<br>
+SET元素会动态地在行首插入 SET 关键字，并会删掉额外的逗号（这些逗号是在使用条件语句给列赋值时引入的）。</p>
+<ol>
+<li>编写接口方法</li>
+</ol>
+<pre><code class="language-java">/**
+* 修改文章信息，并根据trim语句动态修改
+* @param map 查询条件集合
+* @return SQL执行结果，影响了几行
+*/
+int updateArticle(Map&lt;String, Object&gt; map);
+</code></pre>
+<ol start="2">
+<li>sql配置文件</li>
+</ol>
+<pre><code class="language-xml">&lt;!--注意set是用的逗号隔开--&gt;
+&lt;update id=&quot;updateArticle&quot; parameterType=&quot;map&quot; &gt;
+  update blog
+  &lt;set&gt;
+    &lt;if test=&quot;title != null&quot;&gt;
+      title=#{title},
+    &lt;/if&gt;
+    &lt;if test=&quot;author != null&quot;&gt;
+      author=#{author}
+    &lt;/if&gt;
+  &lt;/set&gt;
+  where id =#{id}
+&lt;/update&gt;
+</code></pre>
+<ol start="3">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void updateArticleTest() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+    Map&lt;String, Object&gt;map = new HashMap&lt;&gt;();
+    map.put(&quot;id&quot;, &quot;de27dc043af84946b008ff6ce3b866d1&quot;);
+    map.put(&quot;title&quot;, &quot;Mybatis如此简单01&quot;);
+    int i = mapper.updateArticle(map);
+    System.out.println(i);
+    sqlSession.close();
+}
+</code></pre>
+<h2 id="127-trim-where-set">12.7 trim (where, set)</h2>
+<pre><code class="language-xml">&lt;trim prefix=&quot;WHERE&quot; prefixOverrides=&quot;AND |OR &quot;&gt;
+  ...
+&lt;/trim&gt;
+</code></pre>
+<p><em>prefixOverrides</em> 属性会忽略通过管道符分隔的文本序列（注意此例中的空格是必要的）。上述例子会移除所有 <em>prefixOverrides</em> 属性中指定的内容，并且插入 <em>prefix</em> 属性中指定的内容。<br>
+用于动态更新语句的类似解决方案叫做 <em>set</em>。<em>set</em> 元素可以用于动态包含需要更新的列，忽略其它不更新的列。比如：</p>
+<pre><code class="language-xml">&lt;update id=&quot;updateAuthorIfNecessary&quot;&gt;
+  update Author
+    &lt;set&gt;
+      &lt;if test=&quot;username != null&quot;&gt;username=#{username},&lt;/if&gt;
+      &lt;if test=&quot;password != null&quot;&gt;password=#{password},&lt;/if&gt;
+      &lt;if test=&quot;email != null&quot;&gt;email=#{email},&lt;/if&gt;
+      &lt;if test=&quot;bio != null&quot;&gt;bio=#{bio}&lt;/if&gt;
+    &lt;/set&gt;
+  where id=#{id}
+&lt;/update&gt;
+</code></pre>
+<p>这个例子中，<em>set</em> 元素会动态地在行首插入 SET 关键字，并会删掉额外的逗号（这些逗号是在使用条件语句给列赋值时引入的）。<br>
+来看看与 <em>set</em> 元素等价的自定义 <em>trim</em> 元素吧：</p>
+<pre><code class="language-xml">&lt;trim prefix=&quot;SET&quot; suffixOverrides=&quot;,&quot;&gt;
+  ...
+&lt;/trim&gt;
+</code></pre>
+<p>注意，我们覆盖了后缀值设置，并且自定义了前缀值。​</p>
+<p>这部分相当于扩展功能，需要的自己实践，所以就直接搬文档了</p>
+<h2 id="128-sql片段">12.8 SQL片段</h2>
+<p>有时候可能某个 sql 语句我们用的特别多，为了增加代码的复用性，简化代码，我们需要将这些代码抽取出来，然后使用时直接调用。</p>
+<p><strong>提取SQL片段：</strong></p>
+<pre><code class="language-xml">&lt;sql id=&quot;if-title-author&quot;&gt;
+  &lt;if test=&quot;title != null&quot;&gt;
+    title = #{title}
+  &lt;/if&gt;
+  &lt;if test=&quot;author != null&quot;&gt;
+    and author = #{author}
+  &lt;/if&gt;
+&lt;/sql&gt;
+</code></pre>
+<p><strong>引用SQL片段：</strong></p>
+<pre><code class="language-xml">&lt;select id=&quot;queryArticleIf&quot; parameterType=&quot;map&quot; resultType=&quot;Blog&quot;&gt;
+  &lt;!--select * from blog where--&gt;
+  &lt;!--&lt;if test=&quot;title != null&quot;&gt;--&gt;
+  &lt;!--    title = #{title}--&gt;
+  &lt;!--&lt;/if&gt;--&gt;
+  &lt;!--&lt;if test=&quot;author != null&quot;&gt;--&gt;
+  &lt;!--    and author = #{author}--&gt;
+  &lt;!--&lt;/if&gt;--&gt;
+  &lt;!--select * from blog--&gt;
+  &lt;!--&lt;where&gt;--&gt;
+  &lt;!--    &lt;if test=&quot;title != null&quot;&gt;--&gt;
+  &lt;!--        title = #{title}--&gt;
+  &lt;!--    &lt;/if&gt;--&gt;
+  &lt;!--    &lt;if test=&quot;author != null&quot;&gt;--&gt;
+  &lt;!--        and author = #{author}--&gt;
+  &lt;!--    &lt;/if&gt;--&gt;
+  &lt;!--&lt;/where&gt;--&gt;
+  select * from blog
+  &lt;where&gt;
+    &lt;!-- 引用 sql 片段，如果refid 指定的不在本文件中，那么需要在前面加上 namespace --&gt;
+    &lt;include refid=&quot;if-title-author&quot;/&gt;
+    &lt;!-- 在这里还可以引用其他的 sql 片段 --&gt;
+  &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
+<p>注意：<br>
+①、最好基于单表来定义 sql 片段，提高片段的可复用性<br>
+②、在 sql 片段中不要包括 where</p>
+<h2 id="129-foreach">12.9 foreach</h2>
+<p>将数据库中前三个数据的id修改为1,2,3；<br>
+需求：我们需要查询 blog 表中 id 分别为1,2,3的博客信息</p>
+<ol>
+<li>编写接口</li>
+</ol>
+<pre><code class="language-java">/**
+* 查询文章信息，根据foreach语句动态查询
+* @param map 查询条件集合
+* @return List 文章信息集合
+*/
+List&lt;Blog&gt; queryBlogForeach(Map&lt;String, Object&gt; map);
+</code></pre>
+<ol start="2">
+<li>编写SQL语句</li>
+</ol>
+<pre><code class="language-xml">&lt;select id=&quot;queryBlogForeach&quot; parameterType=&quot;map&quot; resultType=&quot;blog&quot;&gt;
+  select * from blog
+  &lt;where&gt;
+    &lt;!--
+       collection:指定输入对象中的集合属性
+       item:每次遍历生成的对象
+       open:开始遍历时的拼接字符串
+       close:结束时拼接的字符串
+       separator:遍历对象之间需要拼接的字符串
+       select * from blog where 1=1 and (id=1 or id=2 or id=3)
+     --&gt;
+    &lt;foreach collection=&quot;ids&quot;  item=&quot;id&quot; open=&quot;and (&quot; close=&quot;)&quot; separator=&quot;or&quot;&gt;
+      id=#{id}
+    &lt;/foreach&gt;
+  &lt;/where&gt;
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void testQueryBlogForeachTest() {
+    SqlSession session = MybatisUtils.getSqlSession();
+    BlogMapper mapper = session.getMapper(BlogMapper.class);
+
+    Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+    List&lt;Integer&gt; ids = new ArrayList&lt;&gt;();
+    ids.add(1);
+    ids.add(2);
+    ids.add(3);
+    map.put(&quot;ids&quot;,ids);
+
+    List&lt;Blog&gt; blogs = mapper.queryBlogForeach(map);
+
+    System.out.println(blogs);
+
+    session.close();
+}
+</code></pre>
+<p>小结：其实动态 sql 语句的编写往往就是一个拼接的问题，为了保证拼接准确，我们最好首先要写原生的 sql 语句出来，然后在通过 mybatis 动态sql 对照着改，防止出错。多在实践中使用才是熟练掌握它的技巧。</p>
+<h1 id="13-缓存">13. 缓存</h1>
+<h2 id="131-简介">13.1 简介</h2>
+<p>1、什么是缓存 [ Cache ]？</p>
+<ul>
+<li>存在内存中的临时数据。</li>
+<li>将用户经常查询的数据放在缓存（内存）中，用户去查询数据就不用从磁盘上(关系型数据库数据文件)查询，从缓存中查询，从而提高查询效率，解决了高并发系统的性能问题。</li>
+</ul>
+<p>2、为什么使用缓存？</p>
+<ul>
+<li>减少和数据库的交互次数，减少系统开销，提高系统效率。</li>
+</ul>
+<p>3、什么样的数据能使用缓存？</p>
+<ul>
+<li>经常查询并且不经常改变的数据。</li>
+</ul>
+<h2 id="132-mybatis缓存">13.2 Mybatis缓存</h2>
+<ul>
+<li>MyBatis包含一个非常强大的查询缓存特性，它可以非常方便地定制和配置缓存。缓存可以极大的提升查询效率。</li>
+<li>MyBatis系统中默认定义了两级缓存：<strong>一级缓存</strong>和<strong>二级缓存</strong>
+<ul>
+<li>默认情况下，只有一级缓存开启。（SqlSession级别的缓存，也称为本地缓存）</li>
+<li>二级缓存需要手动开启和配置，他是基于namespace级别的缓存。</li>
+<li>为了提高扩展性，MyBatis定义了缓存接口Cache。我们可以通过实现Cache接口来自定义二级缓存</li>
+</ul>
+</li>
+</ul>
+<h2 id="133-一级缓存">13.3 一级缓存</h2>
+<p>一级缓存也叫本地缓存：</p>
+<ul>
+<li>与数据库同一次会话期间查询到的数据会放在本地缓存中。</li>
+<li>以后如果需要获取相同的数据，直接从缓存中拿，没必须再去查询数据库；</li>
+</ul>
+<p>测试：</p>
+<ol>
+<li>在mybatis中加入日志，方便测试结果</li>
+<li>编写接口方法</li>
+</ol>
+<pre><code class="language-java">/**
+* 根据id查询用户信息
+* @param id 用户唯一标识
+* @return User 用户信息类
+*/
+User getUserById(@Param(&quot;id&quot;) int id);
+</code></pre>
+<ol start="3">
+<li>接口对应的Mapper文件</li>
+</ol>
+<pre><code class="language-xml">&lt;select id=&quot;getUserById&quot; resultType=&quot;User&quot;&gt;
+  select * from user where id = #{id};
+&lt;/select&gt;
+</code></pre>
+<ol start="4">
+<li>测试</li>
+</ol>
+<pre><code class="language-java">@Test
+public void getUserByIdTest() {
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+    User user = mapper.getUserById(1);
+    System.out.println(user);
+    System.out.println(&quot;=========================&quot;);
+    User user1 = mapper.getUserById(1);
+    System.out.println(user1);
+    System.out.println(user == user1);
+    sqlSession.close();
+}
+</code></pre>
+<ol start="5">
+<li>结果分析</li>
+</ol>
+<figure data-type="image" tabindex="7"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629390217604-e805969f-d72d-4a23-996e-ab0aeded0f42.png#clientId=u10c19a42-5750-4&amp;from=paste&amp;height=198&amp;id=u2d32b383&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=396&amp;originWidth=897&amp;originalType=binary&amp;ratio=1&amp;size=63062&amp;status=done&amp;style=none&amp;taskId=u675414a1-0343-4edb-9810-f0517557bfd&amp;width=448.5" alt="image.png" loading="lazy"></figure>
+<h2 id="134-一级缓存失效的四种情况">13.4 一级缓存失效的四种情况</h2>
+<p>一级缓存是SqlSession级别的缓存，是一直开启的，我们关闭不了它；<br>
+一级缓存失效情况：没有使用到当前的一级缓存，效果就是，还需要再向数据库中发起一次查询请求！</p>
+<ol>
+<li>sqlSession不同</li>
+</ol>
+<pre><code class="language-java">@Test
+public void getUserByIdTest01(){
+    SqlSession sqlSession = MybatisUtils.getSqlSession();
+    SqlSession sqlSession1 = MybatisUtils.getSqlSession();
+    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+    UserMapper mapper2 = sqlSession1.getMapper(UserMapper.class);
+
+    User user = mapper.getUserById(1);
+    System.out.println(user);
+    User user2 = mapper2.getUserById(1);
+    System.out.println(user2);
+    System.out.println(user==user2);
+
+    sqlSession.close();
+    sqlSession1.close();
+}
+</code></pre>
+<p>观察结果：发现发送了两条SQL语句！<br>
+结论：<strong>每个sqlSession中的缓存相互独立</strong></p>
+<ol start="2">
+<li>sqlSession相同，查询条件不同</li>
+</ol>
+<pre><code class="language-java">@Test
+public void getUserByIdTest02(){
+    SqlSession session = MybatisUtils.getSqlSession();
+    UserMapper mapper = session.getMapper(UserMapper.class);
+    UserMapper mapper1 = session.getMapper(UserMapper.class);
+
+    User user = mapper.getUserById(1);
+    System.out.println(user);
+    User user2 = mapper1.getUserById(2);
+    System.out.println(user2);
+    System.out.println(user==user2);
+
+    session.close();
+}
+</code></pre>
+<p>观察结果：发现发送了两条SQL语句！很正常的理解<br>
+结论：<strong>当前缓存中，不存在这个数据</strong></p>
+<ol start="3">
+<li>sqlSession相同，两次查询之间执行了增删改操作！<br>
+增加方法</li>
+</ol>
+<pre><code class="language-java">/**
+* 修改用户信息
+* @param map 条件以及修改信息的集合
+* @return SQL执行的结果，影响了几行
+*/
+int updateUser(Map&lt;String, Object&gt; map);
+</code></pre>
+<p>编写SQL</p>
+<pre><code class="language-sql">&lt;update id=&quot;updateUser&quot; parameterType=&quot;map&quot;&gt;
+	  update user set name = #{name}, pwd = #{pwd} where id = #{id}
+&lt;/update&gt;
+</code></pre>
+<p>测试</p>
+<pre><code class="language-java">@Test
+public void updateUserTest() {
+    SqlSession session = MybatisUtils.getSqlSession();
+    UserMapper mapper = session.getMapper(UserMapper.class);
+
+    User user = mapper.getUserById(1);
+    System.out.println(user);
+
+    Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+    map.put(&quot;name&quot;,&quot;SolitudeAlma&quot;);
+    map.put(&quot;id&quot;,4);
+    mapper.updateUser(map);
+
+    User user2 = mapper.getUserById(1);
+    System.out.println(user2);
+
+    System.out.println(user==user2);
+
+    session.close();
+}
+</code></pre>
+<p>观察结果：查询在中间执行了增删改操作后，重新执行了<br>
+结论：<strong>因为增删改操作可能会对当前数据产生影响</strong></p>
+<ol start="4">
+<li>sqlSession相同，手动清除一级缓存</li>
+</ol>
+<pre><code class="language-java">@Test
+public void getUserById03(){
+    SqlSession session = MybatisUtils.getSqlSession();
+    UserMapper mapper = session.getMapper(UserMapper.class);
+    User user = mapper.getUserById(1);
+    System.out.println(user);
+
+    session.clearCache();//手动清除缓存
+
+    User user2 = mapper.getUserById(1);
+    System.out.println(user2);
+
+    System.out.println(user==user2);
+
+    session.close();
+}
+</code></pre>
+<p>一级缓存就是一个map</p>
+<h2 id="135-二级缓存">13.5 二级缓存</h2>
+<ul>
+<li>二级缓存也叫全局缓存，一级缓存作用域太低了，所以诞生了二级缓存</li>
+<li>基于namespace级别的缓存，一个名称空间，对应一个二级缓存；</li>
+<li>工作机制
+<ul>
+<li>一个会话查询一条数据，这个数据就会被放在当前会话的一级缓存中；</li>
+<li>如果当前会话关闭了，这个会话对应的一级缓存就没了；但是我们想要的是，会话关闭了，一级缓存中的数据被保存到二级缓存中；</li>
+<li>新的会话查询信息，就可以从二级缓存中获取内容；</li>
+<li>不同的mapper查出的数据会放在自己对应的缓存（map）中；</li>
+</ul>
+</li>
+</ul>
+<h3 id="1351-使用步骤">13.5.1 使用步骤</h3>
+<ol>
+<li>开启全局缓存 【mybatis-config.xml】</li>
+</ol>
+<pre><code class="language-xml">&lt;!--开启全局缓存--&gt;
+&lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;
+</code></pre>
+<ol start="2">
+<li>去每个mapper.xml中配置使用二级缓存，这个配置非常简单；【xxxMapper.xml】</li>
+</ol>
+<pre><code class="language-xml">&lt;cache/&gt; 直接使用这个需要序列化类（org.apache.ibatis.cache.CacheException: Error serializing object.  Cause: java.io.NotSerializableException: com.SolitudeAlma.pojo.User），实现Serializable接口
+或
+官方示例=====&gt;查看官方文档
+&lt;cache
+ eviction=&quot;FIFO&quot;
+ flushInterval=&quot;60000&quot;
+ size=&quot;512&quot;
+ readOnly=&quot;true&quot;/&gt;
+这个更高级的配置创建了一个 FIFO 缓存，每隔 60 秒刷新，最多可以存储结果对象或列表的 512 个引用，而且返回的对象被认为是只读的，因此对它们进行修改可能会在不同线程中的调用者产生冲突。
+</code></pre>
+<ol start="3">
+<li>代码测试</li>
+</ol>
+<ul>
+<li>所有的实体类先实现序列化接口</li>
+<li>测试代码</li>
+</ul>
+<pre><code class="language-java">@Test
+public void testQueryUserById(){
+   SqlSession session = MybatisUtils.getSession();
+   SqlSession session2 = MybatisUtils.getSession();
+
+   UserMapper mapper = session.getMapper(UserMapper.class);
+   UserMapper mapper2 = session2.getMapper(UserMapper.class);
+
+   User user = mapper.queryUserById(1);
+   System.out.println(user);
+   session.close();
+
+   User user2 = mapper2.queryUserById(1);
+   System.out.println(user2);
+   System.out.println(user==user2);
+
+   session2.close();
+}
+</code></pre>
+<h3 id="1352-结论">13.5.2 结论</h3>
+<ul>
+<li>只要开启了二级缓存，我们在同一个Mapper中的查询，可以在二级缓存中拿到数据</li>
+<li>查出的数据都会被默认先放在一级缓存中</li>
+<li>只有会话提交或者关闭以后，一级缓存中的数据才会转到二级缓存中</li>
+<li><strong>只有提交事务后才会写入二级缓存</strong></li>
+</ul>
+<h2 id="136-缓存原理图">13.6 缓存原理图</h2>
+<figure data-type="image" tabindex="8"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629430658041-0e543258-e81f-4ce6-b4a3-57ed5290ff19.png#clientId=ubc6f61bf-340b-4&amp;from=paste&amp;height=539&amp;id=u62f54e33&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=805&amp;originWidth=1099&amp;originalType=binary&amp;ratio=1&amp;size=589029&amp;status=done&amp;style=none&amp;taskId=u505ee197-dd0a-4c75-ba0b-c2ef3a911f8&amp;width=736.5" alt="image.png" loading="lazy"></figure>
+<h2 id="137-自定义缓存-ehcache">13.7 自定义缓存-ehcache</h2>
+<figure data-type="image" tabindex="9"><img src="https://cdn.nlark.com/yuque/0/2021/png/22045814/1629430893346-29abded6-b62a-4fad-8b8e-04dcf49d2587.png#clientId=ubc6f61bf-340b-4&amp;from=paste&amp;height=102&amp;id=ub19b7622&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=203&amp;originWidth=1475&amp;originalType=binary&amp;ratio=1&amp;size=69519&amp;status=done&amp;style=none&amp;taskId=ucee1adaa-c1a5-497b-a43e-6a5f5c46c28&amp;width=737.5" alt="image.png" loading="lazy"></figure>
+<p>第三方缓存实现--EhCache: 查看百度百科<br>
+Ehcache是一种广泛使用的java分布式缓存，用于通用缓存；<br>
+要在应用程序中使用Ehcache，需要引入依赖的jar包</p>
+<pre><code class="language-xml">&lt;!-- https://mvnrepository.com/artifact/org.mybatis.caches/mybatis-ehcache --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis.caches&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-ehcache&lt;/artifactId&gt;
+    &lt;version&gt;1.2.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>在mapper.xml中使用对应的缓存即可</p>
+<pre><code class="language-xml">&lt;!--自定义缓存--&gt;
+&lt;cache type=&quot;org.mybatis.caches.ehcache.EhcacheCache&quot;/&gt;
+</code></pre>
+<p>编写ehcache.xml文件，如果在加载时未找到/ehcache.xml资源或出现问题，则将使用默认配置。</p>
+<pre><code class="language-xml">&lt;!--sxi处爆红就点fetch external resource 或者去设置language and framework里添加igonred区域的uri 或者搜索[Resource registered by this uri is not recognized (Settings | Languages &amp; Frameworks | Schemas and DTDs)]--&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ehcache xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:noNamespaceSchemaLocation=&quot;http://ehcache.org/ehcache.xsd&quot;
+        updateCheck=&quot;false&quot;&gt;
+   &lt;!--
+      diskStore：为缓存路径，ehcache分为内存和磁盘两级，此属性定义磁盘的缓存位置。参数解释如下：
+      user.home – 用户主目录
+      user.dir – 用户当前工作目录
+      java.io.tmpdir – 默认临时文件路径
+    --&gt;
+   &lt;diskStore path=&quot;./tmpdir/Tmp_EhCache&quot;/&gt;
+   
+   &lt;defaultCache
+           eternal=&quot;false&quot;
+           maxElementsInMemory=&quot;10000&quot;
+           overflowToDisk=&quot;false&quot;
+           diskPersistent=&quot;false&quot;
+           timeToIdleSeconds=&quot;1800&quot;
+           timeToLiveSeconds=&quot;259200&quot;
+           memoryStoreEvictionPolicy=&quot;LRU&quot;/&gt;
+
+   &lt;cache
+           name=&quot;cloud_user&quot;
+           eternal=&quot;false&quot;
+           maxElementsInMemory=&quot;5000&quot;
+           overflowToDisk=&quot;false&quot;
+           diskPersistent=&quot;false&quot;
+           timeToIdleSeconds=&quot;1800&quot;
+           timeToLiveSeconds=&quot;1800&quot;
+           memoryStoreEvictionPolicy=&quot;LRU&quot;/&gt;
+   &lt;!--
+      defaultCache：默认缓存策略，当ehcache找不到定义的缓存时，则使用这个缓存策略。只能定义一个。
+    --&gt;
+   &lt;!--
+     name:缓存名称。
+     maxElementsInMemory:缓存最大数目
+     maxElementsOnDisk：硬盘最大缓存个数。
+     eternal:对象是否永久有效，一但设置了，timeout将不起作用。
+     overflowToDisk:是否保存到磁盘，当系统宕机时
+     timeToIdleSeconds:设置对象在失效前的允许闲置时间（单位：秒）。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。
+     timeToLiveSeconds:设置对象在失效前允许存活时间（单位：秒）。最大时间介于创建时间和失效时间之间。仅当eternal=false对象不是永久有效时使用，默认是0.，也就是对象存活时间无穷大。
+     diskPersistent：是否缓存虚拟机重启期数据 Whether the disk store persists between restarts of the Virtual Machine. The default value is false.
+     diskSpoolBufferSizeMB：这个参数设置DiskStore（磁盘缓存）的缓存区大小。默认是30MB。每个Cache都应该有自己的一个缓冲区。
+     diskExpiryThreadIntervalSeconds：磁盘失效线程运行时间间隔，默认是120秒。
+     memoryStoreEvictionPolicy：当达到maxElementsInMemory限制时，Ehcache将会根据指定的策略去清理内存。默认策略是LRU（最近最少使用）。你可以设置为FIFO（先进先出）或是LFU（较少使用）。
+     clearOnFlush：内存数量最大时是否清除。
+     memoryStoreEvictionPolicy:可选策略有：LRU（最近最少使用，默认策略）、FIFO（先进先出）、LFU（最少访问次数）。
+     FIFO，first in first out，这个是大家最熟的，先进先出。
+     LFU， Less Frequently Used，就是上面例子中使用的策略，直白一点就是讲一直以来最少被使用的。如上面所讲，缓存的元素有一个hit属性，hit值最小的将会被清出缓存。
+     LRU，Least Recently Used，最近最少使用的，缓存的元素有一个时间戳，当缓存容量满了，而又需要腾出地方来缓存新的元素的时候，那么现有缓存元素中时间戳离当前时间最远的元素将被清出缓存。
+  --&gt;
+
+&lt;/ehcache&gt;
+</code></pre>
+<p>运行后会爆红</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_42262803/article/details/86485140">https://blog.csdn.net/qq_42262803/article/details/86485140</a><br>
+<a href="https://blog.csdn.net/theonegis/article/details/45873331">https://blog.csdn.net/theonegis/article/details/45873331</a><br>
+<a href="https://blog.csdn.net/langtian08/article/details/82015017">https://blog.csdn.net/langtian08/article/details/82015017</a></p>
+</blockquote>
+<p>合理的使用缓存，可以让我们程序的性能大大提升！</p>
+<blockquote>
+<p><a href="https://gitee.com/solitudealma/java-study-note">附属代码</a><br>
+<a href="https://www.bilibili.com/read/cv5702420">所有资源来源于狂神说的B站投稿视频</a></p>
+</blockquote>
+
+                                </div>
+                            </div>
+                            
+                                <div class="reward ">
+                                    <div class="reward-button ">&yen;
+                                        <span class="reward-code "> 
+                                            <span class="alipay-code "> <img class="alipay-img "  alt = "support " src="https://img.imgdb.cn/item/602e6284343ca1fbf903142d.jpg"><b>Alipay</b>                                                            </span>
+                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://img.imgdb.cn/item/602e5d8d343ca1fbf900a926.jpg"><b>Wechat</b> </span> </span>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-copyright">
+                                作者:
+                                SolitudeAlma<br>永久链接:
+                                    <a href="https://solitudealma.github.io/post/qYIUMWbyl/" title="Java学习笔记之Mybatis">
+                                        https://solitudealma.github.io/post/qYIUMWbyl/
+                                    </a><br> 协议: MIT License
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <style>
+                    .prev:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                    
+                    .next:hover {
+                        color: #2d96bd;
+                        text-decoration: none;
+                        text-align: center;
+                        transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+                    }
+                </style>
+                <div class="lite-item nearby-article">
+                    
+                            
+                                <div class="nearby-article-right" style="padding: 10px;">
+                                    <a class="next" rel="next" href="https://solitudealma.github.io/post/liiMnTBGw/">
+                                        Java学习笔记之HTML5<i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                
+                </div>
+                <!--Share-->
+                <span style="margin-right:15px">
+    <i class="post-share"></i>
+    <span>&#x5206;&#x4EAB;:</span>
+                <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://solitudealma.github.io/post/qYIUMWbyl/"><i class="fa fa-qrcode"></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://solitudealma.github.io/post/qYIUMWbyl/&sharesource=qzone&title=Java学习笔记之Mybatis&pics=https://solitudealma.github.io/images/avatar.png?v=1630301105350&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://solitudealma.github.io/post/qYIUMWbyl/&sharesource=weibo&title=Java学习笔记之Mybatis + " - " + &pic="https://solitudealma.github.io/images/avatar.png?v=1630301105350"><i class="fa fa-weibo "></i></a>
+                </span>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'CtvJjEF5dpKjM6LcNBxkvvGX-gzGzoHsz',
+        appKey: 'k0U3m8TLtYax8UPcxq41eHw2',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '来都来了，不妨评论一下',
+        visitor: true,
+        highlight: true,
+        recordIP: true,
+    })
+</script>
+                                                    
+            </div>
+            <div id="sidebar">
+    <ul>
+        
+            <li class="lite-item">
+                <header class="lite-item-header">
+                    <h3 class="lite-item-title"><i class="Card Card-hitokoto"></i>&nbsp;&#x4E00;&#x8A00;</h3>
+                </header>
+                <div class="textwidget">
+                    <p>
+                        <b id="hitokoto"></b>
+                    </p>
+                </div>
+            </li>
+            
+                <!--
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        
+                            <a href="" class="tag-cloud-link " style="font-size: 12px;margin: 5px; padding: 2px;">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                            </a>
+                            
+                    </div>
+                </li>-->
+                <li class="lite-item">
+                    <header class="lite-item-header">
+                        <h3 class="lite-item-title"><i class="Card Card-tags">&#x6807;&#x7B7E;</i></h3>
+                    </header>
+                    <div class="textwidget">
+                        <div id='tags' style="height: auto;width: 360;"></div>
+                        <script src="https://solitudealma.github.io/media/js/svg3dtagcloud.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                var entries = ([
+                                    
+                                     {
+                                        label: '🏷Java',
+                                        url: 'https://solitudealma.github.io/tag/java/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Nodejs',
+                                        url: 'https://solitudealma.github.io/tag/Nodejs/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷欧拉计划',
+                                        url: 'https://solitudealma.github.io/tag/ProjectEuler/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷题解',
+                                        url: 'https://solitudealma.github.io/tag/answer/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Diary',
+                                        url: 'https://solitudealma.github.io/tag/diary/',
+                                        target: '_button'
+                                    },
+                                    
+                                    
+                                     {
+                                        label: '🏷Algorithm',
+                                        url: 'https://solitudealma.github.io/tag/algorithm/',
+                                        target: '_button'
+                                    }
+                                    
+                                    
+                                ]);
+                                var settings = {
+                                    entries: entries, //数据
+                                    width: 300, //宽度
+                                    height: 300, //高度
+                                    radius: '50%',
+                                    radiusMin: 50,
+                                    bgDraw: false, //是否显示背景
+                                    bgColor: '#fff', //背景颜色
+                                    opacityOver: 1.00,
+                                    opacityOut: 0.05,
+                                    opacitySpeed: 6,
+                                    fov: 360,
+                                    speed: 0.3, //旋转的速度
+                                    fontFamily: 'Oswald, Arial, sans-serif',
+                                    fontSize: '18', //默认字体大小
+                                    fontColor: '#666', //默认字体颜色
+                                    fontWeight: 'normal', //bold
+                                    fontStyle: 'normal', //italic 
+                                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    fontToUpperCase: true,
+                                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                                    tooltipFontSize: '16',
+                                    tooltipFontColor: 'red',
+                                    tooltipFontWeight: 'normal', //bold
+                                    tooltipFontStyle: 'normal', //italic 
+                                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                                    tooltipFontToUpperCase: false,
+                                    tooltipTextAnchor: 'left',
+                                    tooltipDiffX: 0,
+                                    tooltipDiffY: 5
+
+                                };
+
+                                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                                $('#tags').svg3DTagCloud(settings);
+                            });
+                        </script>
+                    </div>
+                </li>
+                
+                    <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/APlayer.min.js"></script>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+                    <div id="player"></div>
+                    
+                        <li class="lite-item">
+                            <header class="lite-item-header">
+                                <h3 class="lite-item-title">
+                                    &#x1F3B5;&#x97F3;&#x4E50;
+                                </h3>
+                            </header>
+                            <div class="textwidget">
+                                <p>
+                                    <div id="playerbox"></div>
+                                </p>
+                            </div>
+                        </li>
+                        
+                            <script>
+                                function LoadPlayer() {
+                                    var music_array = [];
+                                    
+                                    music_array.push({
+                                        name: 'Wherever You Go',
+                                        url: 'https://blog.yt1209.com/WhereverYouGo.mp3',
+                                        artist: 'A Rocket to the Moon',
+                                        cover: 'https://p1.music.126.net/ghFwbrRBHXuVGz2kVG3EUw==/2412328511380407.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Gotta Have You',
+                                        url: 'https://blog.yt1209.com/Gotta Have You.mp3',
+                                        artist: 'The Weepies',
+                                        cover: 'https://p2.music.126.net/AXD2wl0N3UooNRL_kPnpGQ==/6650945837329535.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: '愛にできることはまだあるかい',
+                                        url: 'https://blog.yt1209.com/愛にできることはまだあるかい.mp3',
+                                        artist: 'RADWIMPS',
+                                        cover: 'https://p2.music.126.net/dRwInA9PpkiKkmNWeUvi0w==/109951164220136544.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: '开始懂了',
+                                        url: 'https://blog.yt1209.com/开始懂了.mp3',
+                                        artist: '孙燕姿',
+                                        cover: 'https://p2.music.126.net/35P1LoCK43ANZ7Ebngrt4Q==/109951165549829619.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'めざせポケモンマスター',
+                                        url: 'https://blog.yt1209.com/めざせポケモンマスター.mp3',
+                                        artist: '松本梨香',
+                                        cover: 'https://p1.music.126.net/iAygFRUN_zMX-ObZkjTfOA==/1317214930122446.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Shotgun',
+                                        url: 'https://blog.yt1209.com/Shotgun.mp3',
+                                        artist: 'Us The Duo',
+                                        cover: 'https://p2.music.126.net/owFblNP0hTHbGbtThZk2Ug==/109951164074045609.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'FreeLoop',
+                                        url: 'https://blog.yt1209.com/FreeLoop.mp3',
+                                        artist: 'Daniel Powter',
+                                        cover: 'https://p1.music.126.net/grGdswi38xUoYcDBISdKcg==/92358976750445.jpg?param=130y130',
+                                    });
+                                    
+                                    music_array.push({
+                                        name: 'Everglow',
+                                        url: 'https://blog.yt1209.com/Everglow.mp3',
+                                        artist: 'Coldplay,Gwyneth Paltrow',
+                                        cover: 'https://p1.music.126.net/tnaTZ9ZokTL7w0kDa73iVA==/3297435376989078.jpg?param=130y130',
+                                    });
+                                    
+                                    
+                                    const ap = new APlayer({
+                                        container: document.getElementById('playerbox'),
+                                        audio: music_array
+                                    });
+                                    
+                                }
+                                LoadPlayer();
+                            </script>
+                            
+                                
+                                    
+                                        
+                                                
+                                                    <li class="lite-item">
+                                                        <header class="lite-item-header">
+                                                            <h3 class="lite-item-title">&#x1F468;&#x200D;&#x1F4BB;&#x53CB;&#x94FE;</h3>
+                                                        </header>
+                                                        <div class="textwidget">
+                                                            
+                                                                
+                                                                    <p onclick="javascript:top.location='https://blog.itjoker.cn'"><span class="link_a"><a href="https://blog.itjoker.cn" alt="ITJoker ">ITJoker -ITJoker&#39;s Blog</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://layne666.cn'"><span class="link_a"><a href="https://layne666.cn" alt="Layne666 - Blog ">Layne666 - Blog -不多说了，诸位，拔剑吧！</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='http://noechou.cn'"><span class="link_a"><a href="http://noechou.cn" alt="noechou ">noechou -life is beautiful</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://blog.skywalkerch.cn/'"><span class="link_a"><a href="https://blog.skywalkerch.cn/" alt="Skywalkerch – skywalkerch的博客 ">Skywalkerch – skywalkerch的博客 -来自宇宙另一端的天行者</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://www.summerfire.cn'"><span class="link_a"><a href="https://www.summerfire.cn" alt="夏日萤火 ">夏日萤火 -个人学习笔记，如果能帮到你，不胜荣幸。</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://www.scery.com'"><span class="link_a"><a href="https://www.scery.com" alt="Anthony&#39;s Blog ">Anthony&#39;s Blog -As you look around</a></span></p>
+
+                                                                    
+                                                                    <p onclick="javascript:top.location='https://naiquoy.com'"><span class="link_a"><a href="https://naiquoy.com" alt="Marshall&#39;s Blog ">Marshall&#39;s Blog -</a></span></p>
+
+                                                                    
+                                                                        
+                                                        </div>
+                                                    </li>
+    </ul>
+</div>
+        </div>
+
+</body>
+<footer id="foot">
+    <a class="back-to-top" href="#"><i class="Card Card-top" ></i><span class="back-to-top-text">0%</span></a>
+    <div class="copyright">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+            
+                <div style="width:300px;margin:0 auto; padding:0px 0;">
+                    <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=20063723" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                        <img src="https://yanxuan.nosdn.127.net/b610ced5ac6a0e25cf6edf5606c69775.png" style="float:left;">
+                        <p id="icpinfo" style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px;">
+                            粤ICP备20063723号
+                        </p>
+                    </a>
+                </div>
+                
+                    
+
+                        <div style="font-size:12px">
+                            
+                                        已经建站 <b id='build_time'></b>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/time.min.js"></script>
+                        <script>
+                            buildTime = '2021-2-12'
+                            setInterval(show_date_time, 1000, buildTime);
+                        </script>
+                        
+                            <a href="https://blog.itjoker.cn">
+                                Theme - Card
+                            </a>&nbsp;|&nbsp; &#x7248;&#x6743;&#x6240;&#x6709; &copy;
+                            <script>
+                                var date = new Date();
+                                data2 = new Date(buildTime.replace(/-/g, "/"));
+                                nowYear = date.getFullYear().toString()
+                                buildYear = data2.getFullYear().toString();
+                                if (buildYear == nowYear) {
+                                    document.write('<span class="my-face">' + nowYear + '</span>');
+                                } else {
+                                    document.write(buildYear + '-<span class="my-face">' + nowYear + '</span>');
+                                }
+                            </script>
+
+                            <a href="https://solitudealma.github.io">
+                                SolitudeAlma
+                            </a>&nbsp;|&nbsp;Powered by
+                            <a href="https://coding.net" target="_blank">
+                                Coding.net
+                            </a>
+    </div>
+    <script>
+        let back2TopText = document.querySelector('.back-to-top-text')
+        window.addEventListener('scroll', function(e) {
+            let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+            if (back2TopText) {
+                back2TopText.textContent = Math.floor(percent).toString() + '%';
+            }
+        });
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            document.hidden ? (document.title = "\uD83D\uDE25" + OriginTitile, clearTimeout(titleTime)) : (document.title = "\uD83D\uDE1D" + OriginTitile, titleTime = setTimeout(function() {
+                document.title = OriginTitile
+            }, 2E3))
+        });
+        var OriginTitile = document.title;
+        
+        App.hitokoto();
+        
+        
+        App.weather();
+        
+        var themeIcon = document.getElementById("themeIcon");
+        const currentTheme = window.localStorage.getItem('theme');
+        if (currentTheme == 'dark') {
+            themeIcon.classList.remove('Card-moon');
+            themeIcon.classList.add('Card-sun');
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.cssText = mediaCssText;
+            }
+            document.documentElement.style.cssText = cssText;
+            document.getElementsByClassName('card-bg')[0].style.cssText = mediaCssText;
+        } else {
+            themeIcon.classList.remove('Card-sun');
+            themeIcon.classList.add('Card-moon');
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.cssText = '';
+            }
+            document.documentElement.style.cssText = '';
+            document.getElementsByClassName('card-bg')[0].style.cssText = '';
+        }
+        App.clearLog();
+        App.outputlog();
+        var logo = '%cSolitudeAlma\'%cBlog';
+        console.info(
+            logo,
+            'color: #ffffff; background: #000000; padding:5px 10px 5px 10px;font-size:40px;border-radius:12px 0 0 12px;', 'color: #000000; background: #FE9A00; padding:5px 10px;font-size:40px;border-radius:0 12px 12px 0;'
+        );
+        $('img').attr('data-fancybox', 'images');
+    </script>
+</footer>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            }, {
+                left: "$",
+                right: "$",
+                display: false
+            }]
+        });
+    </script>
+
+</html>
